@@ -1,0 +1,138 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4n5o6p7q8r9s"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_settings"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settings")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.1, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="DifficultyBox" type="HBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/DifficultyBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+theme_override_font_sizes/font_size = 20
+text = "AI难度"
+
+[node name="DifficultyOption" type="OptionButton" parent="ScrollContainer/VBox/DifficultyBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 40)
+
+[node name="DurationBox" type="HBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/DurationBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+theme_override_font_sizes/font_size = 20
+text = "比赛时长"
+
+[node name="DurationOption" type="OptionButton" parent="ScrollContainer/VBox/DurationBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 40)
+
+[node name="SoundBox" type="HBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/SoundBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+theme_override_font_sizes/font_size = 20
+text = "音效音量"
+
+[node name="SoundSlider" type="HSlider" parent="ScrollContainer/VBox/SoundBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 0)
+min_value = 0.0
+max_value = 100.0
+value = 80.0
+
+[node name="MusicBox" type="HBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/MusicBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+theme_override_font_sizes/font_size = 20
+text = "音乐音量"
+
+[node name="MusicSlider" type="HSlider" parent="ScrollContainer/VBox/MusicBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 0)
+min_value = 0.0
+max_value = 100.0
+value = 70.0
+
+[node name="CameraBox" type="HBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/CameraBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+theme_override_font_sizes/font_size = 20
+text = "摄像机模式"
+
+[node name="CameraOption" type="OptionButton" parent="ScrollContainer/VBox/CameraBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 40)
+
+[node name="ControlBox" type="HBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/ControlBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+theme_override_font_sizes/font_size = 20
+text = "操作方式"
+
+[node name="ControlOption" type="OptionButton" parent="ScrollContainer/VBox/ControlBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 40)
+
+[node name="ResetButton" type="Button" parent="ScrollContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+text = "⚠️ 重置所有存档"

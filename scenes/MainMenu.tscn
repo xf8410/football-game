@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1n2k3m4n5o6p"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_main"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.15, 0.08, 1)
+
+[node name="FieldPattern" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.25, 0.12, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -350.0
+offset_right = 300.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "⚽ 足球游戏"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.7, 0.9, 0.7, 1)
+text = "绿茵场上，谁与争锋"
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 20)
+
+[node name="ProfileInfo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+text = "教练：Player  |  等级：1  |  金币：500"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+
+[node name="MenuContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "▶ 快速比赛"
+
+[node name="LANButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🌐 局域网联机"
+
+[node name="ProfileButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "👤 玩家档案"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "⚙️ 设置"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🚪 退出游戏"
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+text = "v0.1.0"
+horizontal_alignment = 2
