@@ -1,0 +1,203 @@
+{
+  "traits": {
+    "long_shot": {
+      "name": "远射大师",
+      "description": "25米外射门力量和精度提升",
+      "tiers": {"bronze": {"power_mult": 1.1, "accuracy_mult": 1.05}, "silver": {"power_mult": 1.2, "accuracy_mult": 1.1}, "gold": {"power_mult": 1.35, "accuracy_mult": 1.2}},
+      "applicable_positions": ["ST", "CF", "CAM", "CM", "LW", "RW"],
+      "icon_color": "#FF6B35"
+    },
+    "free_kick": {
+      "name": "任意球专家",
+      "description": "直接任意球精度大幅提升",
+      "tiers": {"bronze": {"accuracy_mult": 1.1}, "silver": {"accuracy_mult": 1.25}, "gold": {"accuracy_mult": 1.45}},
+      "applicable_positions": ["ST", "CF", "CAM", "CM", "LW", "RW"],
+      "icon_color": "#4ECDC4"
+    },
+    "header": {
+      "name": "头球轰炸",
+      "description": "头球争顶能力和精度提升",
+      "tiers": {"bronze": {"power_mult": 1.1, "jump_mult": 1.1}, "silver": {"power_mult": 1.2, "jump_mult": 1.2}, "gold": {"power_mult": 1.35, "jump_mult": 1.35}},
+      "applicable_positions": ["ST", "CF", "CB"],
+      "icon_color": "#FFD23F"
+    },
+    "speedster": {
+      "name": "闪电突破",
+      "description": "冲刺速度和无球跑动提升",
+      "tiers": {"bronze": {"speed_mult": 1.05}, "silver": {"speed_mult": 1.1}, "gold": {"speed_mult": 1.18}},
+      "applicable_positions": ["LW", "RW", "ST", "LB", "RB"],
+      "icon_color": "#00D9FF"
+    },
+    "playmaker": {
+      "name": "组织核心",
+      "description": "传球精度和视野提升",
+      "tiers": {"bronze": {"pass_mult": 1.08, "vision_mult": 1.1}, "silver": {"pass_mult": 1.15, "vision_mult": 1.2}, "gold": {"pass_mult": 1.25, "vision_mult": 1.35}},
+      "applicable_positions": ["CAM", "CM", "CDM"],
+      "icon_color": "#9B59B6"
+    },
+    "tackle_master": {
+      "name": "抢断专家",
+      "description": "抢断成功率和拦截能力提升",
+      "tiers": {"bronze": {"tackle_mult": 1.1}, "silver": {"tackle_mult": 1.2}, "gold": {"tackle_mult": 1.35}},
+      "applicable_positions": ["CB", "LB", "RB", "CDM", "CM"],
+      "icon_color": "#E74C3C"
+    },
+    "wall": {
+      "name": "钢铁防线",
+      "description": "防守站位和身体对抗提升",
+      "tiers": {"bronze": {"defending_mult": 1.08, "physical_mult": 1.05}, "silver": {"defending_mult": 1.15, "physical_mult": 1.1}, "gold": {"defending_mult": 1.25, "physical_mult": 1.2}},
+      "applicable_positions": ["CB", "LB", "RB", "CDM"],
+      "icon_color": "#34495E"
+    },
+    "dribbler": {
+      "name": "盘带魔术师",
+      "description": "盘带和过人能力提升",
+      "tiers": {"bronze": {"dribbling_mult": 1.08}, "silver": {"dribbling_mult": 1.15}, "gold": {"dribbling_mult": 1.28}},
+      "applicable_positions": ["LW", "RW", "ST", "CAM"],
+      "icon_color": "#F39C12"
+    },
+    "clinical_finisher": {
+      "name": "终结者",
+      "description": "禁区内射门精度提升",
+      "tiers": {"bronze": {"finishing_mult": 1.1}, "silver": {"finishing_mult": 1.2}, "gold": {"finishing_mult": 1.35}},
+      "applicable_positions": ["ST", "CF"],
+      "icon_color": "#E91E63"
+    },
+    "cross_master": {
+      "name": "传中大师",
+      "description": "边路传中精度提升",
+      "tiers": {"bronze": {"cross_mult": 1.1}, "silver": {"cross_mult": 1.2}, "gold": {"cross_mult": 1.35}},
+      "applicable_positions": ["LB", "RB", "LM", "RM", "LW", "RW"],
+      "icon_color": "#1ABC9C"
+    },
+    "gk_sweeper": {
+      "name": "清道夫门将",
+      "description": "门将出击范围和扑救提升",
+      "tiers": {"bronze": {"gk_range_mult": 1.1, "gk_save_mult": 1.05}, "silver": {"gk_range_mult": 1.2, "gk_save_mult": 1.1}, "gold": {"gk_range_mult": 1.35, "gk_save_mult": 1.2}},
+      "applicable_positions": ["GK"],
+      "icon_color": "#2ECC71"
+    },
+    "leader": {
+      "name": "球队领袖",
+      "description": "全队士气和体力恢复提升",
+      "tiers": {"bronze": {"team_stamina_mult": 1.05}, "silver": {"team_stamina_mult": 1.1}, "gold": {"team_stamina_mult": 1.2}},
+      "applicable_positions": ["GK", "CB", "CM", "CDM"],
+      "icon_color": "#FFD700"
+    },
+    "weak_foot_5": {
+      "name": "双足均衡",
+      "description": "逆足能力达到5星，双脚均可精准射门",
+      "tiers": {"bronze": {"weak_foot": 3}, "silver": {"weak_foot": 4}, "gold": {"weak_foot": 5}},
+      "applicable_positions": ["ST", "LW", "RW", "CAM", "CM"],
+      "icon_color": "#95A5A6"
+    },
+    "flair": {
+      "name": "天赋异禀",
+      "description": "花式动作和创意传球概率提升",
+      "tiers": {"bronze": {"flair_mult": 1.1}, "silver": {"flair_mult": 1.2}, "gold": {"flair_mult": 1.35}},
+      "applicable_positions": ["LW", "RW", "CAM", "ST"],
+      "icon_color": "#E67E22"
+    },
+    "workhorse": {
+      "name": "跑不死",
+      "description": "体力消耗降低，覆盖范围增大",
+      "tiers": {"bronze": {"stamina_drain_mult": 0.9}, "silver": {"stamina_drain_mult": 0.8}, "gold": {"stamina_drain_mult": 0.65}},
+      "applicable_positions": ["CM", "CDM", "LB", "RB", "LM", "RM"],
+      "icon_color": "#27AE60"
+    }
+  },
+  "skills": {
+    "bicycle_kick": {
+      "name": "倒钩射门",
+      "description": "高球时可触发倒钩射门，难以防守",
+      "tier": "gold",
+      "trigger": "high_ball_in_box",
+      "cooldown": 120.0
+    },
+    "diving_header": {
+      "name": "鱼跃冲顶",
+      "description": "传中球可触发鱼跃头球",
+      "tier": "silver",
+      "trigger": "cross_received",
+      "cooldown": 60.0
+    },
+    "knuckle_shot": {
+      "name": "电梯球",
+      "description": "远射时球路飘忽不定",
+      "tier": "gold",
+      "trigger": "long_shot",
+      "cooldown": 90.0
+    },
+    "curve_shot": {
+      "name": "搓射",
+      "description": "禁区内搓射绕过门将",
+      "tier": "silver",
+      "trigger": "in_box_shot",
+      "cooldown": 45.0
+    },
+    "lob_shot": {
+      "name": "挑射",
+      "description": "门将出击时挑射破门",
+      "tier": "silver",
+      "trigger": "gk_rushing",
+      "cooldown": 45.0
+    },
+    "power_shot": {
+      "name": "重炮轰门",
+      "description": "蓄力射门，力量极大",
+      "tier": "bronze",
+      "trigger": "charged_shot",
+      "cooldown": 30.0
+    },
+    "no_look_pass": {
+      "name": "no-look传球",
+      "description": "不看人传球，欺骗防守",
+      "tier": "silver",
+      "trigger": "under_pressure",
+      "cooldown": 30.0
+    },
+    "rabona": {
+      "name": "花式传球",
+      "description": "交叉腿传球，出其不意",
+      "tier": "gold",
+      "trigger": "under_pressure",
+      "cooldown": 60.0
+    },
+    "sombrero_flick": {
+      "name": "挑球过人",
+      "description": "用脚尖挑球过防守球员",
+      "tier": "silver",
+      "trigger": "1v1_dribble",
+      "cooldown": 30.0
+    },
+    "scorpion_kick": {
+      "name": "蝎子摆尾",
+      "description": "背后射门，极其华丽",
+      "tier": "gold",
+      "trigger": "back_to_goal",
+      "cooldown": 180.0
+    }
+  },
+  "player_themes": {
+    "annual_star_2025": {"name": "25/26赛季之星", "description": "2025-26赛季年度最佳球员", "buff": {"all_stats": 3}},
+    "euro_star_2025": {"name": "25/26欧战之星", "description": "欧冠/欧联赛季最佳", "buff": {"all_stats": 4}},
+    "world_cup_2026": {"name": "2026世界杯", "description": "世界杯参赛球员", "buff": {"all_stats": 5}},
+    "legend_ambassador": {"name": "传奇大使", "description": "足球传奇人物", "buff": {"all_stats": 8}},
+    "moment": {"name": "时刻", "description": "职业生涯经典时刻", "buff": {"all_stats": 6}},
+    "toty": {"name": "年度最佳阵容", "description": "年度最佳11人", "buff": {"all_stats": 7}}
+  },
+  "rivalries": {
+    "man_city_vs_man_united": {"team_a": "man_city", "team_b": "man_united", "name": "曼彻斯特德比", "buff": {"all_stats": 5}},
+    "real_vs_barca": {"team_a": "real_madrid", "team_b": "barcelona", "name": "西班牙国家德比", "buff": {"all_stats": 5}},
+    "liverpool_vs_man_united": {"team_a": "liverpool", "team_b": "man_united", "name": "双红会", "buff": {"all_stats": 5}},
+    "bayern_vs_dortmund": {"team_a": "bayern_munich", "team_b": "dortmund", "name": "德国国家德比", "buff": {"all_stats": 5}},
+    "inter_vs_milan": {"team_a": "inter_milan", "team_b": "ac_milan", "name": "米兰德比", "buff": {"all_stats": 5}},
+    "psg_vs_marseille": {"team_a": "psg", "team_b": "marseille", "name": "法国国家德比", "buff": {"all_stats": 5}},
+    "arsenal_vs_tottenham": {"team_a": "arsenal", "team_b": "tottenham", "name": "北伦敦德比", "buff": {"all_stats": 5}},
+    "barcelona_vs_atletico": {"team_a": "barcelona", "team_b": "atletico_madrid", "name": "西甲德比", "buff": {"all_stats": 4}},
+    "brazil_vs_argentina": {"team_a": "brazil", "team_b": "argentina", "name": "南美德比", "buff": {"all_stats": 6}},
+    "spain_vs_portugal": {"team_a": "spain", "team_b": "portugal", "name": "伊比利亚德比", "buff": {"all_stats": 5}},
+    "germany_vs_netherlands": {"team_a": "germany", "team_b": "netherlands", "name": "欧洲经典对决", "buff": {"all_stats": 5}},
+    "england_vs_germany": {"team_a": "england", "team_b": "germany", "name": "英德大战", "buff": {"all_stats": 5}}
+  }
+}

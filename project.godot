@@ -25,6 +25,12 @@ TeamDatabase="*res://scripts/team_database.gd"
 PlayerDatabase="*res://scripts/player_database.gd"
 LeagueManager="*res://scripts/league_manager.gd"
 Referee="*res://scripts/referee.gd"
+TeamSpecialties="*res://scripts/team_specialties.gd"
+SquadManager="*res://scripts/squad_manager.gd"
+PlayerDevelopment="*res://scripts/player_development.gd"
+AudioManager="*res://scripts/audio_manager.gd"
+Commentary="*res://scripts/commentary.gd"
+IconGenerator="*res://scripts/icon_generator.gd"
 
 [display]
 

@@ -90,6 +90,18 @@ custom_minimum_size = Vector2(400, 60)
 theme_override_font_sizes/font_size = 24
 text = "🏆 联赛模式"
 
+[node name="SquadButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "👥 球队阵容"
+
+[node name="SpecialtiesButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "✨ 球队特性"
+
 [node name="LANButton" type="Button" parent="VBoxContainer/MenuContainer"]
 layout_mode = 2
 custom_minimum_size = Vector2(400, 60)
