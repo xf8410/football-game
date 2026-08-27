@@ -42,6 +42,10 @@ SeasonStats="*res://scripts/season_stats.gd"
 AdvancedAI="*res://scripts/advanced_ai.gd"
 YouthAcademy="*res://scripts/youth_academy.gd"
 LANMatch="*res://scripts/lan_match.gd"
+ModSystem="*res://scripts/mod_system.gd"
+CardDrawSystem="*res://scripts/card_draw_system.gd"
+MatchFlow="*res://scripts/match_flow.gd"
+StaminaSystem="*res://scripts/stamina_system.gd"
 
 [display]
 

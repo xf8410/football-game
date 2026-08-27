@@ -13,6 +13,7 @@ extends Control
 @onready var training_button = $VBoxContainer/MenuContainer/TrainingButton
 @onready var transfer_button = $VBoxContainer/MenuContainer/TransferButton
 @onready var academy_button = $VBoxContainer/MenuContainer/AcademyButton
+@onready var card_draw_button = $VBoxContainer/MenuContainer/CardDrawButton
 @onready var stats_button = $VBoxContainer/MenuContainer/StatsButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
 @onready var lan_button = $VBoxContainer/MenuContainer/LANButton
@@ -31,6 +32,7 @@ func _ready():
         training_button.pressed.connect(_on_training_pressed)
         transfer_button.pressed.connect(_on_transfer_pressed)
         academy_button.pressed.connect(_on_academy_pressed)
+        card_draw_button.pressed.connect(_on_card_draw_pressed)
         stats_button.pressed.connect(_on_stats_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
         lan_button.pressed.connect(_on_lan_pressed)
@@ -122,6 +124,10 @@ func _on_transfer_pressed():
 func _on_academy_pressed():
         print("[MainMenu] 打开青训营")
         get_tree().change_scene_to_file("res://scenes/YouthAcademy.tscn")
+
+func _on_card_draw_pressed():
+        print("[MainMenu] 打开抽卡")
+        get_tree().change_scene_to_file("res://scenes/CardDraw.tscn")
 
 func _on_stats_pressed():
         print("[MainMenu] 打开赛季统计")

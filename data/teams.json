@@ -11,7 +11,19 @@
       "secondary_color": "#1C2C5B",
       "formation": "4-3-3",
       "rating": 92,
-      "players": ["haaland", "de_bruyne", "rodrri", "foden", "bernardo_silva", "gvardiol", "ruben_dias", "ederson", "walker", "gundogan", "alvarez"]
+      "players": [
+        "haaland",
+        "de_bruyne",
+        "rodrri",
+        "foden",
+        "bernardo_silva",
+        "gvardiol",
+        "ruben_dias",
+        "ederson",
+        "walker",
+        "gundogan",
+        "alvarez"
+      ]
     },
     "man_united": {
       "name": "曼彻斯特联",
@@ -24,7 +36,19 @@
       "secondary_color": "#FBE122",
       "formation": "4-2-3-1",
       "rating": 85,
-      "players": ["bruno_fernandes", "rashford", "garnacho", "casemiro", "martinez", "onana", "mainoo", "maguire", "dalot", "mctominay", "hojlund"]
+      "players": [
+        "bruno_fernandes",
+        "rashford",
+        "garnacho",
+        "casemiro",
+        "martinez",
+        "onana",
+        "mainoo",
+        "maguire",
+        "dalot",
+        "mctominay",
+        "hojlund"
+      ]
     },
     "liverpool": {
       "name": "利物浦",
@@ -37,7 +61,19 @@
       "secondary_color": "#00B2A9",
       "formation": "4-3-3",
       "rating": 89,
-      "players": ["salah", "vandijk", "mac_allister", "nunez", "diaz", "szoboszlai", "alisson", "arnold", "robertson", "gakpo", "gravenberch"]
+      "players": [
+        "salah",
+        "vandijk",
+        "mac_allister",
+        "nunez",
+        "diaz",
+        "szoboszlai",
+        "alisson",
+        "arnold",
+        "robertson",
+        "gakpo",
+        "gravenberch"
+      ]
     },
     "arsenal": {
       "name": "阿森纳",
@@ -50,7 +86,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 88,
-      "players": ["saka", "odegaard", "rice", "martinelli", "saliba", "gabriel_jesus", "raya", "white", "gabriel_magalhaes", "havertz", "trossard"]
+      "players": [
+        "saka",
+        "odegaard",
+        "rice",
+        "martinelli",
+        "saliba",
+        "gabriel_jesus",
+        "raya",
+        "white",
+        "gabriel_magalhaes",
+        "havertz",
+        "trossard"
+      ]
     },
     "chelsea": {
       "name": "切尔西",
@@ -63,7 +111,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-2-3-1",
       "rating": 84,
-      "players": ["palmer", "jackson", "caicedo", "sterling", "james", "colwill", "sanchez", "cucurella", "fernandez", "mudryk", "gallagher"]
+      "players": [
+        "palmer",
+        "jackson",
+        "caicedo",
+        "sterling",
+        "james",
+        "colwill",
+        "sanchez",
+        "cucurella",
+        "fernandez",
+        "mudryk",
+        "gallagher"
+      ]
     },
     "tottenham": {
       "name": "托特纳姆热刺",
@@ -76,7 +136,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 85,
-      "players": ["son", "maddison", "romero", "vicario", "porro", "vandeven", "bissouma", "kulusevski", "richarlison", "sarr", "uemphis"]
+      "players": [
+        "son",
+        "maddison",
+        "romero",
+        "vicario",
+        "porro",
+        "vandeven",
+        "bissouma",
+        "kulusevski",
+        "richarlison",
+        "sarr",
+        "uemphis"
+      ]
     },
     "newcastle": {
       "name": "纽卡斯尔联",
@@ -89,7 +161,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 83,
-      "players": ["isak", "gordon", "bruno_guimaraes", "trippier", "botman", "pope", "willock", "almiron", "joelinton", "scharr", "longstaff"]
+      "players": [
+        "isak",
+        "gordon",
+        "bruno_guimaraes",
+        "trippier",
+        "botman",
+        "pope",
+        "willock",
+        "almiron",
+        "joelinton",
+        "scharr",
+        "longstaff"
+      ]
     },
     "aston_villa": {
       "name": "阿斯顿维拉",
@@ -102,7 +186,19 @@
       "secondary_color": "#95BFE5",
       "formation": "4-4-2",
       "rating": 82,
-      "players": ["watkins", "bailey", "mcginn", "martinez", "torres", "cash", "luiz", "ramsey", "konsa", "mingu", "rogers"]
+      "players": [
+        "watkins",
+        "bailey",
+        "mcginn",
+        "martinez",
+        "torres",
+        "cash",
+        "luiz",
+        "ramsey",
+        "konsa",
+        "mingu",
+        "rogers"
+      ]
     },
     "real_madrid": {
       "name": "皇家马德里",
@@ -115,7 +211,19 @@
       "secondary_color": "#FEBE10",
       "formation": "4-3-3",
       "rating": 93,
-      "players": ["mbappe", "bellingham", "vinicius", "rodrygo", "modric", "valverde", "courtois", "carvajal", "militao", "rudiger", "camavinga"]
+      "players": [
+        "mbappe",
+        "bellingham",
+        "vinicius",
+        "rodrygo",
+        "modric",
+        "valverde",
+        "courtois",
+        "carvajal",
+        "militao",
+        "rudiger",
+        "camavinga"
+      ]
     },
     "barcelona": {
       "name": "巴塞罗那",
@@ -128,7 +236,19 @@
       "secondary_color": "#004D98",
       "formation": "4-3-3",
       "rating": 89,
-      "players": ["lewandowski", "yamal", "pedri", "gavi", "de_jong", "raphinha", "ter_stegen", "kounde", "araujo", "balde", "christensen"]
+      "players": [
+        "lewandowski",
+        "yamal",
+        "pedri",
+        "gavi",
+        "de_jong",
+        "raphinha",
+        "ter_stegen",
+        "kounde",
+        "araujo",
+        "balde",
+        "christensen"
+      ]
     },
     "atletico_madrid": {
       "name": "马德里竞技",
@@ -141,7 +261,19 @@
       "secondary_color": "#272E61",
       "formation": "3-5-2",
       "rating": 87,
-      "players": ["griezmann", "morata", "koke", "de_paul", "oblak", "gimenez", "witsel", "llorente", "lemar", "rabiott", "azpilicueta"]
+      "players": [
+        "griezmann",
+        "morata",
+        "koke",
+        "de_paul",
+        "oblak",
+        "gimenez",
+        "witsel",
+        "llorente",
+        "lemar",
+        "rabiott",
+        "azpilicueta"
+      ]
     },
     "sevilla": {
       "name": "塞维利亚",
@@ -154,7 +286,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-2-3-1",
       "rating": 80,
-      "players": ["en_nesyri", "o_campos", "rakitic", "navas", "gudelj", "nyland", "acuna", "salas", "bade", "sow", "jordan"]
+      "players": [
+        "en_nesyri",
+        "o_campos",
+        "rakitic",
+        "navas",
+        "gudelj",
+        "nyland",
+        "acuna",
+        "salas",
+        "bade",
+        "sow",
+        "jordan"
+      ]
     },
     "valencia": {
       "name": "瓦伦西亚",
@@ -167,7 +311,19 @@
       "secondary_color": "#000000",
       "formation": "4-4-2",
       "rating": 79,
-      "players": ["duro", "lopez", "guerrero", "mamardashvili", "gayal", "foulquier", "mosquera", "paulista", "cilo", "almeida", "yaremchuk"]
+      "players": [
+        "duro",
+        "lopez",
+        "guerrero",
+        "mamardashvili",
+        "gayal",
+        "foulquier",
+        "mosquera",
+        "paulista",
+        "cilo",
+        "almeida",
+        "yaremchuk"
+      ]
     },
     "villarreal": {
       "name": "比利亚雷亚尔",
@@ -180,7 +336,19 @@
       "secondary_color": "#005187",
       "formation": "4-4-2",
       "rating": 80,
-      "players": ["sørloth", "gerard_moreno", "baena", "parejo", "reina", "foyth", "albiol", "pedraza", "kiko", "comesaña", "akor"]
+      "players": [
+        "sørloth",
+        "gerard_moreno",
+        "baena",
+        "parejo",
+        "reina",
+        "foyth",
+        "albiol",
+        "pedraza",
+        "kiko",
+        "comesaña",
+        "akor"
+      ]
     },
     "real_sociedad": {
       "name": "皇家社会",
@@ -193,7 +361,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 82,
-      "players": ["oyarzabal", "kubo", "merino", "zubeldia", "remiro", "traore", "le_normand", "munoz", "zubimendi", "becker", "brais"]
+      "players": [
+        "oyarzabal",
+        "kubo",
+        "merino",
+        "zubeldia",
+        "remiro",
+        "traore",
+        "le_normand",
+        "munoz",
+        "zubimendi",
+        "becker",
+        "brais"
+      ]
     },
     "athletic_bilbao": {
       "name": "毕尔巴鄂竞技",
@@ -206,7 +386,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-2-3-1",
       "rating": 82,
-      "players": ["williams", "nico_williams", "sancet", "ruiz_de_galarreta", "unai_simon", "yeray", "vivian", "de Marcos", "berenguer", "prados", "guruzeta"]
+      "players": [
+        "williams",
+        "nico_williams",
+        "sancet",
+        "ruiz_de_galarreta",
+        "unai_simon",
+        "yeray",
+        "vivian",
+        "de Marcos",
+        "berenguer",
+        "prados",
+        "guruzeta"
+      ]
     },
     "bayern_munich": {
       "name": "拜仁慕尼黑",
@@ -219,7 +411,19 @@
       "secondary_color": "#0066B2",
       "formation": "4-2-3-1",
       "rating": 90,
-      "players": ["kane", "musiala", "sane", "kimmich", "neuer", "davies", "upamecano", "kim", "goretzka", "gnabry", "muller"]
+      "players": [
+        "kane",
+        "musiala",
+        "sane",
+        "kimmich",
+        "neuer",
+        "davies",
+        "upamecano",
+        "kim",
+        "goretzka",
+        "gnabry",
+        "muller"
+      ]
     },
     "dortmund": {
       "name": "多特蒙德",
@@ -232,7 +436,19 @@
       "secondary_color": "#000000",
       "formation": "4-2-3-1",
       "rating": 85,
-      "players": ["adeyemi", "brandt", "reus_legacy", "sabitzer", "hummels", "kobel", "schlotterbeck", "ryerson", "can", "malen", "fulkrug"]
+      "players": [
+        "adeyemi",
+        "brandt",
+        "reus_legacy",
+        "sabitzer",
+        "hummels",
+        "kobel",
+        "schlotterbeck",
+        "ryerson",
+        "can",
+        "malen",
+        "fulkrug"
+      ]
     },
     "rb_leipzig": {
       "name": "莱比锡RB",
@@ -245,7 +461,19 @@
       "secondary_color": "#001F47",
       "formation": "4-2-2-2",
       "rating": 84,
-      "players": ["olmo", "sesko", "xavi_simons", "schlager", "gulacsi", "orbant", "simakan", "henrichs", "raumer", "haidara", "poulsen"]
+      "players": [
+        "olmo",
+        "sesko",
+        "xavi_simons",
+        "schlager",
+        "gulacsi",
+        "orbant",
+        "simakan",
+        "henrichs",
+        "raumer",
+        "haidara",
+        "poulsen"
+      ]
     },
     "leverkusen": {
       "name": "勒沃库森",
@@ -258,7 +486,19 @@
       "secondary_color": "#000000",
       "formation": "3-4-2-1",
       "rating": 87,
-      "players": ["wirtz", "boniface", "grimaldo", "frimpong", "xhaka", "hradecky", "tah", "hincapie", "stanišic", "andrich", "hofmann"]
+      "players": [
+        "wirtz",
+        "boniface",
+        "grimaldo",
+        "frimpong",
+        "xhaka",
+        "hradecky",
+        "tah",
+        "hincapie",
+        "stanišic",
+        "andrich",
+        "hofmann"
+      ]
     },
     "frankfurt": {
       "name": "法兰克福",
@@ -271,7 +511,19 @@
       "secondary_color": "#000000",
       "formation": "4-2-3-1",
       "rating": 81,
-      "players": ["marmoush", "echaumi", "larsson", "skhiri", "trapp", "tuta", "koch", "brown", "max", "götze", "bahoya"]
+      "players": [
+        "marmoush",
+        "echaumi",
+        "larsson",
+        "skhiri",
+        "trapp",
+        "tuta",
+        "koch",
+        "brown",
+        "max",
+        "götze",
+        "bahoya"
+      ]
     },
     "wolfsburg": {
       "name": "沃尔夫斯堡",
@@ -284,7 +536,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 79,
-      "players": ["wind", "wimmer", "arnold", "cools", "grabara", "zervo", "lacroix", "rochl", "gerhardt", "tiago_tomas", "kaminski"]
+      "players": [
+        "wind",
+        "wimmer",
+        "arnold",
+        "cools",
+        "grabara",
+        "zervo",
+        "lacroix",
+        "rochl",
+        "gerhardt",
+        "tiago_tomas",
+        "kaminski"
+      ]
     },
     "ac_milan": {
       "name": "AC米兰",
@@ -297,7 +561,19 @@
       "secondary_color": "#000000",
       "formation": "4-3-3",
       "rating": 86,
-      "players": ["leao", "pulisic", "theo_hernandez", "reijnders", "maignan", "tomori", "kalulu", "pavlovic", "fofana", "morata", "chukwueze"]
+      "players": [
+        "leao",
+        "pulisic",
+        "theo_hernandez",
+        "reijnders",
+        "maignan",
+        "tomori",
+        "kalulu",
+        "pavlovic",
+        "fofana",
+        "morata",
+        "chukwueze"
+      ]
     },
     "inter_milan": {
       "name": "国际米兰",
@@ -310,7 +586,19 @@
       "secondary_color": "#000000",
       "formation": "3-5-2",
       "rating": 88,
-      "players": ["lautaro_martinez", "thuram", "barella", "calhanoglu", "sommer", "bastoni", "lautaro_martinez", "dimarco", "acerbi", "stretto", "mikhitaryan"]
+      "players": [
+        "lautaro_martinez",
+        "thuram",
+        "barella",
+        "calhanoglu",
+        "sommer",
+        "bastoni",
+        "lautaro_martinez",
+        "dimarco",
+        "acerbi",
+        "stretto",
+        "mikhitaryan"
+      ]
     },
     "juventus": {
       "name": "尤文图斯",
@@ -323,7 +611,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 85,
-      "players": ["vlahovic", "yildiz", "chiesa", "mckennie", "di_gregorio", "bremer", "cambiaso", "gatti", "rabiot_legacy", "locatelli", "campbell"]
+      "players": [
+        "vlahovic",
+        "yildiz",
+        "chiesa",
+        "mckennie",
+        "di_gregorio",
+        "bremer",
+        "cambiaso",
+        "gatti",
+        "rabiot_legacy",
+        "locatelli",
+        "campbell"
+      ]
     },
     "napoli": {
       "name": "那不勒斯",
@@ -336,7 +636,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 86,
-      "players": ["kvaratskhelia", "osimhen", "politano", "llorca", "meret", "di_lorenzo", "rrahmani", "juan_jesus", "olivera", "angissa", "trajanoski"]
+      "players": [
+        "kvaratskhelia",
+        "osimhen",
+        "politano",
+        "llorca",
+        "meret",
+        "di_lorenzo",
+        "rrahmani",
+        "juan_jesus",
+        "olivera",
+        "angissa",
+        "trajanoski"
+      ]
     },
     "roma": {
       "name": "罗马",
@@ -349,7 +661,19 @@
       "secondary_color": "#F0BC42",
       "formation": "4-2-3-1",
       "rating": 83,
-      "players": ["dybala", "lukaku", "pellegrini", "cristante", "svilar", "mancini", "ndicka", "celik", "angelino", "cruyff", "el_shaarawy"]
+      "players": [
+        "dybala",
+        "lukaku",
+        "pellegrini",
+        "cristante",
+        "svilar",
+        "mancini",
+        "ndicka",
+        "celik",
+        "angelino",
+        "cruyff",
+        "el_shaarawy"
+      ]
     },
     "lazio": {
       "name": "拉齐奥",
@@ -362,7 +686,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 82,
-      "players": ["immobile", "zaccagni", "felipe_anderson", "luis_alberto", "provedel", "romagnoli", "casale", "marusic", "hysaj", "guendouzi", "roccah"]
+      "players": [
+        "immobile",
+        "zaccagni",
+        "felipe_anderson",
+        "luis_alberto",
+        "provedel",
+        "romagnoli",
+        "casale",
+        "marusic",
+        "hysaj",
+        "guendouzi",
+        "roccah"
+      ]
     },
     "atalanta": {
       "name": "亚特兰大",
@@ -375,7 +711,19 @@
       "secondary_color": "#000000",
       "formation": "3-4-2-1",
       "rating": 84,
-      "players": ["lookman", "scamacca", "de_ketelaere", "koopmeiners", "carnesecchi", "toloi", "djimsiti", "kolasinac", "bellanova", "ederson", "pasalic"]
+      "players": [
+        "lookman",
+        "scamacca",
+        "de_ketelaere",
+        "koopmeiners",
+        "carnesecchi",
+        "toloi",
+        "djimsiti",
+        "kolasinac",
+        "bellanova",
+        "ederson",
+        "pasalic"
+      ]
     },
     "psg": {
       "name": "巴黎圣日耳曼",
@@ -388,7 +736,19 @@
       "secondary_color": "#DA291C",
       "formation": "4-3-3",
       "rating": 88,
-      "players": ["dembele", "barcola", "vitinha", "donnarumma", "hakimi", "marquinhos", "pacho", "nuno_mendes", "zaire_emery", "asensio", "kolo_muani"]
+      "players": [
+        "dembele",
+        "barcola",
+        "vitinha",
+        "donnarumma",
+        "hakimi",
+        "marquinhos",
+        "pacho",
+        "nuno_mendes",
+        "zaire_emery",
+        "asensio",
+        "kolo_muani"
+      ]
     },
     "marseille": {
       "name": "马赛",
@@ -401,7 +761,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 82,
-      "players": ["aubameyang", "greenwood", "harit", "højbjerg", "rulli", "mbemba", "brillant", "murillo", "clauss", "rabiot", "ouahbi"]
+      "players": [
+        "aubameyang",
+        "greenwood",
+        "harit",
+        "højbjerg",
+        "rulli",
+        "mbemba",
+        "brillant",
+        "murillo",
+        "clauss",
+        "rabiot",
+        "ouahbi"
+      ]
     },
     "lyon": {
       "name": "里昂",
@@ -414,7 +786,19 @@
       "secondary_color": "#1A2B48",
       "formation": "4-2-3-1",
       "rating": 80,
-      "players": ["lacazette", "cherki", "tolisso", "caqueret", "perri", "mata", "niakhaté", "tagliafico", "maitland_niles", "ouahbi", "benrahma"]
+      "players": [
+        "lacazette",
+        "cherki",
+        "tolisso",
+        "caqueret",
+        "perri",
+        "mata",
+        "niakhaté",
+        "tagliafico",
+        "maitland_niles",
+        "ouahbi",
+        "benrahma"
+      ]
     },
     "monaco": {
       "name": "摩纳哥",
@@ -427,7 +811,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 82,
-      "players": ["ben_yedder", "embolo", "minamino", "akliouche", "köhn", "maripan", "singo", "vanderson", "caio_henrique", "camara", "zakaria"]
+      "players": [
+        "ben_yedder",
+        "embolo",
+        "minamino",
+        "akliouche",
+        "köhn",
+        "maripan",
+        "singo",
+        "vanderson",
+        "caio_henrique",
+        "camara",
+        "zakaria"
+      ]
     },
     "lille": {
       "name": "里尔",
@@ -440,7 +836,500 @@
       "secondary_color": "#0033A0",
       "formation": "4-2-3-1",
       "rating": 81,
-      "players": ["david", "zhegrova", "cabella", "andré", "chevalier", "diakité", "alexsandro", "meunier", "gudmundsson", "bouaddi", "sahraoui"]
+      "players": [
+        "david",
+        "zhegrova",
+        "cabella",
+        "andré",
+        "chevalier",
+        "diakité",
+        "alexsandro",
+        "meunier",
+        "gudmundsson",
+        "bouaddi",
+        "sahraoui"
+      ]
+    },
+    "benfica": {
+      "name": "本菲卡",
+      "short_name": "本菲卡",
+      "league": "primeira_liga",
+      "city": "里斯本",
+      "country": "葡萄牙",
+      "stadium": "光明球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 84,
+      "players": []
+    },
+    "porto": {
+      "name": "波尔图",
+      "short_name": "波尔图",
+      "league": "primeira_liga",
+      "city": "波尔图",
+      "country": "葡萄牙",
+      "stadium": "巨龙球场",
+      "primary_color": "#004890",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 82,
+      "players": []
+    },
+    "sporting_cp": {
+      "name": "里斯本竞技",
+      "short_name": "葡体",
+      "league": "primeira_liga",
+      "city": "里斯本",
+      "country": "葡萄牙",
+      "stadium": "若泽·阿尔瓦拉德球场",
+      "primary_color": "#008057",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 83,
+      "players": []
+    },
+    "braga": {
+      "name": "布拉加",
+      "short_name": "布拉加",
+      "league": "primeira_liga",
+      "city": "布拉加",
+      "country": "葡萄牙",
+      "stadium": "布拉加市政球场",
+      "primary_color": "#B11300",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 78,
+      "players": []
+    },
+    "vitoria_sc": {
+      "name": "吉马良斯",
+      "short_name": "吉马良斯",
+      "league": "primeira_liga",
+      "city": "吉马良斯",
+      "country": "葡萄牙",
+      "stadium": "D·阿方索·恩里克斯球场",
+      "primary_color": "#FFFFFF",
+      "secondary_color": "#000000",
+      "formation": "4-4-2",
+      "rating": 76,
+      "players": []
+    },
+    "boavista": {
+      "name": "博阿维斯塔",
+      "short_name": "博阿维斯塔",
+      "league": "primeira_liga",
+      "city": "波尔图",
+      "country": "葡萄牙",
+      "stadium": "贝萨球场",
+      "primary_color": "#000000",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 74,
+      "players": []
+    },
+    "ajax": {
+      "name": "阿贾克斯",
+      "short_name": "阿贾克斯",
+      "league": "eredivisie",
+      "city": "阿姆斯特丹",
+      "country": "荷兰",
+      "stadium": "克鲁伊夫竞技场",
+      "primary_color": "#D2122E",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 82,
+      "players": []
+    },
+    "psv": {
+      "name": "埃因霍温",
+      "short_name": "埃因霍温",
+      "league": "eredivisie",
+      "city": "埃因霍温",
+      "country": "荷兰",
+      "stadium": "飞利浦球场",
+      "primary_color": "#ED1C24",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 83,
+      "players": []
+    },
+    "feyenoord": {
+      "name": "费耶诺德",
+      "short_name": "费耶诺德",
+      "league": "eredivisie",
+      "city": "鹿特丹",
+      "country": "荷兰",
+      "stadium": "德库伊普球场",
+      "primary_color": "#E2001A",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 81,
+      "players": []
+    },
+    "az_alkmaar": {
+      "name": "阿尔克马尔",
+      "short_name": "AZ",
+      "league": "eredivisie",
+      "city": "阿尔克马尔",
+      "country": "荷兰",
+      "stadium": "AFAS球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 78,
+      "players": []
+    },
+    "twente": {
+      "name": "特温特",
+      "short_name": "特温特",
+      "league": "eredivisie",
+      "city": "恩斯赫德",
+      "country": "荷兰",
+      "stadium": "德库尔佩尔球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 77,
+      "players": []
+    },
+    "galatasaray": {
+      "name": "加拉塔萨雷",
+      "short_name": "加拉塔萨雷",
+      "league": "super_lig",
+      "city": "伊斯坦布尔",
+      "country": "土耳其",
+      "stadium": "土耳其电信球场",
+      "primary_color": "#FFB300",
+      "secondary_color": "#E30613",
+      "formation": "4-3-3",
+      "rating": 82,
+      "players": []
+    },
+    "fenerbahce": {
+      "name": "费内巴切",
+      "short_name": "费内巴切",
+      "league": "super_lig",
+      "city": "伊斯坦布尔",
+      "country": "土耳其",
+      "stadium": "萨拉科格鲁球场",
+      "primary_color": "#1A237E",
+      "secondary_color": "#FFEB3B",
+      "formation": "4-3-3",
+      "rating": 82,
+      "players": []
+    },
+    "besiktas": {
+      "name": "贝西克塔斯",
+      "short_name": "贝西克塔斯",
+      "league": "super_lig",
+      "city": "伊斯坦布尔",
+      "country": "土耳其",
+      "stadium": "沃达丰公园球场",
+      "primary_color": "#000000",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 80,
+      "players": []
+    },
+    "trabzonspor": {
+      "name": "特拉布宗体育",
+      "short_name": "特拉布宗",
+      "league": "super_lig",
+      "city": "特拉布宗",
+      "country": "土耳其",
+      "stadium": "帕帕多普洛斯球场",
+      "primary_color": "#7A0000",
+      "secondary_color": "#87CEEB",
+      "formation": "4-4-2",
+      "rating": 78,
+      "players": []
+    },
+    "inter_miami": {
+      "name": "迈阿密国际",
+      "short_name": "迈阿密",
+      "league": "mls",
+      "city": "迈阿密",
+      "country": "美国",
+      "stadium": "DRV PNK球场",
+      "primary_color": "#F7B5CD",
+      "secondary_color": "#000000",
+      "formation": "4-3-3",
+      "rating": 78,
+      "players": []
+    },
+    "la_fc": {
+      "name": "洛杉矶FC",
+      "short_name": "LAFC",
+      "league": "mls",
+      "city": "洛杉矶",
+      "country": "美国",
+      "stadium": "加州银行球场",
+      "primary_color": "#000000",
+      "secondary_color": "#C4B456",
+      "formation": "4-3-3",
+      "rating": 80,
+      "players": []
+    },
+    "la_galaxy": {
+      "name": "洛杉矶银河",
+      "short_name": "银河",
+      "league": "mls",
+      "city": "洛杉矶",
+      "country": "美国",
+      "stadium": "尊严健康体育公园",
+      "primary_color": "#00245D",
+      "secondary_color": "#FECF09",
+      "formation": "4-3-3",
+      "rating": 77,
+      "players": []
+    },
+    "nycfc": {
+      "name": "纽约城FC",
+      "short_name": "纽约城",
+      "league": "mls",
+      "city": "纽约",
+      "country": "美国",
+      "stadium": "洋基球场",
+      "primary_color": "#6CADDF",
+      "secondary_color": "#002B5C",
+      "formation": "4-3-3",
+      "rating": 76,
+      "players": []
+    },
+    "al_nassr": {
+      "name": "利雅得胜利",
+      "short_name": "利雅得胜利",
+      "league": "saudi_pro_league",
+      "city": "利雅得",
+      "country": "沙特",
+      "stadium": "马尔佐克王子球场",
+      "primary_color": "#FFD700",
+      "secondary_color": "#0066CC",
+      "formation": "4-3-3",
+      "rating": 82,
+      "players": []
+    },
+    "al_hilal": {
+      "name": "利雅得新月",
+      "short_name": "利雅得新月",
+      "league": "saudi_pro_league",
+      "city": "利雅得",
+      "country": "沙特",
+      "stadium": "法赫德国王国际球场",
+      "primary_color": "#0066CC",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 83,
+      "players": []
+    },
+    "al_ahli": {
+      "name": "吉达联合",
+      "short_name": "吉达联合",
+      "league": "saudi_pro_league",
+      "city": "吉达",
+      "country": "沙特",
+      "stadium": "阿卜杜拉国王体育城",
+      "primary_color": "#008000",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 81,
+      "players": []
+    },
+    "al_ittihad": {
+      "name": "吉达国民",
+      "short_name": "吉达国民",
+      "league": "saudi_pro_league",
+      "city": "吉达",
+      "country": "沙特",
+      "stadium": "费萨尔王子球场",
+      "primary_color": "#FFCC00",
+      "secondary_color": "#000000",
+      "formation": "4-4-2",
+      "rating": 82,
+      "players": []
+    },
+    "shanghai_port": {
+      "name": "上海海港",
+      "short_name": "海港",
+      "league": "csl",
+      "city": "上海",
+      "country": "中国",
+      "stadium": "浦东足球场",
+      "primary_color": "#E60012",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 75,
+      "players": []
+    },
+    "shanghai_shenhua": {
+      "name": "上海申花",
+      "short_name": "申花",
+      "league": "csl",
+      "city": "上海",
+      "country": "中国",
+      "stadium": "虹口足球场",
+      "primary_color": "#0033A0",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 73,
+      "players": []
+    },
+    "beijing_guoan": {
+      "name": "北京国安",
+      "short_name": "国安",
+      "league": "csl",
+      "city": "北京",
+      "country": "中国",
+      "stadium": "工人体育场",
+      "primary_color": "#006600",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 74,
+      "players": []
+    },
+    "shandong_taishan": {
+      "name": "山东泰山",
+      "short_name": "泰山",
+      "league": "csl",
+      "city": "济南",
+      "country": "中国",
+      "stadium": "济南奥体中心",
+      "primary_color": "#FF6600",
+      "secondary_color": "#000000",
+      "formation": "4-4-2",
+      "rating": 74,
+      "players": []
+    },
+    "guangzhou_fc": {
+      "name": "广州队",
+      "short_name": "广州",
+      "league": "csl",
+      "city": "广州",
+      "country": "中国",
+      "stadium": "天河体育中心",
+      "primary_color": "#E60012",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 72,
+      "players": []
+    },
+    "wuhan_three_towns": {
+      "name": "武汉三镇",
+      "short_name": "三镇",
+      "league": "csl",
+      "city": "武汉",
+      "country": "中国",
+      "stadium": "武汉体育中心",
+      "primary_color": "#FFD700",
+      "secondary_color": "#E60012",
+      "formation": "4-4-2",
+      "rating": 73,
+      "players": []
+    },
+    "river_plate": {
+      "name": "河床",
+      "short_name": "河床",
+      "league": "argentine_league",
+      "city": "布宜诺斯艾利斯",
+      "country": "阿根廷",
+      "stadium": "纪念碑球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 80,
+      "players": []
+    },
+    "boca_juniors": {
+      "name": "博卡青年",
+      "short_name": "博卡",
+      "league": "argentine_league",
+      "city": "布宜诺斯艾利斯",
+      "country": "阿根廷",
+      "stadium": "糖果盒球场",
+      "primary_color": "#0033A0",
+      "secondary_color": "#FFD700",
+      "formation": "4-3-3",
+      "rating": 80,
+      "players": []
+    },
+    "racing_club": {
+      "name": "竞技俱乐部",
+      "short_name": "竞技",
+      "league": "argentine_league",
+      "city": "阿韦利亚内达",
+      "country": "阿根廷",
+      "stadium": "胡安·多明戈·庇隆总统球场",
+      "primary_color": "#0033A0",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 77,
+      "players": []
+    },
+    "independent": {
+      "name": "独立队",
+      "short_name": "独立",
+      "league": "argentine_league",
+      "city": "阿韦利亚内达",
+      "country": "阿根廷",
+      "stadium": "美洲解放者球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 76,
+      "players": []
+    },
+    "flamengo": {
+      "name": "弗拉门戈",
+      "short_name": "弗拉门戈",
+      "league": "brasileirao",
+      "city": "里约热内卢",
+      "country": "巴西",
+      "stadium": "马拉卡纳球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#000000",
+      "formation": "4-3-3",
+      "rating": 82,
+      "players": []
+    },
+    "palmeiras": {
+      "name": "帕尔梅拉斯",
+      "short_name": "帕尔梅拉斯",
+      "league": "brasileirao",
+      "city": "圣保罗",
+      "country": "巴西",
+      "stadium": "帕尔凯安塔蒂卡球场",
+      "primary_color": "#006400",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-3-3",
+      "rating": 82,
+      "players": []
+    },
+    "corinthians": {
+      "name": "科林蒂安",
+      "short_name": "科林蒂安",
+      "league": "brasileirao",
+      "city": "圣保罗",
+      "country": "巴西",
+      "stadium": "新化学竞技场",
+      "primary_color": "#000000",
+      "secondary_color": "#FFFFFF",
+      "formation": "4-4-2",
+      "rating": 79,
+      "players": []
+    },
+    "sao_paulo": {
+      "name": "圣保罗",
+      "short_name": "圣保罗",
+      "league": "brasileirao",
+      "city": "圣保罗",
+      "country": "巴西",
+      "stadium": "莫伦比球场",
+      "primary_color": "#E30613",
+      "secondary_color": "#000000",
+      "formation": "4-4-2",
+      "rating": 79,
+      "players": []
     }
   },
   "national_teams": {
@@ -452,7 +1341,19 @@
       "secondary_color": "#009C3B",
       "formation": "4-3-3",
       "rating": 90,
-      "players": ["vinicius_nt", "rodrygo_nt", "neymar_legacy", "casemiro_nt", "marquinhos_nt", "alisson_nt", "danilo_nt", "gabriel_jesus_nt", "raphinha_nt", "bruno_guimaraes_nt", "militao_nt"]
+      "players": [
+        "vinicius_nt",
+        "rodrygo_nt",
+        "neymar_legacy",
+        "casemiro_nt",
+        "marquinhos_nt",
+        "alisson_nt",
+        "danilo_nt",
+        "gabriel_jesus_nt",
+        "raphinha_nt",
+        "bruno_guimaraes_nt",
+        "militao_nt"
+      ]
     },
     "argentina": {
       "name": "阿根廷",
@@ -462,7 +1363,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 91,
-      "players": ["messi", "lautaro_nt", "alvarez_nt", "de_paul_nt", "emiliano_martinez_nt", "otamendi_nt", "molina_nt", "tagliafico_nt", "mac_allister_nt", "enzo_nt", "paredes_nt"]
+      "players": [
+        "messi",
+        "lautaro_nt",
+        "alvarez_nt",
+        "de_paul_nt",
+        "emiliano_martinez_nt",
+        "otamendi_nt",
+        "molina_nt",
+        "tagliafico_nt",
+        "mac_allister_nt",
+        "enzo_nt",
+        "paredes_nt"
+      ]
     },
     "france": {
       "name": "法国",
@@ -472,7 +1385,19 @@
       "secondary_color": "#EF4135",
       "formation": "4-2-3-1",
       "rating": 91,
-      "players": ["mbappe_nt", "griezmann_nt", "dembele_nt", "tchouameni_nt", "lloris_legacy", "upamecano_nt", "hernandez_nt", "kounde_nt", "rabiot_nt", "camavinga_nt", "thuam_nt"]
+      "players": [
+        "mbappe_nt",
+        "griezmann_nt",
+        "dembele_nt",
+        "tchouameni_nt",
+        "lloris_legacy",
+        "upamecano_nt",
+        "hernandez_nt",
+        "kounde_nt",
+        "rabiot_nt",
+        "camavinga_nt",
+        "thuam_nt"
+      ]
     },
     "england": {
       "name": "英格兰",
@@ -482,7 +1407,19 @@
       "secondary_color": "#001E5C",
       "formation": "4-3-3",
       "rating": 89,
-      "players": ["kane_nt", "bellingham_nt", "saka_nt", "rice_nt", "foden_nt", "pickford_nt", "stones_nt", "walker_nt", "shaw_nt", "gallagher_nt", "madueke_nt"]
+      "players": [
+        "kane_nt",
+        "bellingham_nt",
+        "saka_nt",
+        "rice_nt",
+        "foden_nt",
+        "pickford_nt",
+        "stones_nt",
+        "walker_nt",
+        "shaw_nt",
+        "gallagher_nt",
+        "madueke_nt"
+      ]
     },
     "spain": {
       "name": "西班牙",
@@ -492,7 +1429,19 @@
       "secondary_color": "#FFC400",
       "formation": "4-3-3",
       "rating": 88,
-      "players": ["yamal_nt", "rodri_nt", "pedri_nt", "gavi_nt", "morata_nt", "unai_simon_nt", "carvajal_nt", "laporte_nt", "grimaldo_nt", "ruiz_nt", "olmo_nt"]
+      "players": [
+        "yamal_nt",
+        "rodri_nt",
+        "pedri_nt",
+        "gavi_nt",
+        "morata_nt",
+        "unai_simon_nt",
+        "carvajal_nt",
+        "laporte_nt",
+        "grimaldo_nt",
+        "ruiz_nt",
+        "olmo_nt"
+      ]
     },
     "germany": {
       "name": "德国",
@@ -502,7 +1451,19 @@
       "secondary_color": "#DD0000",
       "formation": "4-2-3-1",
       "rating": 87,
-      "players": ["musiala_nt", "kimmich_nt", "wirtz_nt", "kroos_legacy", "neuer_legacy", "rudiger_nt", "kimmich_nt", "schlotterbeck_nt", "mittendorf_nt", "gross_nt", "fulkrug_nt"]
+      "players": [
+        "musiala_nt",
+        "kimmich_nt",
+        "wirtz_nt",
+        "kroos_legacy",
+        "neuer_legacy",
+        "rudiger_nt",
+        "kimmich_nt",
+        "schlotterbeck_nt",
+        "mittendorf_nt",
+        "gross_nt",
+        "fulkrug_nt"
+      ]
     },
     "portugal": {
       "name": "葡萄牙",
@@ -512,7 +1473,19 @@
       "secondary_color": "#FF0000",
       "formation": "4-3-3",
       "rating": 88,
-      "players": ["c_ronaldo", "bruno_fernandes_nt", "bernardo_nt", "vitinha_nt", "ruben_dias_nt", "costa_nt", "cancelo_nt", "leao_nt", "mendy_nt", "neves_nt", "jota_nt"]
+      "players": [
+        "c_ronaldo",
+        "bruno_fernandes_nt",
+        "bernardo_nt",
+        "vitinha_nt",
+        "ruben_dias_nt",
+        "costa_nt",
+        "cancelo_nt",
+        "leao_nt",
+        "mendy_nt",
+        "neves_nt",
+        "jota_nt"
+      ]
     },
     "italy": {
       "name": "意大利",
@@ -522,7 +1495,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 86,
-      "players": ["chiesa_nt", "barella_nt", "scamacca_nt", "jorginho_legacy", "donnarumma_nt", "bastoni_nt", "calafiori_nt", "dimarco_nt", "barella_nt", "frattesi_nt", "raspadari_nt"]
+      "players": [
+        "chiesa_nt",
+        "barella_nt",
+        "scamacca_nt",
+        "jorginho_legacy",
+        "donnarumma_nt",
+        "bastoni_nt",
+        "calafiori_nt",
+        "dimarco_nt",
+        "barella_nt",
+        "frattesi_nt",
+        "raspadari_nt"
+      ]
     },
     "netherlands": {
       "name": "荷兰",
@@ -532,7 +1517,19 @@
       "secondary_color": "#FFFFFF",
       "formation": "4-3-3",
       "rating": 86,
-      "players": ["vandijk_nt", "depay_legacy", "gakpo_nt", "frenkie_nt", "simons_nt", "verbruggen_nt", "aké_nt", "dumfries_nt", "hartman_nt", "reijnders_nt", "schouten_nt"]
+      "players": [
+        "vandijk_nt",
+        "depay_legacy",
+        "gakpo_nt",
+        "frenkie_nt",
+        "simons_nt",
+        "verbruggen_nt",
+        "aké_nt",
+        "dumfries_nt",
+        "hartman_nt",
+        "reijnders_nt",
+        "schouten_nt"
+      ]
     },
     "belgium": {
       "name": "比利时",
@@ -542,7 +1539,19 @@
       "secondary_color": "#FFD500",
       "formation": "4-2-3-1",
       "rating": 85,
-      "players": ["de_bruyne_nt", "lukaku_nt", "doku_nt", "tielemans_nt", "casteels_nt", "faes_nt", "theate_nt", "castagne_nt", "onai_nt", "maddens_nt", "bakayoko_nt"]
+      "players": [
+        "de_bruyne_nt",
+        "lukaku_nt",
+        "doku_nt",
+        "tielemans_nt",
+        "casteels_nt",
+        "faes_nt",
+        "theate_nt",
+        "castagne_nt",
+        "onai_nt",
+        "maddens_nt",
+        "bakayoko_nt"
+      ]
     }
   }
 }

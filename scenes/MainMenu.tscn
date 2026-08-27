@@ -126,6 +126,12 @@ custom_minimum_size = Vector2(400, 60)
 theme_override_font_sizes/font_size = 24
 text = "🌱 青训营"
 
+[node name="CardDrawButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🎴 球员抽卡"
+
 [node name="StatsButton" type="Button" parent="VBoxContainer/MenuContainer"]
 layout_mode = 2
 custom_minimum_size = Vector2(400, 60)
