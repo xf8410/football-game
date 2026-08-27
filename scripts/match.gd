@@ -1,15 +1,19 @@
 ## match.gd
-## 比赛核心控制器
-## 负责：球场搭建、球队生成、计时、比分、进球判定、出界判定、
-##       摄像机、UI、玩家控制切换、AI调度、比赛流程管理
+## 比赛核心控制器（增强版 v0.2）
+##
+## 新增功能：
+##   - 乌龙球判定
+##   - 门将可出击踢球
+##   - 改进的球员切换（11v11任意切换）
+##   - 传中、挑球、挑射、远射、搓射、电梯球
+##   - 2过1配合
+##   - 任意球（含人墙）、角球、界外球、球门球
+##   - 裁判系统（犯规、黄红牌、点球）
+##   - 开球序列
+##   - 帽子戏法/世界波追踪
+##   - 改进的碰撞和寻路逻辑
 ##
 ## 视角：俯视角3D（类似最佳球会的斜俯视角）
-## 球场坐标系：
-##   - 原点在球场中心
-##   - X轴：左右（-34 到 +34）
-##   - Z轴：前后（-52.5 到 +52.5）
-##   - 主队球门在 Z = -52.5（防守 -Z 方向）
-##   - 客队球门在 Z = +52.5（防守 +Z 方向）
 extends Node3D
 
 # ---- 场景节点 ----
@@ -20,27 +24,51 @@ var ball_mesh: MeshInstance3D
 var ball_shadow: MeshInstance3D
 
 # ---- 球队数据 ----
-var home_players: Array = []  # Array of CharacterBody3D
+var home_players: Array = []
 var away_players: Array = []
 var home_score: int = 0
 var away_score: int = 0
+var home_team_id: String = ""
+var away_team_id: String = ""
+
+# ---- 进球追踪 ----
+var home_scorers: Array = []  # [{player_id, minute, type, is_own_goal}]
+var away_scorers: Array = []
+var hat_trick_tracker: Dictionary = {}  # player_id -> goal_count
 
 # ---- 当前控制 ----
 var active_player: CharacterBody3D = null
-var player_side: int = GameState.TeamSide.HOME  # 玩家控制哪一方
+var player_side: int = GameState.TeamSide.HOME
+var active_player_index: int = 0  # 玩家手动切换的球员索引
 
 # ---- 比赛状态 ----
 var match_phase: int = GameState.MatchPhase.KICKOFF
-var match_time: float = 0.0          # 当前半场已用时间（秒）
-var current_half: int = 1             # 1=上半场, 2=下半场
-var half_duration: float = 180.0      # 每半场时长
+var match_time: float = 0.0
+var current_half: int = 1
+var half_duration: float = 180.0
 var goal_celebration_time: float = 0.0
 var out_of_bounds_time: float = 0.0
-var last_touch_team: int = -1         # 最后触球的队伍
+var last_touch_team: int = -1
+var last_touch_player: CharacterBody3D = null
+
+# ---- 定位球状态 ----
+var set_piece_type: int = Referee.SetPieceType.NONE
+var set_piece_team: int = -1
+var set_piece_position: Vector3 = Vector3.ZERO
+var set_piece_ready: bool = false
+var wall_players: Array = []  # 人墙球员列表
 
 # ---- 比赛配置 ----
 var config: Dictionary
 var ai_params: Dictionary
+
+# ---- 球的物理状态 ----
+var ball_velocity: Vector3 = Vector3.ZERO
+var ball_height: float = 0.0
+var ball_height_velocity: float = 0.0
+var ball_owner: CharacterBody3D = null
+var ball_spin: float = 0.0  # 球的旋转（用于搓射/电梯球）
+var ball_shot_type: String = ""  # 射门类型记录
 
 # ---- UI节点 ----
 var ui_canvas: CanvasLayer
@@ -50,41 +78,41 @@ var phase_label: Label
 var control_hint: Label
 var pause_panel: Panel
 var result_panel: Panel
+var event_notification: Label  # 事件通知（进球、犯规等）
+var scorer_list_label: Label   # 进球名单
+var stats_label: Label         # 比赛统计
 
-# ---- 输入缓冲 ----
+# ---- 输入 ----
 var input_vector: Vector2 = Vector2.ZERO
 var is_sprinting: bool = false
 
-# ---- 球的物理状态 ----
-var ball_velocity: Vector3 = Vector3.ZERO
-var ball_height: float = 0.0          # 球离地高度
-var ball_height_velocity: float = 0.0 # 垂直速度
-var ball_owner: CharacterBody3D = null # 当前控球者
-
 # ---- 常量 ----
-const PLAYER_SCENE_PATH = "res://scripts/player_controller.gd"
 const BALL_RADIUS: float = 0.11
 const PLAYER_RADIUS: float = 0.4
-const BALL_FRICTION: float = 0.5       # 地面摩擦（每秒衰减比例）
+const BALL_FRICTION: float = 0.5
 const BALL_AIR_DRAG: float = 0.15
 const BALL_GRAVITY: float = 9.8
 const PASS_SPEED: float = 18.0
 const SHOT_SPEED: float = 28.0
 const LOB_SPEED: float = 12.0
+const CROSS_SPEED: float = 20.0
+const LONG_SHOT_SPEED: float = 32.0
 const CAMERA_HEIGHT: float = 45.0
 const CAMERA_DISTANCE: float = 30.0
-const CAMERA_ANGLE: float = 55.0  # 俯视角角度
+const CAMERA_ANGLE: float = 55.0
 
 func _ready():
-	# 加载配置
 	config = GameState.current_match_config
 	ai_params = GameState.get_ai_params()
 	half_duration = config.get("half_duration", 180.0)
 	player_side = config.get("player_controls", GameState.TeamSide.HOME)
 	home_score = config.get("initial_score", [0, 0])[0]
 	away_score = config.get("initial_score", [0, 0])[1]
+	home_team_id = config.get("home_team_id", "home")
+	away_team_id = config.get("away_team_id", "away")
 
-	# 构建场景
+	Referee.reset_match_stats()
+
 	_setup_lighting()
 	_setup_field()
 	_setup_camera()
@@ -92,26 +120,20 @@ func _ready():
 	_setup_ball()
 	_setup_ui()
 
-	# 开始比赛
+	# 设置网络输入处理器
+	NetworkManager.set_remote_input_handler(_handle_remote_input)
+
+	# 开球
 	_kickoff()
-
-	# 设置网络输入处理器（局域网模式）
-	if config.get("is_lan_match", false):
-		NetworkManager.set_remote_input_handler(_handle_remote_input)
-
-	print("[Match] 比赛开始！%s vs %s" % [config.home_team_name, config.away_team_name])
 
 func _process(delta):
 	match match_phase:
 		GameState.MatchPhase.PLAYING:
-			_update_timer(delta)
-			_update_ball(delta)
-			_update_active_player_control()
+			match_time += delta
+			if match_time >= half_duration:
+				_end_half()
+			_update_player_input()
 			_update_ai(delta)
-			_update_camera(delta)
-			_check_goal()
-			_check_out_of_bounds()
-			_update_stamina(delta)
 		GameState.MatchPhase.GOAL:
 			goal_celebration_time -= delta
 			if goal_celebration_time <= 0:
@@ -121,21 +143,27 @@ func _process(delta):
 			if out_of_bounds_time <= 0:
 				_resume_from_out()
 		GameState.MatchPhase.KICKOFF:
-			# 短暂等待后开始
+			# 开球前短暂等待
+			out_of_bounds_time -= delta
+			if out_of_bounds_time <= 0:
+				match_phase = GameState.MatchPhase.PLAYING
+		GameState.MatchPhase.PAUSED:
 			pass
 
+	_update_camera(delta)
 	_update_ui()
 
 func _physics_process(delta):
-	if match_phase == GameState.MatchPhase.PLAYING:
+	if match_phase == GameState.MatchPhase.PLAYING or match_phase == GameState.MatchPhase.KICKOFF:
 		_update_ball_physics(delta)
+		_check_collisions()
+		_check_bounds_and_goals()
 
 # ============================================================
 # 场景搭建
 # ============================================================
 
 func _setup_lighting():
-	# 环境光
 	var env = Environment.new()
 	env.background_mode = Environment.BG_COLOR
 	env.background_color = Color(0.4, 0.6, 0.8)
@@ -151,7 +179,6 @@ func _setup_lighting():
 	world_env.environment = env
 	add_child(world_env)
 
-	# 方向光（太阳）
 	var sun = DirectionalLight3D.new()
 	sun.rotation_degrees = Vector3(-55, 30, 0)
 	sun.light_energy = 1.2
@@ -160,42 +187,21 @@ func _setup_lighting():
 	add_child(sun)
 
 func _setup_field():
-	# 球场地面
 	field = MeshInstance3D.new()
 	var plane = PlaneMesh.new()
 	plane.size = Vector2(GameState.FIELD_LENGTH + 10, GameState.FIELD_WIDTH + 10)
 	plane.material = _create_field_material()
 	field.mesh = plane
-	field.position = Vector3(0, 0, 0)
 	add_child(field)
-
-	# 球场线条（用细长的Box）
 	_create_field_lines()
-
-	# 球门
 	_create_goal(Vector3(0, 0, -GameState.FIELD_LENGTH / 2), GameState.TeamSide.HOME)
 	_create_goal(Vector3(0, 0, GameState.FIELD_LENGTH / 2), GameState.TeamSide.AWAY)
-
-	# 球场周围的看台（简单装饰）
 	_create_stands()
 
 func _create_field_material() -> StandardMaterial3D:
 	var mat = StandardMaterial3D.new()
-	mat.albedo_color = Color(0.15, 0.45, 0.15)  # 草地绿
+	mat.albedo_color = Color(0.15, 0.45, 0.15)
 	mat.roughness = 0.9
-	mat.metalness = 0.0
-
-	# 创建条纹纹理（用代码生成）
-	var img = Image.create(256, 256, false, Image.FORMAT_RGB8)
-	for y in range(256):
-		for x in range(256):
-			var stripe = (int(y / 32) % 2) == 0
-			if stripe:
-				img.set_pixel(x, y, Color(0.15, 0.48, 0.15))
-			else:
-				img.set_pixel(x, y, Color(0.13, 0.42, 0.13))
-	var tex = ImageTexture.create_from_image(img)
-	mat.albedo_texture = tex
 	return mat
 
 func _create_field_lines():
@@ -205,53 +211,40 @@ func _create_field_lines():
 	line_mat.emission = Color(0.8, 0.8, 0.8)
 	line_mat.emission_energy_multiplier = 0.3
 
-	# 边线
-	_create_line(Vector3(0, 0.01, -GameState.FIELD_LENGTH/2), Vector3(GameState.FIELD_WIDTH, 0.1, 0.15), line_mat)
-	_create_line(Vector3(0, 0.01, GameState.FIELD_LENGTH/2), Vector3(GameState.FIELD_WIDTH, 0.1, 0.15), line_mat)
-	_create_line(Vector3(-GameState.FIELD_WIDTH/2, 0.01, 0), Vector3(0.15, 0.1, GameState.FIELD_LENGTH), line_mat)
-	_create_line(Vector3(GameState.FIELD_WIDTH/2, 0.01, 0), Vector3(0.15, 0.1, GameState.FIELD_LENGTH), line_mat)
+	# 球场边界
+	_create_line(Vector3(0, 0.01, -GameState.FIELD_WIDTH/2), Vector3(GameState.FIELD_LENGTH, 0.1, 0.15), line_mat)
+	_create_line(Vector3(0, 0.01, GameState.FIELD_WIDTH/2), Vector3(GameState.FIELD_LENGTH, 0.1, 0.15), line_mat)
+	_create_line(Vector3(-GameState.FIELD_LENGTH/2, 0.01, 0), Vector3(0.15, 0.1, GameState.FIELD_WIDTH), line_mat)
+	_create_line(Vector3(GameState.FIELD_LENGTH/2, 0.01, 0), Vector3(0.15, 0.1, GameState.FIELD_WIDTH), line_mat)
 
 	# 中线
-	_create_line(Vector3(0, 0.01, 0), Vector3(GameState.FIELD_WIDTH, 0.1, 0.15), line_mat)
+	_create_line(Vector3(0, 0.01, 0), Vector3(0.15, 0.1, GameState.FIELD_WIDTH), line_mat)
 
 	# 中圈
 	var circle = MeshInstance3D.new()
-	var torus = TorusMesh.new()
-	torus.inner_radius = 9.05
-	torus.outer_radius = 9.15
-	circle.mesh = torus
+	var circle_mesh = CylinderMesh.new()
+	circle_mesh.top_radius = 9.15
+	circle_mesh.bottom_radius = 9.15
+	circle_mesh.height = 0.05
+	circle.mesh = circle_mesh
 	circle.material_override = line_mat
-	circle.position = Vector3(0, 0.02, 0)
-	circle.rotation_degrees.x = 90
+	circle.position = Vector3(0, 0.01, 0)
+	# 只显示圆环（简化处理）
 	add_child(circle)
 
-	# 中点
-	var center_dot = MeshInstance3D.new()
-	var sphere = SphereMesh.new()
-	sphere.radius = 0.3
-	sphere.height = 0.6
-	center_dot.mesh = sphere
-	center_dot.material_override = line_mat
-	center_dot.position = Vector3(0, 0.03, 0)
-	add_child(center_dot)
-
-	# 禁区（两端）
-	for side_z in [-1, 1]:
-		var z = side_z * (GameState.FIELD_LENGTH / 2 - GameState.PENALTY_AREA_DEPTH)
-		# 禁区线
-		_create_line(Vector3(0, 0.01, z), Vector3(GameState.PENALTY_AREA_WIDTH, 0.1, 0.15), line_mat)
-		_create_line(Vector3(-GameState.PENALTY_AREA_WIDTH/2, 0.01, z), Vector3(0.15, 0.1, GameState.PENALTY_AREA_DEPTH), line_mat)
-		_create_line(Vector3(GameState.PENALTY_AREA_WIDTH/2, 0.01, z), Vector3(0.15, 0.1, GameState.PENALTY_AREA_DEPTH), line_mat)
-
-		# 点球点
-		var penalty_spot = MeshInstance3D.new()
-		var ps_sphere = SphereMesh.new()
-		ps_sphere.radius = 0.25
-		ps_sphere.height = 0.5
-		penalty_spot.mesh = ps_sphere
-		penalty_spot.material_override = line_mat
-		penalty_spot.position = Vector3(0, 0.03, z + side_z * 2.5)
-		add_child(penalty_spot)
+	# 禁区
+	var pa_depth = GameState.PENALTY_AREA_DEPTH
+	var pa_width = GameState.PENALTY_AREA_WIDTH
+	# 主队禁区
+	_create_line(Vector3(-pa_width/2, 0.01, -GameState.FIELD_LENGTH/2), Vector3(pa_width, 0.1, 0.15), line_mat)
+	_create_line(Vector3(-pa_width/2, 0.01, -GameState.FIELD_LENGTH/2 + pa_depth), Vector3(pa_width, 0.1, 0.15), line_mat)
+	_create_line(Vector3(-pa_width/2, 0.01, -GameState.FIELD_LENGTH/2), Vector3(0.15, 0.1, pa_depth), line_mat)
+	_create_line(Vector3(pa_width/2, 0.01, -GameState.FIELD_LENGTH/2), Vector3(0.15, 0.1, pa_depth), line_mat)
+	# 客队禁区
+	_create_line(Vector3(-pa_width/2, 0.01, GameState.FIELD_LENGTH/2), Vector3(pa_width, 0.1, 0.15), line_mat)
+	_create_line(Vector3(-pa_width/2, 0.01, GameState.FIELD_LENGTH/2 - pa_depth), Vector3(pa_width, 0.1, 0.15), line_mat)
+	_create_line(Vector3(-pa_width/2, 0.01, GameState.FIELD_LENGTH/2), Vector3(0.15, 0.1, pa_depth), line_mat)
+	_create_line(Vector3(pa_width/2, 0.01, GameState.FIELD_LENGTH/2), Vector3(0.15, 0.1, pa_depth), line_mat)
 
 func _create_line(pos: Vector3, size: Vector3, mat: Material):
 	var line = MeshInstance3D.new()
@@ -266,14 +259,14 @@ func _create_goal(pos: Vector3, side: int):
 	var goal_mat = StandardMaterial3D.new()
 	goal_mat.albedo_color = Color.WHITE
 	goal_mat.emission_enabled = true
-	goal_mat.emission = Color(0.9, 0.9, 0.9)
+	goal_mat.emission = Color.WHITE
 	goal_mat.emission_energy_multiplier = 0.5
 
 	# 球门柱
 	var post_left = MeshInstance3D.new()
 	var post_mesh = CylinderMesh.new()
-	post_mesh.top_radius = 0.08
-	post_mesh.bottom_radius = 0.08
+	post_mesh.top_radius = 0.06
+	post_mesh.bottom_radius = 0.06
 	post_mesh.height = GameState.GOAL_HEIGHT
 	post_left.mesh = post_mesh
 	post_left.material_override = goal_mat
@@ -288,49 +281,46 @@ func _create_goal(pos: Vector3, side: int):
 
 	# 横梁
 	var crossbar = MeshInstance3D.new()
-	var cb_mesh = CylinderMesh.new()
-	cb_mesh.top_radius = 0.08
-	cb_mesh.bottom_radius = 0.08
-	cb_mesh.height = GameState.GOAL_WIDTH
-	crossbar.mesh = cb_mesh
+	var bar_mesh = CylinderMesh.new()
+	bar_mesh.top_radius = 0.06
+	bar_mesh.bottom_radius = 0.06
+	bar_mesh.height = GameState.GOAL_WIDTH
+	crossbar.mesh = bar_mesh
 	crossbar.material_override = goal_mat
 	crossbar.position = pos + Vector3(0, GameState.GOAL_HEIGHT, 0)
-	crossbar.rotation_degrees.z = 90
+	crossbar.rotate_x(deg_to_rad(90))
 	add_child(crossbar)
 
-	# 球网（简单半透明面）
+	# 球网（简化）
 	var net = MeshInstance3D.new()
-	var net_plane = PlaneMesh.new()
-	net_plane.size = Vector2(GameState.GOAL_WIDTH, GameState.GOAL_HEIGHT)
+	var net_mesh = BoxMesh.new()
+	net_mesh.size = Vector3(GameState.GOAL_WIDTH, GameState.GOAL_HEIGHT, 2.0)
+	net.mesh = net_mesh
 	var net_mat = StandardMaterial3D.new()
-	net_mat.albedo_color = Color(1, 1, 1, 0.15)
+	net_mat.albedo_color = Color(1, 1, 1, 0.2)
 	net_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	net_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-	net_plane.material = net_mat
-	net.mesh = net_plane
-	net.position = pos + Vector3(0, GameState.GOAL_HEIGHT/2, -2 if side == GameState.TeamSide.HOME else 2)
-	net.rotation_degrees.x = 90
+	net.material_override = net_mat
+	var net_z = 1.5 if side == GameState.TeamSide.HOME else -1.5
+	net.position = pos + Vector3(0, GameState.GOAL_HEIGHT/2, net_z)
 	add_child(net)
 
 func _create_stands():
-	# 简单看台装饰
 	var stand_mat = StandardMaterial3D.new()
 	stand_mat.albedo_color = Color(0.2, 0.2, 0.25)
-
 	for i in range(4):
 		var stand = MeshInstance3D.new()
 		var box = BoxMesh.new()
 		match i:
-			0: # 北看台
+			0:
 				box.size = Vector3(GameState.FIELD_WIDTH + 20, 8, 5)
 				stand.position = Vector3(0, 4, -GameState.FIELD_LENGTH/2 - 10)
-			1: # 南看台
+			1:
 				box.size = Vector3(GameState.FIELD_WIDTH + 20, 8, 5)
 				stand.position = Vector3(0, 4, GameState.FIELD_LENGTH/2 + 10)
-			2: # 东看台
+			2:
 				box.size = Vector3(5, 8, GameState.FIELD_LENGTH + 20)
 				stand.position = Vector3(GameState.FIELD_WIDTH/2 + 10, 4, 0)
-			3: # 西看台
+			3:
 				box.size = Vector3(5, 8, GameState.FIELD_LENGTH + 20)
 				stand.position = Vector3(-GameState.FIELD_WIDTH/2 - 10, 4, 0)
 		stand.mesh = box
@@ -346,27 +336,29 @@ func _setup_camera():
 	_position_camera(Vector3.ZERO)
 
 func _position_camera(target: Vector3):
-	# 斜俯视角（类似最佳球会）
-	var angle_rad = deg_to_rad(CAMERA_ANGLE)
-	var offset = Vector3(0, CAMERA_HEIGHT, -CAMERA_DISTANCE * cos(angle_rad))
-	# 摄像机在目标后方上方
 	camera.position = target + Vector3(0, CAMERA_HEIGHT, -CAMERA_DISTANCE)
 	camera.look_at(target + Vector3(0, 0, 5), Vector3.UP)
 
+func _update_camera(delta):
+	# 摄像机跟随球
+	if ball:
+		var target = ball.position
+		var desired_pos = target + Vector3(0, CAMERA_HEIGHT, -CAMERA_DISTANCE)
+		camera.position = camera.position.lerp(desired_pos, delta * 3)
+		camera.look_at(target + Vector3(0, 0, 5), Vector3.UP)
+
 func _setup_teams():
 	var formation = GameState.get_formation(config.get("formation", "4-4-2"))
-
-	# 主队（防守 -Z 方向）
-	home_players = _create_team(formation, GameState.TeamSide.HOME, config.home_color)
-	# 客队（防守 +Z 方向，镜像坐标）
-	away_players = _create_team(formation, GameState.TeamSide.AWAY, config.away_color)
-
-	# 设置初始活跃球员（最靠近球的非门将球员）
+	home_players = _create_team(formation, GameState.TeamSide.HOME, home_team_id)
+	away_players = _create_team(formation, GameState.TeamSide.AWAY, away_team_id)
 	_switch_active_player()
 
-func _create_team(formation: Array, side: int, color: Color) -> Array:
+func _create_team(formation: Array, side: int, team_id: String) -> Array:
 	var players = []
-	var team_name = config.home_team_name if side == GameState.TeamSide.HOME else config.away_team_name
+	var team_data = TeamDatabase.get_team(team_id)
+	var team_name = team_data.get("name", "Team")
+	var team_colors = TeamDatabase.get_team_colors(team_id)
+	var player_ids = team_data.get("players", [])
 
 	for i in range(formation.size()):
 		var role_data = formation[i]
@@ -374,127 +366,111 @@ func _create_team(formation: Array, side: int, color: Color) -> Array:
 		var x = role_data[1]
 		var z = role_data[2]
 
-		# 客队镜像坐标
 		if side == GameState.TeamSide.AWAY:
 			z = -z
-			x = -x
 
-		var player = _create_player_node(side, color, team_name, role, i, x, z)
-		players.append(player)
+		var player = CharacterBody3D.new()
+		player.set_script(load("res://scripts/player_controller.gd"))
+
+		# 设置球员属性
+		player.team_side = side
+		player.team_id = team_id
+		player.team_name = team_name
+		player.role = role
+		player.player_index = i + 1
+		player.is_goalkeeper = (role == "GK")
+
+		# 从数据库加载球员ID
+		if i < player_ids.size():
+			player.player_id = player_ids[i]
+
+		# 创建视觉
+		_create_player_visual(player, team_colors, side)
+
+		player.position = Vector3(x, 0, z)
+		player.home_position = Vector3(x, 0, z)
 		add_child(player)
+		players.append(player)
 
 	return players
 
-func _create_player_node(side: int, color: Color, team_name: String, role: String, index: int, x: float, z: float) -> CharacterBody3D:
-	var player = CharacterBody3D.new()
-	player.script = load(PLAYER_SCENE_PATH)
-
-	# 球员身体（胶囊）
+func _create_player_visual(player: CharacterBody3D, colors: Dictionary, side: int):
+	# 身体（胶囊体）
 	var body = MeshInstance3D.new()
-	var capsule = CapsuleMesh.new()
-	capsule.radius = PLAYER_RADIUS
-	capsule.height = 1.8
-	body.mesh = capsule
-	body.position = Vector3(0, 0.9, 0)
+	var body_mesh = CapsuleMesh.new()
+	body_mesh.radius = 0.4
+	body_mesh.height = 1.8
+	body.mesh = body_mesh
+	body.name = "MeshInstance3D"
 
 	var mat = StandardMaterial3D.new()
-	mat.albedo_color = color
-	mat.roughness = 0.7
+	mat.albedo_color = colors.primary
+	mat.emission_enabled = true
+	mat.emission = colors.primary
+	mat.emission_energy_multiplier = 0.2
 	body.material_override = mat
+	body.position = Vector3(0, 0.9, 0)
 	player.add_child(body)
 
-	# 球员编号（用不同颜色的小球表示）
-	var num_marker = MeshInstance3D.new()
-	var num_sphere = SphereMesh.new()
-	num_sphere.radius = 0.2
-	num_sphere.height = 0.4
-	num_marker.mesh = num_sphere
-	var num_mat = StandardMaterial3D.new()
-	num_mat.albedo_color = Color.WHITE if index % 2 == 0 else Color.YELLOW
-	num_mat.emission_enabled = true
-	num_mat.emission = num_mat.albedo_color
-	num_mat.emission_energy_multiplier = 0.5
-	num_marker.material_override = num_mat
-	num_marker.position = Vector3(0, 2.0, 0)
-	player.add_child(num_marker)
+	# 号码标签
+	var number_label = Label3D.new()
+	number_label.name = "Label3D"
+	number_label.text = str(player.player_index)
+	number_label.font_size = 48
+	number_label.outline_size = 12
+	number_label.outline_modulate = Color.BLACK
+	number_label.position = Vector3(0, 2.2, 0)
+	number_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	player.add_child(number_label)
 
-	# 方向指示器（小箭头）
+	# 方向箭头（活跃球员指示）
 	var arrow = MeshInstance3D.new()
-	var arrow_box = BoxMesh.new()
-	arrow_box.size = Vector3(0.15, 0.1, 0.5)
-	arrow.mesh = arrow_box
+	var arrow_mesh = ConeMesh.new()
+	arrow_mesh.top_radius = 0
+	arrow_mesh.bottom_radius = 0.3
+	arrow_mesh.height = 0.6
+	arrow.mesh = arrow_mesh
+	arrow.name = "MeshInstance3D3"
 	var arrow_mat = StandardMaterial3D.new()
 	arrow_mat.albedo_color = Color.YELLOW
 	arrow_mat.emission_enabled = true
 	arrow_mat.emission = Color.YELLOW
-	arrow_mat.emission_energy_multiplier = 0.8
+	arrow_mat.emission_energy_multiplier = 1.0
 	arrow.material_override = arrow_mat
-	arrow.position = Vector3(0, 0.3, 0.6)
+	arrow.position = Vector3(0, 2.5, 0)
+	arrow.visible = false
 	player.add_child(arrow)
-
-	# 阴影
-	var shadow = MeshInstance3D.new()
-	var shadow_circle = CircleMesh.new()
-	shadow_circle.radius = 0.6
-	shadow.mesh = shadow_circle
-	var shadow_mat = StandardMaterial3D.new()
-	shadow_mat.albedo_color = Color(0, 0, 0, 0.3)
-	shadow_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	shadow_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-	shadow.material_override = shadow_mat
-	shadow.position = Vector3(0, 0.02, 0)
-	shadow.rotation_degrees.x = -90
-	player.add_child(shadow)
-
-	# 初始化球员属性
-	player.set("team_side", side)
-	player.set("team_name", team_name)
-	player.set("role", role)
-	player.set("player_index", index)
-	player.set("home_position", Vector3(x, 0, z))
-	player.position = Vector3(x, 0, z)
-	player.set("stats", GameState.BASE_PLAYER_STATS.duplicate())
-	player.set("is_active", false)
-	player.set("is_goalkeeper", role == "GK")
-
-	# 门将不同颜色
-	if role == "GK":
-		var gk_mat = StandardMaterial3D.new()
-		gk_mat.albedo_color = Color(0.9, 0.7, 0.1)
-		body.material_override = gk_mat
-
-	return player
 
 func _setup_ball():
 	ball = CharacterBody3D.new()
+	ball.name = "Ball"
 
 	ball_mesh = MeshInstance3D.new()
-	var sphere = SphereMesh.new()
-	sphere.radius = BALL_RADIUS
-	sphere.height = BALL_RADIUS * 2
-	ball_mesh.mesh = sphere
-
+	var ball_m = SphereMesh.new()
+	ball_m.radius = BALL_RADIUS
+	ball_m.height = BALL_RADIUS * 2
+	ball_mesh.mesh = ball_m
 	var ball_mat = StandardMaterial3D.new()
 	ball_mat.albedo_color = Color.WHITE
-	ball_mat.roughness = 0.4
-	ball_mat.metalness = 0.1
+	ball_mat.emission_enabled = true
+	ball_mat.emission = Color(0.9, 0.9, 0.9)
+	ball_mat.emission_energy_multiplier = 0.3
 	ball_mesh.material_override = ball_mat
 	ball.add_child(ball_mesh)
 
-	# 球的阴影
 	ball_shadow = MeshInstance3D.new()
-	var shadow_circle = CircleMesh.new()
-	shadow_circle.radius = BALL_RADIUS * 1.5
-	ball_shadow.mesh = shadow_circle
+	var shadow_m = CircleMesh.new()
+	shadow_m.radius = BALL_RADIUS * 1.5
+	ball_shadow.mesh = shadow_m
 	var shadow_mat = StandardMaterial3D.new()
 	shadow_mat.albedo_color = Color(0, 0, 0, 0.4)
 	shadow_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	shadow_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 	ball_shadow.material_override = shadow_mat
-	ball_shadow.rotation_degrees.x = -90
+	ball_shadow.position = Vector3(0, 0.01, 0)
+	ball_shadow.rotation = Vector3(deg_to_rad(90), 0, 0)
 	add_child(ball_shadow)
 
-	ball.position = Vector3(0, BALL_RADIUS, 0)
+	ball.position = Vector3(0, 0, 0)
 	add_child(ball)
 
 # ============================================================
@@ -505,7 +481,7 @@ func _setup_ui():
 	ui_canvas = CanvasLayer.new()
 	add_child(ui_canvas)
 
-	# 比分牌
+	# 比分
 	score_label = Label.new()
 	score_label.text = "0 - 0"
 	score_label.add_theme_font_size_override("font_size", 48)
@@ -514,17 +490,21 @@ func _setup_ui():
 	score_label.add_theme_constant_override("shadow_offset_x", 2)
 	score_label.add_theme_constant_override("shadow_offset_y", 2)
 	score_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	score_label.position = Vector2(get_viewport().get_visible_rect().size.x / 2 - 60, 20)
+	var vp_size = get_viewport().get_visible_rect().size
+	score_label.position = Vector2(vp_size.x / 2 - 60, 10)
 	score_label.size = Vector2(120, 60)
 	ui_canvas.add_child(score_label)
 
 	# 队名
 	var team_names = Label.new()
-	team_names.text = "%s  vs  %s" % [config.home_team_name, config.away_team_name]
-	team_names.add_theme_font_size_override("font_size", 18)
+	team_names.text = "%s  vs  %s" % [
+		TeamDatabase.get_team_short_name(home_team_id),
+		TeamDatabase.get_team_short_name(away_team_id)
+	]
+	team_names.add_theme_font_size_override("font_size", 20)
 	team_names.add_theme_color_override("font_color", Color(0.9, 0.9, 0.9))
 	team_names.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	team_names.position = Vector2(get_viewport().get_visible_rect().size.x / 2 - 150, 75)
+	team_names.position = Vector2(vp_size.x / 2 - 150, 70)
 	team_names.size = Vector2(300, 25)
 	ui_canvas.add_child(team_names)
 
@@ -534,10 +514,8 @@ func _setup_ui():
 	time_label.add_theme_font_size_override("font_size", 36)
 	time_label.add_theme_color_override("font_color", Color.YELLOW)
 	time_label.add_theme_color_override("font_shadow_color", Color.BLACK)
-	time_label.add_theme_constant_override("shadow_offset_x", 2)
-	time_label.add_theme_constant_override("shadow_offset_y", 2)
 	time_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	time_label.position = Vector2(get_viewport().get_visible_rect().size.x / 2 - 50, 100)
+	time_label.position = Vector2(vp_size.x / 2 - 50, 95)
 	time_label.size = Vector2(100, 45)
 	ui_canvas.add_child(time_label)
 
@@ -547,29 +525,57 @@ func _setup_ui():
 	phase_label.add_theme_font_size_override("font_size", 16)
 	phase_label.add_theme_color_override("font_color", Color(0.8, 0.8, 0.8))
 	phase_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	phase_label.position = Vector2(get_viewport().get_visible_rect().size.x / 2 - 50, 145)
+	phase_label.position = Vector2(vp_size.x / 2 - 50, 140)
 	phase_label.size = Vector2(100, 20)
 	ui_canvas.add_child(phase_label)
 
+	# 事件通知（进球、犯规等）
+	event_notification = Label.new()
+	event_notification.text = ""
+	event_notification.add_theme_font_size_override("font_size", 32)
+	event_notification.add_theme_color_override("font_color", Color.YELLOW)
+	event_notification.add_theme_color_override("font_shadow_color", Color.BLACK)
+	event_notification.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	event_notification.position = Vector2(vp_size.x / 2 - 200, 180)
+	event_notification.size = Vector2(400, 50)
+	event_notification.visible = false
+	ui_canvas.add_child(event_notification)
+
+	# 进球名单
+	scorer_list_label = Label.new()
+	scorer_list_label.text = ""
+	scorer_list_label.add_theme_font_size_override("font_size", 14)
+	scorer_list_label.add_theme_color_override("font_color", Color(0.85, 0.85, 0.85))
+	scorer_list_label.position = Vector2(10, 10)
+	scorer_list_label.size = Vector2(200, 300)
+	ui_canvas.add_child(scorer_list_label)
+
+	# 比赛统计
+	stats_label = Label.new()
+	stats_label.text = ""
+	stats_label.add_theme_font_size_override("font_size", 14)
+	stats_label.add_theme_color_override("font_color", Color(0.85, 0.85, 0.85))
+	stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	stats_label.position = Vector2(vp_size.x - 210, 10)
+	stats_label.size = Vector2(200, 300)
+	ui_canvas.add_child(stats_label)
+
 	# 操作提示
 	control_hint = Label.new()
-	control_hint.text = "WASD移动 | J传球 | 空格射门 | K切换球员 | L抢断 | Shift冲刺"
-	control_hint.add_theme_font_size_override("font_size", 14)
+	control_hint.text = "WASD移动 | J传球 | 空格射门 | K切换 | L抢断 | A传中 | Q挑球 | E二过一 | G门将出击"
+	control_hint.add_theme_font_size_override("font_size", 13)
 	control_hint.add_theme_color_override("font_color", Color(0.7, 0.7, 0.7))
-	control_hint.position = Vector2(20, get_viewport().get_visible_rect().size.y - 30)
+	control_hint.position = Vector2(20, vp_size.y - 25)
 	ui_canvas.add_child(control_hint)
 
-	# 暂停面板
 	_create_pause_panel()
 	_create_result_panel()
 
 func _create_pause_panel():
 	pause_panel = Panel.new()
 	pause_panel.size = Vector2(400, 300)
-	pause_panel.position = Vector2(
-		(get_viewport().get_visible_rect().size.x - 400) / 2,
-		(get_viewport().get_visible_rect().size.y - 300) / 2
-	)
+	var vp_size = get_viewport().get_visible_rect().size
+	pause_panel.position = Vector2((vp_size.x - 400) / 2, (vp_size.y - 300) / 2)
 	pause_panel.visible = false
 	ui_canvas.add_child(pause_panel)
 
@@ -577,34 +583,25 @@ func _create_pause_panel():
 	vbox.position = Vector2(50, 30)
 	vbox.size = Vector2(300, 240)
 	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	vbox.theme_override_constants_separation = 15
 	pause_panel.add_child(vbox)
 
 	var title = Label.new()
 	title.text = "比赛暂停"
-	title.add_theme_font_size_override("font_size", 32)
+	title.add_theme_font_size_override("font_size", 28)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(title)
 
 	var resume_btn = Button.new()
 	resume_btn.text = "继续比赛"
-	resume_btn.pressed.connect(func():
-		match_phase = GameState.MatchPhase.PLAYING
-		pause_panel.visible = false
-	)
+	resume_btn.add_theme_font_size_override("font_size", 20)
+	resume_btn.pressed.connect(_toggle_pause)
 	vbox.add_child(resume_btn)
 
-	var restart_btn = Button.new()
-	restart_btn.text = "重新开始"
-	restart_btn.pressed.connect(func():
-		get_tree().reload_current_scene()
-	)
-	vbox.add_child(restart_btn)
-
 	var quit_btn = Button.new()
-	quit_btn.text = "返回主菜单"
+	quit_btn.text = "退出比赛"
+	quit_btn.add_theme_font_size_override("font_size", 20)
 	quit_btn.pressed.connect(func():
-		if config.get("is_lan_match", false):
-			NetworkManager.close_connection()
 		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 	)
 	vbox.add_child(quit_btn)
@@ -623,6 +620,7 @@ func _create_result_panel():
 	vbox.position = Vector2(50, 30)
 	vbox.size = Vector2(400, 340)
 	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	vbox.theme_override_constants_separation = 15
 	result_panel.add_child(vbox)
 
 	var title = Label.new()
@@ -646,83 +644,74 @@ func _create_result_panel():
 	stats.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(stats)
 
-	var rematch_btn = Button.new()
-	rematch_btn.text = "再赛一场"
-	rematch_btn.pressed.connect(func():
-		get_tree().reload_current_scene()
-	)
-	vbox.add_child(rematch_btn)
+	var scorers = Label.new()
+	scorers.name = "ResultScorers"
+	scorers.text = ""
+	scorers.add_theme_font_size_override("font_size", 14)
+	scorers.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(scorers)
 
-	var menu_btn = Button.new()
-	menu_btn.text = "返回主菜单"
-	menu_btn.pressed.connect(func():
-		if config.get("is_lan_match", false):
-			NetworkManager.close_connection()
-		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	var btn = Button.new()
+	btn.text = "返回"
+	btn.add_theme_font_size_override("font_size", 20)
+	btn.pressed.connect(func():
+		# 如果是联赛模式，返回联赛界面
+		if LeagueManager.current_league_id != "":
+			get_tree().change_scene_to_file("res://scenes/LeagueHub.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 	)
-	vbox.add_child(menu_btn)
+	vbox.add_child(btn)
 
 # ============================================================
 # 比赛流程
 # ============================================================
 
 func _kickoff():
-	match_phase = GameState.MatchPhase.KICKOFF
-
-	# 重置球员位置到阵型
-	_reset_positions()
+	# 重置所有球员到起始位置
+	for p in home_players:
+		p.reset_to_home()
+	for p in away_players:
+		p.reset_to_home()
 
 	# 球放中圈
-	ball.position = Vector3(0, BALL_RADIUS, 0)
+	ball.position = Vector3(0, 0, 0)
 	ball_velocity = Vector3.ZERO
 	ball_height = 0
 	ball_height_velocity = 0
 	ball_owner = null
+	ball_spin = 0
+	ball_shot_type = ""
 
-	# 开球方：上半场主队开球，下半场客队开球
-	var kickoff_side = GameState.TeamSide.HOME if current_half == 1 else GameState.TeamSide.AWAY
+	# 开球方（失球方或上半场主队）
+	var kickoff_side = GameState.TeamSide.HOME
+	if home_score + away_score > 0:
+		# 失球方开球
+		kickoff_side = GameState.TeamSide.AWAY if home_score > away_score else GameState.TeamSide.HOME
+	if current_half == 2 and home_score == 0 and away_score == 0:
+		kickoff_side = GameState.TeamSide.AWAY
+
+	# 让开球方的一名前锋靠近球
 	var kickoff_team = home_players if kickoff_side == GameState.TeamSide.HOME else away_players
+	for p in kickoff_team:
+		if p.role in ["ST", "CF", "CAM"]:
+			p.position = Vector3(0, 0, 0.5 if kickoff_side == GameState.TeamSide.HOME else -0.5)
+			break
 
-	# 开球球员站到中圈
-	if kickoff_team.size() > 9:
-		kickoff_team[9].position = Vector3(-2, 0, 0)
-		kickoff_team[10].position = Vector3(2, 0, 0)
+	match_phase = GameState.MatchPhase.KICKOFF
+	out_of_bounds_time = 1.5  # 1.5秒后开始
 
-	# 短暂延迟后开始
-	await get_tree().create_timer(1.5).timeout
-	match_phase = GameState.MatchPhase.PLAYING
+	_show_event("开球！", 1.5)
 
-	# 切换到最合适的球员
-	_switch_active_player()
-
-func _reset_positions():
-	var formation = GameState.get_formation(config.get("formation", "4-4-2"))
-	for i in range(home_players.size()):
-		var p = home_players[i]
-		var role_data = formation[i]
-		p.position = Vector3(role_data[1], 0, role_data[2])
-		p.set("velocity", Vector3.ZERO)
-		p.set("current_stamina", p.get("stats").stamina)
-
-	for i in range(away_players.size()):
-		var p = away_players[i]
-		var role_data = formation[i]
-		p.position = Vector3(-role_data[1], 0, -role_data[2])
-		p.set("velocity", Vector3.ZERO)
-		p.set("current_stamina", p.get("stats").stamina)
-
-func _update_timer(delta):
-	match_time += delta
-	if match_time >= half_duration:
-		if current_half == 1:
-			# 半场休息
-			current_half = 2
-			match_time = 0
-			phase_label.text = "下半场"
-			_kickoff()
-		else:
-			# 比赛结束
-			_end_match()
+func _end_half():
+	if current_half == 1:
+		current_half = 2
+		match_time = 0
+		phase_label.text = "下半场"
+		_show_event("中场休息", 2.0)
+		_kickoff()
+	else:
+		_end_match()
 
 func _end_match():
 	match_phase = GameState.MatchPhase.FULLTIME
@@ -734,11 +723,16 @@ func _end_match():
 	var drawn = player_score == opponent_score
 	SaveManager.update_match_result(won, drawn, player_score, opponent_score)
 
+	# 如果是联赛模式，记录结果
+	if LeagueManager.current_league_id != "":
+		_record_league_result()
+
 	# 显示结果
 	result_panel.visible = true
 	var title = result_panel.get_node("VBoxContainer/ResultTitle")
 	var score = result_panel.get_node("VBoxContainer/ResultScore")
 	var stats = result_panel.get_node("VBoxContainer/ResultStats")
+	var scorers = result_panel.get_node("VBoxContainer/ResultScorers")
 
 	if won:
 		title.text = "🎉 胜利！"
@@ -751,172 +745,423 @@ func _end_match():
 		title.add_theme_color_override("font_color", Color.RED)
 
 	score.text = "%d - %d" % [home_score, away_score]
-	stats.text = "%s %d - %d %s\n%s vs %s" % [
-		config.home_team_name, home_score, away_score, config.away_team_name,
-		config.home_team_name, config.away_team_name
+
+	# 统计
+	var ref_stats = Referee.match_stats
+	stats.text = "射门 %d-%d | 射正 %d-%d | 犯规 %d-%d | 角球 %d-%d | 黄牌 %d-%d" % [
+		ref_stats.shots.home, ref_stats.shots.away,
+		ref_stats.shots_on_target.home, ref_stats.shots_on_target.away,
+		ref_stats.fouls.home, ref_stats.fouls.away,
+		ref_stats.corners.home, ref_stats.corners.away,
+		ref_stats.yellow_cards.home, ref_stats.yellow_cards.away,
 	]
+
+	# 进球名单
+	var scorer_text = ""
+	for s in home_scorers:
+		var name = PlayerDatabase.get_player_short_name(s.player_id) if s.player_id != "" else "球员%d" % s.number
+		if s.is_own_goal:
+			name += "(乌龙)"
+		scorer_text += "%s %d' %s\n" % [TeamDatabase.get_team_short_name(home_team_id), s.minute, name]
+	for s in away_scorers:
+		var name = PlayerDatabase.get_player_short_name(s.player_id) if s.player_id != "" else "球员%d" % s.number
+		if s.is_own_goal:
+			name += "(乌龙)"
+		scorer_text += "%s %d' %s\n" % [TeamDatabase.get_team_short_name(away_team_id), s.minute, name]
+	scorers.text = scorer_text
+
+func _record_league_result():
+	var home_goals = home_score
+	var away_goals = away_score
+	LeagueManager.record_match_result(home_team_id, away_team_id, home_goals, away_goals)
 
 # ============================================================
 # 球的物理
 # ============================================================
 
-func _update_ball(delta):
+func _update_ball_physics(delta):
 	# 如果有控球者，球跟随控球者
 	if ball_owner != null and is_instance_valid(ball_owner):
 		var owner_pos = ball_owner.position
-		var forward = -ball_owner.get("facing_direction") if ball_owner.get("facing_direction") != null else Vector3.FORWARD
-		# 球在球员脚下前方
+		var forward = ball_owner.facing_direction if ball_owner.facing_direction else Vector3.FORWARD
 		ball.position = owner_pos + Vector3(forward.x, 0, forward.z) * 0.8 + Vector3(0, BALL_RADIUS, 0)
 		ball_velocity = Vector3.ZERO
 		ball_height = 0
 		ball_height_velocity = 0
 	else:
-		_update_ball_physics(delta)
+		# 地面摩擦
+		var friction = BALL_FRICTION * delta
+		ball_velocity = ball_velocity * (1.0 - friction)
 
-	# 更新球的视觉位置（高度）
-	ball_mesh.position = Vector3(0, ball_height, 0)
-	ball_shadow.position = Vector3(ball.position.x, 0.02, ball.position.z)
-	# 阴影随高度变大变淡
-	var shadow_scale = 1.0 + ball_height * 0.1
-	ball_shadow.scale = Vector3(shadow_scale, shadow_scale, shadow_scale)
-	var shadow_mat = ball_shadow.material_override
-	if shadow_mat:
-		shadow_mat.albedo_color.a = max(0.1, 0.4 - ball_height * 0.02)
+		# 空气阻力（球在空中时）
+		if ball_height > 0.1:
+			ball_velocity = ball_velocity * (1.0 - BALL_AIR_DRAG * delta)
 
-func _update_ball_physics(delta):
-	# 水平移动
-	ball.position.x += ball_velocity.x * delta
-	ball.position.z += ball_velocity.z * delta
+		# 旋转效应（搓射/电梯球）
+		if abs(ball_spin) > 0.01 and ball_height > 0.1:
+			# Magnus效应：旋转产生侧向力
+			var perp = Vector3(-ball_velocity.z, 0, ball_velocity.x).normalized()
+			ball_velocity += perp * ball_spin * delta * 3.0
+			ball_spin *= (1.0 - delta * 0.5)  # 旋转衰减
 
-	# 摩擦
-	var friction = BALL_FRICTION * delta
-	ball_velocity.x *= max(0, 1 - friction)
-	ball_velocity.z *= max(0, 1 - friction)
-
-	# 如果速度很小，停止
-	if ball_velocity.length() < 0.5:
-		ball_velocity = Vector3.ZERO
-
-	# 垂直运动（弹跳）
-	if ball_height > 0 or ball_height_velocity != 0:
-		ball_height += ball_height_velocity * delta
-		ball_height_velocity -= BALL_GRAVITY * delta
-
-		if ball_height <= 0:
+		# 重力
+		if ball_height > 0 or ball_height_velocity > 0:
+			ball_height_velocity -= BALL_GRAVITY * delta
+			ball_height += ball_height_velocity * delta
+			if ball_height < 0:
+				ball_height = 0
+				# 弹跳
+				if abs(ball_height_velocity) > 1.0:
+					ball_height_velocity = -ball_height_velocity * 0.5
+				else:
+					ball_height_velocity = 0
+		else:
 			ball_height = 0
-			ball_height_velocity = -ball_height_velocity * 0.5  # 弹跳衰减
-			if abs(ball_height_velocity) < 1.0:
-				ball_height_velocity = 0
+			ball_height_velocity = 0
 
-	# 球的旋转效果
-	if ball_velocity.length() > 0.1:
-		ball_mesh.rotate_axis(Vector3(-ball_velocity.z, 0, ball_velocity.x).normalized(),
-			ball_velocity.length() * delta * 0.5)
+		# 应用速度
+		ball.position += ball_velocity * delta
+		ball.position.y = 0
 
-# ============================================================
-# 进球和出界判定
-# ============================================================
+		# 检查控球
+		_check_ball_possession()
 
-func _check_goal():
+	# 更新球的视觉位置
+	ball_mesh.position = Vector3(0, ball_height, 0)
+	ball_shadow.position = Vector3(ball.position.x, 0.01, ball.position.z)
+	# 阴影随高度缩小
+	var shadow_scale = 1.0 - min(ball_height / 10.0, 0.5)
+	ball_shadow.scale = Vector3(shadow_scale, shadow_scale, shadow_scale)
+
+func _check_ball_possession():
 	if ball_owner != null:
-		return  # 有人控球时不判定
+		return
+
+	var all_players = home_players + away_players
+	var nearest_player = null
+	var nearest_dist = INF
+
+	for p in all_players:
+		if not is_instance_valid(p):
+			continue
+		# 球在空中时，只有高度低于1.5米才能控球
+		if ball_height > 1.5:
+			continue
+		var dist = p.position.distance_to(ball.position)
+		var control_radius = p.stats.get("control_radius", 1.5)
+		if dist < control_radius and dist < nearest_dist:
+			nearest_dist = dist
+			nearest_player = p
+
+	if nearest_player:
+		ball_owner = nearest_player
+		nearest_player.has_ball = true
+		last_touch_team = nearest_player.team_side
+		last_touch_player = nearest_player
+
+		# 如果是玩家控制的队伍，切换到控球者
+		if nearest_player.team_side == player_side and not nearest_player.is_goalkeeper:
+			_switch_to_player(nearest_player)
+
+func _check_collisions():
+	# 球员间碰撞和抢断检测
+	for p in home_players + away_players:
+		if not is_instance_valid(p):
+			continue
+		var opp_team = away_players if p.team_side == GameState.TeamSide.HOME else home_players
+		for opp in opp_team:
+			if not is_instance_valid(opp):
+				continue
+			var dist = p.position.distance_to(opp.position)
+			if dist < 1.0:
+				# 碰撞推开
+				var push_dir = (p.position - opp.position).normalized()
+				p.position += push_dir * 0.02
+				opp.position -= push_dir * 0.02
+
+				# 抢断检测
+				if p.is_player_controlled or p.get("is_active"):
+					if dist < p.stats.get("tackle_radius", 2.0):
+						_check_tackle(p, opp)
+
+func _check_tackle(tackler: CharacterBody3D, target: CharacterBody3D):
+	if ball_owner == target:
+		var success_chance = ai_params.get("tackle_success", 0.6)
+		# 根据防守属性调整
+		var tackle_attr = PlayerDatabase.get_player_attributes(tackler.player_id).get("defending", 70) / 100.0
+		success_chance = success_chance * (0.5 + tackle_attr * 0.5)
+
+		if randf() < success_chance:
+			# 抢断成功
+			ball_owner = null
+			target.has_ball = false
+			var dir = (ball.position - tackler.position)
+			dir.y = 0
+			dir = dir.normalized()
+			ball_velocity = dir * 8.0
+			ball_height_velocity = 1.0
+			tackler.play_action(AnimState.TACKLE if typeof(AnimState) == TYPE_INT else 4, 0.3)
+
+			# 统计
+			var data = SaveManager.load_data()
+			data["stats"]["total_tackles"] = data["stats"].get("total_tackles", 0) + 1
+			SaveManager.save_data(data)
+		else:
+			# 抢断犯规检测
+			var foul_severity = randf()
+			if foul_severity > 0.7:
+				# 犯规
+				Referee.check_foul(tackler, target, ball.position, foul_severity)
+
+# ============================================================
+# 边界和进球判定
+# ============================================================
+
+func _check_bounds_and_goals():
+	if match_phase != GameState.MatchPhase.PLAYING:
+		return
 
 	var ball_pos = ball.position
+	var half_l = GameState.FIELD_LENGTH / 2
+	var half_w = GameState.FIELD_WIDTH / 2
+	var goal_half = GameState.GOAL_WIDTH / 2
 
-	# 主队球门在 Z = -52.5，客队进球（客队得分）
-	if ball_pos.z < -GameState.FIELD_LENGTH / 2 + 1:
-		if abs(ball_pos.x) < GameState.GOAL_WIDTH / 2 and ball_height < GameState.GOAL_HEIGHT:
-			# 客队进球
-			away_score += 1
-			_on_goal_scored(GameState.TeamSide.AWAY)
-			return
+	# 进球判定（球在球门内且高度低于横梁）
+	if ball_pos.z < -half_l and abs(ball_pos.x) < goal_half and ball_height < GameState.GOAL_HEIGHT:
+		# 进了主队球门 -> 客队得分
+		# 判断是否乌龙球
+		var is_own_goal = (last_touch_team == GameState.TeamSide.AWAY)
+		_score_goal(GameState.TeamSide.AWAY, is_own_goal)
+		return
 
-	# 客队球门在 Z = +52.5，主队进球（主队得分）
-	if ball_pos.z > GameState.FIELD_LENGTH / 2 - 1:
-		if abs(ball_pos.x) < GameState.GOAL_WIDTH / 2 and ball_height < GameState.GOAL_HEIGHT:
-			# 主队进球
-			home_score += 1
-			_on_goal_scored(GameState.TeamSide.HOME)
-			return
+	if ball_pos.z > half_l and abs(ball_pos.x) < goal_half and ball_height < GameState.GOAL_HEIGHT:
+		# 进了客队球门 -> 主队得分
+		var is_own_goal = (last_touch_team == GameState.TeamSide.HOME)
+		_score_goal(GameState.TeamSide.HOME, is_own_goal)
+		return
 
-func _on_goal_scored(scoring_side: int):
+	# 球门柱碰撞（简化）
+	if abs(ball_pos.z) > half_l - 0.1 and abs(ball_pos.z) < half_l + 0.1:
+		if abs(ball_pos.x - goal_half) < 0.2 or abs(ball_pos.x + goal_half) < 0.2:
+			if ball_height < GameState.GOAL_HEIGHT:
+				# 击中门柱，反弹
+				ball_velocity.x = -ball_velocity.x * 0.5
+
+	# 出界判定
+	if abs(ball_pos.x) > half_w:
+		# 边线出界 -> 界外球
+		var throw_in_side = GameState.TeamSide.AWAY if last_touch_team == GameState.TeamSide.HOME else GameState.TeamSide.HOME
+		var throw_pos = Vector3(clamp(ball_pos.x, -half_w + 1, half_w - 1), 0, ball_pos.z)
+		_setup_set_piece(Referee.SetPieceType.THROW_IN, throw_in_side, throw_pos)
+		return
+
+	if ball_pos.z < -half_l and abs(ball_pos.x) > goal_half:
+		# 主队底线出界
+		if last_touch_team == GameState.TeamSide.AWAY:
+			# 客队最后触球 -> 主队球门球
+			_setup_set_piece(Referee.SetPieceType.GOAL_KICK, GameState.TeamSide.HOME, Vector3(0, 0, -half_l + 5))
+		else:
+			# 主队最后触球 -> 客队角球
+			var corner_x = -half_w if ball_pos.x < 0 else half_w
+			_setup_set_piece(Referee.SetPieceType.CORNER_KICK, GameState.TeamSide.AWAY, Vector3(corner_x, 0, -half_l))
+		return
+
+	if ball_pos.z > half_l and abs(ball_pos.x) > goal_half:
+		# 客队底线出界
+		if last_touch_team == GameState.TeamSide.HOME:
+			_setup_set_piece(Referee.SetPieceType.GOAL_KICK, GameState.TeamSide.AWAY, Vector3(0, 0, half_l - 5))
+		else:
+			var corner_x = -half_w if ball_pos.x < 0 else half_w
+			_setup_set_piece(Referee.SetPieceType.CORNER_KICK, GameState.TeamSide.HOME, Vector3(corner_x, 0, half_l))
+		return
+
+func _score_goal(scoring_team: int, is_own_goal: bool):
+	if scoring_team == GameState.TeamSide.HOME:
+		home_score += 1
+	else:
+		away_score += 1
+
+	# 记录进球者
+	var scorer = last_touch_player
+	var scorer_id = scorer.player_id if scorer else ""
+	var scorer_number = scorer.player_index if scorer else 0
+	var minute = int(match_time / (half_duration / 45.0)) + (45 if current_half == 2 else 0)
+
+	# 判断进球类型
+	var goal_type = "普通进球"
+	if ball_shot_type != "":
+		goal_type = ball_shot_type
+		ball_shot_type = ""
+
+	# 帽子戏法追踪
+	if scorer_id != "":
+		hat_trick_tracker[scorer_id] = hat_trick_tracker.get(scorer_id, 0) + 1
+		if hat_trick_tracker[scorer_id] == 3:
+			goal_type = "帽子戏法！"
+		elif hat_trick_tracker[scorer_id] > 3:
+			goal_type = "大四喜！" if hat_trick_tracker[scorer_id] == 4 else "独中五元！"
+
+	# 世界波判定（远射）
+	if scorer and abs(scorer.position.z - (GameState.FIELD_LENGTH/2 if scoring_team == 0 else -GameState.FIELD_LENGTH/2)) > 25:
+		if goal_type == "普通进球":
+			goal_type = "世界波！"
+
+	var goal_record = {
+		"player_id": scorer_id,
+		"number": scorer_number,
+		"minute": minute,
+		"type": goal_type,
+		"is_own_goal": is_own_goal,
+	}
+
+	if scoring_team == GameState.TeamSide.HOME:
+		home_scorers.append(goal_record)
+	else:
+		away_scorers.append(goal_record)
+
+	# 显示进球通知
+	var scorer_name = PlayerDatabase.get_player_short_name(scorer_id) if scorer_id != "" else "球员%d" % scorer_number
+	if is_own_goal:
+		scorer_name += "(乌龙球)"
+	var event_text = "⚽ 进球！%s %d'\n%s — %s" % [
+		TeamDatabase.get_team_short_name(home_team_id if scoring_team == 0 else away_team_id),
+		minute, scorer_name, goal_type
+	]
+	_show_event(event_text, 3.0)
+
+	# 统计
+	Referee.record_shot(scoring_team, true)
+
 	match_phase = GameState.MatchPhase.GOAL
 	goal_celebration_time = 3.0
 	ball_owner = null
 
-	var scorer = config.away_team_name if scoring_side == GameState.TeamSide.AWAY else config.home_team_name
-	print("[Match] 进球！%s 得分  比分 %d-%d" % [scorer, home_score, away_score])
+# ============================================================
+# 定位球
+# ============================================================
 
-	# 显示进球提示
-	var goal_label = Label.new()
-	goal_label.text = "⚽ 进球！\n%s" % scorer
-	goal_label.add_theme_font_size_override("font_size", 64)
-	goal_label.add_theme_color_override("font_color", Color.YELLOW)
-	goal_label.add_theme_color_override("font_shadow_color", Color.BLACK)
-	goal_label.add_theme_constant_override("shadow_offset_x", 3)
-	goal_label.add_theme_constant_override("shadow_offset_y", 3)
-	goal_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	goal_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	goal_label.size = get_viewport().get_visible_rect().size
-	ui_canvas.add_child(goal_label)
+func _setup_set_piece(piece_type: int, team: int, pos: Vector3):
+	set_piece_type = piece_type
+	set_piece_team = team
+	set_piece_position = pos
+	set_piece_ready = true
 
-	# 3秒后移除
-	get_tree().create_timer(3.0).timeout.connect(func():
-		goal_label.queue_free()
-	)
-
-func _check_out_of_bounds():
-	if ball_owner != null:
-		return
-
-	var ball_pos = ball.position
-	var half_w = GameState.FIELD_WIDTH / 2
-	var half_l = GameState.FIELD_LENGTH / 2
-
-	# 出边线（左右）
-	if abs(ball_pos.x) > half_w:
-		_on_ball_out("sideline")
-		return
-
-	# 出底线（前后）但不是进球
-	if ball_pos.z < -half_l or ball_pos.z > half_l:
-		_on_ball_out("goal_line")
-		return
-
-func _on_ball_out(line_type: String):
-	match_phase = GameState.MatchPhase.BALL_OUT
-	out_of_bounds_time = 1.5
-	ball_owner = null
-
-	# 简化处理：直接把球放回出界位置附近
-	var ball_pos = ball.position
-	var half_w = GameState.FIELD_WIDTH / 2
-	var half_l = GameState.FIELD_LENGTH / 2
-
-	# 限制球在球场内
-	ball_pos.x = clamp(ball_pos.x, -half_w + 1, half_w - 1)
-	ball_pos.z = clamp(ball_pos.z, -half_l + 1, half_l - 1)
-	ball.position = ball_pos + Vector3(0, BALL_RADIUS, 0)
+	# 将球放到定位球位置
+	ball.position = pos
 	ball_velocity = Vector3.ZERO
 	ball_height = 0
 	ball_height_velocity = 0
+	ball_owner = null
 
-	print("[Match] 球出界 (%s)" % line_type)
+	match_phase = GameState.MatchPhase.BALL_OUT
+	out_of_bounds_time = 2.0
+
+	# 统计
+	match piece_type:
+		Referee.SetPieceType.CORNER_KICK:
+			var key = "home" if team == 0 else "away"
+			Referee.match_stats.corners[key] += 1
+			_show_event("角球 — %s" % TeamDatabase.get_team_short_name(home_team_id if team == 0 else away_team_id), 2.0)
+		Referee.SetPieceType.DIRECT_FREE_KICK, Referee.SetPieceType.INDIRECT_FREE_KICK:
+			var key = "home" if team == 0 else "away"
+			Referee.match_stats.free_kicks[key] += 1
+			_show_event("任意球 — %s" % TeamDatabase.get_team_short_name(home_team_id if team == 0 else away_team_id), 2.0)
+		Referee.SetPieceType.PENALTY:
+			var key = "home" if team == 0 else "away"
+			Referee.match_stats.penalties[key] += 1
+			_show_event("点球！— %s" % TeamDatabase.get_team_short_name(home_team_id if team == 0 else away_team_id), 2.0)
+		Referee.SetPieceType.THROW_IN:
+			_show_event("界外球", 1.5)
+		Referee.SetPieceType.GOAL_KICK:
+			_show_event("球门球", 1.5)
+
+	# 设置人墙（如果是任意球）
+	if piece_type in [Referee.SetPieceType.DIRECT_FREE_KICK, Referee.SetPieceType.INDIRECT_FREE_KICK]:
+		_setup_free_kick_wall(team, pos)
+
+	# 让一名球员靠近球准备发球
+	var team_players = home_players if team == GameState.TeamSide.HOME else away_players
+	var nearest = null
+	var nearest_dist = INF
+	for p in team_players:
+		if p.is_goalkeeper:
+			continue
+		var d = p.position.distance_to(pos)
+		if d < nearest_dist:
+			nearest_dist = d
+			nearest = p
+	if nearest:
+		nearest.position = pos + Vector3(1, 0, 0)
+		if team == player_side:
+			_switch_to_player(nearest)
+
+func _setup_free_kick_wall(attacking_team: int, ball_pos: Vector3):
+	wall_players.clear()
+	var defending_team = GameState.TeamSide.AWAY if attacking_team == GameState.TeamSide.HOME else GameState.TeamSide.HOME
+	var def_players = home_players if defending_team == GameState.TeamSide.HOME else away_players
+
+	# 找到目标球门方向
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if attacking_team == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
+	var wall_dir = (Vector3(0, 0, target_goal_z) - ball_pos)
+	wall_dir.y = 0
+	wall_dir = wall_dir.normalized()
+
+	# 人墙位置：球前方9.15米
+	var wall_center = ball_pos + wall_dir * 9.15
+	# 人墙人数：3-5人
+	var wall_count = 4
+
+	# 选择防守球员组成人墙
+	var selected = []
+	for p in def_players:
+		if p.is_goalkeeper:
+			continue
+		if p.role in ["CB", "LB", "RB", "CDM", "CM"]:
+			selected.append(p)
+		if selected.size() >= wall_count:
+			break
+
+	# 排列人墙
+	var spacing = 0.8
+	for i in range(selected.size()):
+		var offset = (i - (selected.size() - 1) / 2.0) * spacing
+		var perp = Vector3(-wall_dir.z, 0, wall_dir.x) * offset
+		selected[i].position = wall_center + perp
+		selected[i].home_position = wall_center + perp  # 临时改变home position
+		wall_players.append(selected[i])
 
 func _resume_from_out():
+	# 恢复比赛
 	match_phase = GameState.MatchPhase.PLAYING
-	_switch_active_player()
+	set_piece_type = Referee.SetPieceType.NONE
+
+	# 恢复人墙球员的home position
+	for p in wall_players:
+		var formation = GameState.get_formation(config.get("formation", "4-4-2"))
+		var idx = p.player_index - 1
+		if idx >= 0 and idx < formation.size():
+			var role_data = formation[idx]
+			var x = role_data[1]
+			var z = role_data[2]
+			if p.team_side == GameState.TeamSide.AWAY:
+				z = -z
+			p.home_position = Vector3(x, 0, z)
+	wall_players.clear()
 
 # ============================================================
-# 玩家控制
+# 玩家输入
 # ============================================================
 
-func _update_active_player_control():
+func _update_player_input():
 	if active_player == null or not is_instance_valid(active_player):
 		_switch_active_player()
 		return
 
-	# 读取输入
+	if match_phase != GameState.MatchPhase.PLAYING:
+		active_player.input_direction = Vector3.ZERO
+		return
+
+	# 读取移动输入
 	input_vector = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
 		input_vector.y -= 1
@@ -930,13 +1175,10 @@ func _update_active_player_control():
 	is_sprinting = Input.is_action_pressed("sprint")
 	input_vector = input_vector.normalized()
 
-	# 转换为3D方向（屏幕Y对应Z轴）
 	var move_dir = Vector3(input_vector.x, 0, input_vector.y)
-
-	# 设置活跃球员的输入
-	active_player.set("input_direction", move_dir)
-	active_player.set("is_sprinting", is_sprinting)
-	active_player.set("is_player_controlled", true)
+	active_player.input_direction = move_dir
+	active_player.is_sprinting = is_sprinting
+	active_player.is_player_controlled = true
 
 	# 动作按钮
 	if Input.is_action_just_pressed("pass"):
@@ -945,12 +1187,25 @@ func _update_active_player_control():
 		_do_shoot()
 	if Input.is_action_just_pressed("through_ball"):
 		_do_through_ball()
+	if Input.is_action_just_pressed("cross"):
+		_do_cross()
+	if Input.is_action_just_pressed("lob"):
+		_do_lob()
+	if Input.is_action_just_pressed("one_two"):
+		_do_one_two()
 	if Input.is_action_just_pressed("tackle"):
 		_do_tackle()
 	if Input.is_action_just_pressed("switch_player"):
-		_switch_active_player()
+		_switch_active_player_manual()
+	if Input.is_action_just_pressed("gk_rush"):
+		_do_gk_rush()
 	if Input.is_action_just_pressed("pause"):
 		_toggle_pause()
+
+	# 射门类型：长按空格=远射，短按=普通射门
+	# 搓射：Shift+空格
+	# 电梯球：Ctrl+空格
+	# （这些在_do_shoot中根据修饰键判断）
 
 func _toggle_pause():
 	if match_phase == GameState.MatchPhase.PLAYING:
@@ -960,541 +1215,476 @@ func _toggle_pause():
 		match_phase = GameState.MatchPhase.PLAYING
 		pause_panel.visible = false
 
+# ============================================================
+# 球员切换
+# ============================================================
+
 func _switch_active_player():
+	# 自动切换到最靠近球的球员
 	var team = home_players if player_side == GameState.TeamSide.HOME else away_players
 	if team.is_empty():
 		return
 
-	# 找到最靠近球的非门将球员
 	var best_player = null
 	var best_dist = INF
 
 	for p in team:
-		if p.get("is_goalkeeper"):
+		if p.is_goalkeeper:
 			continue
 		var dist = p.position.distance_to(ball.position)
 		if dist < best_dist:
 			best_dist = dist
 			best_player = p
 
-	# 如果没有非门将球员（异常情况），选门将
 	if best_player == null and team.size() > 0:
 		best_player = team[0]
 
-	# 取消上一个活跃球员
-	if active_player != null and is_instance_valid(active_player):
-		active_player.set("is_active", false)
-		active_player.set("is_player_controlled", false)
+	_switch_to_player(best_player)
 
-	active_player = best_player
-	if active_player != null:
-		active_player.set("is_active", true)
-		# 高亮活跃球员
-		_highlight_active_player()
+func _switch_active_player_manual():
+	# 手动切换：循环切换到下一个球员
+	var team = home_players if player_side == GameState.TeamSide.HOME else away_players
+	if team.is_empty():
+		return
 
-func _highlight_active_player():
-	# 给活跃球员加一个光环
-	for p in home_players + away_players:
-		var marker = p.get_node_or_null("ActiveMarker")
-		if marker:
-			marker.queue_free()
+	var current_idx = team.find(active_player) if active_player in team else -1
 
+	# 找下一个非门将球员
+	for i in range(1, team.size() + 1):
+		var idx = (current_idx + i) % team.size()
+		if not team[idx].is_goalkeeper:
+			_switch_to_player(team[idx])
+			return
+
+func _switch_to_player(player: CharacterBody3D):
+	if active_player and is_instance_valid(active_player):
+		active_player.is_active = false
+		active_player.is_player_controlled = false
+
+	active_player = player
 	if active_player:
-		var marker = MeshInstance3D.new()
-		marker.name = "ActiveMarker"
-		var ring = TorusMesh.new()
-		ring.inner_radius = 0.8
-		ring.outer_radius = 1.0
-		marker.mesh = ring
-		var mat = StandardMaterial3D.new()
-		mat.albedo_color = Color.YELLOW
-		mat.emission_enabled = true
-		mat.emission = Color.YELLOW
-		mat.emission_energy_multiplier = 1.5
-		marker.material_override = mat
-		marker.position = Vector3(0, 0.05, 0)
-		marker.rotation_degrees.x = 90
-		active_player.add_child(marker)
+		active_player.is_active = true
+		active_player.is_player_controlled = true
 
 # ============================================================
-# 球员动作
+# 动作：传球、射门、传中、挑球、2过1、抢断、门将出击
 # ============================================================
 
 func _do_pass():
-	if ball_owner == null or ball_owner != active_player:
+	if active_player == null or ball_owner != active_player:
 		return
 
-	# 找最佳传球目标（同队最前方的球员）
-	var team = home_players if ball_owner.get("team_side") == GameState.TeamSide.HOME else away_players
+	var team = home_players if active_player.team_side == GameState.TeamSide.HOME else away_players
+	var forward_dir = 1 if active_player.team_side == GameState.TeamSide.HOME else -1
+
+	# 寻找最佳传球目标
 	var best_target = null
 	var best_score = -INF
 
 	for p in team:
-		if p == ball_owner:
+		if p == active_player:
 			continue
-		# 优先向前传球
-		var forward_dir = 1 if ball_owner.get("team_side") == GameState.TeamSide.HOME else -1
-		var forward_score = (p.position.z - ball_owner.position.z) * forward_dir
-		var dist = ball_owner.position.distance_to(p.position)
-
-		# 距离适中（5-30米）且前方
-		if dist > 3 and dist < 35:
-			var score = forward_score - dist * 0.3
+		var forward_score = (p.position.z - active_player.position.z) * forward_dir
+		var dist = active_player.position.distance_to(p.position)
+		if dist > 3 and dist < 40:
+			var score = forward_score - dist * 0.2
+			# 传球属性影响选择
+			var pass_attr = PlayerDatabase.get_player_attributes(active_player.player_id).get("passing", 70) / 100.0
+			score *= (0.7 + pass_attr * 0.3)
 			if score > best_score:
 				best_score = score
 				best_target = p
 
-	if best_target == null:
-		# 没有好的传球目标，短传给最近的队友
-		var min_dist = INF
-		for p in team:
-			if p == ball_owner:
-				continue
-			var dist = ball_owner.position.distance_to(p.position)
-			if dist < min_dist and dist > 2:
-				min_dist = dist
-				best_target = p
-
 	if best_target:
-		var dir = (best_target.position - ball_owner.position)
+		var dir = (best_target.position - active_player.position)
 		dir.y = 0
+		# 传球准确率
+		var pass_acc = ai_params.get("pass_accuracy", 0.8)
+		var pass_attr = PlayerDatabase.get_player_attributes(active_player.player_id).get("passing", 70) / 100.0
+		pass_acc = pass_acc * (0.5 + pass_attr * 0.5)
+		if randf() > pass_acc:
+			dir.x += randf_range(-0.2, 0.2)
+			dir.z += randf_range(-0.2, 0.2)
 		dir = dir.normalized()
 
-		# 加入一些提前量（传到目标前方）
-		var target_pos = best_target.position + dir * 2
-		var pass_dir = (target_pos - ball_owner.position)
-		pass_dir.y = 0
-		pass_dir = pass_dir.normalized()
-
-		ball_velocity = pass_dir * PASS_SPEED
-		ball_height_velocity = 2.0  # 轻微挑起
+		ball_velocity = dir * PASS_SPEED
+		ball_height_velocity = 0.5
 		ball_owner = null
-		last_touch_team = ball_owner.get("team_side") if ball_owner else -1
+		active_player.has_ball = false
+		active_player.play_action(4, 0.3)  # KICK动画
+		ball_shot_type = ""
 
 		# 统计
-		var stats = SaveManager.load_data().get("stats", {})
-		stats["total_passes"] = stats.get("total_passes", 0) + 1
-		SaveManager.save_data({"stats": stats} if false else SaveManager.load_data())
-
-func _do_shoot():
-	if ball_owner == null or ball_owner != active_player:
-		return
-
-	# 射门方向：朝对方球门
-	var target_goal_z = GameState.FIELD_LENGTH / 2 if ball_owner.get("team_side") == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
-	var dir = Vector3(
-		randf_range(-3, 3) - ball_owner.position.x * 0.1,  # 瞄准球门中心附近
-		0,
-		target_goal_z - ball_owner.position.z
-	)
-	dir = dir.normalized()
-
-	# 射门力度受距离影响
-	var dist_to_goal = abs(ball_owner.position.z - target_goal_z)
-	var power = SHOT_SPEED
-	if dist_to_goal > 25:
-		power *= 1.1  # 远射加力
-
-	ball_velocity = dir * power
-	ball_height_velocity = 3.0  # 射门球会飞起
-	ball_owner = null
-
-	# 统计
-	var data = SaveManager.load_data()
-	data["stats"]["total_shots"] = data["stats"].get("total_shots", 0) + 1
-	SaveManager.save_data(data)
-
-	print("[Match] 射门！力度=%.1f 方向=%s" % [power, dir])
+		var data = SaveManager.load_data()
+		data["stats"]["total_passes"] = data["stats"].get("total_passes", 0) + 1
+		SaveManager.save_data(data)
 
 func _do_through_ball():
-	if ball_owner == null or ball_owner != active_player:
+	if active_player == null or ball_owner != active_player:
 		return
 
-	# 直塞球：传到队友前方空当
-	var team = home_players if ball_owner.get("team_side") == GameState.TeamSide.HOME else away_players
-	var forward_dir = 1 if ball_owner.get("team_side") == GameState.TeamSide.HOME else -1
+	var team = home_players if active_player.team_side == GameState.TeamSide.HOME else away_players
+	var forward_dir = 1 if active_player.team_side == GameState.TeamSide.HOME else -1
 
 	var best_target = null
 	var best_score = -INF
 
 	for p in team:
-		if p == ball_owner:
+		if p == active_player:
 			continue
-		var forward_score = (p.position.z - ball_owner.position.z) * forward_dir
-		var dist = ball_owner.position.distance_to(p.position)
+		var forward_score = (p.position.z - active_player.position.z) * forward_dir
+		var dist = active_player.position.distance_to(p.position)
 		if dist > 5 and dist < 40 and forward_score > 5:
 			if forward_score > best_score:
 				best_score = forward_score
 				best_target = p
 
 	if best_target:
-		# 传到队友前方更远的位置
-		var lead = Vector3(0, 0, forward_dir * 5)
+		# 传到队友前方更远的位置（直塞）
+		var lead = Vector3(0, 0, forward_dir * 8)
 		var target_pos = best_target.position + lead
-		var dir = (target_pos - ball_owner.position)
+		var dir = (target_pos - active_player.position)
 		dir.y = 0
 		dir = dir.normalized()
 
-		ball_velocity = dir * (PASS_SPEED * 1.2)
-		ball_height_velocity = 1.0
+		ball_velocity = dir * (PASS_SPEED * 1.3)
+		ball_height_velocity = 0.3
 		ball_owner = null
+		active_player.has_ball = false
+		active_player.play_action(4, 0.3)
+		ball_shot_type = ""
+
+func _do_cross():
+	if active_player == null or ball_owner != active_player:
+		return
+
+	# 传中：向禁区方向高弧线传球
+	var team = home_players if active_player.team_side == GameState.TeamSide.HOME else away_players
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if active_player.team_side == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
+
+	# 寻找禁区内队友
+	var best_target = null
+	var best_dist = INF
+	for p in team:
+		if p == active_player or p.is_goalkeeper:
+			continue
+		if abs(p.position.z - target_goal_z) < 20:
+			var d = abs(p.position.x)
+			if d < best_dist:
+				best_dist = d
+				best_target = p
+
+	if best_target:
+		var dir = (best_target.position - active_player.position)
+		dir.y = 0
+		dir = dir.normalized()
+
+		ball_velocity = dir * CROSS_SPEED
+		ball_height_velocity = 6.0  # 高弧线
+		ball_spin = 0.3  # 搓弧线
+		ball_owner = null
+		active_player.has_ball = false
+		active_player.play_action(4, 0.4)
+		ball_shot_type = "传中"
+
+func _do_lob():
+	if active_player == null or ball_owner != active_player:
+		return
+
+	# 挑球：球高高挑起，越过前方防守球员
+	var forward = active_player.facing_direction if active_player.facing_direction else Vector3.FORWARD
+	ball_velocity = Vector3(forward.x, 0, forward.z) * LOB_SPEED
+	ball_height_velocity = 8.0  # 高挑
+	ball_owner = null
+	active_player.has_ball = false
+	active_player.play_action(4, 0.3)
+	ball_shot_type = "挑球"
+
+func _do_one_two():
+	if active_player == null or ball_owner != active_player:
+		return
+
+	# 2过1：传球给队友，然后前插等待回传
+	var team = home_players if active_player.team_side == GameState.TeamSide.HOME else away_players
+	var forward_dir = 1 if active_player.team_side == GameState.TeamSide.HOME else -1
+
+	# 找前方最近的队友
+	var best_target = null
+	var best_dist = INF
+	for p in team:
+		if p == active_player:
+			continue
+		var forward_score = (p.position.z - active_player.position.z) * forward_dir
+		var dist = active_player.position.distance_to(p.position)
+		if dist > 5 and dist < 20 and forward_score > 0:
+			if dist < best_dist:
+				best_dist = dist
+				best_target = p
+
+	if best_target:
+		# 传球
+		var dir = (best_target.position - active_player.position)
+		dir.y = 0
+		dir = dir.normalized()
+		ball_velocity = dir * PASS_SPEED
+		ball_height_velocity = 0.3
+		ball_owner = null
+		active_player.has_ball = false
+
+		# 设置2过1状态
+		active_player.start_one_two(best_target)
+
+		# 让队友在前插方向等待回传
+		var run_target = active_player.position + Vector3(0, 0, forward_dir * 15)
+		active_player.home_position = run_target  # 临时改变跑位
+
+		ball_shot_type = "二过一"
+
+func _do_shoot():
+	if active_player == null or ball_owner != active_player:
+		return
+
+	var side = active_player.team_side
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if side == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
+	var dist_to_goal = abs(active_player.position.z - target_goal_z)
+
+	# 判断射门类型
+	var is_long_shot = dist_to_goal > 25
+	var is_curled = Input.is_action_pressed("sprint")  # Shift+空格 = 搓射
+	var is_knuckle = Input.is_action_pressed("tackle")  # L+空格 = 电梯球（简化）
+
+	var dir = Vector3(
+		randf_range(-3, 3) - active_player.position.x * 0.05,
+		0,
+		target_goal_z - active_player.position.z
+	).normalized()
+
+	# 射门属性影响
+	var shoot_attr = PlayerDatabase.get_player_attributes(active_player.player_id).get("shooting", 70) / 100.0
+	var accuracy = ai_params.get("shot_accuracy", 0.7) * (0.5 + shoot_attr * 0.5)
+
+	if randf() > accuracy:
+		dir.x += randf_range(-0.3, 0.3)
+		dir = dir.normalized()
+
+	var power = SHOT_SPEED * randf_range(0.85, 1.0)
+	if is_long_shot:
+		power = LONG_SHOT_SPEED
+		ball_shot_type = "远射"
+	elif is_curled:
+		ball_shot_type = "搓射"
+		ball_spin = 0.5  # 强旋转
+	elif is_knuckle:
+		ball_shot_type = "电梯球"
+		ball_spin = 0.0
+		ball_height_velocity = 4.0
+		power *= 1.1
+	else:
+		ball_shot_type = ""
+
+	ball_velocity = dir * power
+	if not is_knuckle:
+		ball_height_velocity = 2.0 + randf() * 2.0
+	ball_owner = null
+	active_player.has_ball = false
+	active_player.play_action(4, 0.5)
+
+	# 统计
+	Referee.record_shot(side, true)
+	var data = SaveManager.load_data()
+	data["stats"]["total_shots"] = data["stats"].get("total_shots", 0) + 1
+	SaveManager.save_data(data)
 
 func _do_tackle():
 	if active_player == null:
 		return
 
-	# 检查附近是否有对方控球者
-	var opp_team = away_players if active_player.get("team_side") == GameState.TeamSide.HOME else home_players
-	var tackle_radius = active_player.get("stats").tackle_radius
+	var opp_team = away_players if active_player.team_side == GameState.TeamSide.HOME else home_players
+	var tackle_radius = active_player.stats.get("tackle_radius", 2.0)
 
 	for p in opp_team:
 		var dist = active_player.position.distance_to(p.position)
 		if dist < tackle_radius:
-			# 抢断判定
-			var success_chance = ai_params.tackle_success
-			if randf() < success_chance:
-				# 抢断成功
-				if ball_owner == p:
-					ball_owner = null
-				# 球弹向抢断者前方
-				var dir = (ball.position - active_player.position)
-				dir.y = 0
-				dir = dir.normalized()
-				ball_velocity = dir * 8.0
-				ball_height_velocity = 1.0
+			_check_tackle(active_player, p)
+			return
 
-				# 统计
-				var data = SaveManager.load_data()
-				data["stats"]["total_tackles"] = data["stats"].get("total_tackles", 0) + 1
-				SaveManager.save_data(data)
-
-				print("[Match] 抢断成功！")
-				return
-			else:
-				print("[Match] 抢断失败")
-				return
+func _do_gk_rush():
+	# 门将出击
+	var team = home_players if player_side == GameState.TeamSide.HOME else away_players
+	for p in team:
+		if p.is_goalkeeper:
+			# 向球的位置出击
+			p.goalkeeper_rush(ball.position)
+			_show_event("门将出击！", 1.0)
+			return
 
 # ============================================================
 # AI 更新
 # ============================================================
 
 func _update_ai(delta):
-	# 更新所有非玩家控制的球员
-	_update_team_ai(home_players, GameState.TeamSide.HOME, delta)
-	_update_team_ai(away_players, GameState.TeamSide.AWAY, delta)
-
-func _update_team_ai(team: Array, side: int, delta: int):
-	var has_ball = _team_has_ball(side)
-	var ball_side = _get_ball_side()
-
-	# 球队战术决策
-	var tactic = _decide_tactic(side, has_ball, ball_side)
-
-	for p in team:
-		if p == active_player and p.get("is_player_controlled"):
-			continue  # 玩家控制的球员跳过AI
+	# 更新所有非玩家控制的球员AI
+	for p in home_players + away_players:
 		if not is_instance_valid(p):
 			continue
-
-		_update_player_ai(p, side, has_ball, tactic, delta)
-
-func _team_has_ball(side: int) -> bool:
-	if ball_owner == null:
-		return false
-	return ball_owner.get("team_side") == side
-
-func _get_ball_side() -> int:
-	# 返回球更靠近哪一方
-	if ball.position.z < 0:
-		return GameState.TeamSide.HOME
-	return GameState.TeamSide.AWAY
-
-func _decide_tactic(side: int, has_ball: bool, ball_side: int) -> Dictionary:
-	# 球队战术：进攻、平衡、防守
-	var tactic = {
-		"mode": "balance",  # attack / balance / defend
-		"press": false,     # 是否高位逼抢
-	}
-
-	var forward_dir = 1 if side == GameState.TeamSide.HOME else -1
-	var ball_in_own_half = (ball.position.z * forward_dir) < 0
-
-	if has_ball:
-		tactic.mode = "attack"
-	elif ball_side == side:
-		# 球在本方半场但没控球
-		tactic.mode = "defend"
-		tactic.press = true
-	else:
-		# 球在对方半场
-		tactic.mode = "balance"
-		tactic.press = ai_params.press_intensity > 0.5
-
-	# 活动修正：落后时增加压迫
-	var event_mods = GameState.current_event.get("modifiers", {})
-	if event_mods.get("ai_defensive_mode", false):
-		tactic.mode = "defend"
-
-	return tactic
-
-func _update_player_ai(player: Node, side: int, team_has_ball: bool, tactic: Dictionary, delta: float):
-	var home_pos = player.get("home_position")
-	if side == GameState.TeamSide.AWAY:
-		home_pos = Vector3(-home_pos.x, 0, -home_pos.z)
-
-	var ball_pos = ball.position
-	var to_ball = ball_pos - player.position
-	to_ball.y = 0
-	var dist_to_ball = to_ball.length()
-
-	var stats = player.get("stats")
-	var speed = stats.speed * ai_params.chase_speed_mult
-	var is_gk = player.get("is_goalkeeper")
-
-	# 控球检测
-	if ball_owner == null and dist_to_ball < stats.control_radius and ball_height < 1.5:
-		# 检查谁更近
-		var nearest = _get_nearest_player_to_ball()
-		if nearest == player:
-			ball_owner = player
-			player.set("has_ball", true)
-			last_touch_team = side
-
-	var move_dir = Vector3.ZERO
-
-	if ball_owner == player:
-		# 控球AI
-		move_dir = _ai_dribble(player, side, tactic)
-		player.set("input_direction", move_dir)
-		player.set("is_sprinting", false)
-
-		# AI传球/射门决策
-		_ai_decide_action(player, side, tactic)
-	elif is_gk:
-		# 门将AI
-		move_dir = _ai_goalkeeper(player, side)
-		player.set("input_direction", move_dir)
-		player.set("is_sprinting", false)
-	else:
-		# 非控球球员AI
-		if team_has_ball:
-			# 本队有球：跑位
-			move_dir = _ai_off_ball_attack(player, side, tactic)
+		if p == active_player and p.is_player_controlled:
+			continue
+		if p.is_goalkeeper:
+			_update_goalkeeper_ai(p, delta)
 		else:
-			# 本队无球：防守
-			if _is_closest_defender(player, side) and dist_to_ball < 20:
-				# 最近的球员去追球
-				move_dir = to_ball.normalized()
-				player.set("is_sprinting", dist_to_ball > 5)
-			else:
-				# 其他球员回防或保持阵型
-				move_dir = _ai_defend_position(player, side, tactic)
+			_update_player_ai(p, delta)
 
-		player.set("input_direction", move_dir)
+func _update_goalkeeper_ai(gk: CharacterBody3D, delta: float):
+	if gk.gk_rushing:
+		return  # 出击中，由player_controller处理
 
-func _ai_dribble(player: Node, side: int, tactic: Dictionary) -> Vector3:
-	# 控球时带球前进
-	var forward_dir = 1 if side == GameState.TeamSide.HOME else -1
-	var target_goal_z = GameState.FIELD_LENGTH / 2 * forward_dir
+	var target_goal_z = -GameState.FIELD_LENGTH / 2 if gk.team_side == GameState.TeamSide.HOME else GameState.FIELD_LENGTH / 2
+	var ball_pos = ball.position
 
-	# 朝对方球门方向移动
-	var to_goal = Vector3(0, 0, target_goal_z) - player.position
-	to_goal.y = 0
+	# 门将在小禁区内移动，跟随球的横向位置
+	var gk_x = clamp(ball_pos.x * 0.3, -3.0, 3.0)
+	var gk_z = target_goal_z + (5.0 if gk.team_side == GameState.TeamSide.HOME else -5.0)
+	var target = Vector3(gk_x, 0, gk_z)
 
-	# 避开对方球员
-	var opp_team = away_players if side == GameState.TeamSide.HOME else home_players
-	var avoid = Vector3.ZERO
-	for opp in opp_team:
-		var to_opp = opp.position - player.position
-		to_opp.y = 0
-		var d = to_opp.length()
-		if d < 5 and d > 0:
-			avoid -= to_opp.normalized() * (5 - d) / 5
+	# 如果球很近且向球门方向，冲出来
+	var ball_to_goal = abs(ball_pos.z - target_goal_z)
+	if ball_to_goal < 15 and abs(ball_pos.z - target_goal_z) < 15:
+		# 检查球是否向球门移动
+		var goal_dir = sign(target_goal_z - ball_pos.z)
+		if sign(ball_velocity.z) == goal_dir and ball_velocity.length() > 5:
+			gk.goalkeeper_rush(ball_pos)
+			return
 
-	var move = to_goal.normalized() + avoid * 0.5
-	return move.normalized()
+	# 移动到目标位置
+	var to_target = target - gk.position
+	to_target.y = 0
+	if to_target.length() > 0.5:
+		gk.input_direction = to_target.normalized()
+	else:
+		gk.input_direction = Vector3.ZERO
 
-func _ai_decide_action(player: Node, side: int, tactic: Dictionary):
-	# AI决策：传球、射门或继续带球
-	var target_goal_z = GameState.FIELD_LENGTH / 2 * (1 if side == GameState.TeamSide.HOME else -1)
-	var dist_to_goal = abs(player.position.z - target_goal_z)
+func _update_player_ai(p: CharacterBody3D, delta: float):
+	# 简化AI：根据球的位置和阵型决定行为
+	var ball_pos = ball.position
+	var home_pos = p.home_position
+
+	# 判断是否是离球最近的队友
+	var team = home_players if p.team_side == GameState.TeamSide.HOME else away_players
+	var is_nearest = true
+	var my_dist = p.position.distance_to(ball_pos)
+	for teammate in team:
+		if teammate == p or teammate.is_goalkeeper:
+			continue
+		if teammate.position.distance_to(ball_pos) < my_dist:
+			is_nearest = false
+			break
+
+	# 有球时
+	if ball_owner == p:
+		_ai_with_ball(p, delta)
+	# 离球最近时追球
+	elif ball_owner == null and is_nearest:
+		var to_ball = ball_pos - p.position
+		to_ball.y = 0
+		p.input_direction = to_ball.normalized()
+		p.is_sprinting = to_ball.length() > 10
+	# 无球时回到阵型位置
+	else:
+		var to_home = home_pos - p.position
+		to_home.y = 0
+		if to_home.length() > 1.0:
+			p.input_direction = to_home.normalized()
+			p.is_sprinting = to_home.length() > 15
+		else:
+			p.input_direction = Vector3.ZERO
+			p.is_sprinting = false
+
+func _ai_with_ball(p: CharacterBody3D, delta: float):
+	var side = p.team_side
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if side == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
+	var dist_to_goal = abs(p.position.z - target_goal_z)
 
 	# 射门判定
-	if dist_to_goal < 25 and abs(player.position.x) < 25:
+	if dist_to_goal < 25 and abs(p.position.x) < 25:
 		if randf() < 0.02 * (1 + (25 - dist_to_goal) / 25):
-			_ai_shoot(player, side)
+			_ai_shoot(p, side)
 			return
 
 	# 传球判定
 	if randf() < 0.015:
-		_ai_pass(player, side)
+		_ai_pass(p, side)
 		return
 
-func _ai_shoot(player: Node, side: int):
-	var target_goal_z = GameState.FIELD_LENGTH / 2 * (1 if side == GameState.TeamSide.HOME else -1)
+	# 带球前进
+	var goal_dir = Vector3(0, 0, target_goal_z - p.position.z).normalized()
+	# 避开对手
+	var avoid = Vector3.ZERO
+	var opp_team = away_players if side == GameState.TeamSide.HOME else home_players
+	for opp in opp_team:
+		var d = p.position.distance_to(opp.position)
+		if d < 4 and d > 0.1:
+			avoid += (p.position - opp.position).normalized() / d
+	avoid = avoid.normalized()
+
+	p.input_direction = (goal_dir + avoid * 2).normalized()
+	p.is_sprinting = false
+
+func _ai_shoot(p: Node, side: int):
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if side == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
 	var dir = Vector3(
-		randf_range(-3, 3) - player.position.x * 0.05,
+		randf_range(-3, 3) - p.position.x * 0.05,
 		0,
-		target_goal_z - player.position.z
+		target_goal_z - p.position.z
 	).normalized()
 
-	var accuracy = ai_params.shot_accuracy
-	var power = SHOT_SPEED * randf_range(0.8, 1.0)
-	# 不准时偏移
+	var accuracy = ai_params.get("shot_accuracy", 0.7)
 	if randf() > accuracy:
 		dir.x += randf_range(-0.3, 0.3)
 		dir = dir.normalized()
 
+	var power = SHOT_SPEED * randf_range(0.8, 1.0)
 	ball_velocity = dir * power
-	ball_height_velocity = 3.0
+	ball_height_velocity = 2.0 + randf() * 2.0
 	ball_owner = null
+	p.has_ball = false
 	last_touch_team = side
+	last_touch_player = p
+	ball_shot_type = "远射" if abs(p.position.z - target_goal_z) > 25 else ""
+	Referee.record_shot(side, true)
 
-func _ai_pass(player: Node, side: int):
+func _ai_pass(p: Node, side: int):
 	var team = home_players if side == GameState.TeamSide.HOME else away_players
 	var forward_dir = 1 if side == GameState.TeamSide.HOME else -1
 
 	var best_target = null
 	var best_score = -INF
 
-	for p in team:
-		if p == player:
+	for teammate in team:
+		if teammate == p:
 			continue
-		var forward_score = (p.position.z - player.position.z) * forward_dir
-		var dist = player.position.distance_to(p.position)
+		var forward_score = (teammate.position.z - p.position.z) * forward_dir
+		var dist = p.position.distance_to(teammate.position)
 		if dist > 3 and dist < 35:
 			var score = forward_score - dist * 0.2
 			if score > best_score:
 				best_score = score
-				best_target = p
+				best_target = teammate
 
 	if best_target:
-		var dir = (best_target.position - player.position)
+		var dir = (best_target.position - p.position)
 		dir.y = 0
-		# 传球准确率
-		if randf() > ai_params.pass_accuracy:
+		if randf() > ai_params.get("pass_accuracy", 0.8):
 			dir.x += randf_range(-0.3, 0.3)
 			dir.z += randf_range(-0.3, 0.3)
 		dir = dir.normalized()
 
 		ball_velocity = dir * PASS_SPEED
-		ball_height_velocity = 1.5
+		ball_height_velocity = 0.5
 		ball_owner = null
+		p.has_ball = false
 		last_touch_team = side
-
-func _ai_goalkeeper(player: Node, side: int) -> Vector3:
-	# 门将守在球门前，跟随球的横向位置
-	var goal_z = -GameState.FIELD_LENGTH / 2 if side == GameState.TeamSide.HOME else GameState.FIELD_LENGTH / 2
-	var target_x = clamp(ball.position.x * 0.3, -GameState.GOAL_WIDTH, GameState.GOAL_WIDTH)
-	var target = Vector3(target_x, 0, goal_z + (3 if side == GameState.TeamSide.HOME else -3))
-
-	# 如果球很近且在禁区，出击
-	var dist_to_ball = player.position.distance_to(ball.position)
-	if dist_to_ball < 8 and ball_height < 2:
-		target = ball.position
-
-	var dir = target - player.position
-	dir.y = 0
-	return dir.normalized() if dir.length() > 0.5 else Vector3.ZERO
-
-func _ai_off_ball_attack(player: Node, side: int, tactic: Dictionary) -> Vector3:
-	# 无球进攻：向前跑位
-	var forward_dir = 1 if side == GameState.TeamSide.HOME else -1
-	var home_pos = player.get("home_position")
-	if side == GameState.TeamSide.AWAY:
-		home_pos = Vector3(-home_pos.x, 0, -home_pos.z)
-
-	# 向前压上
-	var target = home_pos + Vector3(0, 0, forward_dir * 10)
-	var dir = target - player.position
-	dir.y = 0
-	return dir.normalized() if dir.length() > 1 else Vector3.ZERO
-
-func _ai_defend_position(player: Node, side: int, tactic: Dictionary) -> Vector3:
-	# 防守站位：回到本方半场，在球和球门之间
-	var home_pos = player.get("home_position")
-	if side == GameState.TeamSide.AWAY:
-		home_pos = Vector3(-home_pos.x, 0, -home_pos.z)
-
-	# 根据球的位置调整站位
-	var target = home_pos
-	target.x = lerp(home_pos.x, ball.position.x * 0.5, 0.3)
-
-	var dir = target - player.position
-	dir.y = 0
-	return dir.normalized() if dir.length() > 1 else Vector3.ZERO
-
-func _is_closest_defender(player: Node, side: int) -> bool:
-	var team = home_players if side == GameState.TeamSide.HOME else away_players
-	var min_dist = INF
-	var closest = null
-	for p in team:
-		if p.get("is_goalkeeper"):
-			continue
-		var d = p.position.distance_to(ball.position)
-		if d < min_dist:
-			min_dist = d
-			closest = p
-	return closest == player
-
-func _get_nearest_player_to_ball() -> Node:
-	var all_players = home_players + away_players
-	var nearest = null
-	var min_dist = INF
-	for p in all_players:
-		if not is_instance_valid(p):
-			continue
-		var d = p.position.distance_to(ball.position)
-		if d < min_dist:
-			min_dist = d
-			nearest = p
-	return nearest
-
-# ============================================================
-# 体力系统
-# ============================================================
-
-func _update_stamina(delta):
-	for p in home_players + away_players:
-		if not is_instance_valid(p):
-			continue
-		var stats = p.get("stats")
-		var current = p.get("current_stamina", stats.stamina)
-		if p.get("is_sprinting", false):
-			current -= stats.stamina_drain * delta
-		else:
-			current += stats.stamina_recover * delta
-		current = clamp(current, 0, stats.stamina)
-		p.set("current_stamina", current)
-
-# ============================================================
-# 摄像机
-# ============================================================
-
-func _update_camera(delta):
-	# 摄像机跟随球或活跃球员
-	var target = ball.position
-	if active_player and is_instance_valid(active_player):
-		# 在球和活跃球员之间取中点
-		target = (ball.position + active_player.position) / 2
-
-	# 平滑移动
-	var cam_settings = SaveManager.get_settings()
-	var cam_mode = cam_settings.get("camera_mode", "follow")
-
-	match cam_mode:
-		"follow":
-			var desired_pos = target + Vector3(0, CAMERA_HEIGHT, -CAMERA_DISTANCE)
-			camera.position = camera.position.lerp(desired_pos, delta * 3)
-			camera.look_at(target + Vector3(0, 0, 5), Vector3.UP)
-		"fixed":
-			camera.position = Vector3(0, CAMERA_HEIGHT, -CAMERA_DISTANCE - 10)
-			camera.look_at(Vector3(0, 0, 0), Vector3.UP)
-		"broadcast":
-			# 广播视角：更高更远
-			var desired_pos = target + Vector3(0, CAMERA_HEIGHT * 1.5, -CAMERA_DISTANCE * 1.3)
-			camera.position = camera.position.lerp(desired_pos, delta * 2)
-			camera.look_at(target, Vector3.UP)
+		last_touch_player = p
+		ball_shot_type = ""
 
 # ============================================================
 # UI 更新
@@ -1503,37 +1693,67 @@ func _update_camera(delta):
 func _update_ui():
 	score_label.text = "%d - %d" % [home_score, away_score]
 
-	var remaining = max(0, half_duration - match_time)
-	var minutes = int(remaining / 60)
-	var seconds = int(remaining) % 60
-	time_label.text = "%02d:%02d" % [minutes, seconds]
+	var display_time = match_time
+	var minutes = int(display_time / (half_duration / 45.0))
+	if current_half == 2:
+		minutes += 45
+	time_label.text = "%02d:%02d" % [minutes, int(display_time) % 60]
 
-	# 接近结束时显示加时
-	if remaining < 30 and match_phase == GameState.MatchPhase.PLAYING:
-		time_label.add_theme_color_override("font_color", Color.RED)
-	else:
-		time_label.add_theme_color_override("font_color", Color.YELLOW)
+	# 进球名单
+	var scorer_text = ""
+	for s in home_scorers:
+		var name = PlayerDatabase.get_player_short_name(s.player_id) if s.player_id != "" else "球员%d" % s.number
+		if s.is_own_goal:
+			name += "(乌龙)"
+		scorer_text += "%d' %s %s\n" % [s.minute, name, s.type]
+	scorer_text += "\n"
+	for s in away_scorers:
+		var name = PlayerDatabase.get_player_short_name(s.player_id) if s.player_id != "" else "球员%d" % s.number
+		if s.is_own_goal:
+			name += "(乌龙)"
+		scorer_text += "%d' %s %s\n" % [s.minute, name, s.type]
+	scorer_list_label.text = scorer_text
+
+	# 统计
+	var ref_stats = Referee.match_stats
+	stats_label.text = "射门 %d-%d\n射正 %d-%d\n犯规 %d-%d\n角球 %d-%d\n黄牌 %d-%d" % [
+		ref_stats.shots.home, ref_stats.shots.away,
+		ref_stats.shots_on_target.home, ref_stats.shots_on_target.away,
+		ref_stats.fouls.home, ref_stats.fouls.away,
+		ref_stats.corners.home, ref_stats.corners.away,
+		ref_stats.yellow_cards.home, ref_stats.yellow_cards.away,
+	]
+
+func _show_event(text: String, duration: float):
+	event_notification.text = text
+	event_notification.visible = true
+	event_notification.modulate.a = 1.0
+
+	# 创建Tween淡出
+	var tween = create_tween()
+	tween.tween_interval(duration)
+	tween.tween_property(event_notification, "modulate:a", 0.0, 0.5)
+	tween.tween_callback(func():
+		event_notification.visible = false
+	)
 
 # ============================================================
-# 局域网输入处理
+# 网络联机
 # ============================================================
 
 func _handle_remote_input(sender_id: int, input_data: Dictionary):
-	# 房主收到客户端的输入
-	# 简化实现：客户端控制客队
 	if not config.get("is_lan_match", false) or not NetworkManager.is_host:
 		return
 
-	# 将远程输入应用到客队活跃球员
 	var remote_input = input_data.get("input_vector", Vector2.ZERO)
 	var remote_sprint = input_data.get("sprint", false)
 	var remote_actions = input_data.get("actions", [])
 
-	# 找到客队最靠近球的球员作为活跃球员
+	# 找到客队最靠近球的球员
 	var away_active = null
 	var min_dist = INF
 	for p in away_players:
-		if p.get("is_goalkeeper"):
+		if p.is_goalkeeper:
 			continue
 		var d = p.position.distance_to(ball.position)
 		if d < min_dist:
@@ -1542,27 +1762,28 @@ func _handle_remote_input(sender_id: int, input_data: Dictionary):
 
 	if away_active:
 		var move_dir = Vector3(remote_input.x, 0, remote_input.y)
-		away_active.set("input_direction", move_dir)
-		away_active.set("is_sprinting", remote_sprint)
-		away_active.set("is_player_controlled", true)
+		away_active.input_direction = move_dir
+		away_active.is_sprinting = remote_sprint
+		away_active.is_player_controlled = true
 
-		# 处理动作
 		for action in remote_actions:
 			match action:
 				"pass": _do_pass_for(away_active)
 				"shoot": _do_shoot_for(away_active)
 				"tackle": _do_tackle_for(away_active)
+				"cross": _do_cross_for(away_active)
+				"lob": _do_lob_for(away_active)
 
 func _do_pass_for(player: Node):
 	if ball_owner != player:
 		return
-	var team = away_players if player.get("team_side") == GameState.TeamSide.AWAY else home_players
+	var team = away_players if player.team_side == GameState.TeamSide.AWAY else home_players
+	var forward_dir = 1 if player.team_side == GameState.TeamSide.HOME else -1
 	var best_target = null
 	var best_score = -INF
 	for p in team:
 		if p == player:
 			continue
-		var forward_dir = 1 if player.get("team_side") == GameState.TeamSide.HOME else -1
 		var forward_score = (p.position.z - player.position.z) * forward_dir
 		var dist = player.position.distance_to(p.position)
 		if dist > 3 and dist < 35:
@@ -1575,25 +1796,27 @@ func _do_pass_for(player: Node):
 		dir.y = 0
 		dir = dir.normalized()
 		ball_velocity = dir * PASS_SPEED
-		ball_height_velocity = 2.0
+		ball_height_velocity = 0.5
 		ball_owner = null
 
 func _do_shoot_for(player: Node):
 	if ball_owner != player:
 		return
-	var target_goal_z = GameState.FIELD_LENGTH / 2 if player.get("team_side") == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if player.team_side == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
 	var dir = Vector3(randf_range(-3, 3) - player.position.x * 0.1, 0, target_goal_z - player.position.z).normalized()
 	ball_velocity = dir * SHOT_SPEED
 	ball_height_velocity = 3.0
 	ball_owner = null
+	last_touch_team = player.team_side
+	last_touch_player = player
 
 func _do_tackle_for(player: Node):
-	var opp_team = home_players if player.get("team_side") == GameState.TeamSide.AWAY else away_players
-	var tackle_radius = player.get("stats").tackle_radius
+	var opp_team = home_players if player.team_side == GameState.TeamSide.AWAY else away_players
+	var tackle_radius = player.stats.get("tackle_radius", 2.0)
 	for p in opp_team:
 		var dist = player.position.distance_to(p.position)
 		if dist < tackle_radius:
-			if randf() < ai_params.tackle_success:
+			if randf() < ai_params.get("tackle_success", 0.6):
 				if ball_owner == p:
 					ball_owner = null
 				var dir = (ball.position - player.position)
@@ -1602,3 +1825,35 @@ func _do_tackle_for(player: Node):
 				ball_velocity = dir * 8.0
 				ball_height_velocity = 1.0
 				return
+
+func _do_cross_for(player: Node):
+	if ball_owner != player:
+		return
+	var team = away_players if player.team_side == GameState.TeamSide.AWAY else home_players
+	var target_goal_z = GameState.FIELD_LENGTH / 2 if player.team_side == GameState.TeamSide.HOME else -GameState.FIELD_LENGTH / 2
+	var best_target = null
+	var best_dist = INF
+	for p in team:
+		if p == player or p.is_goalkeeper:
+			continue
+		if abs(p.position.z - target_goal_z) < 20:
+			var d = abs(p.position.x)
+			if d < best_dist:
+				best_dist = d
+				best_target = p
+	if best_target:
+		var dir = (best_target.position - player.position)
+		dir.y = 0
+		dir = dir.normalized()
+		ball_velocity = dir * CROSS_SPEED
+		ball_height_velocity = 6.0
+		ball_spin = 0.3
+		ball_owner = null
+
+func _do_lob_for(player: Node):
+	if ball_owner != player:
+		return
+	var forward = player.facing_direction if player.facing_direction else Vector3.FORWARD
+	ball_velocity = Vector3(forward.x, 0, forward.z) * LOB_SPEED
+	ball_height_velocity = 8.0
+	ball_owner = null

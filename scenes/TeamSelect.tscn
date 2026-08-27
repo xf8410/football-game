@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3n4k5m6n7o8p"]
+
+[ext_resource type="Script" path="res://scripts/team_select.gd" id="1_team"]
+
+[node name="TeamSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_team")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.1, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = -300.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="LeagueLabel" type="Label" parent="ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "选择球队"
+
+[node name="TeamContainer" type="VBoxContainer" parent="ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TeamInfoPanel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 80.0
+offset_right = -20.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 16
+text = "请选择一支球队"
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "开始联赛"

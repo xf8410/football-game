@@ -1,0 +1,613 @@
+{
+  "players": {
+    "c_ronaldo": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": ["LW", "ST", "RW"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "sporting_cp", "years": "2002-2003", "age_range": [17, 18]},
+        {"club": "man_united", "years": "2003-2009", "age_range": [18, 24]},
+        {"club": "real_madrid", "years": "2009-2018", "age_range": [24, 33]},
+        {"club": "juventus", "years": "2018-2021", "age_range": [33, 36]},
+        {"club": "man_united", "years": "2021-2022", "age_range": [36, 37]},
+        {"club": "al_nassr", "years": "2023-至今", "age_range": [38, 40]}
+      ],
+      "special_versions": {
+        "annual": "年度最佳版（金球奖赛季）",
+        "moment": "时刻版（欧冠经典表现）",
+        "euro": "欧洲杯版（葡萄牙夺冠2016）",
+        "league_legend": "英超传奇版"
+      },
+      "attributes": {"pace": 88, "shooting": 94, "passing": 82, "dribbling": 87, "defending": 35, "physical": 80},
+      "traits": ["long_shot", "header", "free_kick", "weak_foot_5", "flair"],
+      "era_peak": "real_madrid"
+    },
+    "messi": {
+      "name": "利昂内尔·梅西",
+      "short_name": "梅西",
+      "nationality": "阿根廷",
+      "positions": ["RW", "CF", "CAM"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "barcelona", "years": "2004-2021", "age_range": [17, 34]},
+        {"club": "psg", "years": "2021-2023", "age_range": [34, 36]},
+        {"club": "inter_miami", "years": "2023-至今", "age_range": [36, 38]}
+      ],
+      "attributes": {"pace": 85, "shooting": 92, "passing": 91, "dribbling": 95, "defending": 33, "physical": 68},
+      "traits": ["dribbler", "playmaker", "free_kick", "weak_foot_4", "flair", "vision"],
+      "era_peak": "barcelona"
+    },
+    "mbappe": {
+      "name": "基利安·姆巴佩",
+      "short_name": "姆巴佩",
+      "nationality": "法国",
+      "positions": ["LW", "ST", "CF"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "monaco", "years": "2015-2017", "age_range": [16, 18]},
+        {"club": "psg", "years": "2017-2024", "age_range": [18, 25]},
+        {"club": "real_madrid", "years": "2024-至今", "age_range": [25, 27]}
+      ],
+      "attributes": {"pace": 97, "shooting": 90, "passing": 80, "dribbling": 92, "defending": 36, "physical": 78},
+      "traits": ["speedster", "finisher", "weak_foot_5", "flair"],
+      "era_peak": "psg"
+    },
+    "haaland": {
+      "name": "厄林·哈兰德",
+      "short_name": "哈兰德",
+      "nationality": "挪威",
+      "positions": ["ST", "CF"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "molde", "years": "2017-2018", "age_range": [16, 17]},
+        {"club": "rb_leipzig", "years": "2019-2020", "age_range": [18, 19]},
+        {"club": "dortmund", "years": "2020-2022", "age_range": [19, 21]},
+        {"club": "man_city", "years": "2022-至今", "age_range": [22, 25]}
+      ],
+      "attributes": {"pace": 89, "shooting": 93, "passing": 66, "dribbling": 80, "defending": 45, "physical": 88},
+      "traits": ["target_man", "finisher", "header", "powerful"],
+      "era_peak": "man_city"
+    },
+    "bellingham": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": ["CAM", "CM", "CF"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "birmingham", "years": "2019-2020", "age_range": [16, 17]},
+        {"club": "dortmund", "years": "2020-2023", "age_range": [17, 20]},
+        {"club": "real_madrid", "years": "2023-至今", "age_range": [20, 22]}
+      ],
+      "attributes": {"pace": 80, "shooting": 84, "passing": 86, "dribbling": 87, "defending": 75, "physical": 82},
+      "traits": ["box_to_box", "leader", "late_runs", "flair"],
+      "era_peak": "real_madrid"
+    },
+    "vinicius": {
+      "name": "维尼修斯·儒尼奥尔",
+      "short_name": "维尼修斯",
+      "nationality": "巴西",
+      "positions": ["LW", "RW"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "flamengo", "years": "2017-2018", "age_range": [16, 17]},
+        {"club": "real_madrid", "years": "2018-至今", "age_range": [18, 24]}
+      ],
+      "attributes": {"pace": 95, "shooting": 83, "passing": 78, "dribbling": 92, "defending": 29, "physical": 70},
+      "traits": ["speedster", "dribbler", "flair", "skill_moves"],
+      "era_peak": "real_madrid"
+    },
+    "rodrygo": {
+      "name": "罗德里戈·戈埃斯",
+      "short_name": "罗德里戈",
+      "nationality": "巴西",
+      "positions": ["RW", "LW", "CF"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "santos", "years": "2017-2019", "age_range": [16, 18]},
+        {"club": "real_madrid", "years": "2019-至今", "age_range": [18, 24]}
+      ],
+      "attributes": {"pace": 89, "shooting": 80, "passing": 78, "dribbling": 87, "defending": 35, "physical": 68},
+      "traits": ["dribbler", "big_game", "flair"],
+      "era_peak": "real_madrid"
+    },
+    "de_bruyne": {
+      "name": "凯文·德布劳内",
+      "short_name": "德布劳内",
+      "nationality": "比利时",
+      "positions": ["CAM", "CM", "RM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "werder_bremen", "years": "2012-2014", "age_range": [21, 23]},
+        {"club": "wolfsburg", "years": "2014-2015", "age_range": [23, 24]},
+        {"club": "man_city", "years": "2015-至今", "age_range": [24, 33]}
+      ],
+      "attributes": {"pace": 76, "shooting": 86, "passing": 94, "dribbling": 87, "defending": 64, "physical": 78},
+      "traits": ["playmaker", "vision", "long_pass", "cross", "weak_foot_5"],
+      "era_peak": "man_city"
+    },
+    "rodrri": {
+      "name": "罗德里",
+      "short_name": "罗德里",
+      "nationality": "西班牙",
+      "positions": ["CDM", "CM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "atletico_madrid", "years": "2018-2019", "age_range": [22, 23]},
+        {"club": "man_city", "years": "2019-至今", "age_range": [23, 28]}
+      ],
+      "attributes": {"pace": 64, "shooting": 75, "passing": 86, "dribbling": 78, "defending": 86, "physical": 85},
+      "traits": ["playmaker", "defensive", "leader", "ball_control"],
+      "era_peak": "man_city"
+    },
+    "foden": {
+      "name": "菲尔·福登",
+      "short_name": "福登",
+      "nationality": "英格兰",
+      "positions": ["CAM", "LW", "RW"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "man_city", "years": "2017-至今", "age_range": [17, 24]}
+      ],
+      "attributes": {"pace": 82, "shooting": 82, "passing": 84, "dribbling": 88, "defending": 54, "physical": 68},
+      "traits": ["dribbler", "flair", "playmaker"],
+      "era_peak": "man_city"
+    },
+    "bernardo_silva": {
+      "name": "贝尔纳多·席尔瓦",
+      "short_name": "B席",
+      "nationality": "葡萄牙",
+      "positions": ["CAM", "RM", "CM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "monaco", "years": "2014-2017", "age_range": [20, 23]},
+        {"club": "man_city", "years": "2017-至今", "age_range": [23, 30]}
+      ],
+      "attributes": {"pace": 78, "shooting": 80, "passing": 86, "dribbling": 89, "defending": 64, "physical": 72},
+      "traits": ["dribbler", "workhorse", "playmaker"],
+      "era_peak": "man_city"
+    },
+    "alvarez": {
+      "name": "胡利安·阿尔瓦雷斯",
+      "short_name": "阿尔瓦雷斯",
+      "nationality": "阿根廷",
+      "positions": ["ST", "CF", "CAM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "river_plate", "years": "2018-2022", "age_range": [18, 22]},
+        {"club": "man_city", "years": "2022-2024", "age_range": [22, 24]},
+        {"club": "atletico_madrid", "years": "2024-至今", "age_range": [24, 25]}
+      ],
+      "attributes": {"pace": 84, "shooting": 84, "passing": 78, "dribbling": 84, "defending": 50, "physical": 75},
+      "traits": ["workhorse", "finisher", "pressing"],
+      "era_peak": "man_city"
+    },
+    "bruno_fernandes": {
+      "name": "布鲁诺·费尔南德斯",
+      "short_name": "B费",
+      "nationality": "葡萄牙",
+      "positions": ["CAM", "CM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "sporting_cp", "years": "2017-2020", "age_range": [23, 25]},
+        {"club": "man_united", "years": "2020-至今", "age_range": [25, 30]}
+      ],
+      "attributes": {"pace": 75, "shooting": 85, "passing": 89, "dribbling": 82, "defending": 69, "physical": 75},
+      "traits": ["playmaker", "long_shot", "vision", "leader"],
+      "era_peak": "man_united"
+    },
+    "salah": {
+      "name": "穆罕默德·萨拉赫",
+      "short_name": "萨拉赫",
+      "nationality": "埃及",
+      "positions": ["RW", "ST"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "basel", "years": "2012-2014", "age_range": [20, 22]},
+        {"club": "chelsea", "years": "2014-2016", "age_range": [22, 24]},
+        {"club": "roma", "years": "2016-2017", "age_range": [24, 25]},
+        {"club": "liverpool", "years": "2017-至今", "age_range": [25, 32]}
+      ],
+      "attributes": {"pace": 90, "shooting": 87, "passing": 81, "dribbling": 88, "defending": 45, "physical": 75},
+      "traits": ["speedster", "finisher", "cut_inside", "weak_foot_4"],
+      "era_peak": "liverpool"
+    },
+    "vandijk": {
+      "name": "维吉尔·范戴克",
+      "short_name": "范戴克",
+      "nationality": "荷兰",
+      "positions": ["CB"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "celtic", "years": "2013-2015", "age_range": [22, 24]},
+        {"club": "southampton", "years": "2015-2018", "age_range": [24, 27]},
+        {"club": "liverpool", "years": "2018-至今", "age_range": [27, 33]}
+      ],
+      "attributes": {"pace": 78, "shooting": 60, "passing": 71, "dribbling": 72, "defending": 90, "physical": 86},
+      "traits": ["defensive_leader", "header", "strong", "leader"],
+      "era_peak": "liverpool"
+    },
+    "saka": {
+      "name": "布卡约·萨卡",
+      "short_name": "萨卡",
+      "nationality": "英格兰",
+      "positions": ["RW", "LW", "LB"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "arsenal", "years": "2018-至今", "age_range": [17, 23]}
+      ],
+      "attributes": {"pace": 86, "shooting": 80, "passing": 82, "dribbling": 86, "defending": 65, "physical": 72},
+      "traits": ["dribbler", "cross", "weak_foot_4", "young_talent"],
+      "era_peak": "arsenal"
+    },
+    "odegaard": {
+      "name": "马丁·厄德高",
+      "short_name": "厄德高",
+      "nationality": "挪威",
+      "positions": ["CAM", "CM"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "real_madrid", "years": "2015-2021", "age_range": [16, 22]},
+        {"club": "arsenal", "years": "2021-至今", "age_range": [22, 25]}
+      ],
+      "attributes": {"pace": 76, "shooting": 82, "passing": 87, "dribbling": 86, "defending": 60, "physical": 68},
+      "traits": ["playmaker", "vision", "dribbler"],
+      "era_peak": "arsenal"
+    },
+    "rice": {
+      "name": "德克兰·赖斯",
+      "short_name": "赖斯",
+      "nationality": "英格兰",
+      "positions": ["CDM", "CM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "west_ham", "years": "2017-2023", "age_range": [18, 24]},
+        {"club": "arsenal", "years": "2023-至今", "age_range": [24, 26]}
+      ],
+      "attributes": {"pace": 76, "shooting": 70, "passing": 82, "dribbling": 78, "defending": 85, "physical": 85},
+      "traits": ["defensive", "leader", "ball_control", "box_to_box"],
+      "era_peak": "arsenal"
+    },
+    "kane": {
+      "name": "哈里·凯恩",
+      "short_name": "凯恩",
+      "nationality": "英格兰",
+      "positions": ["ST", "CF"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "tottenham", "years": "2009-2023", "age_range": [16, 30]},
+        {"club": "bayern_munich", "years": "2023-至今", "age_range": [30, 32]}
+      ],
+      "attributes": {"pace": 70, "shooting": 93, "passing": 84, "dribbling": 78, "defending": 47, "physical": 83},
+      "traits": ["finisher", "playmaker", "header", "weak_foot_5", "leader"],
+      "era_peak": "tottenham"
+    },
+    "musiala": {
+      "name": "贾马尔·穆西亚拉",
+      "short_name": "穆西亚拉",
+      "nationality": "德国",
+      "positions": ["CAM", "LW", "RW"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "bayern_munich", "years": "2020-至今", "age_range": [17, 22]}
+      ],
+      "attributes": {"pace": 85, "shooting": 80, "passing": 82, "dribbling": 92, "defending": 52, "physical": 65},
+      "traits": ["dribbler", "flair", "skill_moves", "young_talent"],
+      "era_peak": "bayern_munich"
+    },
+    "kimmich": {
+      "name": "约书亚·基米希",
+      "short_name": "基米希",
+      "nationality": "德国",
+      "positions": ["CDM", "CM", "RB"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "bayern_munich", "years": "2015-至今", "age_range": [20, 30]}
+      ],
+      "attributes": {"pace": 70, "shooting": 75, "passing": 88, "dribbling": 80, "defending": 80, "physical": 75},
+      "traits": ["playmaker", "defensive", "cross", "leader", "versatile"],
+      "era_peak": "bayern_munich"
+    },
+    "wirtz": {
+      "name": "弗洛里安·维尔茨",
+      "short_name": "维尔茨",
+      "nationality": "德国",
+      "positions": ["CAM", "LW"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "leverkusen", "years": "2020-至今", "age_range": [17, 22]}
+      ],
+      "attributes": {"pace": 82, "shooting": 78, "passing": 85, "dribbling": 88, "defending": 55, "physical": 65},
+      "traits": ["playmaker", "dribbler", "vision", "young_talent"],
+      "era_peak": "leverkusen"
+    },
+    "lewandowski": {
+      "name": "罗伯特·莱万多夫斯基",
+      "short_name": "莱万",
+      "nationality": "波兰",
+      "positions": ["ST"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "dortmund", "years": "2010-2014", "age_range": [22, 26]},
+        {"club": "bayern_munich", "years": "2014-2022", "age_range": [26, 34]},
+        {"club": "barcelona", "years": "2022-至今", "age_range": [34, 36]}
+      ],
+      "attributes": {"pace": 72, "shooting": 91, "passing": 79, "dribbling": 82, "defending": 44, "physical": 82},
+      "traits": ["finisher", "header", "weak_foot_4", "target_man"],
+      "era_peak": "bayern_munich"
+    },
+    "yamal": {
+      "name": "拉明·亚马尔",
+      "short_name": "亚马尔",
+      "nationality": "西班牙",
+      "positions": ["RW", "LW"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "barcelona", "years": "2023-至今", "age_range": [16, 18]}
+      ],
+      "attributes": {"pace": 87, "shooting": 75, "passing": 80, "dribbling": 88, "defending": 40, "physical": 60},
+      "traits": ["dribbler", "flair", "skill_moves", "wonderkid"],
+      "era_peak": "barcelona"
+    },
+    "pedri": {
+      "name": "佩德里",
+      "short_name": "佩德里",
+      "nationality": "西班牙",
+      "positions": ["CM", "CAM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "barcelona", "years": "2020-至今", "age_range": [17, 22]}
+      ],
+      "attributes": {"pace": 76, "shooting": 72, "passing": 85, "dribbling": 87, "defending": 60, "physical": 65},
+      "traits": ["playmaker", "dribbler", "vision", "young_talent"],
+      "era_peak": "barcelona"
+    },
+    "griezmann": {
+      "name": "安托万·格列兹曼",
+      "short_name": "格列兹曼",
+      "nationality": "法国",
+      "positions": ["CF", "ST", "CAM"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "real_sociedad", "years": "2009-2014", "age_range": [18, 23]},
+        {"club": "atletico_madrid", "years": "2014-2019", "age_range": [23, 28]},
+        {"club": "barcelona", "years": "2019-2022", "age_range": [28, 31]},
+        {"club": "atletico_madrid", "years": "2022-至今", "age_range": [31, 34]}
+      ],
+      "attributes": {"pace": 77, "shooting": 85, "passing": 85, "dribbling": 86, "defending": 60, "physical": 70},
+      "traits": ["playmaker", "finisher", "workhorse", "vision"],
+      "era_peak": "atletico_madrid"
+    },
+    "lautaro_martinez": {
+      "name": "劳塔罗·马丁内斯",
+      "short_name": "劳塔罗",
+      "nationality": "阿根廷",
+      "positions": ["ST", "CF"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "racing", "years": "2015-2018", "age_range": [18, 21]},
+        {"club": "inter_milan", "years": "2018-至今", "age_range": [21, 27]}
+      ],
+      "attributes": {"pace": 82, "shooting": 88, "passing": 75, "dribbling": 84, "defending": 50, "physical": 80},
+      "traits": ["finisher", "pressing", "workhorse", "header"],
+      "era_peak": "inter_milan"
+    },
+    "leao": {
+      "name": "拉斐尔·莱奥",
+      "short_name": "莱奥",
+      "nationality": "葡萄牙",
+      "positions": ["LW", "ST"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "sporting_cp", "years": "2017-2018", "age_range": [18, 19]},
+        {"club": "lille", "years": "2018-2019", "age_range": [19, 20]},
+        {"club": "ac_milan", "years": "2019-至今", "age_range": [20, 25]}
+      ],
+      "attributes": {"pace": 93, "shooting": 80, "passing": 76, "dribbling": 87, "defending": 35, "physical": 75},
+      "traits": ["speedster", "dribbler", "flair", "skill_moves"],
+      "era_peak": "ac_milan"
+    },
+    "pulisic": {
+      "name": "克里斯蒂安·普利西奇",
+      "short_name": "普利西奇",
+      "nationality": "美国",
+      "positions": ["RW", "LW", "CAM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "chelsea", "years": "2019-2023", "age_range": [20, 24]},
+        {"club": "ac_milan", "years": "2023-至今", "age_range": [24, 26]}
+      ],
+      "attributes": {"pace": 85, "shooting": 78, "passing": 78, "dribbling": 85, "defending": 45, "physical": 65},
+      "traits": ["dribbler", "speedster", "flair"],
+      "era_peak": "ac_milan"
+    },
+    "kvaratskhelia": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "K神",
+      "nationality": "格鲁吉亚",
+      "positions": ["LW", "RW"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "dinamo_batumi", "years": "2021-2022", "age_range": [20, 21]},
+        {"club": "napoli", "years": "2022-至今", "age_range": [21, 24]}
+      ],
+      "attributes": {"pace": 85, "shooting": 80, "passing": 78, "dribbling": 89, "defending": 40, "physical": 72},
+      "traits": ["dribbler", "flair", "skill_moves", "cut_inside"],
+      "era_peak": "napoli"
+    },
+    "osimhen": {
+      "name": "维克托·奥斯梅恩",
+      "short_name": "奥斯梅恩",
+      "nationality": "尼日利亚",
+      "positions": ["ST"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "lille", "years": "2019-2020", "age_range": [20, 21]},
+        {"club": "napoli", "years": "2020-至今", "age_range": [21, 25]}
+      ],
+      "attributes": {"pace": 89, "shooting": 86, "passing": 65, "dribbling": 78, "defending": 40, "physical": 82},
+      "traits": ["speedster", "finisher", "header", "target_man"],
+      "era_peak": "napoli"
+    },
+    "vlahovic": {
+      "name": "杜尚·弗拉霍维奇",
+      "short_name": "弗拉霍维奇",
+      "nationality": "塞尔维亚",
+      "positions": ["ST"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "fiorentina", "years": "2018-2022", "age_range": [18, 22]},
+        {"club": "juventus", "years": "2022-至今", "age_range": [22, 25]}
+      ],
+      "attributes": {"pace": 80, "shooting": 85, "passing": 68, "dribbling": 75, "defending": 40, "physical": 82},
+      "traits": ["finisher", "header", "target_man", "powerful"],
+      "era_peak": "juventus"
+    },
+    "dembele": {
+      "name": "乌斯曼·登贝莱",
+      "short_name": "登贝莱",
+      "nationality": "法国",
+      "positions": ["RW", "LW"],
+      "preferred_foot": "both",
+      "career": [
+        {"club": "rennes", "years": "2015-2016", "age_range": [18, 19]},
+        {"club": "dortmund", "years": "2016-2017", "age_range": [19, 20]},
+        {"club": "barcelona", "years": "2017-2023", "age_range": [20, 26]},
+        {"club": "psg", "years": "2023-至今", "age_range": [26, 28]}
+      ],
+      "attributes": {"pace": 90, "shooting": 78, "passing": 80, "dribbling": 88, "defending": 38, "physical": 65},
+      "traits": ["dribbler", "speedster", "weak_foot_5", "flair"],
+      "era_peak": "psg"
+    },
+    "modric": {
+      "name": "卢卡·莫德里奇",
+      "short_name": "魔笛",
+      "nationality": "克罗地亚",
+      "positions": ["CM", "CAM"],
+      "preferred_foot": "both",
+      "career": [
+        {"club": "dinamo_zagreb", "years": "2003-2008", "age_range": [18, 23]},
+        {"club": "tottenham", "years": "2008-2012", "age_range": [23, 27]},
+        {"club": "real_madrid", "years": "2012-至今", "age_range": [27, 39]}
+      ],
+      "attributes": {"pace": 74, "shooting": 78, "passing": 89, "dribbling": 87, "defending": 72, "physical": 65},
+      "traits": ["playmaker", "vision", "dribbler", "leader", "ball_control"],
+      "era_peak": "real_madrid"
+    },
+    "son": {
+      "name": "孙兴慜",
+      "short_name": "孙兴慜",
+      "nationality": "韩国",
+      "positions": ["LW", "ST", "RW"],
+      "preferred_foot": "both",
+      "career": [
+        {"club": "hamburger_sv", "years": "2010-2013", "age_range": [18, 21]},
+        {"club": "bayer_leverkusen", "years": "2013-2015", "age_range": [21, 23]},
+        {"club": "tottenham", "years": "2015-至今", "age_range": [23, 32]}
+      ],
+      "attributes": {"pace": 88, "shooting": 87, "passing": 82, "dribbling": 85, "defending": 43, "physical": 70},
+      "traits": ["speedster", "finisher", "weak_foot_5", "cut_inside"],
+      "era_peak": "tottenham"
+    },
+    "palmer": {
+      "name": "科尔·帕尔默",
+      "short_name": "帕尔默",
+      "nationality": "英格兰",
+      "positions": ["CAM", "RW", "CF"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "man_city", "years": "2020-2023", "age_range": [18, 21]},
+        {"club": "chelsea", "years": "2023-至今", "age_range": [21, 23]}
+      ],
+      "attributes": {"pace": 79, "shooting": 83, "passing": 82, "dribbling": 84, "defending": 50, "physical": 68},
+      "traits": ["playmaker", "finisher", "flair", "young_talent"],
+      "era_peak": "chelsea"
+    },
+    "valverde": {
+      "name": "费德里科·巴尔韦德",
+      "short_name": "巴尔韦德",
+      "nationality": "乌拉圭",
+      "positions": ["CM", "RM", "CAM"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "real_madrid", "years": "2018-至今", "age_range": [20, 26]}
+      ],
+      "attributes": {"pace": 85, "shooting": 82, "passing": 83, "dribbling": 82, "defending": 75, "physical": 82},
+      "traits": ["box_to_box", "long_shot", "workhorse", "powerful"],
+      "era_peak": "real_madrid"
+    },
+    "courtois": {
+      "name": "蒂博·库尔图瓦",
+      "short_name": "库尔图瓦",
+      "nationality": "比利时",
+      "positions": ["GK"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "atletico_madrid", "years": "2011-2014", "age_range": [19, 22]},
+        {"club": "chelsea", "years": "2014-2018", "age_range": [22, 26]},
+        {"club": "real_madrid", "years": "2018-至今", "age_range": [26, 32]}
+      ],
+      "attributes": {"gk_diving": 87, "gk_handling": 86, "gk_kicking": 86, "gk_reflexes": 88, "gk_positioning": 85},
+      "traits": ["gk_tall", "gk_1v1", "gk_saver"],
+      "era_peak": "real_madrid"
+    },
+    "donnarumma": {
+      "name": "詹路易吉·多纳鲁马",
+      "short_name": "多纳鲁马",
+      "nationality": "意大利",
+      "positions": ["GK"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "ac_milan", "years": "2015-2021", "age_range": [16, 22]},
+        {"club": "psg", "years": "2021-至今", "age_range": [22, 26]}
+      ],
+      "attributes": {"gk_diving": 85, "gk_handling": 82, "gk_kicking": 78, "gk_reflexes": 88, "gk_positioning": 83},
+      "traits": ["gk_tall", "gk_1v1", "gk_saver"],
+      "era_peak": "psg"
+    },
+    "neuer": {
+      "name": "曼努埃尔·诺伊尔",
+      "short_name": "诺伊尔",
+      "nationality": "德国",
+      "positions": ["GK"],
+      "preferred_foot": "both",
+      "career": [
+        {"club": "schalke", "years": "2006-2011", "age_range": [20, 25]},
+        {"club": "bayern_munich", "years": "2011-至今", "age_range": [25, 38]}
+      ],
+      "attributes": {"gk_diving": 84, "gk_handling": 85, "gk_kicking": 93, "gk_reflexes": 85, "gk_positioning": 87},
+      "traits": ["gk_sweeper", "gk_1v1", "gk_leader", "gk_distribution"],
+      "era_peak": "bayern_munich"
+    },
+    "alisson": {
+      "name": "阿利松·贝克尔",
+      "short_name": "阿利松",
+      "nationality": "巴西",
+      "positions": ["GK"],
+      "preferred_foot": "right",
+      "career": [
+        {"club": "roma", "years": "2016-2018", "age_range": [23, 25]},
+        {"club": "liverpool", "years": "2018-至今", "age_range": [25, 32]}
+      ],
+      "attributes": {"gk_diving": 85, "gk_handling": 85, "gk_kicking": 87, "gk_reflexes": 86, "gk_positioning": 86},
+      "traits": ["gk_sweeper", "gk_1v1", "gk_saver", "gk_distribution"],
+      "era_peak": "liverpool"
+    },
+    "ederson": {
+      "name": "埃德森",
+      "short_name": "埃德森",
+      "nationality": "巴西",
+      "positions": ["GK"],
+      "preferred_foot": "left",
+      "career": [
+        {"club": "benfica", "years": "2015-2017", "age_range": [22, 24]},
+        {"club": "man_city", "years": "2017-至今", "age_range": [24, 31]}
+      ],
+      "attributes": {"gk_diving": 83, "gk_handling": 82, "gk_kicking": 93, "gk_reflexes": 84, "gk_positioning": 83},
+      "traits": ["gk_sweeper", "gk_distribution", "gk_passing"],
+      "era_peak": "man_city"
+    }
+  }
+}

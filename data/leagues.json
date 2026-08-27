@@ -1,0 +1,52 @@
+{
+  "leagues": {
+    "premier_league": {
+      "name": "英格兰超级联赛",
+      "short_name": "英超",
+      "country": "英格兰",
+      "tier": 1,
+      "team_count": 10,
+      "color": "#3D195B"
+    },
+    "la_liga": {
+      "name": "西班牙甲级联赛",
+      "short_name": "西甲",
+      "country": "西班牙",
+      "tier": 1,
+      "team_count": 10,
+      "color": "#FF6B00"
+    },
+    "bundesliga": {
+      "name": "德国甲级联赛",
+      "short_name": "德甲",
+      "country": "德国",
+      "tier": 1,
+      "team_count": 8,
+      "color": "#D20515"
+    },
+    "serie_a": {
+      "name": "意大利甲级联赛",
+      "short_name": "意甲",
+      "country": "意大利",
+      "tier": 1,
+      "team_count": 8,
+      "color": "#008FD7"
+    },
+    "ligue_1": {
+      "name": "法国甲级联赛",
+      "short_name": "法甲",
+      "country": "法国",
+      "tier": 1,
+      "team_count": 6,
+      "color": "#091C3E"
+    },
+    "national": {
+      "name": "国家队",
+      "short_name": "国家队",
+      "country": "国际",
+      "tier": 0,
+      "team_count": 10,
+      "color": "#1A1A2E"
+    }
+  }
+}
