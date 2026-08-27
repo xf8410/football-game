@@ -30,6 +30,7 @@ SquadManager="*res://scripts/squad_manager.gd"
 PlayerDevelopment="*res://scripts/player_development.gd"
 AudioManager="*res://scripts/audio_manager.gd"
 Commentary="*res://scripts/commentary.gd"
+CommentaryTTS="*res://scripts/commentary_tts.gd"
 IconGenerator="*res://scripts/icon_generator.gd"
 SkillSystem="*res://scripts/skill_system.gd"
 CupManager="*res://scripts/cup_manager.gd"
@@ -38,6 +39,9 @@ TransferMarket="*res://scripts/transfer_market.gd"
 SkillIconGenerator="*res://scripts/skill_icon_generator.gd"
 PlayerPortrait="*res://scripts/player_portrait.gd"
 SeasonStats="*res://scripts/season_stats.gd"
+AdvancedAI="*res://scripts/advanced_ai.gd"
+YouthAcademy="*res://scripts/youth_academy.gd"
+LANMatch="*res://scripts/lan_match.gd"
 
 [display]
 

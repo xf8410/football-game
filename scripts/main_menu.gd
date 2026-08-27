@@ -12,6 +12,7 @@ extends Control
 @onready var specialties_button = $VBoxContainer/MenuContainer/SpecialtiesButton
 @onready var training_button = $VBoxContainer/MenuContainer/TrainingButton
 @onready var transfer_button = $VBoxContainer/MenuContainer/TransferButton
+@onready var academy_button = $VBoxContainer/MenuContainer/AcademyButton
 @onready var stats_button = $VBoxContainer/MenuContainer/StatsButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
 @onready var lan_button = $VBoxContainer/MenuContainer/LANButton
@@ -29,19 +30,21 @@ func _ready():
         specialties_button.pressed.connect(_on_specialties_pressed)
         training_button.pressed.connect(_on_training_pressed)
         transfer_button.pressed.connect(_on_transfer_pressed)
+        academy_button.pressed.connect(_on_academy_pressed)
         stats_button.pressed.connect(_on_stats_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
         lan_button.pressed.connect(_on_lan_pressed)
         settings_button.pressed.connect(_on_settings_pressed)
         quit_button.pressed.connect(_on_quit_pressed)
 
-        # 加载成长数据
+        # 加载数据
         PlayerDevelopment.load_development()
         TransferMarket.load_state()
+        YouthAcademy.load_state()
 
         # 显示玩家信息
         _update_profile_display()
-        version_label.text = "v0.5.0-alpha | Godot 4.3"
+        version_label.text = "v0.6.0-alpha | Godot 4.3"
 
         # 检查是否有进行中的联赛
         if LeagueManager.load_season():
@@ -51,7 +54,7 @@ func _ready():
         var subtitles = [
                 "绿茵场上，谁与争锋",
                 "11v11 真实足球体验",
-                "转会市场 + 赛季统计 + 回放",
+                "189名球员 + 青训营 + 1v1联机",
                 "单机畅玩，局域对战",
         ]
         title_label.text = "⚽ 足球游戏"
@@ -115,6 +118,10 @@ func _on_training_pressed():
 func _on_transfer_pressed():
         print("[MainMenu] 打开转会市场")
         get_tree().change_scene_to_file("res://scenes/TransferMarket.tscn")
+
+func _on_academy_pressed():
+        print("[MainMenu] 打开青训营")
+        get_tree().change_scene_to_file("res://scenes/YouthAcademy.tscn")
 
 func _on_stats_pressed():
         print("[MainMenu] 打开赛季统计")

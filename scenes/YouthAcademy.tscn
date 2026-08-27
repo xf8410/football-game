@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://f2n3k4m5n6o7p"]
+
+[ext_resource type="Script" path="res://scripts/youth_academy_ui.gd" id="1_academy"]
+
+[node name="YouthAcademyUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_academy")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "🌱 青训营"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="LeftPanel" type="Panel" parent="VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBox/HBox/LeftPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 400.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "青训球员列表"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/HBox/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouthList" type="VBoxContainer" parent="VBox/HBox/LeftPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="RightPanel" type="Panel" parent="VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(350, 0)
+
+[node name="LevelLabel" type="Label" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 340.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 14
+text = "青训营等级: 1 / 10"
+
+[node name="ScoutButton" type="Button" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 55.0
+offset_right = 340.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 16
+text = "🔍 搜索球员 (500)"
+
+[node name="UpgradeButton" type="Button" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 95.0
+offset_right = 340.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 16
+text = "⬆ 升级青训营 (2000金币)"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 135.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DetailLabel" type="Label" parent="VBox/HBox/RightPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "选择球员查看详情"
+autowrap_mode = 3
