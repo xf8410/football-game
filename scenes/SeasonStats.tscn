@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=3 uid="uid://e1n2k3m4n5o6p"]
+
+[ext_resource type="Script" path="res://scripts/season_stats_ui.gd" id="1_stats"]
+
+[node name="SeasonStatsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stats")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "📊 赛季统计"
+horizontal_alignment = 1
+
+[node name="SummaryLabel" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.8, 0.8, 0.3, 1)
+text = "本赛季: 0场比赛 | 0个进球 | 场均0.0球"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="积分榜" type="Control" parent="VBox/TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/TabContainer/积分榜"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TableVBox" type="VBoxContainer" parent="VBox/TabContainer/积分榜/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="射手榜" type="Control" parent="VBox/TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/TabContainer/射手榜"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScorersVBox" type="VBoxContainer" parent="VBox/TabContainer/射手榜/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="助攻榜" type="Control" parent="VBox/TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/TabContainer/助攻榜"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AssistsVBox" type="VBoxContainer" parent="VBox/TabContainer/助攻榜/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

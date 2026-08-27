@@ -34,6 +34,10 @@ IconGenerator="*res://scripts/icon_generator.gd"
 SkillSystem="*res://scripts/skill_system.gd"
 CupManager="*res://scripts/cup_manager.gd"
 ReplaySystem="*res://scripts/replay_system.gd"
+TransferMarket="*res://scripts/transfer_market.gd"
+SkillIconGenerator="*res://scripts/skill_icon_generator.gd"
+PlayerPortrait="*res://scripts/player_portrait.gd"
+SeasonStats="*res://scripts/season_stats.gd"
 
 [display]
 

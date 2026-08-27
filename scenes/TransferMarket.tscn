@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=3 uid="uid://c9n0k1m2n3o4p"]
+
+[ext_resource type="Script" path="res://scripts/transfer_market_ui.gd" id="1_market"]
+
+[node name="TransferMarketUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_market")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 25.0
+offset_right = 100.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "💰 转会市场"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="MarketPanel" type="Panel" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBox/MarketPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "🏪 转会市场（点击购买）"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBox/MarketPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarketList" type="VBoxContainer" parent="HBox/MarketPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="OwnedPanel" type="Panel" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBox/OwnedPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "👥 我的球员（点击出售）"
+
+[node name="BudgetLabel" type="Label" parent="HBox/OwnedPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 300.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+text = "💰 预算: 5000"
+
+[node name="RefreshButton" type="Button" parent="HBox/OwnedPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 200.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 16
+text = "🔄 刷新市场 (500金币)"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBox/OwnedPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 100.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OwnedList" type="VBoxContainer" parent="HBox/OwnedPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="DetailPanel" type="Panel" parent="HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 0)
+
+[node name="DetailLabel" type="Label" parent="HBox/DetailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "选择球员查看详情"
+autowrap_mode = 3

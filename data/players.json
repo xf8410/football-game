@@ -1,180 +1,65 @@
 {
   "players": {
-    "c_ronaldo": {
-      "name": "克里斯蒂亚诺·罗纳尔多", "short_name": "C罗", "nationality": "葡萄牙",
-      "positions": ["LW", "ST", "RW"], "preferred_foot": "right",
-      "career": [
-        {"club": "sporting_cp", "years": "2002-2003"},
-        {"club": "man_united", "years": "2003-2009"},
-        {"club": "real_madrid", "years": "2009-2018"},
-        {"club": "juventus", "years": "2018-2021"},
-        {"club": "man_united", "years": "2021-2022"},
-        {"club": "al_nassr", "years": "2023-至今"}
-      ],
-      "attributes": {"pace": 88, "shooting": 94, "passing": 82, "dribbling": 87, "defending": 35, "physical": 80},
-      "traits": ["long_shot", "header", "free_kick"],
-      "skills": ["speed_burst", "power_shot", "clutch_player"],
-      "special_versions": {"annual": "年度最佳", "moment": "时刻", "euro": "欧洲杯", "league_legend": "英超传奇"}
-    },
-    "messi": {
-      "name": "利昂内尔·梅西", "short_name": "梅西", "nationality": "阿根廷",
-      "positions": ["RW", "CF", "CAM"], "preferred_foot": "left",
-      "career": [{"club": "barcelona", "years": "2004-2021"}, {"club": "psg", "years": "2021-2023"}, {"club": "inter_miami", "years": "2023-至今"}],
-      "attributes": {"pace": 85, "shooting": 92, "passing": 91, "dribbling": 95, "defending": 35, "physical": 65},
-      "traits": ["dribbling_master", "playmaker", "free_kick"],
-      "skills": ["ghost_dribble", "vision_pass", "curve_shot"]
-    },
-    "haaland": {
-      "name": "厄林·哈兰德", "short_name": "哈兰德", "nationality": "挪威",
-      "positions": ["ST", "CF"], "preferred_foot": "left",
-      "career": [{"club": "molde", "years": "2017-2018"}, {"club": "salzburg", "years": "2019-2020"}, {"club": "dortmund", "years": "2020-2022"}, {"club": "man_city", "years": "2022-至今"}],
-      "attributes": {"pace": 91, "shooting": 93, "passing": 70, "dribbling": 80, "defending": 45, "physical": 88},
-      "traits": ["header", "poacher", "power_shot"],
-      "skills": ["speed_burst", "power_shot", "aerial_dominance"]
-    },
-    "mbappe": {
-      "name": "基利安·姆巴佩", "short_name": "姆巴佩", "nationality": "法国",
-      "positions": ["LW", "ST", "RW"], "preferred_foot": "right",
-      "career": [{"club": "monaco", "years": "2015-2017"}, {"club": "psg", "years": "2017-2024"}, {"club": "real_madrid", "years": "2024-至今"}],
-      "attributes": {"pace": 97, "shooting": 90, "passing": 80, "dribbling": 92, "defending": 40, "physical": 78},
-      "traits": ["speedster", "dribbling_master", "finisher"],
-      "skills": ["speed_burst", "ghost_dribble", "clutch_player"]
-    },
-    "bellingham": {
-      "name": "裘德·贝林厄姆", "short_name": "贝林厄姆", "nationality": "英格兰",
-      "positions": ["CM", "CAM", "CDM"], "preferred_foot": "right",
-      "career": [{"club": "birmingham", "years": "2019-2020"}, {"club": "dortmund", "years": "2020-2023"}, {"club": "real_madrid", "years": "2023-至今"}],
-      "attributes": {"pace": 80, "shooting": 85, "passing": 86, "dribbling": 87, "defending": 75, "physical": 82},
-      "traits": ["playmaker", "box_to_box", "leader"],
-      "skills": ["vision_pass", "smart_positioning", "endless_runner"]
-    },
-    "vinicius": {
-      "name": "维尼修斯·儒尼奥尔", "short_name": "维尼修斯", "nationality": "巴西",
-      "positions": ["LW", "RW"], "preferred_foot": "right",
-      "career": [{"club": "flamengo", "years": "2017-2018"}, {"club": "real_madrid", "years": "2018-至今"}],
-      "attributes": {"pace": 95, "shooting": 83, "passing": 78, "dribbling": 92, "defending": 30, "physical": 70},
-      "traits": ["speedster", "dribbling_master", "flair"],
-      "skills": ["speed_burst", "ghost_dribble", "nutmeg"]
-    },
-    "de_bruyne": {
-      "name": "凯文·德布劳内", "short_name": "德布劳内", "nationality": "比利时",
-      "positions": ["CM", "CAM", "RM"], "preferred_foot": "right",
-      "career": [{"club": "werder_bremen", "years": "2012-2014"}, {"club": "wolfsburg", "years": "2014-2015"}, {"club": "man_city", "years": "2015-至今"}],
-      "attributes": {"pace": 76, "shooting": 88, "passing": 94, "dribbling": 87, "defending": 65, "physical": 78},
-      "traits": ["playmaker", "long_shot", "crossing"],
-      "skills": ["vision_pass", "curve_shot", "long_pass_master"]
-    },
-    "rodrri": {
-      "name": "罗德里", "short_name": "罗德里", "nationality": "西班牙",
-      "positions": ["CDM", "CM"], "preferred_foot": "right",
-      "career": [{"club": "atletico_madrid", "years": "2018-2019"}, {"club": "man_city", "years": "2019-至今"}],
-      "attributes": {"pace": 65, "shooting": 75, "passing": 86, "dribbling": 80, "defending": 85, "physical": 85},
-      "traits": ["interceptor", "playmaker", "leader"],
-      "skills": ["smart_intercept", "vision_pass", "wall_defense"]
-    },
-    "foden": {
-      "name": "菲尔·福登", "short_name": "福登", "nationality": "英格兰",
-      "positions": ["CAM", "LW", "RW"], "preferred_foot": "left",
-      "career": [{"club": "man_city", "years": "2017-至今"}],
-      "attributes": {"pace": 82, "shooting": 84, "passing": 85, "dribbling": 88, "defending": 50, "physical": 65},
-      "traits": ["dribbling_master", "playmaker", "flair"],
-      "skills": ["ghost_dribble", "vision_pass", "curve_shot"]
-    },
-    "salah": {
-      "name": "穆罕默德·萨拉赫", "short_name": "萨拉赫", "nationality": "埃及",
-      "positions": ["RW", "ST"], "preferred_foot": "left",
-      "career": [{"club": "basel", "years": "2012-2014"}, {"club": "roma", "years": "2016-2017"}, {"club": "liverpool", "years": "2017-至今"}],
-      "attributes": {"pace": 93, "shooting": 89, "passing": 81, "dribbling": 90, "defending": 45, "physical": 75},
-      "traits": ["speedster", "finisher", "dribbling_master"],
-      "skills": ["speed_burst", "ghost_dribble", "curve_shot"]
-    },
-    "vandijk": {
-      "name": "维尔吉尔·范戴克", "short_name": "范戴克", "nationality": "荷兰",
-      "positions": ["CB"], "preferred_foot": "right",
-      "career": [{"club": "celtic", "years": "2013-2015"}, {"club": "southampton", "years": "2015-2018"}, {"club": "liverpool", "years": "2018-至今"}],
-      "attributes": {"pace": 78, "shooting": 60, "passing": 71, "dribbling": 72, "defending": 90, "physical": 86},
-      "traits": ["header", "leader", "wall"],
-      "skills": ["wall_defense", "aerial_dominance", "smart_intercept"]
-    },
-    "bruno_fernandes": {
-      "name": "布鲁诺·费尔南德斯", "short_name": "B费", "nationality": "葡萄牙",
-      "positions": ["CAM", "CM"], "preferred_foot": "right",
-      "career": [{"club": "sporting_cp", "years": "2017-2020"}, {"club": "man_united", "years": "2020-至今"}],
-      "attributes": {"pace": 75, "shooting": 85, "passing": 89, "dribbling": 82, "defending": 60, "physical": 75},
-      "traits": ["playmaker", "long_shot", "free_kick"],
-      "skills": ["vision_pass", "power_shot", "long_pass_master"]
-    },
-    "kane": {
-      "name": "哈里·凯恩", "short_name": "凯恩", "nationality": "英格兰",
-      "positions": ["ST", "CF"], "preferred_foot": "right",
-      "career": [{"club": "tottenham", "years": "2009-2023"}, {"club": "bayern_munich", "years": "2023-至今"}],
-      "attributes": {"pace": 70, "shooting": 93, "passing": 84, "dribbling": 79, "defending": 47, "physical": 83},
-      "traits": ["finisher", "playmaker", "header"],
-      "skills": ["power_shot", "vision_pass", "aerial_dominance"]
-    },
-    "leao": {
-      "name": "拉斐尔·莱奥", "short_name": "莱奥", "nationality": "葡萄牙",
-      "positions": ["LW", "ST"], "preferred_foot": "right",
-      "career": [{"club": "lille", "years": "2018-2019"}, {"club": "ac_milan", "years": "2019-至今"}],
-      "attributes": {"pace": 93, "shooting": 80, "passing": 76, "dribbling": 88, "defending": 35, "physical": 78},
-      "traits": ["speedster", "dribbling_master", "flair"],
-      "skills": ["speed_burst", "ghost_dribble", "nutmeg"]
-    },
-    "lautaro": {
-      "name": "劳塔罗·马丁内斯", "short_name": "劳塔罗", "nationality": "阿根廷",
-      "positions": ["ST", "CF"], "preferred_foot": "right",
-      "career": [{"club": "racing", "years": "2016-2018"}, {"club": "inter_milan", "years": "2018-至今"}],
-      "attributes": {"pace": 85, "shooting": 88, "passing": 75, "dribbling": 84, "defending": 50, "physical": 80},
-      "traits": ["finisher", "poacher", "header"],
-      "skills": ["power_shot", "clutch_player", "aerial_dominance"]
-    },
-    "rice": {
-      "name": "德克兰·赖斯", "short_name": "赖斯", "nationality": "英格兰",
-      "positions": ["CDM", "CM"], "preferred_foot": "right",
-      "career": [{"club": "west_ham", "years": "2017-2023"}, {"club": "arsenal", "years": "2023-至今"}],
-      "attributes": {"pace": 72, "shooting": 70, "passing": 80, "dribbling": 78, "defending": 85, "physical": 85},
-      "traits": ["interceptor", "wall", "leader"],
-      "skills": ["smart_intercept", "wall_defense", "endless_runner"]
-    },
-    "rodrygo": {
-      "name": "罗德里戈·戈斯", "short_name": "罗德里戈", "nationality": "巴西",
-      "positions": ["RW", "LW", "ST"], "preferred_foot": "right",
-      "career": [{"club": "santos", "years": "2017-2019"}, {"club": "real_madrid", "years": "2019-至今"}],
-      "attributes": {"pace": 89, "shooting": 82, "passing": 78, "dribbling": 87, "defending": 35, "physical": 68},
-      "traits": ["speedster", "dribbling_master", "clutch"],
-      "skills": ["speed_burst", "ghost_dribble", "clutch_player"]
-    },
-    "griezmann": {
-      "name": "安托万·格列兹曼", "short_name": "格列兹曼", "nationality": "法国",
-      "positions": ["ST", "CF", "CAM"], "preferred_foot": "left",
-      "career": [{"club": "real_sociedad", "years": "2009-2014"}, {"club": "atletico_madrid", "years": "2014-2019"}, {"club": "barcelona", "years": "2019-2022"}, {"club": "atletico_madrid", "years": "2022-至今"}],
-      "attributes": {"pace": 80, "shooting": 86, "passing": 85, "dribbling": 86, "defending": 50, "physical": 72},
-      "traits": ["playmaker", "finisher", "dribbling_master"],
-      "skills": ["vision_pass", "ghost_dribble", "curve_shot"]
-    },
-    "neuer": {
-      "name": "曼努埃尔·诺伊尔", "short_name": "诺伊尔", "nationality": "德国",
-      "positions": ["GK"], "preferred_foot": "right",
-      "career": [{"club": "schalke", "years": "2006-2011"}, {"club": "bayern_munich", "years": "2011-至今"}],
-      "attributes": {"gk_diving": 84, "gk_handling": 85, "gk_kicking": 93, "gk_reflexes": 85, "gk_positioning": 87},
-      "traits": ["sweeper_keeper", "gk_leader", "gk_distribution"],
-      "skills": ["sweeper_keeper", "gk_1v1_master", "gk_reflex_save"]
-    },
-    "alisson": {
-      "name": "阿利松·贝克尔", "short_name": "阿利松", "nationality": "巴西",
-      "positions": ["GK"], "preferred_foot": "right",
-      "career": [{"club": "roma", "years": "2016-2018"}, {"club": "liverpool", "years": "2018-至今"}],
-      "attributes": {"gk_diving": 85, "gk_handling": 85, "gk_kicking": 87, "gk_reflexes": 86, "gk_positioning": 86},
-      "traits": ["sweeper_keeper", "gk_1v1", "gk_saver"],
-      "skills": ["sweeper_keeper", "gk_1v1_master", "gk_reflex_save"]
-    },
-    "courtois": {
-      "name": "蒂博·库尔图瓦", "short_name": "库尔图瓦", "nationality": "比利时",
-      "positions": ["GK"], "preferred_foot": "left",
-      "career": [{"club": "atletico_madrid", "years": "2011-2018"}, {"club": "real_madrid", "years": "2018-至今"}],
-      "attributes": {"gk_diving": 87, "gk_handling": 86, "gk_kicking": 82, "gk_reflexes": 88, "gk_positioning": 85},
-      "traits": ["gk_saver", "gk_1v1", "gk_leader"],
-      "skills": ["gk_reflex_save", "gk_1v1_master", "wall_defense"]
-    }
+    "c_ronaldo": {"name": "克里斯蒂亚诺·罗纳尔多", "short_name": "C罗", "nationality": "葡萄牙", "positions": ["LW","ST","RW"], "preferred_foot": "right", "career": [{"club":"sporting_cp","years":"2002-2003"},{"club":"man_united","years":"2003-2009"},{"club":"real_madrid","years":"2009-2018"},{"club":"juventus","years":"2018-2021"},{"club":"man_united","years":"2021-2022"},{"club":"al_nassr","years":"2023-至今"}], "attributes": {"pace":88,"shooting":94,"passing":82,"dribbling":87,"defending":35,"physical":80}, "traits": ["long_shot","header","free_kick"], "skills": ["speed_burst","power_shot","clutch_player"], "special_versions": {"annual":"年度最佳","moment":"时刻","euro":"欧洲杯","league_legend":"英超传奇"}},
+    "messi": {"name": "利昂内尔·梅西", "short_name": "梅西", "nationality": "阿根廷", "positions": ["RW","CF","CAM"], "preferred_foot": "left", "career": [{"club":"barcelona","years":"2004-2021"},{"club":"psg","years":"2021-2023"},{"club":"inter_miami","years":"2023-至今"}], "attributes": {"pace":85,"shooting":92,"passing":91,"dribbling":95,"defending":35,"physical":65}, "traits": ["dribbling_master","playmaker","free_kick"], "skills": ["ghost_dribble","vision_pass","curve_shot"]},
+    "haaland": {"name": "厄林·哈兰德", "short_name": "哈兰德", "nationality": "挪威", "positions": ["ST"], "preferred_foot": "left", "career": [{"club":"molde","years":"2017-2018"},{"club":"salzburg","years":"2019-2020"},{"club":"dortmund","years":"2020-2022"},{"club":"man_city","years":"2022-至今"}], "attributes": {"pace":91,"shooting":94,"passing":70,"dribbling":82,"defending":45,"physical":93}, "traits": ["long_shot","header","power_header"], "skills": ["speed_burst","power_shot","clutch_player"]},
+    "mbappe": {"name": "基利安·姆巴佩", "short_name": "姆巴佩", "nationality": "法国", "positions": ["LW","ST","RW"], "preferred_foot": "right", "career": [{"club":"monaco","years":"2015-2018"},{"club":"psg","years":"2018-2024"},{"club":"real_madrid","years":"2024-至今"}], "attributes": {"pace":98,"shooting":90,"passing":80,"dribbling":92,"defending":40,"physical":78}, "traits": ["speedster","dribbling_master","finisher"], "skills": ["speed_burst","ghost_dribble","clutch_player"]},
+    "bellingham": {"name": "裘德·贝林厄姆", "short_name": "贝林厄姆", "nationality": "英格兰", "positions": ["CM","CAM"], "preferred_foot": "right", "career": [{"club":"birmingham","years":"2019-2020"},{"club":"dortmund","years":"2020-2023"},{"club":"real_madrid","years":"2023-至今"}], "attributes": {"pace":80,"shooting":82,"passing":85,"dribbling":87,"defending":75,"physical":85}, "traits": ["playmaker","box_to_box","leader"], "skills": ["vision_pass","smart_positioning","clutch_player"]},
+    "vinicius": {"name": "维尼修斯·儒尼奥尔", "short_name": "维尼修斯", "nationality": "巴西", "positions": ["LW"], "preferred_foot": "right", "career": [{"club":"flamengo","years":"2017-2018"},{"club":"real_madrid","years":"2018-至今"}], "attributes": {"pace":95,"shooting":80,"passing":78,"dribbling":92,"defending":30,"physical":70}, "traits": ["speedster","dribbling_master","flair"], "skills": ["speed_burst","ghost_dribble","quick_turn"]},
+    "de_bruyne": {"name": "凯文·德布劳内", "short_name": "德布劳内", "nationality": "比利时", "positions": ["CM","CAM"], "preferred_foot": "right", "career": [{"club":"werder","years":"2012-2014"},{"club":"wolfsburg","years":"2014-2015"},{"club":"man_city","years":"2015-至今"}], "attributes": {"pace":75,"shooting":88,"passing":94,"dribbling":88,"defending":65,"physical":78}, "traits": ["playmaker","long_shot","crossing"], "skills": ["vision_pass","pinpoint_pass","power_shot"]},
+    "rodrri": {"name": "罗德里", "short_name": "罗德里", "nationality": "西班牙", "positions": ["CDM"], "preferred_foot": "right", "career": [{"club":"atletico_madrid","years":"2018-2019"},{"club":"man_city","years":"2019-至今"}], "attributes": {"pace":65,"shooting":75,"passing":88,"dribbling":80,"defending":85,"physical":88}, "traits": ["playmaker","iron_wall","leader"], "skills": ["interceptor","iron_wall","vision_pass"]},
+    "foden": {"name": "菲尔·福登", "short_name": "福登", "nationality": "英格兰", "positions": ["CAM","LW"], "preferred_foot": "left", "career": [{"club":"man_city","years":"2017-至今"}], "attributes": {"pace":82,"shooting":82,"passing":85,"dribbling":88,"defending":50,"physical":65}, "traits": ["dribbling_master","playmaker","flair"], "skills": ["ghost_dribble","vision_pass","first_touch"]},
+    "salah": {"name": "穆罕默德·萨拉赫", "short_name": "萨拉赫", "nationality": "埃及", "positions": ["RW","ST"], "preferred_foot": "left", "career": [{"club":"basel","years":"2012-2014"},{"club":"roma","years":"2016-2017"},{"club":"liverpool","years":"2017-至今"}], "attributes": {"pace":90,"shooting":88,"passing":82,"dribbling":90,"defending":45,"physical":75}, "traits": ["speedster","finisher","dribbling_master"], "skills": ["speed_burst","ghost_dribble","power_shot"]},
+    "vandijk": {"name": "维尔吉尔·范迪克", "short_name": "范迪克", "nationality": "荷兰", "positions": ["CB"], "preferred_foot": "right", "career": [{"club":"celtic","years":"2013-2015"},{"club":"southampton","years":"2015-2018"},{"club":"liverpool","years":"2018-至今"}], "attributes": {"pace":78,"shooting":60,"passing":75,"dribbling":70,"defending":92,"physical":93}, "traits": ["iron_wall","header","leader"], "skills": ["iron_wall","air_dominance","wall_defense"]},
+    "kane": {"name": "哈里·凯恩", "short_name": "凯恩", "nationality": "英格兰", "positions": ["ST"], "preferred_foot": "right", "career": [{"club":"tottenham","years":"2009-2023"},{"club":"bayern_munich","years":"2023-至今"}], "attributes": {"pace":70,"shooting":93,"passing":84,"dribbling":80,"defending":40,"physical":88}, "traits": ["finisher","long_shot","playmaker"], "skills": ["power_shot","vision_pass","clutch_player"]},
+    "neuer": {"name": "曼努埃尔·诺伊尔", "short_name": "诺伊尔", "nationality": "德国", "positions": ["GK"], "preferred_foot": "right", "career": [{"club":"schalke","years":"2006-2011"},{"club":"bayern_munich","years":"2011-至今"}], "attributes": {"gk_diving":84,"gk_handling":85,"gk_kicking":93,"gk_reflexes":85,"gk_positioning":87}, "traits": ["sweeper_keeper","gk_leader","gk_distribution"], "skills": ["sweeper_keeper","gk_1v1_master","gk_reflex_save"]},
+    "alisson": {"name": "阿利松·贝克尔", "short_name": "阿利松", "nationality": "巴西", "positions": ["GK"], "preferred_foot": "right", "career": [{"club":"roma","years":"2016-2018"},{"club":"liverpool","years":"2018-至今"}], "attributes": {"gk_diving":85,"gk_handling":85,"gk_kicking":87,"gk_reflexes":86,"gk_positioning":86}, "traits": ["sweeper_keeper","gk_1v1","gk_saver"], "skills": ["sweeper_keeper","gk_1v1_master","gk_reflex_save"]},
+    "courtois": {"name": "蒂博·库尔图瓦", "short_name": "库尔图瓦", "nationality": "比利时", "positions": ["GK"], "preferred_foot": "left", "career": [{"club":"atletico_madrid","years":"2011-2018"},{"club":"real_madrid","years":"2018-至今"}], "attributes": {"gk_diving":87,"gk_handling":86,"gk_kicking":82,"gk_reflexes":88,"gk_positioning":85}, "traits": ["gk_saver","gk_1v1","gk_leader"], "skills": ["gk_reflex_save","gk_1v1_master","wall_defense"]},
+    "bruno_fernandes": {"name": "布鲁诺·费尔南德斯", "short_name": "B费", "nationality": "葡萄牙", "positions": ["CAM","CM"], "preferred_foot": "right", "career": [{"club":"sporting_cp","years":"2017-2020"},{"club":"man_united","years":"2020-至今"}], "attributes": {"pace":75,"shooting":88,"passing":91,"dribbling":84,"defending":60,"physical":75}, "traits": ["playmaker","long_shot","free_kick"], "skills": ["vision_pass","power_shot","pinpoint_pass"]},
+    "rashford": {"name": "马库斯·拉什福德", "short_name": "拉什福德", "nationality": "英格兰", "positions": ["LW","ST"], "preferred_foot": "right", "career": [{"club":"man_united","years":"2015-至今"}], "attributes": {"pace":90,"shooting":82,"passing":75,"dribbling":85,"defending":40,"physical":75}, "traits": ["speedster","finisher"], "skills": ["speed_burst","power_shot","quick_turn"]},
+    "casemiro": {"name": "卡塞米罗", "short_name": "卡塞米罗", "nationality": "巴西", "positions": ["CDM"], "preferred_foot": "right", "career": [{"club":"real_madrid","years":"2013-2022"},{"club":"man_united","years":"2022-至今"}], "attributes": {"pace":65,"shooting":75,"passing":80,"dribbling":75,"defending":90,"physical":92}, "traits": ["iron_wall","header","leader"], "skills": ["interceptor","iron_wall","precise_tackle"]},
+    "gundogan": {"name": "伊尔凯·京多安", "short_name": "京多安", "nationality": "德国", "positions": ["CM","CAM"], "preferred_foot": "right", "career": [{"club":"dortmund","years":"2011-2016"},{"club":"man_city","years":"2016-2023"},{"club":"barcelona","years":"2023-至今"}], "attributes": {"pace":72,"shooting":82,"passing":88,"dribbling":85,"defending":65,"physical":72}, "traits": ["playmaker","box_to_box"], "skills": ["vision_pass","smart_positioning","first_touch"]},
+    "alvarez": {"name": "胡利安·阿尔瓦雷斯", "short_name": "阿尔瓦雷斯", "nationality": "阿根廷", "positions": ["ST","CAM"], "preferred_foot": "right", "career": [{"club":"river_plate","years":"2018-2022"},{"club":"man_city","years":"2022-2024"},{"club":"atletico_madrid","years":"2024-至今"}], "attributes": {"pace":85,"shooting":85,"passing":80,"dribbling":85,"defending":50,"physical":75}, "traits": ["finisher","dribbling_master"], "skills": ["ghost_dribble","power_shot","clutch_player"]},
+    "gvardiol": {"name": "约什科·格瓦迪奥尔", "short_name": "格瓦迪奥尔", "nationality": "克罗地亚", "positions": ["CB","LB"], "preferred_foot": "left", "career": [{"club":"leipzig","years":"2021-2023"},{"club":"man_city","years":"2023-至今"}], "attributes": {"pace":82,"shooting":55,"passing":75,"dribbling":72,"defending":87,"physical":85}, "traits": ["iron_wall","header"], "skills": ["iron_wall","air_dominance","fast_retreat"]},
+    "ruben_dias": {"name": "鲁本·迪亚斯", "short_name": "迪亚斯", "nationality": "葡萄牙", "positions": ["CB"], "preferred_foot": "right", "career": [{"club":"benfica","years":"2015-2020"},{"club":"man_city","years":"2020-至今"}], "attributes": {"pace":75,"shooting":50,"passing":78,"dribbling":70,"defending":91,"physical":88}, "traits": ["iron_wall","leader","header"], "skills": ["iron_wall","wall_defense","interceptor"]},
+    "ederson": {"name": "埃德森", "short_name": "埃德森", "nationality": "巴西", "positions": ["GK"], "preferred_foot": "left", "career": [{"club":"benfica","years":"2015-2017"},{"club":"man_city","years":"2017-至今"}], "attributes": {"gk_diving":83,"gk_handling":82,"gk_kicking":93,"gk_reflexes":84,"gk_positioning":83}, "traits": ["sweeper_keeper","gk_distribution"], "skills": ["sweeper_keeper","gk_reflex_save"]},
+    "walker": {"name": "凯尔·沃克", "short_name": "沃克", "nationality": "英格兰", "positions": ["RB"], "preferred_foot": "right", "career": [{"club":"tottenham","years":"2009-2017"},{"club":"man_city","years":"2017-至今"}], "attributes": {"pace":92,"shooting":60,"passing":72,"dribbling":75,"defending":80,"physical":85}, "traits": ["speedster","iron_wall"], "skills": ["speed_burst","fast_retreat","interceptor"]},
+    "mac_allister": {"name": "亚历克西斯·麦卡利斯特", "short_name": "麦卡利斯特", "nationality": "阿根廷", "positions": ["CM","CDM"], "preferred_foot": "right", "career": [{"club":"brighton","years":"2019-2023"},{"club":"liverpool","years":"2023-至今"}], "attributes": {"pace":72,"shooting":78,"passing":87,"dribbling":84,"defending":72,"physical":72}, "traits": ["playmaker","box_to_box"], "skills": ["vision_pass","first_touch","smart_positioning"]},
+    "szoboszlai": {"name": "多米尼克·索博斯洛伊", "short_name": "索博斯洛伊", "nationality": "匈牙利", "positions": ["CM","CAM"], "preferred_foot": "right", "career": [{"club":"leipzig","years":"2018-2023"},{"club":"liverpool","years":"2023-至今"}], "attributes": {"pace":80,"shooting":82,"passing":85,"dribbling":84,"defending":60,"physical":75}, "traits": ["long_shot","playmaker","free_kick"], "skills": ["power_shot","vision_pass","pinpoint_pass"]},
+    "nunez": {"name": "达尔文·努涅斯", "short_name": "努涅斯", "nationality": "乌拉圭", "positions": ["ST"], "preferred_foot": "right", "career": [{"club":"benfica","years":"2019-2022"},{"club":"liverpool","years":"2022-至今"}], "attributes": {"pace":93,"shooting":82,"passing":70,"dribbling":78,"defending":35,"physical":82}, "traits": ["speedster","finisher"], "skills": ["speed_burst","power_shot","ghost_movement"]},
+    "diaz": {"name": "路易斯·迪亚斯", "short_name": "迪亚斯", "nationality": "哥伦比亚", "positions": ["LW"], "preferred_foot": "right", "career": [{"club":"porto","years":"2019-2022"},{"club":"liverpool","years":"2022-至今"}], "attributes": {"pace":90,"shooting":78,"passing":75,"dribbling":88,"defending":40,"physical":70}, "traits": ["speedster","dribbling_master","flair"], "skills": ["speed_burst","ghost_dribble","quick_turn"]},
+    "arnold": {"name": "特伦特·阿诺德", "short_name": "阿诺德", "nationality": "英格兰", "positions": ["RB","CM"], "preferred_foot": "right", "career": [{"club":"liverpool","years":"2016-至今"}], "attributes": {"pace":78,"shooting":75,"passing":90,"dribbling":80,"defending":75,"physical":70}, "traits": ["crossing","playmaker","long_shot"], "skills": ["pinpoint_pass","vision_pass","curve_shot"]},
+    "robertson": {"name": "安德鲁·罗伯逊", "short_name": "罗伯逊", "nationality": "苏格兰", "positions": ["LB"], "preferred_foot": "left", "career": [{"club":"liverpool","years":"2017-至今"}], "attributes": {"pace":82,"shooting":60,"passing":82,"dribbling":78,"defending":80,"physical":75}, "traits": ["crossing","iron_wall"], "skills": ["pinpoint_pass","fast_retreat","endless_runner"]},
+    "rice": {"name": "德克兰·赖斯", "short_name": "赖斯", "nationality": "英格兰", "positions": ["CDM","CM"], "preferred_foot": "right", "career": [{"club":"west_ham","years":"2015-2023"},{"club":"arsenal","years":"2023-至今"}], "attributes": {"pace":75,"shooting":70,"passing":82,"dribbling":80,"defending":88,"physical":88}, "traits": ["iron_wall","box_to_box","leader"], "skills": ["interceptor","iron_wall","vision_pass"]},
+    "odegaard": {"name": "马丁·厄德高", "short_name": "厄德高", "nationality": "挪威", "positions": ["CAM","CM"], "preferred_foot": "left", "career": [{"club":"real_madrid","years":"2015-2021"},{"club":"arsenal","years":"2021-至今"}], "attributes": {"pace":78,"shooting":80,"passing":89,"dribbling":87,"defending":55,"physical":65}, "traits": ["playmaker","dribbling_master","flair"], "skills": ["vision_pass","ghost_dribble","first_touch"]},
+    "saka": {"name": "布卡约·萨卡", "short_name": "萨卡", "nationality": "英格兰", "positions": ["RW","LW"], "preferred_foot": "left", "career": [{"club":"arsenal","years":"2018-至今"}], "attributes": {"pace":88,"shooting":80,"passing":82,"dribbling":87,"defending":55,"physical":70}, "traits": ["speedster","dribbling_master","crossing"], "skills": ["speed_burst","ghost_dribble","pinpoint_pass"]},
+    "martinez_l": {"name": "利桑德罗·马丁内斯", "short_name": "利马", "nationality": "阿根廷", "positions": ["CB","LB"], "preferred_foot": "left", "career": [{"club":"ajax","years":"2019-2022"},{"club":"man_united","years":"2022-至今"}], "attributes": {"pace":78,"shooting":50,"passing":78,"dribbling":75,"defending":87,"physical":80}, "traits": ["iron_wall","leader"], "skills": ["interceptor","precise_tackle","wall_defense"]},
+    "lautaro": {"name": "劳塔罗·马丁内斯", "short_name": "劳塔罗", "nationality": "阿根廷", "positions": ["ST"], "preferred_foot": "right", "career": [{"club":"racing","years":"2016-2018"},{"club":"inter_milan","years":"2018-至今"}], "attributes": {"pace":85,"shooting":88,"passing":75,"dribbling":85,"defending":45,"physical":80}, "traits": ["finisher","header","dribbling_master"], "skills": ["power_shot","air_dominance","ghost_dribble"]},
+    "leao": {"name": "拉斐尔·莱奥", "short_name": "莱奥", "nationality": "葡萄牙", "positions": ["LW","ST"], "preferred_foot": "right", "career": [{"club":"lille","years":"2018-2019"},{"club":"ac_milan","years":"2019-至今"}], "attributes": {"pace":93,"shooting":80,"passing":78,"dribbling":90,"defending":35,"physical":78}, "traits": ["speedster","dribbling_master","flair"], "skills": ["speed_burst","ghost_dribble","quick_turn"]},
+    "barella": {"name": "尼科洛·巴雷拉", "short_name": "巴雷拉", "nationality": "意大利", "positions": ["CM","CAM"], "preferred_foot": "right", "career": [{"club":"cagliari","years":"2015-2019"},{"club":"inter_milan","years":"2019-至今"}], "attributes": {"pace":80,"shooting":78,"passing":85,"dribbling":85,"defending":72,"physical":75}, "traits": ["box_to_box","playmaker"], "skills": ["vision_pass","endless_runner","smart_positioning"]},
+    "kvaratskhelia": {"name": "赫维恰·克瓦拉茨赫利亚", "short_name": "K神", "nationality": "格鲁吉亚", "positions": ["LW"], "preferred_foot": "right", "career": [{"club":"napoli","years":"2022-至今"}], "attributes": {"pace":88,"shooting":80,"passing":80,"dribbling":92,"defending":40,"physical":72}, "traits": ["dribbling_master","flair","speedster"], "skills": ["ghost_dribble","quick_turn","ghost_movement"]},
+    "osimhen": {"name": "维克托·奥斯梅恩", "short_name": "奥斯梅恩", "nationality": "尼日利亚", "positions": ["ST"], "preferred_foot": "right", "career": [{"club":"napoli","years":"2020-至今"}], "attributes": {"pace":90,"shooting":88,"passing":65,"dribbling":80,"defending":40,"physical":85}, "traits": ["speedster","finisher","header"], "skills": ["speed_burst","power_shot","air_dominance"]},
+    "musiala": {"name": "贾马尔·穆西亚拉", "short_name": "穆西亚拉", "nationality": "德国", "positions": ["CAM","LW"], "preferred_foot": "right", "career": [{"club":"bayern_munich","years":"2020-至今"}], "attributes": {"pace":85,"shooting":78,"passing":82,"dribbling":93,"defending":45,"physical":65}, "traits": ["dribbling_master","flair","playmaker"], "skills": ["ghost_dribble","quick_turn","vision_pass"]},
+    "davies": {"name": "阿方索·戴维斯", "short_name": "戴维斯", "nationality": "加拿大", "positions": ["LB"], "preferred_foot": "right", "career": [{"club":"bayern_munich","years":"2019-至今"}], "attributes": {"pace":96,"shooting":60,"passing":75,"dribbling":82,"defending":78,"physical":75}, "traits": ["speedster","crossing"], "skills": ["speed_burst","fast_retreat","pinpoint_pass"]},
+    "kimmich": {"name": "约书亚·基米希", "short_name": "基米希", "nationality": "德国", "positions": ["CDM","RB"], "preferred_foot": "right", "career": [{"club":"bayern_munich","years":"2015-至今"}], "attributes": {"pace":75,"shooting":75,"passing":89,"dribbling":82,"defending":82,"physical":75}, "traits": ["playmaker","crossing","leader"], "skills": ["vision_pass","pinpoint_pass","interceptor"]},
+    "sané": {"name": "勒鲁瓦·萨内", "short_name": "萨内", "nationality": "德国", "positions": ["RW","LW"], "preferred_foot": "right", "career": [{"club":"man_city","years":"2016-2020"},{"club":"bayern_munich","years":"2020-至今"}], "attributes": {"pace":92,"shooting":78,"passing":78,"dribbling":87,"defending":35,"physical":72}, "traits": ["speedster","dribbling_master"], "skills": ["speed_burst","ghost_dribble","quick_turn"]},
+    "harry_kane": {"name": "哈里·凯恩", "short_name": "凯恩", "nationality": "英格兰", "positions": ["ST"], "preferred_foot": "right", "career": [{"club":"tottenham","years":"2009-2023"},{"club":"bayern_munich","years":"2023-至今"}], "attributes": {"pace":70,"shooting":93,"passing":84,"dribbling":80,"defending":40,"physical":88}, "traits": ["finisher","long_shot","playmaker"], "skills": ["power_shot","vision_pass","clutch_player"]},
+    "dembele": {"name": "乌斯曼·登贝莱", "short_name": "登贝莱", "nationality": "法国", "positions": ["RW","LW"], "preferred_foot": "left", "career": [{"club":"dortmund","years":"2016-2017"},{"club":"barcelona","years":"2017-2023"},{"club":"psg","years":"2023-至今"}], "attributes": {"pace":93,"shooting":75,"passing":78,"dribbling":90,"defending":35,"physical":70}, "traits": ["speedster","dribbling_master","flair"], "skills": ["speed_burst","ghost_dribble","quick_turn"]},
+    "hakimi": {"name": "阿什拉夫·哈基米", "short_name": "哈基米", "nationality": "摩洛哥", "positions": ["RB"], "preferred_foot": "right", "career": [{"club":"dortmund","years":"2018-2020"},{"club":"inter_milan","years":"2020-2021"},{"club":"psg","years":"2021-至今"}], "attributes": {"pace":95,"shooting":70,"passing":78,"dribbling":82,"defending":75,"physical":75}, "traits": ["speedster","crossing"], "skills": ["speed_burst","pinpoint_pass","fast_retreat"]},
+    "donnarumma": {"name": "吉安路易吉·多纳鲁马", "short_name": "多纳鲁马", "nationality": "意大利", "positions": ["GK"], "preferred_foot": "right", "career": [{"club":"ac_milan","years":"2015-2021"},{"club":"psg","years":"2021-至今"}], "attributes": {"gk_diving":88,"gk_handling":84,"gk_kicking":80,"gk_reflexes":89,"gk_positioning":84}, "traits": ["gk_saver","gk_1v1","gk_leader"], "skills": ["gk_reflex_save","gk_1v1_master","wall_defense"]},
+    "mbappe_r": {"name": "基利安·姆巴佩", "short_name": "姆巴佩", "nationality": "法国", "positions": ["LW","ST"], "preferred_foot": "right", "career": [{"club":"monaco","years":"2015-2018"},{"club":"psg","years":"2018-2024"},{"club":"real_madrid","years":"2024-至今"}], "attributes": {"pace":98,"shooting":90,"passing":80,"dribbling":92,"defending":40,"physical":78}, "traits": ["speedster","dribbling_master","finisher"], "skills": ["speed_burst","ghost_dribble","clutch_player"]},
+    "yamal": {"name": "拉明·亚马尔", "short_name": "亚马尔", "nationality": "西班牙", "positions": ["RW"], "preferred_foot": "left", "career": [{"club":"barcelona","years":"2023-至今"}], "attributes": {"pace":88,"shooting":75,"passing":82,"dribbling":90,"defending":35,"physical":60}, "traits": ["dribbling_master","flair","speedster"], "skills": ["ghost_dribble","quick_turn","ghost_movement"]},
+    "pedri": {"name": "佩德里", "short_name": "佩德里", "nationality": "西班牙", "positions": ["CM","CAM"], "preferred_foot": "right", "career": [{"club":"barcelona","years":"2020-至今"}], "attributes": {"pace":75,"shooting":72,"passing":88,"dribbling":88,"defending":55,"physical":60}, "traits": ["playmaker","dribbling_master"], "skills": ["vision_pass","first_touch","ghost_dribble"]},
+    "gavi": {"name": "加维", "short_name": "加维", "nationality": "西班牙", "positions": ["CM"], "preferred_foot": "right", "career": [{"club":"barcelona","years":"2021-至今"}], "attributes": {"pace":78,"shooting":70,"passing":82,"dribbling":84,"defending":65,"physical":65}, "traits": ["box_to_box","playmaker"], "skills": ["endless_runner","vision_pass","interceptor"]},
+    "lewandowski": {"name": "罗伯特·莱万多夫斯基", "short_name": "莱万", "nationality": "波兰", "positions": ["ST"], "preferred_foot": "right", "career": [{"club":"dortmund","years":"2010-2014"},{"club":"bayern_munich","years":"2014-2022"},{"club":"barcelona","years":"2022-至今"}], "attributes": {"pace":75,"shooting":92,"passing":78,"dribbling":82,"defending":40,"physical":85}, "traits": ["finisher","header","long_shot"], "skills": ["power_shot","air_dominance","clutch_player"]},
+    "griezmann": {"name": "安托万·格列兹曼", "short_name": "格列兹曼", "nationality": "法国", "positions": ["ST","CAM"], "preferred_foot": "left", "career": [{"club":"atletico_madrid","years":"2014-2019"},{"club":"barcelona","years":"2019-2021"},{"club":"atletico_madrid","years":"2021-至今"}], "attributes": {"pace":80,"shooting":85,"passing":85,"dribbling":85,"defending":50,"physical":72}, "traits": ["finisher","playmaker","dribbling_master"], "skills": ["vision_pass","ghost_dribble","power_shot"]},
+    "valverde": {"name": "费德里科·巴尔韦德", "short_name": "巴尔韦德", "nationality": "乌拉圭", "positions": ["CM","RM"], "preferred_foot": "right", "career": [{"club":"real_madrid","years":"2018-至今"}], "attributes": {"pace":88,"shooting":82,"passing":82,"dribbling":82,"defending":75,"physical":85}, "traits": ["box_to_box","long_shot","speedster"], "skills": ["endless_runner","power_shot","speed_burst"]},
+    "camavinga": {"name": "爱德华多·卡马文加", "short_name": "卡马文加", "nationality": "法国", "positions": ["CM","LB"], "preferred_foot": "left", "career": [{"club":"rennes","years":"2019-2021"},{"club":"real_madrid","years":"2021-至今"}], "attributes": {"pace":82,"shooting":70,"passing":80,"dribbling":84,"defending":78,"physical":78}, "traits": ["box_to_box","dribbling_master"], "skills": ["endless_runner","ghost_dribble","interceptor"]},
+    "modric": {"name": "卢卡·莫德里奇", "short_name": "莫德里奇", "nationality": "克罗地亚", "positions": ["CM"], "preferred_foot": "right", "career": [{"club":"tottenham","years":"2008-2012"},{"club":"real_madrid","years":"2012-至今"}], "attributes": {"pace":72,"shooting":78,"passing":90,"dribbling":87,"defending":65,"physical":65}, "traits": ["playmaker","dribbling_master","leader"], "skills": ["vision_pass","ghost_dribble","first_touch"]},
+    "kroos": {"name": "托尼·克罗斯", "short_name": "克罗斯", "nationality": "德国", "positions": ["CM"], "preferred_foot": "left", "career": [{"club":"bayern_munich","years":"2007-2014"},{"club":"real_madrid","years":"2014-2024"}], "attributes": {"pace":65,"shooting":82,"passing":92,"dribbling":82,"defending":68,"physical":70}, "traits": ["playmaker","long_shot","crossing"], "skills": ["vision_pass","pinpoint_pass","power_shot"]},
+    "rudiger": {"name": "安东尼奥·吕迪格", "short_name": "吕迪格", "nationality": "德国", "positions": ["CB"], "preferred_foot": "right", "career": [{"club":"roma","years":"2016-2017"},{"club":"chelsea","years":"2017-2022"},{"club":"real_madrid","years":"2022-至今"}], "attributes": {"pace":82,"shooting":50,"passing":72,"dribbling":68,"defending":88,"physical":88}, "traits": ["iron_wall","header","speedster"], "skills": ["iron_wall","air_dominance","speed_burst"]},
+    "militao": {"name": "埃德尔·米利唐", "short_name": "米利唐", "nationality": "巴西", "positions": ["CB"], "preferred_foot": "right", "career": [{"club":"porto","years":"2018-2019"},{"club":"real_madrid","years":"2019-至今"}], "attributes": {"pace":85,"shooting":50,"passing":72,"dribbling":70,"defending":87,"physical":85}, "traits": ["iron_wall","speedster"], "skills": ["iron_wall","speed_burst","interceptor"]},
+    "carvajal": {"name": "达尼·卡瓦哈尔", "short_name": "卡瓦哈尔", "nationality": "西班牙", "positions": ["RB"], "preferred_foot": "right", "career": [{"club":"real_madrid","years":"2013-至今"}], "attributes": {"pace":80,"shooting":65,"passing":80,"dribbling":80,"defending":82,"physical":75}, "traits": ["crossing","iron_wall"], "skills": ["pinpoint_pass","interceptor","endless_runner"]},
+    "mendy": {"name": "费兰·门迪", "short_name": "门迪", "nationality": "法国", "positions": ["LB"], "preferred_foot": "right", "career": [{"club":"lyon","years":"2017-2019"},{"club":"real_madrid","years":"2019-至今"}], "attributes": {"pace":85,"shooting":55,"passing":75,"dribbling":78,"defending":82,"physical":80}, "traits": ["speedster","iron_wall"], "skills": ["speed_burst","fast_retreat","interceptor"]}
   }
 }

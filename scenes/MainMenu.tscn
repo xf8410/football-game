@@ -114,6 +114,18 @@ custom_minimum_size = Vector2(400, 60)
 theme_override_font_sizes/font_size = 24
 text = "🏅 杯赛模式"
 
+[node name="TransferButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "💰 转会市场"
+
+[node name="StatsButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "📊 赛季统计"
+
 [node name="LANButton" type="Button" parent="VBoxContainer/MenuContainer"]
 layout_mode = 2
 custom_minimum_size = Vector2(400, 60)
