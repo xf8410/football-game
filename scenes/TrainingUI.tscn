@@ -1,0 +1,175 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8n9k0m1n2o3p"]
+
+[ext_resource type="Script" path="res://scripts/training_ui.gd" id="1_train"]
+
+[node name="TrainingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_train")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 25.0
+offset_right = 100.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "训练中心"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="LeftPanel" type="Panel" parent="HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(250, 0)
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="HBox/LeftPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 240.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 16
+text = "选择球员"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBox/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 30.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="HBox/LeftPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="CenterPanel" type="Panel" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CardContainer" type="Control" parent="HBox/CenterPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -240.0
+offset_right = 140.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightPanel" type="Panel" parent="HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(350, 0)
+size_flags_horizontal = 0
+
+[node name="LevelLabel" type="Label" parent="HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 340.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "等级: 1 / 50"
+
+[node name="XPBar" type="ProgressBar" parent="HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 340.0
+offset_bottom = 60.0
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="XPCardsLabel" type="Label" parent="HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 65.0
+offset_right = 340.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.8, 0.8, 0.3, 1)
+text = "经验卡: 小×10 中×5 大×2"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBox/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 90.0
+offset_right = -5.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DetailLabel" type="Label" parent="HBox/RightPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "选择球员查看详情"
+autowrap_mode = 3
+
+[node name="UpgradeButton" type="Button" parent="HBox/RightPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0, 0.5, 0, 1)
+text = "升级 (+XP)"

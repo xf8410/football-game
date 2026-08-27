@@ -7,8 +7,10 @@ extends Control
 @onready var title_label = $VBoxContainer/TitleLabel
 @onready var play_button = $VBoxContainer/MenuContainer/PlayButton
 @onready var league_button = $VBoxContainer/MenuContainer/LeagueButton
+@onready var cup_button = $VBoxContainer/MenuContainer/CupButton
 @onready var squad_button = $VBoxContainer/MenuContainer/SquadButton
 @onready var specialties_button = $VBoxContainer/MenuContainer/SpecialtiesButton
+@onready var training_button = $VBoxContainer/MenuContainer/TrainingButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
 @onready var lan_button = $VBoxContainer/MenuContainer/LANButton
 @onready var settings_button = $VBoxContainer/MenuContainer/SettingsButton
@@ -20,8 +22,10 @@ func _ready():
         # 连接按钮信号
         play_button.pressed.connect(_on_play_pressed)
         league_button.pressed.connect(_on_league_pressed)
+        cup_button.pressed.connect(_on_cup_pressed)
         squad_button.pressed.connect(_on_squad_pressed)
         specialties_button.pressed.connect(_on_specialties_pressed)
+        training_button.pressed.connect(_on_training_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
         lan_button.pressed.connect(_on_lan_pressed)
         settings_button.pressed.connect(_on_settings_pressed)
@@ -32,7 +36,7 @@ func _ready():
 
         # 显示玩家信息
         _update_profile_display()
-        version_label.text = "v0.3.0-alpha | Godot 4.3"
+        version_label.text = "v0.4.0-alpha | Godot 4.3"
 
         # 检查是否有进行中的联赛
         if LeagueManager.load_season():
@@ -42,7 +46,7 @@ func _ready():
         var subtitles = [
                 "绿茵场上，谁与争锋",
                 "11v11 真实足球体验",
-                "五大联赛 + 国家队 + 特性系统",
+                "24种阵型 + 被动技能系统",
                 "单机畅玩，局域对战",
         ]
         title_label.text = "⚽ 足球游戏"
@@ -98,6 +102,23 @@ func _on_squad_pressed():
 func _on_specialties_pressed():
         print("[MainMenu] 打开球队特性")
         get_tree().change_scene_to_file("res://scenes/TeamSpecialties.tscn")
+
+func _on_training_pressed():
+        print("[MainMenu] 打开训练中心")
+        get_tree().change_scene_to_file("res://scenes/TrainingUI.tscn")
+
+func _on_cup_pressed():
+        print("[MainMenu] 打开杯赛模式")
+        # 简化：直接开始一个16强淘汰赛
+        var all_teams = TeamDatabase.get_all_clubs().keys()
+        all_teams.shuffle()
+        var cup_teams = all_teams.slice(0, 16)
+        if player_team_id == "":
+                player_team_id = cup_teams[0]
+        CupManager.start_knockout_cup("冠军杯", cup_teams, player_team_id)
+        get_tree().change_scene_to_file("res://scenes/Match.tscn")
+
+var player_team_id = ""
 
 func _on_profile_pressed():
         print("[MainMenu] 打开玩家档案")

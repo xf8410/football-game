@@ -1,0 +1,159 @@
+[gd_scene load_steps=2 format=3 uid="uid://a7n8k9m0n1o2p"]
+
+[ext_resource type="Script" path="res://scripts/player_card.gd" id="1_card"]
+
+[node name="PlayerCard" type="Control"]
+custom_minimum_size = Vector2(280, 480)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_card")
+
+[node name="CardBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3, 0.3, 0.4, 0.95)
+
+[node name="Border" type="ColorRect" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="PortraitBG" type="ColorRect" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(0.2, 0.25, 0.35, 1)
+
+[node name="PortraitLabel" type="Label" parent="CardBG/PortraitBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -30.0
+offset_right = 80.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+text = "球员头像"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RatingLabel" type="Label" parent="CardBG"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 70.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+text = "90"
+vertical_alignment = 1
+
+[node name="PositionLabel" type="Label" parent="CardBG"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 55.0
+offset_right = 70.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(1, 1, 1, 0.9)
+text = "ST"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 210.0
+offset_right = -10.0
+offset_bottom = 240.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "球员姓名"
+horizontal_alignment = 1
+
+[node name="NationLabel" type="Label" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 240.0
+offset_right = -10.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+text = "国籍"
+horizontal_alignment = 1
+
+[node name="Separator" type="ColorRect" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 265.0
+offset_right = -20.0
+offset_bottom = 267.0
+grow_horizontal = 2
+color = Color(0.5, 0.5, 0.5, 0.5)
+
+[node name="AttrsContainer" type="VBoxContainer" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 275.0
+offset_right = -15.0
+offset_bottom = 380.0
+grow_horizontal = 2
+theme_override_constants/separation = 3
+
+[node name="TraitsContainer" type="VBoxContainer" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 385.0
+offset_right = -15.0
+offset_bottom = 435.0
+grow_horizontal = 2
+theme_override_constants/separation = 2
+
+[node name="SkillsContainer" type="VBoxContainer" parent="CardBG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 440.0
+offset_right = -15.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme_override_constants/separation = 2

@@ -31,6 +31,9 @@ PlayerDevelopment="*res://scripts/player_development.gd"
 AudioManager="*res://scripts/audio_manager.gd"
 Commentary="*res://scripts/commentary.gd"
 IconGenerator="*res://scripts/icon_generator.gd"
+SkillSystem="*res://scripts/skill_system.gd"
+CupManager="*res://scripts/cup_manager.gd"
+ReplaySystem="*res://scripts/replay_system.gd"
 
 [display]
 
