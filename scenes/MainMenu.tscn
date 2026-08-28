@@ -132,6 +132,18 @@ custom_minimum_size = Vector2(400, 60)
 theme_override_font_sizes/font_size = 24
 text = "🎴 球员抽卡"
 
+[node name="CollectionButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "📖 球员图鉴"
+
+[node name="CheckinButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "📅 每日签到"
+
 [node name="StatsButton" type="Button" parent="VBoxContainer/MenuContainer"]
 layout_mode = 2
 custom_minimum_size = Vector2(400, 60)

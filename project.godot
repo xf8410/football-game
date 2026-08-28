@@ -46,6 +46,8 @@ ModSystem="*res://scripts/mod_system.gd"
 CardDrawSystem="*res://scripts/card_draw_system.gd"
 MatchFlow="*res://scripts/match_flow.gd"
 StaminaSystem="*res://scripts/stamina_system.gd"
+CardCollection="*res://scripts/card_collection.gd"
+DailyCheckin="*res://scripts/daily_checkin.gd"
 
 [display]
 
