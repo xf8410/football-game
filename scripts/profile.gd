@@ -13,6 +13,7 @@ extends Control
 @onready var rename_edit = $RenameDialog/LineEdit
 
 var profile: Dictionary
+var team_edit: LineEdit
 
 func _ready():
 	back_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/MainMenu.tscn"))
@@ -27,8 +28,44 @@ func _ready():
 	rename_btn.pressed.connect(func(): rename_dialog.popup_centered())
 	$ScrollContainer/VBox/ProfileHeader.add_child(rename_btn)
 
+	# 添加修改球队名按钮
+	var team_btn = Button.new()
+	team_btn.text = "修改球队名"
+	team_btn.pressed.connect(func(): _open_team_rename())
+	$ScrollContainer/VBox/ProfileHeader.add_child(team_btn)
+
 	# 确认改名
 	rename_dialog.confirmed.connect(_on_rename_confirmed)
+
+func _open_team_rename():
+	# 程序化构建一个球队改名弹窗
+	var dialog = ConfirmationDialog.new()
+	dialog.title = "修改球队名"
+	dialog.ok_button_text = "确定"
+	dialog.cancel_button_text = "取消"
+
+	team_edit = LineEdit.new()
+	team_edit.placeholder_text = "输入球队名"
+	var my = SaveManager.get_my_team()
+	team_edit.text = my.get("name", "我的球队")
+	team_edit.custom_minimum_size = Vector2(280, 40)
+
+	var vbox = VBoxContainer.new()
+	vbox.add_child(team_edit)
+	dialog.add_child(vbox)
+
+	add_child(dialog)
+	dialog.confirmed.connect(_on_team_rename_confirmed)
+	dialog.popup_centered()
+
+func _on_team_rename_confirmed():
+	var new_name = team_edit.text.strip_edges()
+	if new_name.length() > 0 and new_name.length() <= 16:
+		var my = SaveManager.get_my_team()
+		my["name"] = new_name
+		my["short_name"] = new_name
+		SaveManager.save_my_team(my)
+		print("[Profile] 球队名已修改为: " + new_name)
 
 func _display_profile():
 	name_label.text = "教练：" + str(profile.get("name", "Player"))
