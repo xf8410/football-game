@@ -23,6 +23,8 @@ extends Control
 @onready var world_cup_button = $VBoxContainer/MenuContainer/WorldCupButton
 @onready var history_button = $VBoxContainer/MenuContainer/HistoryButton
 @onready var awards_button = $VBoxContainer/MenuContainer/AwardsButton
+@onready var trophy_room_button = $VBoxContainer/MenuContainer/TrophyRoomButton
+@onready var transfer_history_button = $VBoxContainer/MenuContainer/TransferHistoryButton
 @onready var trade_button = $VBoxContainer/MenuContainer/TradeButton
 @onready var stats_button = $VBoxContainer/MenuContainer/StatsButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
@@ -52,6 +54,8 @@ func _ready():
         world_cup_button.pressed.connect(_on_world_cup_pressed)
         history_button.pressed.connect(_on_history_pressed)
         awards_button.pressed.connect(_on_awards_pressed)
+        trophy_room_button.pressed.connect(_on_trophy_room_pressed)
+        transfer_history_button.pressed.connect(_on_transfer_history_pressed)
         trade_button.pressed.connect(_on_trade_pressed)
         stats_button.pressed.connect(_on_stats_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
@@ -184,6 +188,14 @@ func _on_history_pressed():
 func _on_awards_pressed():
         print("[MainMenu] 打开奖项")
         get_tree().change_scene_to_file("res://scenes/Awards.tscn")
+
+func _on_trophy_room_pressed():
+        print("[MainMenu] 打开奖杯陈列室")
+        get_tree().change_scene_to_file("res://scenes/TrophyRoom.tscn")
+
+func _on_transfer_history_pressed():
+        print("[MainMenu] 打开转会历史")
+        get_tree().change_scene_to_file("res://scenes/TransferHistory.tscn")
 
 func _on_trade_pressed():
         print("[MainMenu] 打开卡牌交易")

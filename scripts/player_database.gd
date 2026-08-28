@@ -34,6 +34,16 @@ func _load_data():
                                 players_data[pid] = transfer_players[pid]
                 transfer_file.close()
 
+        # 加载更多转会历史球员
+        var more_file = FileAccess.open("res://data/more_transfer_players.json", FileAccess.READ)
+        if more_file:
+                var json3 = JSON.new()
+                if json3.parse(more_file.get_as_text()) == OK:
+                        var more_players = json3.data.get("players", {})
+                        for pid in more_players:
+                                players_data[pid] = more_players[pid]
+                more_file.close()
+
         print("[PlayerDB] 已加载 %d 名球员（含转会历史版本）" % players_data.size())
 
 ## 获取球员数据

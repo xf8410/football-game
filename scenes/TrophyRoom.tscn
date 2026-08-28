@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0n1k2m3n4o5p"]
+[gd_scene load_steps=2 format=3 uid="uid://g5n6k7m8n9o0p"]
 
-[ext_resource type="Script" path="res://scripts/world_cup_ui.gd" id="1_wc"]
+[ext_resource type="Script" path="res://scripts/trophy_room_ui.gd" id="1_trophy"]
 
-[node name="WorldCupUI" type="Control"]
+[node name="TrophyRoomUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wc")
+script = ExtResource("1_trophy")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -45,35 +45,21 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "🌍 世界杯"
+text = "🏆 奖杯陈列室"
 horizontal_alignment = 1
 
-[node name="StageLabel" type="Label" parent="VBox"]
+[node name="StatsLabel" type="Label" parent="VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
-text = "当前阶段: 未开始"
+theme_override_colors/font_color = Color(1, 0.84, 0, 1)
+text = "🏆 已获得 0 个奖项"
 horizontal_alignment = 1
-
-[node name="StartButton" type="Button" parent="VBox"]
-layout_mode = 2
-custom_minimum_size = Vector2(0, 60)
-theme_override_font_sizes/font_size = 22
-text = "🌍 开始世界杯"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GroupsVBox" type="VBoxContainer" parent="VBox/ScrollContainer"]
+[node name="TrophiesVBox" type="VBoxContainer" parent="VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 5
-visible = false
-
-[node name="KnockoutLabel" type="Label" parent="VBox/ScrollContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = ""
-visible = false
-autowrap_mode = 3
+theme_override_constants/separation = 6
