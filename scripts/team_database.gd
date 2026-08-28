@@ -33,7 +33,10 @@ func _load_data():
 	print("[TeamDB] 已加载 %d 支俱乐部, %d 支国家队" % [clubs.size(), national_teams.size()])
 
 ## 获取球队数据（俱乐部或国家队）
+## 特殊处理 "my_team"：玩家自定义球队，从本地存档读取，可自定义名称/颜色/阵型。
 func get_team(team_id: String) -> Dictionary:
+	if team_id == "my_team":
+		return SaveManager.get_my_team()
 	if clubs.has(team_id):
 		return clubs[team_id]
 	if national_teams.has(team_id):
