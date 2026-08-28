@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=3 uid="uid://e7n8k9m0n1o2p"]
+
+[ext_resource type="Script" path="res://scripts/stadium_ui.gd" id="1_stadium"]
+
+[node name="StadiumUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stadium")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "🏟️ 球场自定义"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="LeftPanel" type="Panel" parent="VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBox/HBox/LeftPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 18
+text = "选择球场"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/HBox/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StadiumList" type="VBoxContainer" parent="VBox/HBox/LeftPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="RightPanel" type="Panel" parent="VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(350, 0)
+
+[node name="WeatherBox" type="HBoxContainer" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 340.0
+offset_bottom = 50.0
+
+[node name="Label" type="Label" parent="VBox/HBox/RightPanel/WeatherBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(60, 0)
+theme_override_font_sizes/font_size = 16
+text = "天气:"
+
+[node name="WeatherOption" type="OptionButton" parent="VBox/HBox/RightPanel/WeatherBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 40)
+
+[node name="TimeBox" type="HBoxContainer" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 55.0
+offset_right = 340.0
+offset_bottom = 95.0
+
+[node name="Label" type="Label" parent="VBox/HBox/RightPanel/TimeBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(60, 0)
+theme_override_font_sizes/font_size = 16
+text = "时间:"
+
+[node name="TimeSlider" type="HSlider" parent="VBox/HBox/RightPanel/TimeBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(180, 0)
+min_value = 0.0
+max_value = 24.0
+value = 14.0
+
+[node name="TimeLabel" type="Label" parent="VBox/HBox/RightPanel/TimeBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 0)
+theme_override_font_sizes/font_size = 14
+text = "14:00"
+
+[node name="RandomButton" type="Button" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 340.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 16
+text = "🎲 随机环境"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/HBox/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 140.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DetailLabel" type="Label" parent="VBox/HBox/RightPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "选择球场和环境"
+autowrap_mode = 3

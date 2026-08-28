@@ -48,6 +48,9 @@ MatchFlow="*res://scripts/match_flow.gd"
 StaminaSystem="*res://scripts/stamina_system.gd"
 CardCollection="*res://scripts/card_collection.gd"
 DailyCheckin="*res://scripts/daily_checkin.gd"
+AchievementSystem="*res://scripts/achievement_system.gd"
+ChemistrySystem="*res://scripts/chemistry_system.gd"
+StadiumSystem="*res://scripts/stadium_system.gd"
 
 [display]
 

@@ -16,6 +16,8 @@ extends Control
 @onready var card_draw_button = $VBoxContainer/MenuContainer/CardDrawButton
 @onready var collection_button = $VBoxContainer/MenuContainer/CollectionButton
 @onready var checkin_button = $VBoxContainer/MenuContainer/CheckinButton
+@onready var achievement_button = $VBoxContainer/MenuContainer/AchievementButton
+@onready var stadium_button = $VBoxContainer/MenuContainer/StadiumButton
 @onready var stats_button = $VBoxContainer/MenuContainer/StatsButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
 @onready var lan_button = $VBoxContainer/MenuContainer/LANButton
@@ -37,6 +39,8 @@ func _ready():
         card_draw_button.pressed.connect(_on_card_draw_pressed)
         collection_button.pressed.connect(_on_collection_pressed)
         checkin_button.pressed.connect(_on_checkin_pressed)
+        achievement_button.pressed.connect(_on_achievement_pressed)
+        stadium_button.pressed.connect(_on_stadium_pressed)
         stats_button.pressed.connect(_on_stats_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
         lan_button.pressed.connect(_on_lan_pressed)
@@ -140,6 +144,14 @@ func _on_collection_pressed():
 func _on_checkin_pressed():
         print("[MainMenu] 打开每日签到")
         get_tree().change_scene_to_file("res://scenes/DailyCheckin.tscn")
+
+func _on_achievement_pressed():
+        print("[MainMenu] 打开成就")
+        get_tree().change_scene_to_file("res://scenes/Achievement.tscn")
+
+func _on_stadium_pressed():
+        print("[MainMenu] 打开球场自定义")
+        get_tree().change_scene_to_file("res://scenes/Stadium.tscn")
 
 func _on_stats_pressed():
         print("[MainMenu] 打开赛季统计")
