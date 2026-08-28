@@ -101,13 +101,22 @@ func _update_profile_display():
 
 func _on_play_pressed():
         print("[MainMenu] 开始快速比赛")
-        # 设置默认比赛配置
+        # 玩家主队 = "我的球队"（自定义名称/颜色/阵型，从存档读取）
+        var my_team = SaveManager.get_my_team()
+        # 机器人客队：从真实俱乐部中随机一支（AI 球队使用原队名）
+        var clubs = TeamDatabase.get_all_clubs()
+        var ids = clubs.keys()
+        ids.shuffle()
+        var away_id = ids[0] if ids.size() > 0 else "man_city"
+        var away_team = TeamDatabase.get_team(away_id)
         GameState.set_match_config({
-                "home_team_name": "红队",
-                "away_team_name": "蓝队",
-                "home_color": Color(0.9, 0.15, 0.15),
-                "away_color": Color(0.15, 0.3, 0.9),
-                "formation": "4-4-2",
+                "home_team_id": "my_team",
+                "away_team_id": away_id,
+                "home_team_name": my_team.get("name", "我的球队"),
+                "away_team_name": away_team.get("name", "客队"),
+                "home_color": Color.from_string(my_team.get("primary_color", "#C8102E"), Color.RED),
+                "away_color": Color.from_string(away_team.get("primary_color", "#1C2C5B"), Color.BLUE),
+                "formation": my_team.get("formation", "4-3-3"),
                 "difficulty": GameState.AIDifficulty.NORMAL,
                 "half_duration": 180.0,
                 "player_controls": GameState.TeamSide.HOME,
