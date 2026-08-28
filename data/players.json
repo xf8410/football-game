@@ -1,8 +1,466 @@
 {
   "players": {
-    "haaland": {
+    "c_ronaldo_sporting_cp_0": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 86,
+        "passing": 74,
+        "dribbling": 79,
+        "defending": 40,
+        "physical": 72
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "sporting_cp",
+      "era": "里斯本竞技时期",
+      "years": "2002-2003",
+      "jersey_number": 28,
+      "base_player_id": "c_ronaldo",
+      "version_index": 0
+    },
+    "c_ronaldo_man_united_1": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 88,
+        "shooting": 94,
+        "passing": 82,
+        "dribbling": 87,
+        "defending": 40,
+        "physical": 80
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "man_united",
+      "era": "曼联一期",
+      "years": "2003-2009",
+      "jersey_number": 7,
+      "base_player_id": "c_ronaldo",
+      "version_index": 1
+    },
+    "c_ronaldo_real_madrid_2": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 93,
+        "shooting": 99,
+        "passing": 87,
+        "dribbling": 92,
+        "defending": 40,
+        "physical": 85
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "real_madrid",
+      "era": "皇马巅峰",
+      "years": "2009-2018",
+      "jersey_number": 7,
+      "base_player_id": "c_ronaldo",
+      "version_index": 2
+    },
+    "c_ronaldo_juventus_3": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 90,
+        "shooting": 96,
+        "passing": 84,
+        "dribbling": 89,
+        "defending": 40,
+        "physical": 82
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "juventus",
+      "era": "尤文时期",
+      "years": "2018-2021",
+      "jersey_number": 7,
+      "base_player_id": "c_ronaldo",
+      "version_index": 3
+    },
+    "c_ronaldo_man_united_4": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 85,
+        "shooting": 91,
+        "passing": 79,
+        "dribbling": 84,
+        "defending": 40,
+        "physical": 77
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "man_united",
+      "era": "曼联二期",
+      "years": "2021-2022",
+      "jersey_number": 7,
+      "base_player_id": "c_ronaldo",
+      "version_index": 4
+    },
+    "c_ronaldo_al_nassr_5": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 83,
+        "shooting": 89,
+        "passing": 77,
+        "dribbling": 82,
+        "defending": 40,
+        "physical": 75
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "al_nassr",
+      "era": "利雅得胜利",
+      "years": "2023-至今",
+      "jersey_number": 7,
+      "base_player_id": "c_ronaldo",
+      "version_index": 5
+    },
+    "messi_barcelona_0": {
+      "name": "利昂内尔·梅西",
+      "short_name": "梅西",
+      "nationality": "阿根廷",
+      "positions": [
+        "RW",
+        "CF",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 90,
+        "shooting": 97,
+        "passing": 96,
+        "dribbling": 99,
+        "defending": 40,
+        "physical": 70
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 0.92,
+        "body_type": "stocky",
+        "skin_tone": "#E8B888",
+        "hair_style": "medium_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "barcelona",
+      "era": "巴萨巅峰",
+      "years": "2004-2021",
+      "jersey_number": 10,
+      "base_player_id": "messi",
+      "version_index": 0
+    },
+    "messi_psg_1": {
+      "name": "利昂内尔·梅西",
+      "short_name": "梅西",
+      "nationality": "阿根廷",
+      "positions": [
+        "RW",
+        "CF",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 83,
+        "shooting": 90,
+        "passing": 89,
+        "dribbling": 93,
+        "defending": 40,
+        "physical": 63
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 0.92,
+        "body_type": "stocky",
+        "skin_tone": "#E8B888",
+        "hair_style": "medium_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "psg",
+      "era": "巴黎时期",
+      "years": "2021-2023",
+      "jersey_number": 30,
+      "base_player_id": "messi",
+      "version_index": 1
+    },
+    "messi_inter_miami_2": {
+      "name": "利昂内尔·梅西",
+      "short_name": "梅西",
+      "nationality": "阿根廷",
+      "positions": [
+        "RW",
+        "CF",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 80,
+        "shooting": 87,
+        "passing": 86,
+        "dribbling": 90,
+        "defending": 40,
+        "physical": 60
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 0.92,
+        "body_type": "stocky",
+        "skin_tone": "#E8B888",
+        "hair_style": "medium_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "inter_miami",
+      "era": "迈阿密国际",
+      "years": "2023-至今",
+      "jersey_number": 10,
+      "base_player_id": "messi",
+      "version_index": 2
+    },
+    "haaland_molde_0": {
       "name": "厄林·哈兰德",
-      "short_name": "厄林·",
+      "short_name": "哈兰德",
+      "nationality": "挪威",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 81,
+        "shooting": 83,
+        "passing": 56,
+        "dribbling": 70,
+        "defending": 40,
+        "physical": 78
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "power_header"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9BF80"
+      },
+      "club": "molde",
+      "era": "莫尔德时期",
+      "years": "2017-2018",
+      "jersey_number": 30,
+      "base_player_id": "haaland",
+      "version_index": 0
+    },
+    "haaland_salzburg_1": {
+      "name": "厄林·哈兰德",
+      "short_name": "哈兰德",
+      "nationality": "挪威",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 86,
+        "shooting": 88,
+        "passing": 61,
+        "dribbling": 75,
+        "defending": 40,
+        "physical": 83
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "power_header"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9BF80"
+      },
+      "club": "salzburg",
+      "era": "萨尔茨堡时期",
+      "years": "2019-2020",
+      "jersey_number": 30,
+      "base_player_id": "haaland",
+      "version_index": 1
+    },
+    "haaland_dortmund_2": {
+      "name": "厄林·哈兰德",
+      "short_name": "哈兰德",
       "nationality": "挪威",
       "positions": [
         "ST"
@@ -26,17 +484,190 @@
         "power_shot",
         "clutch_player"
       ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9BF80"
+      },
+      "club": "dortmund",
+      "era": "多特时期",
+      "years": "2020-2022",
+      "jersey_number": 9,
+      "base_player_id": "haaland",
+      "version_index": 2
     },
-    "de_bruyne": {
-      "name": "凯文·德布劳内",
-      "short_name": "凯文·",
-      "nationality": "比利时",
+    "haaland_man_city_3": {
+      "name": "厄林·哈兰德",
+      "short_name": "哈兰德",
+      "nationality": "挪威",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 94,
+        "shooting": 96,
+        "passing": 69,
+        "dribbling": 83,
+        "defending": 48,
+        "physical": 91
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "power_header"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9BF80"
+      },
+      "club": "man_city",
+      "era": "曼城时期",
+      "years": "2022-至今",
+      "jersey_number": 9,
+      "base_player_id": "haaland",
+      "version_index": 3
+    },
+    "mbappe_monaco_0": {
+      "name": "基利安·姆巴佩",
+      "short_name": "姆巴佩",
+      "nationality": "法国",
+      "positions": [
+        "ST",
+        "LW",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 89,
+        "shooting": 82,
+        "passing": 72,
+        "dribbling": 84,
+        "defending": 40,
+        "physical": 70
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "clinical_finisher"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8C5A3C",
+        "hair_style": "short_curly",
+        "hair_color": "#1A1208"
+      },
+      "club": "monaco",
+      "era": "摩纳哥时期",
+      "years": "2015-2017",
+      "jersey_number": 29,
+      "base_player_id": "mbappe",
+      "version_index": 0
+    },
+    "mbappe_psg_1": {
+      "name": "基利安·姆巴佩",
+      "short_name": "姆巴佩",
+      "nationality": "法国",
+      "positions": [
+        "ST",
+        "LW",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 99,
+        "shooting": 92,
+        "passing": 82,
+        "dribbling": 94,
+        "defending": 40,
+        "physical": 80
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "clinical_finisher"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8C5A3C",
+        "hair_style": "short_curly",
+        "hair_color": "#1A1208"
+      },
+      "club": "psg",
+      "era": "巴黎时期",
+      "years": "2017-2024",
+      "jersey_number": 7,
+      "base_player_id": "mbappe",
+      "version_index": 1
+    },
+    "mbappe_real_madrid_2": {
+      "name": "基利安·姆巴佩",
+      "short_name": "姆巴佩",
+      "nationality": "法国",
+      "positions": [
+        "ST",
+        "LW",
+        "RW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 99,
+        "shooting": 93,
+        "passing": 83,
+        "dribbling": 95,
+        "defending": 40,
+        "physical": 81
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "clinical_finisher"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8C5A3C",
+        "hair_style": "short_curly",
+        "hair_color": "#1A1208"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2024-至今",
+      "jersey_number": 9,
+      "base_player_id": "mbappe",
+      "version_index": 2
+    },
+    "bellingham_birmingham_0": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
       "positions": [
         "CAM",
         "CM"
@@ -44,11 +675,211 @@
       "preferred_foot": "right",
       "attributes": {
         "pace": 70,
+        "shooting": 75,
+        "passing": 76,
+        "dribbling": 77,
+        "defending": 65,
+        "physical": 72
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker"
+      ],
+      "skills": [
+        "endless_runner",
+        "vision_pass",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#C8A080",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "birmingham",
+      "era": "伯明翰时期",
+      "years": "2019-2020",
+      "jersey_number": 22,
+      "base_player_id": "bellingham",
+      "version_index": 0
+    },
+    "bellingham_dortmund_1": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 85,
+        "passing": 86,
+        "dribbling": 87,
+        "defending": 75,
+        "physical": 82
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker"
+      ],
+      "skills": [
+        "endless_runner",
+        "vision_pass",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#C8A080",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "dortmund",
+      "era": "多特时期",
+      "years": "2020-2023",
+      "jersey_number": 22,
+      "base_player_id": "bellingham",
+      "version_index": 1
+    },
+    "bellingham_real_madrid_2": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 85,
+        "shooting": 90,
+        "passing": 91,
+        "dribbling": 92,
+        "defending": 80,
+        "physical": 87
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker"
+      ],
+      "skills": [
+        "endless_runner",
+        "vision_pass",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#C8A080",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2023-至今",
+      "jersey_number": 5,
+      "base_player_id": "bellingham",
+      "version_index": 2
+    },
+    "vinicius_flamengo_0": {
+      "name": "维尼修斯·儒尼奥尔",
+      "short_name": "维尼修斯",
+      "nationality": "巴西",
+      "positions": [
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 87,
+        "shooting": 75,
+        "passing": 70,
+        "dribbling": 82,
+        "defending": 40,
+        "physical": 62
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "slim",
+        "skin_tone": "#5A3520",
+        "hair_style": "curly",
+        "hair_color": "#0A0805"
+      },
+      "club": "flamengo",
+      "era": "弗拉门戈时期",
+      "years": "2017-2018",
+      "jersey_number": 11,
+      "base_player_id": "vinicius",
+      "version_index": 0
+    },
+    "vinicius_real_madrid_1": {
+      "name": "维尼修斯·儒尼奥尔",
+      "short_name": "维尼修斯",
+      "nationality": "巴西",
+      "positions": [
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 98,
         "shooting": 86,
-        "passing": 93,
-        "dribbling": 86,
-        "defending": 64,
-        "physical": 78
+        "passing": 81,
+        "dribbling": 93,
+        "defending": 40,
+        "physical": 73
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "slim",
+        "skin_tone": "#5A3520",
+        "hair_style": "curly",
+        "hair_color": "#0A0805"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2018-至今",
+      "jersey_number": 7,
+      "base_player_id": "vinicius",
+      "version_index": 1
+    },
+    "de_bruyne_werder_bremen_0": {
+      "name": "凯文·德布劳内",
+      "short_name": "德布劳内",
+      "nationality": "比利时",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 62,
+        "shooting": 78,
+        "passing": 85,
+        "dribbling": 78,
+        "defending": 56,
+        "physical": 70
       },
       "traits": [
         "playmaker",
@@ -60,14 +891,265 @@
         "pinpoint_pass",
         "curve_shot"
       ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9A850"
+      },
+      "club": "werder_bremen",
+      "era": "不莱梅时期",
+      "years": "2012-2014",
+      "jersey_number": 22,
+      "base_player_id": "de_bruyne",
+      "version_index": 0
     },
-    "rodrri": {
+    "de_bruyne_wolfsburg_1": {
+      "name": "凯文·德布劳内",
+      "short_name": "德布劳内",
+      "nationality": "比利时",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 67,
+        "shooting": 83,
+        "passing": 90,
+        "dribbling": 83,
+        "defending": 61,
+        "physical": 75
+      },
+      "traits": [
+        "playmaker",
+        "long_shot",
+        "free_kick"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9A850"
+      },
+      "club": "wolfsburg",
+      "era": "狼堡时期",
+      "years": "2014-2015",
+      "jersey_number": 17,
+      "base_player_id": "de_bruyne",
+      "version_index": 1
+    },
+    "de_bruyne_man_city_2": {
+      "name": "凯文·德布劳内",
+      "short_name": "德布劳内",
+      "nationality": "比利时",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 73,
+        "shooting": 89,
+        "passing": 96,
+        "dribbling": 89,
+        "defending": 67,
+        "physical": 81
+      },
+      "traits": [
+        "playmaker",
+        "long_shot",
+        "free_kick"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9A850"
+      },
+      "club": "man_city",
+      "era": "曼城时期",
+      "years": "2015-至今",
+      "jersey_number": 17,
+      "base_player_id": "de_bruyne",
+      "version_index": 2
+    },
+    "salah_roma_0": {
+      "name": "穆罕默德·萨拉赫",
+      "short_name": "萨拉赫",
+      "nationality": "埃及",
+      "positions": [
+        "RW",
+        "ST"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 88,
+        "shooting": 83,
+        "passing": 76,
+        "dribbling": 83,
+        "defending": 40,
+        "physical": 70
+      },
+      "traits": [
+        "speedster",
+        "clinical_finisher",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#A06840",
+        "hair_style": "short_black",
+        "hair_color": "#1A1208"
+      },
+      "club": "roma",
+      "era": "罗马时期",
+      "years": "2015-2017",
+      "jersey_number": 11,
+      "base_player_id": "salah",
+      "version_index": 0
+    },
+    "salah_liverpool_1": {
+      "name": "穆罕默德·萨拉赫",
+      "short_name": "萨拉赫",
+      "nationality": "埃及",
+      "positions": [
+        "RW",
+        "ST"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 96,
+        "shooting": 91,
+        "passing": 84,
+        "dribbling": 91,
+        "defending": 48,
+        "physical": 78
+      },
+      "traits": [
+        "speedster",
+        "clinical_finisher",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#A06840",
+        "hair_style": "short_black",
+        "hair_color": "#1A1208"
+      },
+      "club": "liverpool",
+      "era": "利物浦时期",
+      "years": "2017-至今",
+      "jersey_number": 11,
+      "base_player_id": "salah",
+      "version_index": 1
+    },
+    "kane_tottenham_0": {
+      "name": "哈里·凯恩",
+      "short_name": "凯恩",
+      "nationality": "英格兰",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 68,
+        "shooting": 93,
+        "passing": 84,
+        "dribbling": 83,
+        "defending": 47,
+        "physical": 83
+      },
+      "traits": [
+        "clinical_finisher",
+        "playmaker",
+        "header"
+      ],
+      "skills": [
+        "power_shot",
+        "vision_pass",
+        "air_dominance"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_blonde",
+        "hair_color": "#B89860"
+      },
+      "club": "tottenham",
+      "era": "热刺时期",
+      "years": "2009-2023",
+      "jersey_number": 10,
+      "base_player_id": "kane",
+      "version_index": 0
+    },
+    "kane_bayern_munich_1": {
+      "name": "哈里·凯恩",
+      "short_name": "凯恩",
+      "nationality": "英格兰",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 71,
+        "shooting": 96,
+        "passing": 87,
+        "dribbling": 86,
+        "defending": 50,
+        "physical": 86
+      },
+      "traits": [
+        "clinical_finisher",
+        "playmaker",
+        "header"
+      ],
+      "skills": [
+        "power_shot",
+        "vision_pass",
+        "air_dominance"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_blonde",
+        "hair_color": "#B89860"
+      },
+      "club": "bayern_munich",
+      "era": "拜仁时期",
+      "years": "2023-至今",
+      "jersey_number": 9,
+      "base_player_id": "kane",
+      "version_index": 1
+    },
+    "rodri_atletico_madrid_0": {
       "name": "罗德里",
       "short_name": "罗德里",
       "nationality": "西班牙",
@@ -77,12 +1159,12 @@
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 62,
-        "shooting": 75,
-        "passing": 85,
-        "dribbling": 78,
-        "defending": 82,
-        "physical": 85
+        "pace": 59,
+        "shooting": 72,
+        "passing": 82,
+        "dribbling": 75,
+        "defending": 79,
+        "physical": 82
       },
       "traits": [
         "iron_wall",
@@ -93,16 +1175,63 @@
         "pinpoint_pass",
         "interceptor"
       ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "atletico_madrid",
+      "era": "马竞时期",
+      "years": "2018-2019",
+      "jersey_number": 14,
+      "base_player_id": "rodri",
+      "version_index": 0
     },
-    "foden": {
+    "rodri_man_city_1": {
+      "name": "罗德里",
+      "short_name": "罗德里",
+      "nationality": "西班牙",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 65,
+        "shooting": 78,
+        "passing": 88,
+        "dribbling": 81,
+        "defending": 85,
+        "physical": 88
+      },
+      "traits": [
+        "iron_wall",
+        "playmaker"
+      ],
+      "skills": [
+        "iron_wall",
+        "pinpoint_pass",
+        "interceptor"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "man_city",
+      "era": "曼城时期",
+      "years": "2019-至今",
+      "jersey_number": 16,
+      "base_player_id": "rodri",
+      "version_index": 1
+    },
+    "foden_man_city_0": {
       "name": "菲尔·福登",
-      "short_name": "菲尔·",
+      "short_name": "福登",
       "nationality": "英格兰",
       "positions": [
         "CAM",
@@ -126,552 +1255,76 @@
         "vision_pass",
         "first_touch"
       ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "bernardo_silva": {
-      "name": "贝尔纳多·席尔瓦",
-      "short_name": "贝尔纳",
-      "nationality": "葡萄牙",
-      "positions": [
-        "CAM",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 76,
-        "shooting": 80,
-        "passing": 86,
-        "dribbling": 90,
-        "defending": 60,
-        "physical": 68
+      "appearance": {
+        "height_mult": 0.95,
+        "body_type": "slim",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8A860"
       },
-      "traits": [
-        "dribbling_master",
-        "playmaker"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "endless_runner",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
+      "club": "man_city",
+      "era": "曼城时期",
+      "years": "2017-至今",
+      "jersey_number": 47,
+      "base_player_id": "foden",
+      "version_index": 0
     },
-    "gvardiol": {
-      "name": "约什科·格瓦迪奥尔",
-      "short_name": "约什科",
-      "nationality": "克罗地亚",
-      "positions": [
-        "CB",
-        "LB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 55,
-        "passing": 70,
-        "dribbling": 72,
-        "defending": 85,
-        "physical": 84
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "ruben_dias": {
-      "name": "鲁本·迪亚斯",
-      "short_name": "鲁本·",
-      "nationality": "葡萄牙",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 68,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 70,
-        "defending": 90,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "header",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "wall_defense",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "ederson": {
-      "name": "埃德森",
-      "short_name": "埃德森",
-      "nationality": "巴西",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "gk_diving": 83,
-        "gk_handling": 82,
-        "gk_kicking": 93,
-        "gk_reflexes": 84,
-        "gk_positioning": 83
-      },
-      "traits": [
-        "sweeper_keeper",
-        "gk_distribution"
-      ],
-      "skills": [
-        "sweeper_keeper",
-        "gk_1v1_master",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "walker": {
-      "name": "凯尔·沃克",
-      "short_name": "凯尔·",
+    "saka_arsenal_0": {
+      "name": "布卡约·萨卡",
+      "short_name": "萨卡",
       "nationality": "英格兰",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 93,
-        "shooting": 60,
-        "passing": 75,
-        "dribbling": 75,
-        "defending": 80,
-        "physical": 82
-      },
-      "traits": [
-        "speedster",
-        "iron_wall"
-      ],
-      "skills": [
-        "speed_burst",
-        "fast_retreat",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "gundogan": {
-      "name": "伊尔凯·京多安",
-      "short_name": "伊尔凯",
-      "nationality": "德国",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 82,
-        "passing": 86,
-        "dribbling": 84,
-        "defending": 68,
-        "physical": 72
-      },
-      "traits": [
-        "playmaker",
-        "clutch"
-      ],
-      "skills": [
-        "vision_pass",
-        "clutch_player",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "alvarez": {
-      "name": "胡利安·阿尔瓦雷斯",
-      "short_name": "胡利安",
-      "nationality": "阿根廷",
-      "positions": [
-        "ST",
-        "CF"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 84,
-        "shooting": 85,
-        "passing": 78,
-        "dribbling": 84,
-        "defending": 50,
-        "physical": 72
-      },
-      "traits": [
-        "clutch",
-        "dribbling_master"
-      ],
-      "skills": [
-        "clutch_player",
-        "ghost_dribble",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "doku": {
-      "name": "杰里米·多库",
-      "short_name": "杰里米",
-      "nationality": "比利时",
-      "positions": [
-        "LW",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 90,
-        "shooting": 72,
-        "passing": 75,
-        "dribbling": 89,
-        "defending": 40,
-        "physical": 65
-      },
-      "traits": [
-        "dribbling_master",
-        "speedster"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "speed_burst",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "ake": {
-      "name": "内森·阿克",
-      "short_name": "内森·",
-      "nationality": "荷兰",
-      "positions": [
-        "CB",
-        "LB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 75,
-        "shooting": 45,
-        "passing": 68,
-        "dribbling": 68,
-        "defending": 83,
-        "physical": 80
-      },
-      "traits": [
-        "iron_wall"
-      ],
-      "skills": [
-        "iron_wall",
-        "fast_retreat",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "stones": {
-      "name": "约翰·斯通斯",
-      "short_name": "约翰·",
-      "nationality": "英格兰",
-      "positions": [
-        "CB",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 70,
-        "shooting": 55,
-        "passing": 75,
-        "dribbling": 72,
-        "defending": 84,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "playmaker"
-      ],
-      "skills": [
-        "iron_wall",
-        "pinpoint_pass",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "ortega": {
-      "name": "斯特凡·奥尔特加",
-      "short_name": "斯特凡",
-      "nationality": "德国",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 80,
-        "gk_handling": 80,
-        "gk_kicking": 85,
-        "gk_reflexes": 81,
-        "gk_positioning": 80
-      },
-      "traits": [
-        "sweeper_keeper"
-      ],
-      "skills": [
-        "sweeper_keeper",
-        "gk_reflex_save"
-      ],
-      "career": [
-        {
-          "club": "man_city",
-          "years": "现役"
-        }
-      ]
-    },
-    "c_ronaldo": {
-      "name": "克里斯蒂亚诺·罗纳尔多",
-      "short_name": "克里斯",
-      "nationality": "葡萄牙",
-      "positions": [
-        "LW",
-        "ST",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 94,
-        "passing": 82,
-        "dribbling": 87,
-        "defending": 35,
-        "physical": 80
-      },
-      "traits": [
-        "long_shot",
-        "header",
-        "free_kick"
-      ],
-      "skills": [
-        "speed_burst",
-        "power_shot",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "mbappe": {
-      "name": "基利安·姆巴佩",
-      "short_name": "基利安",
-      "nationality": "法国",
-      "positions": [
-        "ST",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 97,
-        "shooting": 90,
-        "passing": 80,
-        "dribbling": 92,
-        "defending": 36,
-        "physical": 78
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master",
-        "clutch"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "bellingham": {
-      "name": "祖德·贝林厄姆",
-      "short_name": "祖德·",
-      "nationality": "英格兰",
-      "positions": [
-        "CAM",
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 85,
-        "passing": 84,
-        "dribbling": 87,
-        "defending": 75,
-        "physical": 82
-      },
-      "traits": [
-        "playmaker",
-        "clutch",
-        "box_to_box"
-      ],
-      "skills": [
-        "vision_pass",
-        "clutch_player",
-        "ghost_dribble"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "vinicius": {
-      "name": "维尼修斯·儒尼奥尔",
-      "short_name": "维尼修",
-      "nationality": "巴西",
-      "positions": [
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 95,
-        "shooting": 83,
-        "passing": 78,
-        "dribbling": 90,
-        "defending": 30,
-        "physical": 68
-      },
-      "traits": [
-        "dribbling_master",
-        "speedster"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "speed_burst",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "rodrygo": {
-      "name": "罗德里戈",
-      "short_name": "罗德里",
-      "nationality": "巴西",
       "positions": [
         "RW",
         "LW"
       ],
-      "preferred_foot": "right",
+      "preferred_foot": "left",
       "attributes": {
-        "pace": 89,
-        "shooting": 82,
-        "passing": 78,
+        "pace": 86,
+        "shooting": 80,
+        "passing": 82,
         "dribbling": 86,
-        "defending": 35,
-        "physical": 65
+        "defending": 60,
+        "physical": 70
       },
       "traits": [
         "dribbling_master",
-        "clutch"
+        "crossing"
       ],
       "skills": [
         "ghost_dribble",
-        "clutch_player",
-        "speed_burst"
+        "pinpoint_pass",
+        "endless_runner"
       ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#5A3520",
+        "hair_style": "short_black",
+        "hair_color": "#0A0805"
+      },
+      "club": "arsenal",
+      "era": "阿森纳时期",
+      "years": "2018-至今",
+      "jersey_number": 7,
+      "base_player_id": "saka",
+      "version_index": 0
     },
-    "modric": {
-      "name": "卢卡·莫德里奇",
-      "short_name": "卢卡·",
-      "nationality": "克罗地亚",
+    "odegaard_real_madrid_0": {
+      "name": "马丁·厄德高",
+      "short_name": "厄德高",
+      "nationality": "挪威",
       "positions": [
-        "CM",
-        "CAM"
+        "CAM",
+        "CM"
       ],
-      "preferred_foot": "right",
+      "preferred_foot": "left",
       "attributes": {
-        "pace": 70,
-        "shooting": 78,
-        "passing": 89,
-        "dribbling": 87,
-        "defending": 65,
-        "physical": 65
+        "pace": 71,
+        "shooting": 77,
+        "passing": 83,
+        "dribbling": 82,
+        "defending": 50,
+        "physical": 60
       },
       "traits": [
         "playmaker",
@@ -680,880 +1333,236 @@
       "skills": [
         "vision_pass",
         "ghost_dribble",
-        "endless_runner"
+        "first_touch"
       ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "slim",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8A860"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2015-2021",
+      "jersey_number": 21,
+      "base_player_id": "odegaard",
+      "version_index": 0
     },
-    "kroos": {
-      "name": "托尼·克罗斯",
-      "short_name": "托尼·",
-      "nationality": "德国",
+    "odegaard_arsenal_1": {
+      "name": "马丁·厄德高",
+      "short_name": "厄德高",
+      "nationality": "挪威",
       "positions": [
-        "CM",
-        "CDM"
+        "CAM",
+        "CM"
       ],
       "preferred_foot": "left",
       "attributes": {
-        "pace": 58,
-        "shooting": 82,
+        "pace": 79,
+        "shooting": 85,
         "passing": 91,
-        "dribbling": 82,
-        "defending": 70,
-        "physical": 70
+        "dribbling": 90,
+        "defending": 58,
+        "physical": 68
       },
       "traits": [
         "playmaker",
-        "long_shot",
-        "pinpoint_pass"
+        "dribbling_master"
       ],
       "skills": [
-        "pinpoint_pass",
         "vision_pass",
-        "curve_shot"
+        "ghost_dribble",
+        "first_touch"
       ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "slim",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8A860"
+      },
+      "club": "arsenal",
+      "era": "阿森纳时期",
+      "years": "2021-至今",
+      "jersey_number": 8,
+      "base_player_id": "odegaard",
+      "version_index": 1
     },
-    "valverde": {
-      "name": "费德里科·巴尔韦德",
-      "short_name": "费德里",
-      "nationality": "乌拉圭",
+    "rice_west_ham_0": {
+      "name": "德克兰·赖斯",
+      "short_name": "赖斯",
+      "nationality": "英格兰",
       "positions": [
-        "CM",
-        "RM"
+        "CDM",
+        "CM"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 85,
-        "shooting": 84,
-        "passing": 83,
-        "dribbling": 82,
-        "defending": 78,
+        "pace": 72,
+        "shooting": 70,
+        "passing": 82,
+        "dribbling": 78,
+        "defending": 85,
         "physical": 85
       },
       "traits": [
-        "box_to_box",
-        "long_shot"
+        "iron_wall",
+        "box_to_box"
       ],
       "skills": [
-        "speed_burst",
-        "power_shot",
+        "iron_wall",
+        "interceptor",
         "endless_runner"
       ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "courtois": {
-      "name": "蒂博·库尔图瓦",
-      "short_name": "蒂博·",
-      "nationality": "比利时",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "gk_diving": 87,
-        "gk_handling": 86,
-        "gk_kicking": 82,
-        "gk_reflexes": 88,
-        "gk_positioning": 85
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
       },
-      "traits": [
-        "gk_saver",
-        "gk_1v1"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
+      "club": "west_ham",
+      "era": "西汉姆时期",
+      "years": "2017-2023",
+      "jersey_number": 41,
+      "base_player_id": "rice",
+      "version_index": 0
     },
-    "rüdiger": {
-      "name": "安东尼奥·吕迪格",
-      "short_name": "安东尼",
-      "nationality": "德国",
+    "rice_arsenal_1": {
+      "name": "德克兰·赖斯",
+      "short_name": "赖斯",
+      "nationality": "英格兰",
       "positions": [
-        "CB"
+        "CDM",
+        "CM"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 82,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 68,
+        "pace": 75,
+        "shooting": 73,
+        "passing": 85,
+        "dribbling": 81,
         "defending": 88,
         "physical": 88
       },
       "traits": [
         "iron_wall",
-        "header",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "militao": {
-      "name": "埃德尔·米利唐",
-      "short_name": "埃德尔",
-      "nationality": "巴西",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 70,
-        "defending": 87,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "carvajal": {
-      "name": "达尼·卡瓦哈尔",
-      "short_name": "达尼·",
-      "nationality": "西班牙",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 65,
-        "passing": 80,
-        "dribbling": 80,
-        "defending": 82,
-        "physical": 75
-      },
-      "traits": [
-        "crossing",
-        "iron_wall"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "interceptor",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "mendy": {
-      "name": "费兰·门迪",
-      "short_name": "费兰·",
-      "nationality": "法国",
-      "positions": [
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 55,
-        "passing": 75,
-        "dribbling": 78,
-        "defending": 82,
-        "physical": 80
-      },
-      "traits": [
-        "speedster",
-        "iron_wall"
-      ],
-      "skills": [
-        "speed_burst",
-        "fast_retreat",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "camavinga": {
-      "name": "爱德华多·卡马文加",
-      "short_name": "爱德华",
-      "nationality": "法国",
-      "positions": [
-        "CM",
-        "LB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 82,
-        "shooting": 70,
-        "passing": 80,
-        "dribbling": 84,
-        "defending": 76,
-        "physical": 80
-      },
-      "traits": [
-        "box_to_box",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "tchouameni": {
-      "name": "奥雷利安·楚阿梅尼",
-      "short_name": "奥雷利",
-      "nationality": "法国",
-      "positions": [
-        "CDM",
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 70,
-        "passing": 80,
-        "dribbling": 76,
-        "defending": 85,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "real_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "messi": {
-      "name": "利昂内尔·梅西",
-      "short_name": "利昂内",
-      "nationality": "阿根廷",
-      "positions": [
-        "RW",
-        "CF",
-        "CAM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 85,
-        "shooting": 92,
-        "passing": 91,
-        "dribbling": 95,
-        "defending": 35,
-        "physical": 65
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker",
-        "free_kick"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "lewandowski": {
-      "name": "罗伯特·莱万多夫斯基",
-      "short_name": "罗伯特",
-      "nationality": "波兰",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 91,
-        "passing": 79,
-        "dribbling": 84,
-        "defending": 45,
-        "physical": 82
-      },
-      "traits": [
-        "header",
-        "clutch",
-        "poacher"
-      ],
-      "skills": [
-        "power_shot",
-        "air_dominance",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "gavi": {
-      "name": "巴勃罗·加维",
-      "short_name": "巴勃罗",
-      "nationality": "西班牙",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 72,
-        "passing": 80,
-        "dribbling": 83,
-        "defending": 70,
-        "physical": 68
-      },
-      "traits": [
-        "playmaker",
         "box_to_box"
       ],
       "skills": [
-        "endless_runner",
-        "vision_pass",
-        "mad_dog"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "pedri": {
-      "name": "佩德里",
-      "short_name": "佩德里",
-      "nationality": "西班牙",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 73,
-        "shooting": 75,
-        "passing": 86,
-        "dribbling": 87,
-        "defending": 60,
-        "physical": 62
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "de_jong": {
-      "name": "弗伦基·德容",
-      "short_name": "弗伦基",
-      "nationality": "荷兰",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 70,
-        "passing": 85,
-        "dribbling": 89,
-        "defending": 75,
-        "physical": 80
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
+        "iron_wall",
+        "interceptor",
         "endless_runner"
       ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "raphinha": {
-      "name": "拉菲尼亚",
-      "short_name": "拉菲尼",
-      "nationality": "巴西",
-      "positions": [
-        "RW",
-        "LW"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 85,
-        "shooting": 80,
-        "passing": 80,
-        "dribbling": 84,
-        "defending": 45,
-        "physical": 68
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
       },
-      "traits": [
-        "dribbling_master",
-        "crossing"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "pinpoint_pass",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
+      "club": "arsenal",
+      "era": "阿森纳时期",
+      "years": "2023-至今",
+      "jersey_number": 41,
+      "base_player_id": "rice",
+      "version_index": 1
     },
-    "ter_stegen": {
-      "name": "马克-安德烈·特尔施特根",
-      "short_name": "马克-",
-      "nationality": "德国",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 85,
-        "gk_handling": 84,
-        "gk_kicking": 90,
-        "gk_reflexes": 86,
-        "gk_positioning": 84
-      },
-      "traits": [
-        "sweeper_keeper",
-        "gk_distribution"
-      ],
-      "skills": [
-        "sweeper_keeper",
-        "gk_reflex_save",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "araujo": {
-      "name": "罗纳德·阿劳霍",
-      "short_name": "罗纳德",
-      "nationality": "乌拉圭",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 50,
-        "passing": 70,
-        "dribbling": 70,
-        "defending": 87,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "speedster",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "kounde": {
-      "name": "朱尔·孔德",
-      "short_name": "朱尔·",
-      "nationality": "法国",
-      "positions": [
-        "CB",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 55,
-        "passing": 75,
-        "dribbling": 78,
-        "defending": 85,
-        "physical": 80
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "balde": {
-      "name": "亚历杭德罗·巴尔德",
-      "short_name": "亚历杭",
-      "nationality": "西班牙",
-      "positions": [
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 92,
-        "shooting": 55,
-        "passing": 72,
-        "dribbling": 80,
-        "defending": 75,
-        "physical": 72
-      },
-      "traits": [
-        "speedster",
-        "crossing"
-      ],
-      "skills": [
-        "speed_burst",
-        "fast_retreat",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "christensen": {
-      "name": "安德烈亚斯·克里斯滕森",
-      "short_name": "安德烈",
-      "nationality": "丹麦",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 50,
-        "passing": 75,
-        "dribbling": 70,
-        "defending": 84,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "playmaker"
-      ],
-      "skills": [
-        "iron_wall",
-        "pinpoint_pass",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "ferran": {
-      "name": "费兰·托雷斯",
-      "short_name": "费兰·",
-      "nationality": "西班牙",
-      "positions": [
-        "ST",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 84,
-        "shooting": 78,
-        "passing": 75,
-        "dribbling": 80,
-        "defending": 45,
-        "physical": 72
-      },
-      "traits": [
-        "speedster"
-      ],
-      "skills": [
-        "speed_burst",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "yamal": {
-      "name": "拉明·亚马尔",
-      "short_name": "拉明·",
-      "nationality": "西班牙",
-      "positions": [
-        "RW"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 87,
-        "shooting": 76,
-        "passing": 80,
-        "dribbling": 88,
-        "defending": 40,
-        "physical": 60
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    " Cancelo": {
-      "name": "若昂·坎塞洛",
-      "short_name": "若昂·",
-      "nationality": "葡萄牙",
-      "positions": [
-        "LB",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 70,
-        "passing": 84,
-        "dribbling": 86,
-        "defending": 76,
-        "physical": 72
-      },
-      "traits": [
-        "crossing",
-        "dribbling_master"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "ghost_dribble",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    " Cancelo_barcelona": {
-      "name": "若昂·坎塞洛",
-      "short_name": "若昂·",
-      "nationality": "葡萄牙",
-      "positions": [
-        "LB",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 70,
-        "passing": 84,
-        "dribbling": 86,
-        "defending": 76,
-        "physical": 72
-      },
-      "traits": [
-        "crossing",
-        "dribbling_master"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "ghost_dribble",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "barcelona",
-          "years": "现役"
-        }
-      ]
-    },
-    "kane": {
-      "name": "哈里·凯恩",
-      "short_name": "哈里·",
-      "nationality": "英格兰",
+    "lautaro_racing_club_0": {
+      "name": "劳塔罗·马丁内斯",
+      "short_name": "劳塔罗",
+      "nationality": "阿根廷",
       "positions": [
         "ST"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 70,
-        "shooting": 93,
-        "passing": 84,
-        "dribbling": 83,
-        "defending": 47,
-        "physical": 83
+        "pace": 74,
+        "shooting": 80,
+        "passing": 67,
+        "dribbling": 76,
+        "defending": 40,
+        "physical": 72
       },
       "traits": [
-        "long_shot",
-        "header",
-        "playmaker"
+        "clinical_finisher",
+        "header"
       ],
       "skills": [
         "power_shot",
-        "vision_pass",
-        "air_dominance"
+        "air_dominance",
+        "clutch_player"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 0.98,
+        "body_type": "athletic",
+        "skin_tone": "#C8A080",
+        "hair_style": "short_black",
+        "hair_color": "#1A1208"
+      },
+      "club": "racing_club",
+      "era": "竞技俱乐部时期",
+      "years": "2016-2018",
+      "jersey_number": 10,
+      "base_player_id": "lautaro",
+      "version_index": 0
     },
-    "musiala": {
-      "name": "贾马尔·穆西亚拉",
-      "short_name": "贾马尔",
-      "nationality": "德国",
+    "lautaro_inter_milan_1": {
+      "name": "劳塔罗·马丁内斯",
+      "short_name": "劳塔罗",
+      "nationality": "阿根廷",
       "positions": [
-        "CAM",
-        "LW"
+        "ST"
       ],
       "preferred_foot": "right",
       "attributes": {
         "pace": 85,
-        "shooting": 80,
-        "passing": 82,
-        "dribbling": 91,
-        "defending": 50,
-        "physical": 65
+        "shooting": 91,
+        "passing": 78,
+        "dribbling": 87,
+        "defending": 43,
+        "physical": 83
       },
       "traits": [
-        "dribbling_master",
-        "playmaker"
+        "clinical_finisher",
+        "header"
       ],
       "skills": [
-        "ghost_dribble",
-        "quick_turn",
-        "vision_pass"
+        "power_shot",
+        "air_dominance",
+        "clutch_player"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 0.98,
+        "body_type": "athletic",
+        "skin_tone": "#C8A080",
+        "hair_style": "short_black",
+        "hair_color": "#1A1208"
+      },
+      "club": "inter_milan",
+      "era": "国米时期",
+      "years": "2018-至今",
+      "jersey_number": 10,
+      "base_player_id": "lautaro",
+      "version_index": 1
     },
-    "sane": {
-      "name": "勒鲁瓦·萨内",
-      "short_name": "勒鲁瓦",
-      "nationality": "德国",
+    "leao_sporting_cp_0": {
+      "name": "拉斐尔·莱奥",
+      "short_name": "莱奥",
+      "nationality": "葡萄牙",
       "positions": [
-        "RW",
-        "LW"
+        "LW",
+        "ST"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 92,
-        "shooting": 80,
-        "passing": 80,
-        "dribbling": 86,
+        "pace": 85,
+        "shooting": 72,
+        "passing": 68,
+        "dribbling": 79,
         "defending": 40,
-        "physical": 72
+        "physical": 70
       },
       "traits": [
         "speedster",
@@ -1562,149 +1571,183 @@
       "skills": [
         "speed_burst",
         "ghost_dribble",
-        "curve_shot"
+        "first_touch"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
-    },
-    "kimmich": {
-      "name": "约书亚·基米希",
-      "short_name": "约书亚",
-      "nationality": "德国",
-      "positions": [
-        "CDM",
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 70,
-        "shooting": 78,
-        "passing": 88,
-        "dribbling": 82,
-        "defending": 80,
-        "physical": 75
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#8C5A3C",
+        "hair_style": "short_curly",
+        "hair_color": "#0A0805"
       },
-      "traits": [
-        "playmaker",
-        "crossing",
-        "iron_wall"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "vision_pass",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "club": "sporting_cp",
+      "era": "葡萄牙体育时期",
+      "years": "2017-2018",
+      "jersey_number": 30,
+      "base_player_id": "leao",
+      "version_index": 0
     },
-    "davies": {
-      "name": "阿方索·戴维斯",
-      "short_name": "阿方索",
-      "nationality": "加拿大",
+    "leao_ac_milan_1": {
+      "name": "拉斐尔·莱奥",
+      "short_name": "莱奥",
+      "nationality": "葡萄牙",
       "positions": [
-        "LB"
+        "LW",
+        "ST"
       ],
       "preferred_foot": "right",
       "attributes": {
         "pace": 96,
-        "shooting": 65,
-        "passing": 76,
-        "dribbling": 82,
-        "defending": 78,
-        "physical": 75
+        "shooting": 83,
+        "passing": 79,
+        "dribbling": 90,
+        "defending": 40,
+        "physical": 81
       },
       "traits": [
         "speedster",
-        "crossing"
+        "dribbling_master"
       ],
       "skills": [
         "speed_burst",
-        "fast_retreat",
-        "pinpoint_pass"
+        "ghost_dribble",
+        "first_touch"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#8C5A3C",
+        "hair_style": "short_curly",
+        "hair_color": "#0A0805"
+      },
+      "club": "ac_milan",
+      "era": "AC米兰时期",
+      "years": "2018-至今",
+      "jersey_number": 10,
+      "base_player_id": "leao",
+      "version_index": 1
     },
-    "neuer": {
-      "name": "曼努埃尔·诺伊尔",
-      "short_name": "曼努埃",
-      "nationality": "德国",
+    "kvaratskhelia_dinamo_batumi_0": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "K77",
+      "nationality": "格鲁吉亚",
       "positions": [
-        "GK"
+        "LW"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "gk_diving": 84,
-        "gk_handling": 85,
-        "gk_kicking": 93,
-        "gk_reflexes": 85,
-        "gk_positioning": 87
+        "pace": 75,
+        "shooting": 70,
+        "passing": 68,
+        "dribbling": 78,
+        "defending": 40,
+        "physical": 62
       },
       "traits": [
-        "sweeper_keeper",
-        "gk_leader",
-        "gk_distribution"
+        "dribbling_master",
+        "flair"
       ],
       "skills": [
-        "sweeper_keeper",
-        "gk_1v1_master",
-        "gk_reflex_save"
+        "ghost_dribble",
+        "first_touch",
+        "curve_shot"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "medium_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "dinamo_batumi",
+      "era": "巴统迪纳摩时期",
+      "years": "2021-2022",
+      "jersey_number": 77,
+      "base_player_id": "kvaratskhelia",
+      "version_index": 0
     },
-    "upamecano": {
-      "name": "达约·于帕梅卡诺",
-      "short_name": "达约·",
-      "nationality": "法国",
+    "kvaratskhelia_napoli_1": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "K77",
+      "nationality": "格鲁吉亚",
+      "positions": [
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 88,
+        "shooting": 83,
+        "passing": 81,
+        "dribbling": 91,
+        "defending": 40,
+        "physical": 75
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "first_touch",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "medium_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "napoli",
+      "era": "那不勒斯时期",
+      "years": "2022-至今",
+      "jersey_number": 77,
+      "base_player_id": "kvaratskhelia",
+      "version_index": 1
+    },
+    "vandijk_celtic_0": {
+      "name": "维尔吉尔·范迪克",
+      "short_name": "范迪克",
+      "nationality": "荷兰",
       "positions": [
         "CB"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 85,
-        "shooting": 45,
-        "passing": 70,
-        "dribbling": 72,
-        "defending": 85,
-        "physical": 87
+        "pace": 70,
+        "shooting": 52,
+        "passing": 66,
+        "dribbling": 64,
+        "defending": 82,
+        "physical": 78
       },
       "traits": [
         "iron_wall",
-        "speedster",
-        "header"
+        "header",
+        "leader"
       ],
       "skills": [
         "iron_wall",
-        "speed_burst",
-        "air_dominance"
+        "air_dominance",
+        "wall_defense"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.12,
+        "body_type": "muscular",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9A850"
+      },
+      "club": "celtic",
+      "era": "凯尔特人时期",
+      "years": "2013-2015",
+      "jersey_number": 5,
+      "base_player_id": "vandijk",
+      "version_index": 0
     },
-    "de_ligt": {
-      "name": "马泰斯·德里赫特",
-      "short_name": "马泰斯",
+    "vandijk_southampton_1": {
+      "name": "维尔吉尔·范迪克",
+      "short_name": "范迪克",
       "nationality": "荷兰",
       "positions": [
         "CB"
@@ -1712,11 +1755,11 @@
       "preferred_foot": "right",
       "attributes": {
         "pace": 75,
-        "shooting": 55,
-        "passing": 72,
-        "dribbling": 70,
-        "defending": 88,
-        "physical": 88
+        "shooting": 57,
+        "passing": 71,
+        "dribbling": 69,
+        "defending": 87,
+        "physical": 83
       },
       "traits": [
         "iron_wall",
@@ -1728,195 +1771,35 @@
         "air_dominance",
         "wall_defense"
       ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
-    },
-    "gnabry": {
-      "name": "塞尔日·格纳布里",
-      "short_name": "塞尔日",
-      "nationality": "德国",
-      "positions": [
-        "RW",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 82,
-        "passing": 78,
-        "dribbling": 84,
-        "defending": 45,
-        "physical": 72
+      "appearance": {
+        "height_mult": 1.12,
+        "body_type": "muscular",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9A850"
       },
-      "traits": [
-        "dribbling_master",
-        "long_shot"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "power_shot",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
+      "club": "southampton",
+      "era": "南安普顿时期",
+      "years": "2015-2018",
+      "jersey_number": 17,
+      "base_player_id": "vandijk",
+      "version_index": 1
     },
-    "muller": {
-      "name": "托马斯·穆勒",
-      "short_name": "托马斯",
-      "nationality": "德国",
-      "positions": [
-        "CF",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 68,
-        "shooting": 82,
-        "passing": 82,
-        "dribbling": 80,
-        "defending": 60,
-        "physical": 75
-      },
-      "traits": [
-        "playmaker",
-        "clutch",
-        "poacher"
-      ],
-      "skills": [
-        "vision_pass",
-        "clutch_player",
-        "smart_positioning"
-      ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
-    },
-    "goretzka": {
-      "name": "莱昂·戈雷茨卡",
-      "short_name": "莱昂·",
-      "nationality": "德国",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 78,
-        "passing": 80,
-        "dribbling": 80,
-        "defending": 78,
-        "physical": 85
-      },
-      "traits": [
-        "box_to_box",
-        "header"
-      ],
-      "skills": [
-        "speed_burst",
-        "air_dominance",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
-    },
-    "coman": {
-      "name": "金斯利·科曼",
-      "short_name": "金斯利",
-      "nationality": "法国",
-      "positions": [
-        "LW",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 93,
-        "shooting": 75,
-        "passing": 76,
-        "dribbling": 87,
-        "defending": 35,
-        "physical": 65
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "bayern_munich",
-          "years": "现役"
-        }
-      ]
-    },
-    "salah": {
-      "name": "穆罕默德·萨拉赫",
-      "short_name": "穆罕默",
-      "nationality": "埃及",
-      "positions": [
-        "RW",
-        "ST"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 89,
-        "shooting": 87,
-        "passing": 81,
-        "dribbling": 88,
-        "defending": 45,
-        "physical": 75
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master",
-        "clutch"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "vandijk": {
-      "name": "维尔吉尔·范戴克",
-      "short_name": "维尔吉",
+    "vandijk_liverpool_2": {
+      "name": "维尔吉尔·范迪克",
+      "short_name": "范迪克",
       "nationality": "荷兰",
       "positions": [
         "CB"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 78,
-        "shooting": 60,
-        "passing": 74,
-        "dribbling": 72,
-        "defending": 90,
-        "physical": 90
+        "pace": 81,
+        "shooting": 63,
+        "passing": 77,
+        "dribbling": 75,
+        "defending": 93,
+        "physical": 89
       },
       "traits": [
         "iron_wall",
@@ -1928,144 +1811,216 @@
         "air_dominance",
         "wall_defense"
       ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.12,
+        "body_type": "muscular",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9A850"
+      },
+      "club": "liverpool",
+      "era": "利物浦时期",
+      "years": "2018-至今",
+      "jersey_number": 4,
+      "base_player_id": "vandijk",
+      "version_index": 2
     },
-    "mac_allister": {
-      "name": "亚历克西斯·麦卡利斯特",
-      "short_name": "亚历克",
-      "nationality": "阿根廷",
+    "ruben_dias_benfica_0": {
+      "name": "鲁本·迪亚斯",
+      "short_name": "迪亚斯",
+      "nationality": "葡萄牙",
       "positions": [
-        "CM",
-        "CDM"
+        "CB"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 72,
-        "shooting": 78,
-        "passing": 84,
-        "dribbling": 82,
-        "defending": 72,
-        "physical": 72
+        "pace": 69,
+        "shooting": 52,
+        "passing": 69,
+        "dribbling": 67,
+        "defending": 85,
+        "physical": 82
       },
       "traits": [
-        "playmaker",
-        "long_shot"
+        "iron_wall",
+        "leader"
       ],
       "skills": [
-        "vision_pass",
-        "pinpoint_pass",
-        "curve_shot"
+        "iron_wall",
+        "interceptor",
+        "wall_defense"
       ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "nunez": {
-      "name": "达尔文·努涅斯",
-      "short_name": "达尔文",
-      "nationality": "乌拉圭",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 91,
-        "shooting": 80,
-        "passing": 70,
-        "dribbling": 78,
-        "defending": 40,
-        "physical": 80
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "muscular",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
       },
-      "traits": [
-        "speedster",
-        "header"
-      ],
-      "skills": [
-        "speed_burst",
-        "air_dominance",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
+      "club": "benfica",
+      "era": "本菲卡时期",
+      "years": "2015-2020",
+      "jersey_number": 4,
+      "base_player_id": "ruben_dias",
+      "version_index": 0
     },
-    "diaz": {
-      "name": "路易斯·迪亚斯",
-      "short_name": "路易斯",
-      "nationality": "哥伦比亚",
+    "ruben_dias_man_city_1": {
+      "name": "鲁本·迪亚斯",
+      "short_name": "迪亚斯",
+      "nationality": "葡萄牙",
       "positions": [
-        "LW"
+        "CB"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "pace": 88,
-        "shooting": 78,
+        "pace": 75,
+        "shooting": 58,
         "passing": 75,
-        "dribbling": 86,
-        "defending": 40,
-        "physical": 68
+        "dribbling": 73,
+        "defending": 91,
+        "physical": 88
       },
       "traits": [
-        "speedster",
-        "dribbling_master"
+        "iron_wall",
+        "leader"
       ],
       "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
+        "iron_wall",
+        "interceptor",
+        "wall_defense"
       ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "muscular",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
+      },
+      "club": "man_city",
+      "era": "曼城时期",
+      "years": "2020-至今",
+      "jersey_number": 3,
+      "base_player_id": "ruben_dias",
+      "version_index": 1
     },
-    "szoboszlai": {
-      "name": "多米尼克·索博斯洛伊",
-      "short_name": "多米尼",
-      "nationality": "匈牙利",
+    "courtois_atletico_madrid_0": {
+      "name": "蒂博·库尔图瓦",
+      "short_name": "库尔图瓦",
+      "nationality": "比利时",
       "positions": [
-        "CM",
-        "CAM"
+        "GK"
       ],
-      "preferred_foot": "right",
+      "preferred_foot": "left",
       "attributes": {
-        "pace": 80,
-        "shooting": 82,
-        "passing": 82,
-        "dribbling": 82,
-        "defending": 65,
-        "physical": 75
+        "gk_diving": 84,
+        "gk_handling": 83,
+        "gk_kicking": 79,
+        "gk_reflexes": 85,
+        "gk_positioning": 82
       },
       "traits": [
-        "long_shot",
-        "playmaker"
+        "gk_saver",
+        "gk_1v1",
+        "gk_leader"
       ],
       "skills": [
-        "power_shot",
-        "vision_pass",
-        "curve_shot"
+        "gk_reflex_save",
+        "gk_1v1_master",
+        "wall_defense"
       ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#B89860"
+      },
+      "club": "atletico_madrid",
+      "era": "马竞时期",
+      "years": "2011-2014",
+      "jersey_number": 13,
+      "base_player_id": "courtois",
+      "version_index": 0
     },
-    "alisson": {
+    "courtois_chelsea_1": {
+      "name": "蒂博·库尔图瓦",
+      "short_name": "库尔图瓦",
+      "nationality": "比利时",
+      "positions": [
+        "GK"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "gk_diving": 84,
+        "gk_handling": 83,
+        "gk_kicking": 79,
+        "gk_reflexes": 85,
+        "gk_positioning": 82
+      },
+      "traits": [
+        "gk_saver",
+        "gk_1v1",
+        "gk_leader"
+      ],
+      "skills": [
+        "gk_reflex_save",
+        "gk_1v1_master",
+        "wall_defense"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#B89860"
+      },
+      "club": "chelsea",
+      "era": "切尔西时期",
+      "years": "2014-2018",
+      "jersey_number": 13,
+      "base_player_id": "courtois",
+      "version_index": 1
+    },
+    "courtois_real_madrid_2": {
+      "name": "蒂博·库尔图瓦",
+      "short_name": "库尔图瓦",
+      "nationality": "比利时",
+      "positions": [
+        "GK"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "gk_diving": 90,
+        "gk_handling": 89,
+        "gk_kicking": 85,
+        "gk_reflexes": 91,
+        "gk_positioning": 88
+      },
+      "traits": [
+        "gk_saver",
+        "gk_1v1",
+        "gk_leader"
+      ],
+      "skills": [
+        "gk_reflex_save",
+        "gk_1v1_master",
+        "wall_defense"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_blonde",
+        "hair_color": "#B89860"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2018-至今",
+      "jersey_number": 1,
+      "base_player_id": "courtois",
+      "version_index": 2
+    },
+    "alisson_roma_0": {
       "name": "阿利松·贝克尔",
       "short_name": "阿利松",
       "nationality": "巴西",
@@ -2074,11 +2029,11 @@
       ],
       "preferred_foot": "right",
       "attributes": {
-        "gk_diving": 85,
-        "gk_handling": 85,
-        "gk_kicking": 87,
-        "gk_reflexes": 86,
-        "gk_positioning": 86
+        "gk_diving": 82,
+        "gk_handling": 82,
+        "gk_kicking": 84,
+        "gk_reflexes": 83,
+        "gk_positioning": 83
       },
       "traits": [
         "sweeper_keeper",
@@ -2090,4073 +2045,136 @@
         "gk_1v1_master",
         "gk_reflex_save"
       ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "arnold": {
-      "name": "特伦特·亚历山大-阿诺德",
-      "short_name": "特伦特",
-      "nationality": "英格兰",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 76,
-        "shooting": 75,
-        "passing": 90,
-        "dribbling": 80,
-        "defending": 76,
-        "physical": 72
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#A06840",
+        "hair_style": "short_curly",
+        "hair_color": "#1A1208"
       },
-      "traits": [
-        "crossing",
-        "playmaker",
-        "long_shot"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "vision_pass",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
+      "club": "roma",
+      "era": "罗马时期",
+      "years": "2016-2018",
+      "jersey_number": 1,
+      "base_player_id": "alisson",
+      "version_index": 0
     },
-    "robertson": {
-      "name": "安德鲁·罗伯逊",
-      "short_name": "安德鲁",
-      "nationality": "苏格兰",
-      "positions": [
-        "LB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 80,
-        "shooting": 65,
-        "passing": 82,
-        "dribbling": 80,
-        "defending": 80,
-        "physical": 75
-      },
-      "traits": [
-        "crossing",
-        "iron_wall"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "endless_runner",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "gakpo": {
-      "name": "科迪·加克波",
-      "short_name": "科迪·",
-      "nationality": "荷兰",
-      "positions": [
-        "LW",
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 78,
-        "passing": 76,
-        "dribbling": 82,
-        "defending": 50,
-        "physical": 75
-      },
-      "traits": [
-        "speedster"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "gravenberch": {
-      "name": "瑞恩·赫拉芬贝赫",
-      "short_name": "瑞恩·",
-      "nationality": "荷兰",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 70,
-        "passing": 80,
-        "dribbling": 85,
-        "defending": 70,
-        "physical": 80
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "konate": {
-      "name": "易卜拉希马·科纳特",
-      "short_name": "易卜拉",
-      "nationality": "法国",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 45,
-        "passing": 70,
-        "dribbling": 70,
-        "defending": 85,
-        "physical": 87
-      },
-      "traits": [
-        "iron_wall",
-        "speedster",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "liverpool",
-          "years": "现役"
-        }
-      ]
-    },
-    "dembele": {
-      "name": "乌斯曼·登贝莱",
-      "short_name": "乌斯曼",
-      "nationality": "法国",
-      "positions": [
-        "RW",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 90,
-        "shooting": 75,
-        "passing": 80,
-        "dribbling": 88,
-        "defending": 40,
-        "physical": 65
-      },
-      "traits": [
-        "dribbling_master",
-        "speedster"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "speed_burst",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "asensio": {
-      "name": "马尔科·阿森西奥",
-      "short_name": "马尔科",
-      "nationality": "西班牙",
-      "positions": [
-        "CAM",
-        "RW"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 80,
-        "shooting": 82,
-        "passing": 80,
-        "dribbling": 84,
-        "defending": 50,
-        "physical": 72
-      },
-      "traits": [
-        "long_shot",
-        "dribbling_master"
-      ],
-      "skills": [
-        "curve_shot",
-        "ghost_dribble",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "hakimi": {
-      "name": "阿什拉夫·哈基米",
-      "short_name": "阿什拉",
-      "nationality": "摩洛哥",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 95,
-        "shooting": 70,
-        "passing": 78,
-        "dribbling": 82,
-        "defending": 78,
-        "physical": 75
-      },
-      "traits": [
-        "speedster",
-        "crossing"
-      ],
-      "skills": [
-        "speed_burst",
-        "pinpoint_pass",
-        "fast_retreat"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "vitinha": {
-      "name": "维蒂尼亚",
-      "short_name": "维蒂尼",
-      "nationality": "葡萄牙",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 72,
-        "passing": 85,
-        "dribbling": 86,
-        "defending": 68,
-        "physical": 65
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "donnarumma": {
-      "name": "詹路易吉·多纳鲁马",
-      "short_name": "詹路易",
-      "nationality": "意大利",
+    "alisson_liverpool_1": {
+      "name": "阿利松·贝克尔",
+      "short_name": "阿利松",
+      "nationality": "巴西",
       "positions": [
         "GK"
       ],
       "preferred_foot": "right",
       "attributes": {
         "gk_diving": 88,
-        "gk_handling": 85,
-        "gk_kicking": 78,
-        "gk_reflexes": 87,
+        "gk_handling": 88,
+        "gk_kicking": 90,
+        "gk_reflexes": 89,
+        "gk_positioning": 89
+      },
+      "traits": [
+        "sweeper_keeper",
+        "gk_1v1",
+        "gk_saver"
+      ],
+      "skills": [
+        "sweeper_keeper",
+        "gk_1v1_master",
+        "gk_reflex_save"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#A06840",
+        "hair_style": "short_curly",
+        "hair_color": "#1A1208"
+      },
+      "club": "liverpool",
+      "era": "利物浦时期",
+      "years": "2018-至今",
+      "jersey_number": 1,
+      "base_player_id": "alisson",
+      "version_index": 1
+    },
+    "neuer_schalke_0": {
+      "name": "曼努埃尔·诺伊尔",
+      "short_name": "诺伊尔",
+      "nationality": "德国",
+      "positions": [
+        "GK"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "gk_diving": 81,
+        "gk_handling": 82,
+        "gk_kicking": 90,
+        "gk_reflexes": 82,
         "gk_positioning": 84
       },
       "traits": [
-        "gk_saver",
-        "gk_1v1"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "marquinhos": {
-      "name": "马尔基尼奥斯",
-      "short_name": "马尔基",
-      "nationality": "巴西",
-      "positions": [
-        "CB",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 50,
-        "passing": 78,
-        "dribbling": 75,
-        "defending": 87,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "hernandez": {
-      "name": "卢卡斯·埃尔南德斯",
-      "short_name": "卢卡斯",
-      "nationality": "法国",
-      "positions": [
-        "CB",
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 72,
-        "defending": 85,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "ruiz": {
-      "name": "法比安·鲁伊斯",
-      "short_name": "法比安",
-      "nationality": "西班牙",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 75,
-        "shooting": 78,
-        "passing": 84,
-        "dribbling": 82,
-        "defending": 70,
-        "physical": 78
-      },
-      "traits": [
-        "playmaker",
-        "long_shot"
-      ],
-      "skills": [
-        "vision_pass",
-        "curve_shot",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "kolo_muani": {
-      "name": "兰达尔·科洛·穆阿尼",
-      "short_name": "兰达尔",
-      "nationality": "法国",
-      "positions": [
-        "ST",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 80,
-        "passing": 75,
-        "dribbling": 84,
-        "defending": 45,
-        "physical": 75
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "barcola": {
-      "name": "布拉德利·巴尔科拉",
-      "short_name": "布拉德",
-      "nationality": "法国",
-      "positions": [
-        "LW",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 90,
-        "shooting": 70,
-        "passing": 72,
-        "dribbling": 84,
-        "defending": 35,
-        "physical": 62
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "zaire_emery": {
-      "name": "沃伦·扎伊尔-埃梅里",
-      "short_name": "沃伦·",
-      "nationality": "法国",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 76,
-        "shooting": 72,
-        "passing": 80,
-        "dribbling": 82,
-        "defending": 70,
-        "physical": 70
-      },
-      "traits": [
-        "playmaker",
-        "box_to_box"
-      ],
-      "skills": [
-        "vision_pass",
-        "endless_runner",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "skriniar": {
-      "name": "米兰·什克里尼亚尔",
-      "short_name": "米兰·",
-      "nationality": "斯洛伐克",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 68,
-        "defending": 87,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "psg",
-          "years": "现役"
-        }
-      ]
-    },
-    "lautaro": {
-      "name": "劳塔罗·马丁内斯",
-      "short_name": "劳塔罗",
-      "nationality": "阿根廷",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 88,
-        "passing": 75,
-        "dribbling": 84,
-        "defending": 50,
-        "physical": 78
-      },
-      "traits": [
-        "clutch",
-        "poacher",
-        "header"
-      ],
-      "skills": [
-        "clutch_player",
-        "air_dominance",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "barella": {
-      "name": "尼科洛·巴雷拉",
-      "short_name": "尼科洛",
-      "nationality": "意大利",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 78,
-        "passing": 84,
-        "dribbling": 84,
-        "defending": 75,
-        "physical": 78
-      },
-      "traits": [
-        "box_to_box",
-        "playmaker"
-      ],
-      "skills": [
-        "endless_runner",
-        "vision_pass",
-        "mad_dog"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "thuram": {
-      "name": "马库斯·图拉姆",
-      "short_name": "马库斯",
-      "nationality": "法国",
-      "positions": [
-        "ST",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 82,
-        "passing": 75,
-        "dribbling": 82,
-        "defending": 45,
-        "physical": 85
-      },
-      "traits": [
-        "speedster",
-        "header"
-      ],
-      "skills": [
-        "speed_burst",
-        "air_dominance",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "calhanoglu": {
-      "name": "哈坎·恰尔汗奥卢",
-      "short_name": "哈坎·",
-      "nationality": "土耳其",
-      "positions": [
-        "CDM",
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 70,
-        "shooting": 85,
-        "passing": 88,
-        "dribbling": 82,
-        "defending": 72,
-        "physical": 72
-      },
-      "traits": [
-        "long_shot",
-        "playmaker",
-        "free_kick"
-      ],
-      "skills": [
-        "power_shot",
-        "vision_pass",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "bastoni": {
-      "name": "亚历山德罗·巴斯托尼",
-      "short_name": "亚历山",
-      "nationality": "意大利",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 75,
-        "shooting": 50,
-        "passing": 80,
-        "dribbling": 75,
-        "defending": 86,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "playmaker"
-      ],
-      "skills": [
-        "iron_wall",
-        "pinpoint_pass",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "dimarco": {
-      "name": "费德里科·迪马尔科",
-      "short_name": "费德里",
-      "nationality": "意大利",
-      "positions": [
-        "LB",
-        "LWB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 80,
-        "shooting": 78,
-        "passing": 82,
-        "dribbling": 80,
-        "defending": 78,
-        "physical": 72
-      },
-      "traits": [
-        "crossing",
-        "long_shot"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "curve_shot",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "sommer": {
-      "name": "扬·索默",
-      "short_name": "扬·索",
-      "nationality": "瑞士",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 83,
-        "gk_handling": 84,
-        "gk_kicking": 82,
-        "gk_reflexes": 85,
-        "gk_positioning": 85
-      },
-      "traits": [
-        "gk_saver",
-        "gk_1v1"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "acerbi": {
-      "name": "弗朗切斯科·阿切尔比",
-      "short_name": "弗朗切",
-      "nationality": "意大利",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 65,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 68,
-        "defending": 85,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "dumfries": {
-      "name": "丹泽尔·邓弗里斯",
-      "short_name": "丹泽尔",
-      "nationality": "荷兰",
-      "positions": [
-        "RB",
-        "RWB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 70,
-        "passing": 75,
-        "dribbling": 76,
-        "defending": 80,
-        "physical": 85
-      },
-      "traits": [
-        "speedster",
-        "crossing",
-        "header"
-      ],
-      "skills": [
-        "speed_burst",
-        "pinpoint_pass",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "mkitaryan": {
-      "name": "亨里克·姆希塔良",
-      "short_name": "亨里克",
-      "nationality": "亚美尼亚",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 75,
-        "passing": 82,
-        "dribbling": 82,
-        "defending": 65,
-        "physical": 68
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "frattesi": {
-      "name": "达维德·弗拉泰西",
-      "short_name": "达维德",
-      "nationality": "意大利",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 76,
-        "passing": 76,
-        "dribbling": 78,
-        "defending": 72,
-        "physical": 78
-      },
-      "traits": [
-        "box_to_box"
-      ],
-      "skills": [
-        "endless_runner",
-        "speed_burst",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "pavard": {
-      "name": "邦雅曼·帕瓦尔",
-      "short_name": "邦雅曼",
-      "nationality": "法国",
-      "positions": [
-        "CB",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 65,
-        "passing": 75,
-        "dribbling": 72,
-        "defending": 85,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "long_shot"
-      ],
-      "skills": [
-        "iron_wall",
-        "curve_shot",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "inter_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "bruno_fernandes": {
-      "name": "布鲁诺·费尔南德斯",
-      "short_name": "布鲁诺",
-      "nationality": "葡萄牙",
-      "positions": [
-        "CAM",
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 85,
-        "passing": 89,
-        "dribbling": 84,
-        "defending": 65,
-        "physical": 75
-      },
-      "traits": [
-        "playmaker",
-        "long_shot",
-        "free_kick"
-      ],
-      "skills": [
-        "vision_pass",
-        "power_shot",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "rashford": {
-      "name": "马库斯·拉什福德",
-      "short_name": "马库斯",
-      "nationality": "英格兰",
-      "positions": [
-        "LW",
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 90,
-        "shooting": 82,
-        "passing": 75,
-        "dribbling": 84,
-        "defending": 42,
-        "physical": 75
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "garnacho": {
-      "name": "亚历杭德罗·加纳乔",
-      "short_name": "亚历杭",
-      "nationality": "阿根廷",
-      "positions": [
-        "LW",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 75,
-        "passing": 72,
-        "dribbling": 82,
-        "defending": 40,
-        "physical": 65
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "casemiro": {
-      "name": "卡塞米罗",
-      "short_name": "卡塞米",
-      "nationality": "巴西",
-      "positions": [
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 65,
-        "shooting": 75,
-        "passing": 78,
-        "dribbling": 75,
-        "defending": 88,
-        "physical": 90
-      },
-      "traits": [
-        "iron_wall",
-        "header",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "martinez": {
-      "name": "利桑德罗·马丁内斯",
-      "short_name": "利桑德",
-      "nationality": "阿根廷",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 72,
-        "shooting": 50,
-        "passing": 78,
-        "dribbling": 75,
-        "defending": 85,
-        "physical": 80
-      },
-      "traits": [
-        "iron_wall",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "interceptor",
-        "mad_dog"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "onana": {
-      "name": "安德烈·奥纳纳",
-      "short_name": "安德烈",
-      "nationality": "喀麦隆",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 82,
-        "gk_handling": 82,
-        "gk_kicking": 88,
-        "gk_reflexes": 83,
-        "gk_positioning": 82
-      },
-      "traits": [
         "sweeper_keeper",
+        "gk_leader",
         "gk_distribution"
       ],
       "skills": [
         "sweeper_keeper",
         "gk_1v1_master",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "mainoo": {
-      "name": "科比·梅努",
-      "short_name": "科比·",
-      "nationality": "英格兰",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 70,
-        "passing": 80,
-        "dribbling": 82,
-        "defending": 72,
-        "physical": 72
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "maguire": {
-      "name": "哈里·马奎尔",
-      "short_name": "哈里·",
-      "nationality": "英格兰",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 62,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 68,
-        "defending": 82,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "dalot": {
-      "name": "迪奥戈·达洛特",
-      "short_name": "迪奥戈",
-      "nationality": "葡萄牙",
-      "positions": [
-        "RB",
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 65,
-        "passing": 78,
-        "dribbling": 80,
-        "defending": 80,
-        "physical": 75
-      },
-      "traits": [
-        "crossing",
-        "iron_wall"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "mctominay": {
-      "name": "斯科特·麦克托米奈",
-      "short_name": "斯科特",
-      "nationality": "苏格兰",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 75,
-        "passing": 72,
-        "dribbling": 72,
-        "defending": 75,
-        "physical": 85
-      },
-      "traits": [
-        "box_to_box",
-        "header"
-      ],
-      "skills": [
-        "air_dominance",
-        "endless_runner",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "hojlund": {
-      "name": "拉斯穆斯·霍伊伦德",
-      "short_name": "拉斯穆",
-      "nationality": "丹麦",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 85,
-        "shooting": 78,
-        "passing": 68,
-        "dribbling": 76,
-        "defending": 45,
-        "physical": 80
-      },
-      "traits": [
-        "speedster",
-        "header"
-      ],
-      "skills": [
-        "speed_burst",
-        "air_dominance",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "mount": {
-      "name": "梅森·芒特",
-      "short_name": "梅森·",
-      "nationality": "英格兰",
-      "positions": [
-        "CAM",
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 75,
-        "passing": 80,
-        "dribbling": 82,
-        "defending": 65,
-        "physical": 70
-      },
-      "traits": [
-        "playmaker",
-        "box_to_box"
-      ],
-      "skills": [
-        "vision_pass",
-        "endless_runner",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "man_united",
-          "years": "现役"
-        }
-      ]
-    },
-    "saka": {
-      "name": "布卡约·萨卡",
-      "short_name": "布卡约",
-      "nationality": "英格兰",
-      "positions": [
-        "RW"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 85,
-        "shooting": 82,
-        "passing": 82,
-        "dribbling": 86,
-        "defending": 55,
-        "physical": 72
-      },
-      "traits": [
-        "dribbling_master",
-        "crossing",
-        "clutch"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "pinpoint_pass",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "odegaard": {
-      "name": "马丁·厄德高",
-      "short_name": "马丁·",
-      "nationality": "挪威",
-      "positions": [
-        "CAM",
-        "CM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 75,
-        "shooting": 82,
-        "passing": 88,
-        "dribbling": 86,
-        "defending": 55,
-        "physical": 65
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "rice": {
-      "name": "德克兰·赖斯",
-      "short_name": "德克兰",
-      "nationality": "英格兰",
-      "positions": [
-        "CDM",
-        "CM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 75,
-        "passing": 82,
-        "dribbling": 80,
-        "defending": 85,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "box_to_box",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "endless_runner",
-        "vision_pass"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "haaland2": {
-      "name": "加布里埃尔·马加良斯",
-      "short_name": "加布里",
-      "nationality": "巴西",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 72,
-        "shooting": 55,
-        "passing": 70,
-        "dribbling": 68,
-        "defending": 86,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "saliba": {
-      "name": "威廉·萨利巴",
-      "short_name": "威廉·",
-      "nationality": "法国",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 72,
-        "defending": 87,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "white": {
-      "name": "本·怀特",
-      "short_name": "本·怀",
-      "nationality": "英格兰",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 60,
-        "passing": 78,
-        "dribbling": 78,
-        "defending": 82,
-        "physical": 78
-      },
-      "traits": [
-        "iron_wall",
-        "crossing"
-      ],
-      "skills": [
-        "interceptor",
-        "pinpoint_pass",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "zinchenko": {
-      "name": "亚历山大·津琴科",
-      "short_name": "亚历山",
-      "nationality": "乌克兰",
-      "positions": [
-        "LB",
-        "CM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 72,
-        "shooting": 65,
-        "passing": 82,
-        "dribbling": 82,
-        "defending": 75,
-        "physical": 70
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "raya": {
-      "name": "戴维·拉亚",
-      "short_name": "戴维·",
-      "nationality": "西班牙",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 80,
-        "gk_handling": 80,
-        "gk_kicking": 85,
-        "gk_reflexes": 82,
-        "gk_positioning": 81
-      },
-      "traits": [
-        "sweeper_keeper",
-        "gk_distribution"
-      ],
-      "skills": [
-        "sweeper_keeper",
-        "gk_reflex_save",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "martinelli": {
-      "name": "加布里埃尔·马丁内利",
-      "short_name": "加布里",
-      "nationality": "巴西",
-      "positions": [
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 89,
-        "shooting": 78,
-        "passing": 72,
-        "dribbling": 84,
-        "defending": 45,
-        "physical": 70
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "havertz": {
-      "name": "凯·哈弗茨",
-      "short_name": "凯·哈",
-      "nationality": "德国",
-      "positions": [
-        "ST",
-        "CAM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 80,
-        "shooting": 80,
-        "passing": 78,
-        "dribbling": 82,
-        "defending": 55,
-        "physical": 82
-      },
-      "traits": [
-        "header",
-        "clutch"
-      ],
-      "skills": [
-        "air_dominance",
-        "clutch_player",
-        "vision_pass"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "jorginho": {
-      "name": "若日尼奥",
-      "short_name": "若日尼",
-      "nationality": "意大利",
-      "positions": [
-        "CDM",
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 62,
-        "shooting": 70,
-        "passing": 85,
-        "dribbling": 80,
-        "defending": 75,
-        "physical": 70
-      },
-      "traits": [
-        "playmaker",
-        "iron_wall"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "vision_pass",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "trossard": {
-      "name": "莱安德罗·特罗萨德",
-      "short_name": "莱安德",
-      "nationality": "比利时",
-      "positions": [
-        "LW",
-        "ST"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 78,
-        "passing": 76,
-        "dribbling": 82,
-        "defending": 50,
-        "physical": 68
-      },
-      "traits": [
-        "dribbling_master",
-        "clutch"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "clutch_player",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "arsenal",
-          "years": "现役"
-        }
-      ]
-    },
-    "palmer": {
-      "name": "科尔·帕尔默",
-      "short_name": "科尔·",
-      "nationality": "英格兰",
-      "positions": [
-        "CAM",
-        "RW"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 82,
-        "passing": 84,
-        "dribbling": 85,
-        "defending": 50,
-        "physical": 68
-      },
-      "traits": [
-        "playmaker",
-        "clutch",
-        "long_shot"
-      ],
-      "skills": [
-        "vision_pass",
-        "clutch_player",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "jackson": {
-      "name": "尼古拉斯·杰克逊",
-      "short_name": "尼古拉",
-      "nationality": "塞内加尔",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 86,
-        "shooting": 76,
-        "passing": 68,
-        "dribbling": 78,
-        "defending": 40,
-        "physical": 78
-      },
-      "traits": [
-        "speedster"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "caicedo": {
-      "name": "莫伊塞斯·凯塞多",
-      "short_name": "莫伊塞",
-      "nationality": "厄瓜多尔",
-      "positions": [
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 65,
-        "passing": 80,
-        "dribbling": 78,
-        "defending": 85,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "interceptor"
-      ],
-      "skills": [
-        "iron_wall",
-        "interceptor",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "enzo_fernandez": {
-      "name": "恩佐·费尔南德斯",
-      "short_name": "恩佐·",
-      "nationality": "阿根廷",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 75,
-        "passing": 84,
-        "dribbling": 80,
-        "defending": 75,
-        "physical": 75
-      },
-      "traits": [
-        "playmaker",
-        "long_shot"
-      ],
-      "skills": [
-        "vision_pass",
-        "curve_shot",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "sterling": {
-      "name": "拉希姆·斯特林",
-      "short_name": "拉希姆",
-      "nationality": "英格兰",
-      "positions": [
-        "LW",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 75,
-        "passing": 78,
-        "dribbling": 86,
-        "defending": 42,
-        "physical": 68
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "gallagher": {
-      "name": "康纳·加拉格尔",
-      "short_name": "康纳·",
-      "nationality": "英格兰",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 72,
-        "passing": 76,
-        "dribbling": 76,
-        "defending": 75,
-        "physical": 78
-      },
-      "traits": [
-        "box_to_box"
-      ],
-      "skills": [
-        "endless_runner",
-        "mad_dog",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "disasi": {
-      "name": "阿克塞尔·迪萨西",
-      "short_name": "阿克塞",
-      "nationality": "法国",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 50,
-        "passing": 70,
-        "dribbling": 68,
-        "defending": 83,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "colwill": {
-      "name": "利维·科尔威尔",
-      "short_name": "利维·",
-      "nationality": "英格兰",
-      "positions": [
-        "CB",
-        "LB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 72,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 70,
-        "defending": 82,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "interceptor",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "james": {
-      "name": "里斯·詹姆斯",
-      "short_name": "里斯·",
-      "nationality": "英格兰",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 75,
-        "passing": 82,
-        "dribbling": 82,
-        "defending": 82,
-        "physical": 82
-      },
-      "traits": [
-        "crossing",
-        "iron_wall",
-        "leader"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "interceptor",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "cucurella": {
-      "name": "马克·库库雷利亚",
-      "short_name": "马克·",
-      "nationality": "西班牙",
-      "positions": [
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 60,
-        "passing": 78,
-        "dribbling": 80,
-        "defending": 78,
-        "physical": 68
-      },
-      "traits": [
-        "crossing",
-        "dribbling_master"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "ghost_dribble",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "mudryk": {
-      "name": "米哈伊洛·穆德里克",
-      "short_name": "米哈伊",
-      "nationality": "乌克兰",
-      "positions": [
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 93,
-        "shooting": 68,
-        "passing": 70,
-        "dribbling": 82,
-        "defending": 35,
-        "physical": 62
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "sanchez": {
-      "name": "罗伯特·桑切斯",
-      "short_name": "罗伯特",
-      "nationality": "西班牙",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 80,
-        "gk_handling": 80,
-        "gk_kicking": 85,
-        "gk_reflexes": 80,
-        "gk_positioning": 80
-      },
-      "traits": [
-        "sweeper_keeper"
-      ],
-      "skills": [
-        "sweeper_keeper",
         "gk_reflex_save"
       ],
-      "career": [
-        {
-          "club": "chelsea",
-          "years": "现役"
-        }
-      ]
-    },
-    "griezmann": {
-      "name": "安托万·格列兹曼",
-      "short_name": "安托万",
-      "nationality": "法国",
-      "positions": [
-        "ST",
-        "CF",
-        "CAM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 85,
-        "passing": 84,
-        "dribbling": 86,
-        "defending": 55,
-        "physical": 72
+      "appearance": {
+        "height_mult": 1.12,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
       },
-      "traits": [
-        "playmaker",
-        "clutch",
-        "poacher"
-      ],
-      "skills": [
-        "vision_pass",
-        "clutch_player",
-        "ghost_dribble"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
+      "club": "schalke",
+      "era": "沙尔克时期",
+      "years": "2006-2011",
+      "jersey_number": 1,
+      "base_player_id": "neuer",
+      "version_index": 0
     },
-    "morata": {
-      "name": "阿尔瓦罗·莫拉塔",
-      "short_name": "阿尔瓦",
-      "nationality": "西班牙",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 80,
-        "passing": 72,
-        "dribbling": 76,
-        "defending": 45,
-        "physical": 80
-      },
-      "traits": [
-        "header",
-        "speedster"
-      ],
-      "skills": [
-        "air_dominance",
-        "speed_burst",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "koke": {
-      "name": "科克",
-      "short_name": "科克",
-      "nationality": "西班牙",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 72,
-        "passing": 82,
-        "dribbling": 78,
-        "defending": 78,
-        "physical": 78
-      },
-      "traits": [
-        "iron_wall",
-        "playmaker",
-        "leader"
-      ],
-      "skills": [
-        "interceptor",
-        "vision_pass",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "de_paul": {
-      "name": "罗德里戈·德保罗",
-      "short_name": "罗德里",
-      "nationality": "阿根廷",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 76,
-        "shooting": 75,
-        "passing": 82,
-        "dribbling": 80,
-        "defending": 70,
-        "physical": 75
-      },
-      "traits": [
-        "playmaker",
-        "box_to_box"
-      ],
-      "skills": [
-        "vision_pass",
-        "endless_runner",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "lemar": {
-      "name": "托马斯·勒马尔",
-      "short_name": "托马斯",
-      "nationality": "法国",
-      "positions": [
-        "LW",
-        "CAM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 72,
-        "passing": 80,
-        "dribbling": 84,
-        "defending": 50,
-        "physical": 65
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "oblak": {
-      "name": "扬·奥布拉克",
-      "short_name": "扬·奥",
-      "nationality": "斯洛文尼亚",
+    "neuer_bayern_munich_1": {
+      "name": "曼努埃尔·诺伊尔",
+      "short_name": "诺伊尔",
+      "nationality": "德国",
       "positions": [
         "GK"
       ],
       "preferred_foot": "right",
       "attributes": {
-        "gk_diving": 86,
-        "gk_handling": 85,
-        "gk_kicking": 82,
-        "gk_reflexes": 86,
-        "gk_positioning": 87
-      },
-      "traits": [
-        "gk_saver",
-        "gk_1v1"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "gimenez": {
-      "name": "何塞·玛丽亚·希门尼斯",
-      "short_name": "何塞·",
-      "nationality": "乌拉圭",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 50,
-        "passing": 70,
-        "dibbling": 68,
-        "defending": 87,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "savic": {
-      "name": "斯特凡·萨维奇",
-      "short_name": "斯特凡",
-      "nationality": "黑山",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 68,
-        "shooting": 50,
-        "passing": 70,
-        "dribbling": 68,
-        "defending": 85,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "llorente": {
-      "name": "马科斯·略伦特",
-      "short_name": "马科斯",
-      "nationality": "西班牙",
-      "positions": [
-        "CM",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 75,
-        "passing": 78,
-        "dribbling": 78,
-        "defending": 78,
-        "physical": 82
-      },
-      "traits": [
-        "box_to_box",
-        "speedster"
-      ],
-      "skills": [
-        "speed_burst",
-        "endless_runner",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "molina": {
-      "name": "纳韦尔·莫利纳",
-      "short_name": "纳韦尔",
-      "nationality": "阿根廷",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 65,
-        "passing": 75,
-        "dribbling": 76,
-        "defending": 78,
-        "physical": 75
-      },
-      "traits": [
-        "crossing",
-        "speedster"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "correa": {
-      "name": "安赫尔·科雷亚",
-      "short_name": "安赫尔",
-      "nationality": "阿根廷",
-      "positions": [
-        "ST",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 75,
-        "passing": 75,
-        "dribbling": 82,
-        "defending": 45,
-        "physical": 72
-      },
-      "traits": [
-        "dribbling_master",
-        "clutch"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "clutch_player",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "witsel": {
-      "name": "阿克塞尔·维特塞尔",
-      "short_name": "阿克塞",
-      "nationality": "比利时",
-      "positions": [
-        "CB",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 60,
-        "shooting": 65,
-        "passing": 78,
-        "dribbling": 72,
-        "defending": 82,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "playmaker"
-      ],
-      "skills": [
-        "iron_wall",
-        "vision_pass",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "atletico_madrid",
-          "years": "现役"
-        }
-      ]
-    },
-    "vlahovic": {
-      "name": "杜尚·弗拉霍维奇",
-      "short_name": "杜尚·",
-      "nationality": "塞尔维亚",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 86,
-        "passing": 70,
-        "dribbling": 78,
-        "defending": 45,
-        "physical": 82
-      },
-      "traits": [
-        "header",
-        "long_shot",
-        "power_shot"
-      ],
-      "skills": [
-        "power_shot",
-        "air_dominance",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "chiesa": {
-      "name": "费德里科·基耶萨",
-      "short_name": "费德里",
-      "nationality": "意大利",
-      "positions": [
-        "RW",
-        "LW",
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 87,
-        "shooting": 80,
-        "passing": 76,
-        "dribbling": 84,
-        "defending": 50,
-        "physical": 72
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "rabiot": {
-      "name": "阿德里安·拉比奥",
-      "short_name": "阿德里",
-      "nationality": "法国",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 75,
-        "passing": 80,
-        "dribbling": 80,
-        "defending": 75,
-        "physical": 82
-      },
-      "traits": [
-        "box_to_box",
-        "header"
-      ],
-      "skills": [
-        "endless_runner",
-        "air_dominance",
-        "vision_pass"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "locatelli": {
-      "name": "曼努埃尔·洛卡特利",
-      "short_name": "曼努埃",
-      "nationality": "意大利",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 70,
-        "shooting": 72,
-        "passing": 80,
-        "dribbling": 76,
-        "defending": 78,
-        "physical": 78
-      },
-      "traits": [
-        "playmaker",
-        "iron_wall"
-      ],
-      "skills": [
-        "vision_pass",
-        "interceptor",
-        "pinpoint_pass"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "bremer": {
-      "name": "格莱松·布雷默",
-      "short_name": "格莱松",
-      "nationality": "巴西",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 50,
-        "passing": 70,
-        "dribbling": 68,
-        "defending": 87,
-        "physical": 87
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "danilo": {
-      "name": "达尼洛",
-      "short_name": "达尼洛",
-      "nationality": "巴西",
-      "positions": [
-        "CB",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 55,
-        "passing": 75,
-        "dribbling": 75,
-        "defending": 84,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "interceptor",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "szczesny": {
-      "name": "沃伊切赫·什琴斯尼",
-      "short_name": "沃伊切",
-      "nationality": "波兰",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 85,
-        "gk_handling": 84,
-        "gk_kicking": 82,
-        "gk_reflexes": 85,
-        "gk_positioning": 85
-      },
-      "traits": [
-        "gk_saver",
-        "gk_1v1"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "cambiaso": {
-      "name": "安德烈亚·坎比亚索",
-      "short_name": "安德烈",
-      "nationality": "意大利",
-      "positions": [
-        "LB",
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 65,
-        "passing": 78,
-        "dribbling": 80,
-        "defending": 78,
-        "physical": 72
-      },
-      "traits": [
-        "crossing",
-        "dribbling_master"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "ghost_dribble",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "mckennie": {
-      "name": "韦斯顿·麦肯尼",
-      "short_name": "韦斯顿",
-      "nationality": "美国",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 70,
-        "passing": 75,
-        "dribbling": 75,
-        "defending": 75,
-        "physical": 82
-      },
-      "traits": [
-        "box_to_box",
-        "header"
-      ],
-      "skills": [
-        "endless_runner",
-        "air_dominance",
-        "mad_dog"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "yildiz": {
-      "name": "凯南·伊尔迪兹",
-      "short_name": "凯南·",
-      "nationality": "土耳其",
-      "positions": [
-        "CAM",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 72,
-        "passing": 76,
-        "dribbling": 84,
-        "defending": 40,
-        "physical": 65
-      },
-      "traits": [
-        "dribbling_master"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "quick_turn",
-        "vision_pass"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "gatti": {
-      "name": "费德里科·加蒂",
-      "short_name": "费德里",
-      "nationality": "意大利",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 50,
-        "passing": 68,
-        "dribbling": 68,
-        "defending": 82,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "costic": {
-      "name": "菲利普·科斯蒂奇",
-      "short_name": "菲利普",
-      "nationality": "塞尔维亚",
-      "positions": [
-        "LW",
-        "LB"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 78,
-        "shooting": 65,
-        "passing": 82,
-        "dribbling": 80,
-        "defending": 70,
-        "physical": 72
-      },
-      "traits": [
-        "crossing",
-        "speedster"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "speed_burst",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "juventus",
-          "years": "现役"
-        }
-      ]
-    },
-    "reus": {
-      "name": "马尔科·罗伊斯",
-      "short_name": "马尔科",
-      "nationality": "德国",
-      "positions": [
-        "CAM",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 82,
-        "passing": 84,
-        "dribbling": 85,
-        "defending": 50,
-        "physical": 68
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker",
-        "free_kick"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "brandt": {
-      "name": "尤利安·布兰特",
-      "short_name": "尤利安",
-      "nationality": "德国",
-      "positions": [
-        "CAM",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 78,
-        "passing": 84,
-        "dribbling": 85,
-        "defending": 50,
-        "physical": 68
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "hummels": {
-      "name": "马茨·胡梅尔斯",
-      "short_name": "马茨·",
-      "nationality": "德国",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 62,
-        "shooting": 60,
-        "passing": 80,
-        "dribbling": 72,
-        "defending": 85,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "playmaker",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "vision_pass",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "reier": {
-      "name": "卡里姆·阿德耶米",
-      "short_name": "卡里姆",
-      "nationality": "德国",
-      "positions": [
-        "RW",
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 94,
-        "shooting": 72,
-        "passing": 70,
-        "dribbling": 82,
-        "defending": 40,
-        "physical": 68
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "sabitzer": {
-      "name": "马塞尔·萨比策",
-      "short_name": "马塞尔",
-      "nationality": "奥地利",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 78,
-        "passing": 80,
-        "dribbling": 78,
-        "defending": 68,
-        "physical": 72
-      },
-      "traits": [
-        "long_shot",
-        "playmaker"
-      ],
-      "skills": [
-        "power_shot",
-        "vision_pass",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "schlotterbeck": {
-      "name": "尼科·施洛特贝克",
-      "short_name": "尼科·",
-      "nationality": "德国",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 70,
-        "defending": 84,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "ryerson": {
-      "name": "朱利安·吕尔森",
-      "short_name": "朱利安",
-      "nationality": "挪威",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 60,
-        "passing": 72,
-        "dribbling": 74,
-        "defending": 78,
-        "physical": 75
-      },
-      "traits": [
-        "speedster",
-        "iron_wall"
-      ],
-      "skills": [
-        "speed_burst",
-        "interceptor",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "maehlen": {
-      "name": "尼克拉斯·聚勒",
-      "short_name": "尼克拉",
-      "nationality": "德国",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 70,
-        "shooting": 55,
-        "passing": 72,
-        "dribbling": 70,
-        "defending": 85,
-        "physical": 88
-      },
-      "traits": [
-        "iron_wall",
-        "header"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "fullkrug": {
-      "name": "尼克拉斯·菲尔克鲁格",
-      "short_name": "尼克拉",
-      "nationality": "德国",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 68,
-        "shooting": 82,
-        "passing": 70,
-        "dribbling": 72,
-        "defending": 45,
-        "physical": 82
-      },
-      "traits": [
-        "header",
-        "poacher"
-      ],
-      "skills": [
-        "air_dominance",
-        "clutch_player",
-        "power_shot"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "gittens": {
-      "name": "杰米·拜诺-吉滕斯",
-      "short_name": "杰米·",
-      "nationality": "英格兰",
-      "positions": [
-        "LW",
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 68,
-        "passing": 68,
-        "dribbling": 82,
-        "defending": 35,
-        "physical": 62
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "can": {
-      "name": "埃姆雷·詹",
-      "short_name": "埃姆雷",
-      "nationality": "德国",
-      "positions": [
-        "CM",
-        "CDM",
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 72,
-        "passing": 78,
-        "dribbling": 76,
-        "defending": 78,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "box_to_box"
-      ],
-      "skills": [
-        "iron_wall",
-        "endless_runner",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "kobel": {
-      "name": "格雷戈尔·科贝尔",
-      "short_name": "格雷戈",
-      "nationality": "瑞士",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 82,
-        "gk_handling": 82,
-        "gk_kicking": 82,
-        "gk_reflexes": 83,
-        "gk_positioning": 82
-      },
-      "traits": [
-        "gk_saver"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master"
-      ],
-      "career": [
-        {
-          "club": "dortmund",
-          "years": "现役"
-        }
-      ]
-    },
-    "leao": {
-      "name": "拉斐尔·莱奥",
-      "short_name": "拉斐尔",
-      "nationality": "葡萄牙",
-      "positions": [
-        "LW",
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 93,
-        "shooting": 80,
-        "passing": 78,
-        "dribbling": 88,
-        "defending": 40,
-        "physical": 78
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "pulisc": {
-      "name": "克里斯蒂安·普利西奇",
-      "short_name": "克里斯",
-      "nationality": "美国",
-      "positions": [
-        "RW",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 78,
-        "passing": 78,
-        "dribbling": 84,
-        "defending": 45,
-        "physical": 68
-      },
-      "traits": [
-        "dribbling_master",
-        "speedster"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "speed_burst",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "theo": {
-      "name": "特奥·埃尔南德斯",
-      "short_name": "特奥·",
-      "nationality": "法国",
-      "positions": [
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 90,
-        "shooting": 75,
-        "passing": 78,
-        "dribbling": 82,
-        "defending": 80,
-        "physical": 82
-      },
-      "traits": [
-        "speedster",
-        "crossing",
-        "header"
-      ],
-      "skills": [
-        "speed_burst",
-        "pinpoint_pass",
-        "air_dominance"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "maignan": {
-      "name": "迈尼昂",
-      "short_name": "迈尼昂",
-      "nationality": "法国",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 85,
-        "gk_handling": 84,
-        "gk_kicking": 85,
-        "gk_reflexes": 86,
-        "gk_positioning": 85
+        "gk_diving": 87,
+        "gk_handling": 88,
+        "gk_kicking": 96,
+        "gk_reflexes": 88,
+        "gk_positioning": 90
       },
       "traits": [
         "sweeper_keeper",
-        "gk_saver"
+        "gk_leader",
+        "gk_distribution"
       ],
       "skills": [
         "sweeper_keeper",
-        "gk_reflex_save",
-        "gk_1v1_master"
+        "gk_1v1_master",
+        "gk_reflex_save"
       ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "tomori": {
-      "name": "菲卡约·托莫里",
-      "short_name": "菲卡约",
-      "nationality": "英格兰",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 50,
-        "passing": 72,
-        "dribbling": 72,
-        "defending": 84,
-        "physical": 82
+      "appearance": {
+        "height_mult": 1.12,
+        "body_type": "muscular",
+        "skin_tone": "#F0C8A0",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2818"
       },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "reijnders": {
-      "name": "泰贾尼·雷因德斯",
-      "short_name": "泰贾尼",
-      "nationality": "荷兰",
-      "positions": [
-        "CM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 72,
-        "passing": 80,
-        "dribbling": 80,
-        "defending": 72,
-        "physical": 75
-      },
-      "traits": [
-        "playmaker",
-        "box_to_box"
-      ],
-      "skills": [
-        "vision_pass",
-        "endless_runner",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "bennacer": {
-      "name": "伊斯梅尔·本纳塞尔",
-      "short_name": "伊斯梅",
-      "nationality": "阿尔及利亚",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 72,
-        "shooting": 70,
-        "passing": 82,
-        "dribbling": 82,
-        "defending": 75,
-        "physical": 68
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "chukwueze": {
-      "name": "萨穆埃尔·丘库埃泽",
-      "short_name": "萨穆埃",
-      "nationality": "尼日利亚",
-      "positions": [
-        "RW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 88,
-        "shooting": 72,
-        "passing": 72,
-        "dribbling": 84,
-        "defending": 40,
-        "physical": 68
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "quick_turn"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "giroud": {
-      "name": "奥利维耶·吉鲁",
-      "short_name": "奥利维",
-      "nationality": "法国",
-      "positions": [
-        "ST"
-      ],
-      "preferred_foot": "left",
-      "attributes": {
-        "pace": 68,
-        "shooting": 82,
-        "passing": 72,
-        "dribbling": 75,
-        "defending": 45,
-        "physical": 85
-      },
-      "traits": [
-        "header",
-        "poacher",
-        "clutch"
-      ],
-      "skills": [
-        "air_dominance",
-        "clutch_player",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "loftus_cheek": {
-      "name": "鲁本·洛夫图斯-奇克",
-      "short_name": "鲁本·",
-      "nationality": "英格兰",
-      "positions": [
-        "CM",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 75,
-        "passing": 76,
-        "dribbling": 82,
-        "defending": 70,
-        "physical": 82
-      },
-      "traits": [
-        "box_to_box",
-        "dribbling_master"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "endless_runner",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "kjaer": {
-      "name": "西蒙·克亚尔",
-      "short_name": "西蒙·",
-      "nationality": "丹麦",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 65,
-        "shooting": 50,
-        "passing": 70,
-        "dribbling": 68,
-        "defending": 84,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "header",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "calabria": {
-      "name": "戴维德·卡拉布里亚",
-      "short_name": "戴维德",
-      "nationality": "意大利",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 60,
-        "passing": 75,
-        "dribbling": 76,
-        "defending": 80,
-        "physical": 75
-      },
-      "traits": [
-        "iron_wall",
-        "crossing"
-      ],
-      "skills": [
-        "interceptor",
-        "pinpoint_pass",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "ac_milan",
-          "years": "现役"
-        }
-      ]
-    },
-    "son": {
-      "name": "孙兴慜",
-      "short_name": "孙兴慜",
-      "nationality": "韩国",
-      "positions": [
-        "LW",
-        "ST"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 87,
-        "shooting": 87,
-        "passing": 82,
-        "dribbling": 86,
-        "defending": 42,
-        "physical": 70
-      },
-      "traits": [
-        "speedster",
-        "dribbling_master",
-        "clutch"
-      ],
-      "skills": [
-        "speed_burst",
-        "ghost_dribble",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "maddison": {
-      "name": "詹姆斯·麦迪逊",
-      "short_name": "詹姆斯",
-      "nationality": "英格兰",
-      "positions": [
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 80,
-        "passing": 85,
-        "dribbling": 84,
-        "defending": 50,
-        "physical": 68
-      },
-      "traits": [
-        "playmaker",
-        "dribbling_master",
-        "free_kick"
-      ],
-      "skills": [
-        "vision_pass",
-        "ghost_dribble",
-        "curve_shot"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "romero": {
-      "name": "克里斯蒂安·罗梅罗",
-      "short_name": "克里斯",
-      "nationality": "阿根廷",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 50,
-        "passing": 70,
-        "dribbling": 68,
-        "defending": 86,
-        "physical": 85
-      },
-      "traits": [
-        "iron_wall",
-        "header",
-        "leader"
-      ],
-      "skills": [
-        "iron_wall",
-        "air_dominance",
-        "mad_dog"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "vandeven": {
-      "name": "米基·范德文",
-      "short_name": "米基·",
-      "nationality": "荷兰",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 90,
-        "shooting": 45,
-        "passing": 68,
-        "dribbling": 68,
-        "defending": 82,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall",
-        "speedster"
-      ],
-      "skills": [
-        "iron_wall",
-        "speed_burst",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "bentancur": {
-      "name": "罗德里戈·本坦库尔",
-      "short_name": "罗德里",
-      "nationality": "乌拉圭",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 72,
-        "shooting": 70,
-        "passing": 80,
-        "dribbling": 78,
-        "defending": 78,
-        "physical": 80
-      },
-      "traits": [
-        "playmaker",
-        "box_to_box"
-      ],
-      "skills": [
-        "vision_pass",
-        "endless_runner",
-        "interceptor"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "vicario": {
-      "name": "古列尔莫·维卡里奥",
-      "short_name": "古列尔",
-      "nationality": "意大利",
-      "positions": [
-        "GK"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "gk_diving": 82,
-        "gk_handling": 82,
-        "gk_kicking": 82,
-        "gk_reflexes": 83,
-        "gk_positioning": 82
-      },
-      "traits": [
-        "gk_saver"
-      ],
-      "skills": [
-        "gk_reflex_save",
-        "gk_1v1_master"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "porro": {
-      "name": "佩德罗·波罗",
-      "short_name": "佩德罗",
-      "nationality": "西班牙",
-      "positions": [
-        "RB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 70,
-        "passing": 78,
-        "dribbling": 80,
-        "defending": 75,
-        "physical": 72
-      },
-      "traits": [
-        "crossing",
-        "speedster"
-      ],
-      "skills": [
-        "pinpoint_pass",
-        "speed_burst",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "u dog": {
-      "name": "德斯蒂尼·乌多吉",
-      "short_name": "德斯蒂",
-      "nationality": "意大利",
-      "positions": [
-        "LB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 85,
-        "shooting": 60,
-        "passing": 72,
-        "dribbling": 78,
-        "defending": 75,
-        "physical": 72
-      },
-      "traits": [
-        "speedster",
-        "crossing"
-      ],
-      "skills": [
-        "speed_burst",
-        "pinpoint_pass",
-        "endless_runner"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "kulusevski": {
-      "name": "德扬·库卢塞夫斯基",
-      "short_name": "德扬·",
-      "nationality": "瑞典",
-      "positions": [
-        "RW",
-        "CAM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 80,
-        "shooting": 75,
-        "passing": 80,
-        "dribbling": 84,
-        "defending": 55,
-        "physical": 78
-      },
-      "traits": [
-        "dribbling_master",
-        "playmaker"
-      ],
-      "skills": [
-        "ghost_dribble",
-        "vision_pass",
-        "first_touch"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "richarlison": {
-      "name": "里沙利松",
-      "short_name": "里沙利",
-      "nationality": "巴西",
-      "positions": [
-        "ST",
-        "LW"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 82,
-        "shooting": 76,
-        "passing": 70,
-        "dribbling": 78,
-        "defending": 45,
-        "physical": 78
-      },
-      "traits": [
-        "header",
-        "speedster"
-      ],
-      "skills": [
-        "air_dominance",
-        "speed_burst",
-        "clutch_player"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "sarr": {
-      "name": "帕普·萨尔",
-      "short_name": "帕普·",
-      "nationality": "塞内加尔",
-      "positions": [
-        "CM",
-        "CDM"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 78,
-        "shooting": 65,
-        "passing": 75,
-        "dribbling": 76,
-        "defending": 75,
-        "physical": 78
-      },
-      "traits": [
-        "box_to_box"
-      ],
-      "skills": [
-        "endless_runner",
-        "interceptor",
-        "speed_burst"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
-    },
-    "dragusin": {
-      "name": "拉杜·德拉古辛",
-      "short_name": "拉杜·",
-      "nationality": "罗马尼亚",
-      "positions": [
-        "CB"
-      ],
-      "preferred_foot": "right",
-      "attributes": {
-        "pace": 75,
-        "shooting": 45,
-        "passing": 68,
-        "dribbling": 68,
-        "defending": 82,
-        "physical": 82
-      },
-      "traits": [
-        "iron_wall"
-      ],
-      "skills": [
-        "iron_wall",
-        "interceptor",
-        "wall_defense"
-      ],
-      "career": [
-        {
-          "club": "tottenham",
-          "years": "现役"
-        }
-      ]
+      "club": "bayern_munich",
+      "era": "拜仁时期",
+      "years": "2011-至今",
+      "jersey_number": 1,
+      "base_player_id": "neuer",
+      "version_index": 1
     }
   }
 }

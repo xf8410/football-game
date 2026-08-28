@@ -18,6 +18,7 @@ extends Control
 @onready var checkin_button = $VBoxContainer/MenuContainer/CheckinButton
 @onready var achievement_button = $VBoxContainer/MenuContainer/AchievementButton
 @onready var stadium_button = $VBoxContainer/MenuContainer/StadiumButton
+@onready var kit_button = $VBoxContainer/MenuContainer/KitButton
 @onready var stats_button = $VBoxContainer/MenuContainer/StatsButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
 @onready var lan_button = $VBoxContainer/MenuContainer/LANButton
@@ -41,6 +42,7 @@ func _ready():
         checkin_button.pressed.connect(_on_checkin_pressed)
         achievement_button.pressed.connect(_on_achievement_pressed)
         stadium_button.pressed.connect(_on_stadium_pressed)
+        kit_button.pressed.connect(_on_kit_pressed)
         stats_button.pressed.connect(_on_stats_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
         lan_button.pressed.connect(_on_lan_pressed)
@@ -152,6 +154,10 @@ func _on_achievement_pressed():
 func _on_stadium_pressed():
         print("[MainMenu] 打开球场自定义")
         get_tree().change_scene_to_file("res://scenes/Stadium.tscn")
+
+func _on_kit_pressed():
+        print("[MainMenu] 打开球衣选择")
+        get_tree().change_scene_to_file("res://scenes/KitSelect.tscn")
 
 func _on_stats_pressed():
         print("[MainMenu] 打开赛季统计")

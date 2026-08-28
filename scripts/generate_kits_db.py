@@ -1,0 +1,336 @@
+#!/usr/bin/env python3
+"""
+球衣数据库生成器
+为每支球队生成主场/客场球衣颜色和设计
+"""
+import json
+import os
+
+# 球衣数据库：team_id -> {home: {...}, away: {...}}
+KITS = {
+    # ---- 英超 ----
+    "man_city": {
+        "home": {"primary": "#6CABDD", "secondary": "#1C2C5B", "pattern": "solid", "sponsor": "Etihad"},
+        "away": {"primary": "#1C2C5B", "secondary": "#6CABDD", "pattern": "solid", "sponsor": "Etihad"},
+        "third": {"primary": "#FFFFFF", "secondary": "#6CABDD", "pattern": "stripes", "sponsor": "Etihad"},
+    },
+    "man_united": {
+        "home": {"primary": "#DA291C", "secondary": "#000000", "pattern": "solid", "sponsor": "TeamViewer"},
+        "away": {"primary": "#FFFFFF", "secondary": "#DA291C", "pattern": "solid", "sponsor": "TeamViewer"},
+        "third": {"primary": "#000000", "secondary": "#FBE122", "pattern": "solid", "sponsor": "TeamViewer"},
+    },
+    "liverpool": {
+        "home": {"primary": "#C8102E", "secondary": "#00B2A9", "pattern": "solid", "sponsor": "Standard Chartered"},
+        "away": {"primary": "#FFFFFF", "secondary": "#C8102E", "pattern": "solid", "sponsor": "Standard Chartered"},
+        "third": {"primary": "#00B2A9", "secondary": "#000000", "pattern": "solid", "sponsor": "Standard Chartered"},
+    },
+    "arsenal": {
+        "home": {"primary": "#EF0107", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Emirates"},
+        "away": {"primary": "#FFFFFF", "secondary": "#EF0107", "pattern": "solid", "sponsor": "Emirates"},
+        "third": {"primary": "#000000", "secondary": "#EF0107", "pattern": "solid", "sponsor": "Emirates"},
+    },
+    "chelsea": {
+        "home": {"primary": "#034694", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Three"},
+        "away": {"primary": "#FFFFFF", "secondary": "#034694", "pattern": "solid", "sponsor": "Three"},
+        "third": {"primary": "#000000", "secondary": "#034694", "pattern": "solid", "sponsor": "Three"},
+    },
+    "tottenham": {
+        "home": {"primary": "#132257", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "AIA"},
+        "away": {"primary": "#FFFFFF", "secondary": "#132257", "pattern": "solid", "sponsor": "AIA"},
+        "third": {"primary": "#000000", "secondary": "#132257", "pattern": "solid", "sponsor": "AIA"},
+    },
+    "newcastle": {
+        "home": {"primary": "#241F20", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Sela"},
+        "away": {"primary": "#FFFFFF", "secondary": "#241F20", "pattern": "solid", "sponsor": "Sela"},
+        "third": {"primary": "#0057B8", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Sela"},
+    },
+    "aston_villa": {
+        "home": {"primary": "#95BFE5", "secondary": "#670E36", "pattern": "claret_blue", "sponsor": "BK8"},
+        "away": {"primary": "#FFFFFF", "secondary": "#670E36", "pattern": "solid", "sponsor": "BK8"},
+        "third": {"primary": "#000000", "secondary": "#95BFE5", "pattern": "solid", "sponsor": "BK8"},
+    },
+    "west_ham": {
+        "home": {"primary": "#7A263A", "secondary": "#1BB1E7", "pattern": "claret_blue", "sponsor": "Betway"},
+        "away": {"primary": "#FFFFFF", "secondary": "#7A263A", "pattern": "solid", "sponsor": "Betway"},
+        "third": {"primary": "#000000", "secondary": "#7A263A", "pattern": "solid", "sponsor": "Betway"},
+    },
+    "brighton": {
+        "home": {"primary": "#0057B8", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "American Express"},
+        "away": {"primary": "#FFFFFF", "secondary": "#0057B8", "pattern": "solid", "sponsor": "American Express"},
+        "third": {"primary": "#000000", "secondary": "#0057B8", "pattern": "solid", "sponsor": "American Express"},
+    },
+
+    # ---- 西甲 ----
+    "real_madrid": {
+        "home": {"primary": "#FFFFFF", "secondary": "#FEBE10", "pattern": "solid", "sponsor": "Emirates"},
+        "away": {"primary": "#000000", "secondary": "#FEBE10", "pattern": "solid", "sponsor": "Emirates"},
+        "third": {"primary": "#00529F", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Emirates"},
+    },
+    "barcelona": {
+        "home": {"primary": "#A50044", "secondary": "#004D98", "pattern": "stripes", "sponsor": "Spotify"},
+        "away": {"primary": "#FFFFFF", "secondary": "#A50044", "pattern": "solid", "sponsor": "Spotify"},
+        "third": {"primary": "#000000", "secondary": "#A50044", "pattern": "solid", "sponsor": "Spotify"},
+    },
+    "atletico_madrid": {
+        "home": {"primary": "#CB3524", "secondary": "#1C2C5B", "pattern": "stripes", "sponsor": "Riyadh Air"},
+        "away": {"primary": "#1C2C5B", "secondary": "#CB3524", "pattern": "solid", "sponsor": "Riyadh Air"},
+        "third": {"primary": "#FFFFFF", "secondary": "#CB3524", "pattern": "solid", "sponsor": "Riyadh Air"},
+    },
+    "sevilla": {
+        "home": {"primary": "#D80027", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Marathon"},
+        "away": {"primary": "#FFFFFF", "secondary": "#D80027", "pattern": "solid", "sponsor": "Marathon"},
+        "third": {"primary": "#000000", "secondary": "#D80027", "pattern": "solid", "sponsor": "Marathon"},
+    },
+    "valencia": {
+        "home": {"primary": "#FFFFFF", "secondary": "#000000", "pattern": "solid", "sponsor": "Cazoo"},
+        "away": {"primary": "#000000", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Cazoo"},
+        "third": {"primary": "#FF7900", "secondary": "#000000", "pattern": "solid", "sponsor": "Cazoo"},
+    },
+    "villarreal": {
+        "home": {"primary": "#FFE667", "secondary": "#005187", "pattern": "solid", "sponsor": "Pamesa"},
+        "away": {"primary": "#005187", "secondary": "#FFE667", "pattern": "solid", "sponsor": "Pamesa"},
+        "third": {"primary": "#000000", "secondary": "#FFE667", "pattern": "solid", "sponsor": "Pamesa"},
+    },
+    "real_sociedad": {
+        "home": {"primary": "#0067B1", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Kutxabank"},
+        "away": {"primary": "#FFFFFF", "secondary": "#0067B1", "pattern": "solid", "sponsor": "Kutxabank"},
+        "third": {"primary": "#000000", "secondary": "#0067B1", "pattern": "solid", "sponsor": "Kutxabank"},
+    },
+    "athletic_bilbao": {
+        "home": {"primary": "#EE2523", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Kutxabank"},
+        "away": {"primary": "#FFFFFF", "secondary": "#EE2523", "pattern": "solid", "sponsor": "Kutxabank"},
+        "third": {"primary": "#000000", "secondary": "#EE2523", "pattern": "solid", "sponsor": "Kutxabank"},
+    },
+    "getafe": {
+        "home": {"primary": "#005999", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Tecnasa"},
+        "away": {"primary": "#FFFFFF", "secondary": "#005999", "pattern": "solid", "sponsor": "Tecnasa"},
+        "third": {"primary": "#000000", "secondary": "#005999", "pattern": "solid", "sponsor": "Tecnasa"},
+    },
+    "real_betis": {
+        "home": {"primary": "#00954C", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Betway"},
+        "away": {"primary": "#FFFFFF", "secondary": "#00954C", "pattern": "solid", "sponsor": "Betway"},
+        "third": {"primary": "#000000", "secondary": "#00954C", "pattern": "solid", "sponsor": "Betway"},
+    },
+
+    # ---- 德甲 ----
+    "bayern_munich": {
+        "home": {"primary": "#DC052D", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Deutsche Telekom"},
+        "away": {"primary": "#FFFFFF", "secondary": "#DC052D", "pattern": "solid", "sponsor": "Deutsche Telekom"},
+        "third": {"primary": "#000000", "secondary": "#DC052D", "pattern": "solid", "sponsor": "Deutsche Telekom"},
+    },
+    "dortmund": {
+        "home": {"primary": "#FDE100", "secondary": "#000000", "pattern": "solid", "sponsor": "1&1"},
+        "away": {"primary": "#000000", "secondary": "#FDE100", "pattern": "solid", "sponsor": "1&1"},
+        "third": {"primary": "#FFFFFF", "secondary": "#FDE100", "pattern": "solid", "sponsor": "1&1"},
+    },
+    "leipzig": {
+        "home": {"primary": "#DD0741", "secondary": "#001F47", "pattern": "solid", "sponsor": "Red Bull"},
+        "away": {"primary": "#FFFFFF", "secondary": "#DD0741", "pattern": "solid", "sponsor": "Red Bull"},
+        "third": {"primary": "#001F47", "secondary": "#DD0741", "pattern": "solid", "sponsor": "Red Bull"},
+    },
+    "leverkusen": {
+        "home": {"primary": "#E32219", "secondary": "#000000", "pattern": "solid", "sponsor": "Barmenia"},
+        "away": {"primary": "#000000", "secondary": "#E32219", "pattern": "solid", "sponsor": "Barmenia"},
+        "third": {"primary": "#FFFFFF", "secondary": "#E32219", "pattern": "solid", "sponsor": "Barmenia"},
+    },
+    "frankfurt": {
+        "home": {"primary": "#E1000F", "secondary": "#000000", "pattern": "solid", "sponsor": "Indeed"},
+        "away": {"primary": "#000000", "secondary": "#E1000F", "pattern": "solid", "sponsor": "Indeed"},
+        "third": {"primary": "#FFFFFF", "secondary": "#E1000F", "pattern": "solid", "sponsor": "Indeed"},
+    },
+    "wolfsburg": {
+        "home": {"primary": "#65B32E", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Volkswagen"},
+        "away": {"primary": "#FFFFFF", "secondary": "#65B32E", "pattern": "solid", "sponsor": "Volkswagen"},
+        "third": {"primary": "#000000", "secondary": "#65B32E", "pattern": "solid", "sponsor": "Volkswagen"},
+    },
+    "freiburg": {
+        "home": {"primary": "#000000", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Linga"},
+        "away": {"primary": "#FFFFFF", "secondary": "#000000", "pattern": "solid", "sponsor": "Linga"},
+        "third": {"primary": "#E2001A", "secondary": "#000000", "pattern": "solid", "sponsor": "Linga"},
+    },
+    "mainz": {
+        "home": {"primary": "#C3141E", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Linga"},
+        "away": {"primary": "#FFFFFF", "secondary": "#C3141E", "pattern": "solid", "sponsor": "Linga"},
+        "third": {"primary": "#000000", "secondary": "#C3141E", "pattern": "solid", "sponsor": "Linga"},
+    },
+
+    # ---- 意甲 ----
+    "ac_milan": {
+        "home": {"primary": "#FB090B", "secondary": "#000000", "pattern": "stripes", "sponsor": "Emirates"},
+        "away": {"primary": "#FFFFFF", "secondary": "#FB090B", "pattern": "solid", "sponsor": "Emirates"},
+        "third": {"primary": "#000000", "secondary": "#FB090B", "pattern": "solid", "sponsor": "Emirates"},
+    },
+    "inter_milan": {
+        "home": {"primary": "#0068A8", "secondary": "#000000", "pattern": "stripes", "sponsor": "Betsson"},
+        "away": {"primary": "#FFFFFF", "secondary": "#0068A8", "pattern": "solid", "sponsor": "Betsson"},
+        "third": {"primary": "#000000", "secondary": "#0068A8", "pattern": "solid", "sponsor": "Betsson"},
+    },
+    "juventus": {
+        "home": {"primary": "#000000", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Jeep"},
+        "away": {"primary": "#FFFFFF", "secondary": "#000000", "pattern": "solid", "sponsor": "Jeep"},
+        "third": {"primary": "#FF6600", "secondary": "#000000", "pattern": "solid", "sponsor": "Jeep"},
+    },
+    "napoli": {
+        "home": {"primary": "#12A0D7", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "MSC"},
+        "away": {"primary": "#FFFFFF", "secondary": "#12A0D7", "pattern": "solid", "sponsor": "MSC"},
+        "third": {"primary": "#000000", "secondary": "#12A0D7", "pattern": "solid", "sponsor": "MSC"},
+    },
+    "roma": {
+        "home": {"primary": "#8E1F2F", "secondary": "#F0BC42", "pattern": "solid", "sponsor": "Riyadh Season"},
+        "away": {"primary": "#FFFFFF", "secondary": "#8E1F2F", "pattern": "solid", "sponsor": "Riyadh Season"},
+        "third": {"primary": "#000000", "secondary": "#8E1F2F", "pattern": "solid", "sponsor": "Riyadh Season"},
+    },
+    "lazio": {
+        "home": {"primary": "#87D8F7", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Binance"},
+        "away": {"primary": "#FFFFFF", "secondary": "#87D8F7", "pattern": "solid", "sponsor": "Binance"},
+        "third": {"primary": "#000000", "secondary": "#87D8F7", "pattern": "solid", "sponsor": "Binance"},
+    },
+    "atalanta": {
+        "home": {"primary": "#1E71B8", "secondary": "#000000", "pattern": "stripes", "sponsor": "Radici"},
+        "away": {"primary": "#FFFFFF", "secondary": "#1E71B8", "pattern": "solid", "sponsor": "Radici"},
+        "third": {"primary": "#000000", "secondary": "#1E71B8", "pattern": "solid", "sponsor": "Radici"},
+    },
+    "fiorentina": {
+        "home": {"primary": "#592C82", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Mediacom"},
+        "away": {"primary": "#FFFFFF", "secondary": "#592C82", "pattern": "solid", "sponsor": "Mediacom"},
+        "third": {"primary": "#000000", "secondary": "#592C82", "pattern": "solid", "sponsor": "Mediacom"},
+    },
+
+    # ---- 法甲 ----
+    "psg": {
+        "home": {"primary": "#004170", "secondary": "#DA291C", "pattern": "hechter", "sponsor": "Qatar Airways"},
+        "away": {"primary": "#FFFFFF", "secondary": "#004170", "pattern": "solid", "sponsor": "Qatar Airways"},
+        "third": {"primary": "#000000", "secondary": "#004170", "pattern": "solid", "sponsor": "Qatar Airways"},
+    },
+    "marseille": {
+        "home": {"primary": "#2FAEE0", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "CMA CGM"},
+        "away": {"primary": "#FFFFFF", "secondary": "#2FAEE0", "pattern": "solid", "sponsor": "CMA CGM"},
+        "third": {"primary": "#000000", "secondary": "#2FAEE0", "pattern": "solid", "sponsor": "CMA CGM"},
+    },
+    "lyon": {
+        "home": {"primary": "#FFFFFF", "secondary": "#1A2B5E", "pattern": "split", "sponsor": "Emirates"},
+        "away": {"primary": "#1A2B5E", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Emirates"},
+        "third": {"primary": "#000000", "secondary": "#1A2B5E", "pattern": "solid", "sponsor": "Emirates"},
+    },
+    "monaco": {
+        "home": {"primary": "#E63329", "secondary": "#FFFFFF", "pattern": "diagonal", "sponsor": "Monte Carlo"},
+        "away": {"primary": "#FFFFFF", "secondary": "#E63329", "pattern": "solid", "sponsor": "Monte Carlo"},
+        "third": {"primary": "#000000", "secondary": "#E63329", "pattern": "solid", "sponsor": "Monte Carlo"},
+    },
+    "lille": {
+        "home": {"primary": "#E01E13", "secondary": "#00337F", "pattern": "split", "sponsor": "Cazoo"},
+        "away": {"primary": "#FFFFFF", "secondary": "#E01E13", "pattern": "solid", "sponsor": "Cazoo"},
+        "third": {"primary": "#000000", "secondary": "#E01E13", "pattern": "solid", "sponsor": "Cazoo"},
+    },
+    "nice": {
+        "home": {"primary": "#C8102E", "secondary": "#000000", "pattern": "solid", "sponsor": "Innovave"},
+        "away": {"primary": "#FFFFFF", "secondary": "#C8102E", "pattern": "solid", "sponsor": "Innovave"},
+        "third": {"primary": "#000000", "secondary": "#C8102E", "pattern": "solid", "sponsor": "Innovave"},
+    },
+
+    # ---- 葡超 ----
+    "benfica": {
+        "home": {"primary": "#E30613", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Emirates"},
+        "away": {"primary": "#FFFFFF", "secondary": "#E30613", "pattern": "solid", "sponsor": "Emirates"},
+        "third": {"primary": "#000000", "secondary": "#E30613", "pattern": "solid", "sponsor": "Emirates"},
+    },
+    "porto": {
+        "home": {"primary": "#004890", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Betano"},
+        "away": {"primary": "#FFFFFF", "secondary": "#004890", "pattern": "solid", "sponsor": "Betano"},
+        "third": {"primary": "#000000", "secondary": "#004890", "pattern": "solid", "sponsor": "Betano"},
+    },
+    "sporting_cp": {
+        "home": {"primary": "#008057", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Betano"},
+        "away": {"primary": "#FFFFFF", "secondary": "#008057", "pattern": "solid", "sponsor": "Betano"},
+        "third": {"primary": "#000000", "secondary": "#008057", "pattern": "solid", "sponsor": "Betano"},
+    },
+
+    # ---- 荷甲 ----
+    "ajax": {
+        "home": {"primary": "#D2122E", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Ziggo"},
+        "away": {"primary": "#FFFFFF", "secondary": "#D2122E", "pattern": "solid", "sponsor": "Ziggo"},
+        "third": {"primary": "#000000", "secondary": "#D2122E", "pattern": "solid", "sponsor": "Ziggo"},
+    },
+    "psv": {
+        "home": {"primary": "#ED1C24", "secondary": "#FFFFFF", "pattern": "stripes", "sponsor": "Philips"},
+        "away": {"primary": "#FFFFFF", "secondary": "#ED1C24", "pattern": "solid", "sponsor": "Philips"},
+        "third": {"primary": "#000000", "secondary": "#ED1C24", "pattern": "solid", "sponsor": "Philips"},
+    },
+    "feyenoord": {
+        "home": {"primary": "#E2001A", "secondary": "#FFFFFF", "pattern": "split", "sponsor": "Hertog Jan"},
+        "away": {"primary": "#FFFFFF", "secondary": "#E2001A", "pattern": "solid", "sponsor": "Hertog Jan"},
+        "third": {"primary": "#000000", "secondary": "#E2001A", "pattern": "solid", "sponsor": "Hertog Jan"},
+    },
+
+    # ---- 沙特联 ----
+    "al_nassr": {
+        "home": {"primary": "#FFD700", "secondary": "#0066CC", "pattern": "solid", "sponsor": "Saudi Tourism"},
+        "away": {"primary": "#0066CC", "secondary": "#FFD700", "pattern": "solid", "sponsor": "Saudi Tourism"},
+        "third": {"primary": "#000000", "secondary": "#FFD700", "pattern": "solid", "sponsor": "Saudi Tourism"},
+    },
+    "al_hilal": {
+        "home": {"primary": "#003DA5", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Saudi Tourism"},
+        "away": {"primary": "#FFFFFF", "secondary": "#003DA5", "pattern": "solid", "sponsor": "Saudi Tourism"},
+        "third": {"primary": "#000000", "secondary": "#003DA5", "pattern": "solid", "sponsor": "Saudi Tourism"},
+    },
+
+    # ---- 美职联 ----
+    "inter_miami": {
+        "home": {"primary": "#F7B5CD", "secondary": "#231F20", "pattern": "solid", "sponsor": "XBTO"},
+        "away": {"primary": "#231F20", "secondary": "#F7B5CD", "pattern": "solid", "sponsor": "XBTO"},
+        "third": {"primary": "#FFFFFF", "secondary": "#F7B5CD", "pattern": "solid", "sponsor": "XBTO"},
+    },
+
+    # ---- 中超 ----
+    "shanghai_port": {
+        "home": {"primary": "#C8102E", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "上汽"},
+        "away": {"primary": "#FFFFFF", "secondary": "#C8102E", "pattern": "solid", "sponsor": "上汽"},
+        "third": {"primary": "#000000", "secondary": "#C8102E", "pattern": "solid", "sponsor": "上汽"},
+    },
+    "shandong_taishan": {
+        "home": {"primary": "#FF6600", "secondary": "#000000", "pattern": "solid", "sponsor": "鲁能"},
+        "away": {"primary": "#FFFFFF", "secondary": "#FF6600", "pattern": "solid", "sponsor": "鲁能"},
+        "third": {"primary": "#000000", "secondary": "#FF6600", "pattern": "solid", "sponsor": "鲁能"},
+    },
+    "beijing_guoan": {
+        "home": {"primary": "#0057B8", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "中赫"},
+        "away": {"primary": "#FFFFFF", "secondary": "#0057B8", "pattern": "solid", "sponsor": "中赫"},
+        "third": {"primary": "#000000", "secondary": "#0057B8", "pattern": "solid", "sponsor": "中赫"},
+    },
+
+    # ---- 阿甲/巴甲 ----
+    "boca_juniors": {
+        "home": {"primary": "#003DA5", "secondary": "#FFD700", "pattern": "solid", "sponsor": "Qatar Airways"},
+        "away": {"primary": "#FFFFFF", "secondary": "#003DA5", "pattern": "solid", "sponsor": "Qatar Airways"},
+        "third": {"primary": "#000000", "secondary": "#003DA5", "pattern": "solid", "sponsor": "Qatar Airways"},
+    },
+    "river_plate": {
+        "home": {"primary": "#FFFFFF", "secondary": "#C8102E", "pattern": "diagonal", "sponsor": "Codere"},
+        "away": {"primary": "#000000", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Codere"},
+        "third": {"primary": "#C8102E", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Codere"},
+    },
+    "flamengo": {
+        "home": {"primary": "#C8102E", "secondary": "#000000", "pattern": "stripes", "sponsor": "Pix"},
+        "away": {"primary": "#FFFFFF", "secondary": "#C8102E", "pattern": "solid", "sponsor": "Pix"},
+        "third": {"primary": "#000000", "secondary": "#C8102E", "pattern": "solid", "sponsor": "Pix"},
+    },
+    "palmeiras": {
+        "home": {"primary": "#006437", "secondary": "#FFFFFF", "pattern": "solid", "sponsor": "Crefisa"},
+        "away": {"primary": "#FFFFFF", "secondary": "#006437", "pattern": "solid", "sponsor": "Crefisa"},
+        "third": {"primary": "#000000", "secondary": "#006437", "pattern": "solid", "sponsor": "Crefisa"},
+    },
+    "sao_paulo": {
+        "home": {"primary": "#FE0000", "secondary": "#000000", "pattern": "stripes", "sponsor": "Apoena"},
+        "away": {"primary": "#FFFFFF", "secondary": "#FE0000", "pattern": "solid", "sponsor": "Apoena"},
+        "third": {"primary": "#000000", "secondary": "#FE0000", "pattern": "solid", "sponsor": "Apoena"},
+    },
+}
+
+def main():
+    output_path = os.path.join(os.path.dirname(__file__), "..", "data", "kits.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump({"kits": KITS}, f, ensure_ascii=False, indent=2)
+    print(f"已生成 {len(KITS)} 支球队的球衣数据到 {output_path}")
+
+if __name__ == "__main__":
+    main()
