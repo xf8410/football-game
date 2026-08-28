@@ -3066,6 +3066,1040 @@
       "base_player_id": "chiesa",
       "version_index": 2,
       "is_national": true
+    },
+    "pele_santos_0": {
+      "name": "贝利",
+      "short_name": "贝利",
+      "nationality": "巴西",
+      "positions": [
+        "ST",
+        "CF"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 93,
+        "shooting": 99,
+        "passing": 90,
+        "dribbling": 99,
+        "defending": 45,
+        "physical": 80
+      },
+      "traits": [
+        "dribbling_master",
+        "header",
+        "long_shot"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "santos",
+      "era": "桑托斯传奇",
+      "years": "1956-1974",
+      "jersey_number": 10,
+      "base_player_id": "pele",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "pele_brazil_1": {
+      "name": "贝利",
+      "short_name": "贝利",
+      "nationality": "巴西",
+      "positions": [
+        "ST",
+        "CF"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 93,
+        "shooting": 99,
+        "passing": 90,
+        "dribbling": 99,
+        "defending": 45,
+        "physical": 80
+      },
+      "traits": [
+        "dribbling_master",
+        "header",
+        "long_shot"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "power_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "brazil",
+      "era": "国家队传奇",
+      "years": "1957-1971",
+      "jersey_number": 10,
+      "base_player_id": "pele",
+      "version_index": 1,
+      "is_national": true,
+      "is_legend": true
+    },
+    "maradona_napoli_0": {
+      "name": "迭戈·马拉多纳",
+      "short_name": "马拉多纳",
+      "nationality": "阿根廷",
+      "positions": [
+        "CAM",
+        "CF"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 90,
+        "shooting": 94,
+        "passing": 95,
+        "dribbling": 99,
+        "defending": 35,
+        "physical": 75
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 0.95,
+        "body_type": "stocky",
+        "skin_tone": "#D9A87A",
+        "hair_style": "curly_black",
+        "hair_color": "#2A1A0A"
+      },
+      "club": "napoli",
+      "era": "那不勒斯传奇",
+      "years": "1984-1991",
+      "jersey_number": 10,
+      "base_player_id": "maradona",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "maradona_argentina_1": {
+      "name": "迭戈·马拉多纳",
+      "short_name": "马拉多纳",
+      "nationality": "阿根廷",
+      "positions": [
+        "CAM",
+        "CF"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 90,
+        "shooting": 94,
+        "passing": 95,
+        "dribbling": 99,
+        "defending": 35,
+        "physical": 75
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 0.95,
+        "body_type": "stocky",
+        "skin_tone": "#D9A87A",
+        "hair_style": "curly_black",
+        "hair_color": "#2A1A0A"
+      },
+      "club": "argentina",
+      "era": "国家队传奇",
+      "years": "1977-1994",
+      "jersey_number": 10,
+      "base_player_id": "maradona",
+      "version_index": 1,
+      "is_national": true,
+      "is_legend": true
+    },
+    "zidane_juventus_0": {
+      "name": "齐内丁·齐达内",
+      "short_name": "齐达内",
+      "nationality": "法国",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 82,
+        "shooting": 87,
+        "passing": 95,
+        "dribbling": 97,
+        "defending": 62,
+        "physical": 82
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "long_shot"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "bald",
+        "hair_color": "#000000"
+      },
+      "club": "juventus",
+      "era": "尤文时期",
+      "years": "1996-2001",
+      "jersey_number": 21,
+      "base_player_id": "zidane",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "zidane_real_madrid_1": {
+      "name": "齐内丁·齐达内",
+      "short_name": "齐达内",
+      "nationality": "法国",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 85,
+        "shooting": 90,
+        "passing": 98,
+        "dribbling": 99,
+        "defending": 65,
+        "physical": 85
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "long_shot"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "bald",
+        "hair_color": "#000000"
+      },
+      "club": "real_madrid",
+      "era": "皇马传奇",
+      "years": "2001-2006",
+      "jersey_number": 5,
+      "base_player_id": "zidane",
+      "version_index": 1,
+      "is_national": false,
+      "is_legend": true
+    },
+    "zidane_france_2": {
+      "name": "齐内丁·齐达内",
+      "short_name": "齐达内",
+      "nationality": "法国",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 85,
+        "shooting": 90,
+        "passing": 98,
+        "dribbling": 99,
+        "defending": 65,
+        "physical": 85
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "long_shot"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "bald",
+        "hair_color": "#000000"
+      },
+      "club": "france",
+      "era": "国家队传奇",
+      "years": "1994-2006",
+      "jersey_number": 10,
+      "base_player_id": "zidane",
+      "version_index": 2,
+      "is_national": true,
+      "is_legend": true
+    },
+    "ronaldinho_barcelona_0": {
+      "name": "罗纳尔迪尼奥",
+      "short_name": "小罗",
+      "nationality": "巴西",
+      "positions": [
+        "LW",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 92,
+        "shooting": 93,
+        "passing": 95,
+        "dribbling": 99,
+        "defending": 40,
+        "physical": 77
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "curve_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "long_curly",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "barcelona",
+      "era": "巴萨巅峰",
+      "years": "2003-2008",
+      "jersey_number": 10,
+      "base_player_id": "ronaldinho",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "ronaldinho_brazil_1": {
+      "name": "罗纳尔迪尼奥",
+      "short_name": "小罗",
+      "nationality": "巴西",
+      "positions": [
+        "LW",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 92,
+        "shooting": 93,
+        "passing": 95,
+        "dribbling": 99,
+        "defending": 40,
+        "physical": 77
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "curve_shot",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "long_curly",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "brazil",
+      "era": "国家队传奇",
+      "years": "1999-2013",
+      "jersey_number": 10,
+      "base_player_id": "ronaldinho",
+      "version_index": 1,
+      "is_national": true,
+      "is_legend": true
+    },
+    "beckham_man_united_0": {
+      "name": "大卫·贝克汉姆",
+      "short_name": "贝克汉姆",
+      "nationality": "英格兰",
+      "positions": [
+        "RM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 83,
+        "shooting": 90,
+        "passing": 97,
+        "dribbling": 87,
+        "defending": 60,
+        "physical": 77
+      },
+      "traits": [
+        "crossing",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "pinpoint_pass",
+        "curve_shot",
+        "vision_pass"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "slick_blonde",
+        "hair_color": "#C8A878"
+      },
+      "club": "man_united",
+      "era": "曼联传奇",
+      "years": "1992-2003",
+      "jersey_number": 7,
+      "base_player_id": "beckham",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "beckham_real_madrid_1": {
+      "name": "大卫·贝克汉姆",
+      "short_name": "贝克汉姆",
+      "nationality": "英格兰",
+      "positions": [
+        "RM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 87,
+        "passing": 94,
+        "dribbling": 84,
+        "defending": 57,
+        "physical": 74
+      },
+      "traits": [
+        "crossing",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "pinpoint_pass",
+        "curve_shot",
+        "vision_pass"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "slick_blonde",
+        "hair_color": "#C8A878"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2003-2007",
+      "jersey_number": 23,
+      "base_player_id": "beckham",
+      "version_index": 1,
+      "is_national": false,
+      "is_legend": true
+    },
+    "beckham_england_2": {
+      "name": "大卫·贝克汉姆",
+      "short_name": "贝克汉姆",
+      "nationality": "英格兰",
+      "positions": [
+        "RM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 83,
+        "shooting": 90,
+        "passing": 97,
+        "dribbling": 87,
+        "defending": 60,
+        "physical": 77
+      },
+      "traits": [
+        "crossing",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "pinpoint_pass",
+        "curve_shot",
+        "vision_pass"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "slick_blonde",
+        "hair_color": "#C8A878"
+      },
+      "club": "england",
+      "era": "国家队传奇",
+      "years": "1996-2009",
+      "jersey_number": 7,
+      "base_player_id": "beckham",
+      "version_index": 2,
+      "is_national": true,
+      "is_legend": true
+    },
+    "ronaldo_r9_barcelona_0": {
+      "name": "罗纳尔多·纳扎里奥",
+      "short_name": "大罗",
+      "nationality": "巴西",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 96,
+        "shooting": 97,
+        "passing": 83,
+        "dribbling": 99,
+        "defending": 38,
+        "physical": 85
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "barcelona",
+      "era": "巴萨时期",
+      "years": "1996-1997",
+      "jersey_number": 9,
+      "base_player_id": "ronaldo_r9",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "ronaldo_r9_real_madrid_1": {
+      "name": "罗纳尔多·纳扎里奥",
+      "short_name": "大罗",
+      "nationality": "巴西",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 98,
+        "shooting": 99,
+        "passing": 85,
+        "dribbling": 99,
+        "defending": 40,
+        "physical": 87
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "real_madrid",
+      "era": "皇马传奇",
+      "years": "2002-2007",
+      "jersey_number": 11,
+      "base_player_id": "ronaldo_r9",
+      "version_index": 1,
+      "is_national": false,
+      "is_legend": true
+    },
+    "ronaldo_r9_brazil_2": {
+      "name": "罗纳尔多·纳扎里奥",
+      "short_name": "大罗",
+      "nationality": "巴西",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 98,
+        "shooting": 99,
+        "passing": 85,
+        "dribbling": 99,
+        "defending": 40,
+        "physical": 87
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "brazil",
+      "era": "国家队传奇",
+      "years": "1994-2011",
+      "jersey_number": 9,
+      "base_player_id": "ronaldo_r9",
+      "version_index": 2,
+      "is_national": true,
+      "is_legend": true
+    },
+    "maldini_ac_milan_0": {
+      "name": "保罗·马尔蒂尼",
+      "short_name": "马尔蒂尼",
+      "nationality": "意大利",
+      "positions": [
+        "CB",
+        "LB"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 87,
+        "shooting": 55,
+        "passing": 80,
+        "dribbling": 80,
+        "defending": 99,
+        "physical": 90
+      },
+      "traits": [
+        "iron_wall",
+        "header",
+        "speedster"
+      ],
+      "skills": [
+        "iron_wall",
+        "interceptor",
+        "wall_defense"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_black",
+        "hair_color": "#2A1A0A"
+      },
+      "club": "ac_milan",
+      "era": "AC米兰传奇",
+      "years": "1985-2009",
+      "jersey_number": 3,
+      "base_player_id": "maldini",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "maldini_italy_1": {
+      "name": "保罗·马尔蒂尼",
+      "short_name": "马尔蒂尼",
+      "nationality": "意大利",
+      "positions": [
+        "CB",
+        "LB"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 87,
+        "shooting": 55,
+        "passing": 80,
+        "dribbling": 80,
+        "defending": 99,
+        "physical": 90
+      },
+      "traits": [
+        "iron_wall",
+        "header",
+        "speedster"
+      ],
+      "skills": [
+        "iron_wall",
+        "interceptor",
+        "wall_defense"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_black",
+        "hair_color": "#2A1A0A"
+      },
+      "club": "italy",
+      "era": "国家队传奇",
+      "years": "1988-2002",
+      "jersey_number": 3,
+      "base_player_id": "maldini",
+      "version_index": 1,
+      "is_national": true,
+      "is_legend": true
+    },
+    "henry_arsenal_0": {
+      "name": "蒂埃里·亨利",
+      "short_name": "亨利",
+      "nationality": "法国",
+      "positions": [
+        "ST",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 97,
+        "shooting": 95,
+        "passing": 87,
+        "dribbling": 95,
+        "defending": 45,
+        "physical": 83
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "arsenal",
+      "era": "阿森纳传奇",
+      "years": "1999-2007",
+      "jersey_number": 14,
+      "base_player_id": "henry",
+      "version_index": 0,
+      "is_national": false,
+      "is_legend": true
+    },
+    "henry_france_1": {
+      "name": "蒂埃里·亨利",
+      "short_name": "亨利",
+      "nationality": "法国",
+      "positions": [
+        "ST",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 97,
+        "shooting": 95,
+        "passing": 87,
+        "dribbling": 95,
+        "defending": 45,
+        "physical": 83
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "france",
+      "era": "国家队传奇",
+      "years": "1997-2010",
+      "jersey_number": 12,
+      "base_player_id": "henry",
+      "version_index": 1,
+      "is_national": true,
+      "is_legend": true
+    },
+    "c_ronaldo_ambassador": {
+      "name": "克里斯蒂亚诺·罗纳尔多",
+      "short_name": "C罗(大使)",
+      "nationality": "葡萄牙",
+      "positions": [
+        "ST",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 92,
+        "shooting": 98,
+        "passing": 85,
+        "dribbling": 90,
+        "defending": 40,
+        "physical": 85
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "free_kick",
+        "power_header"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player",
+        "air_dominance"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "slick_back",
+        "hair_color": "#261810"
+      },
+      "club": "ambassador",
+      "era": "大使版本",
+      "years": "特殊",
+      "jersey_number": 7,
+      "base_player_id": "c_ronaldo",
+      "version_index": 99,
+      "is_ambassador": true,
+      "is_national": false
+    },
+    "messi_ambassador": {
+      "name": "利昂内尔·梅西",
+      "short_name": "梅西(大使)",
+      "nationality": "阿根廷",
+      "positions": [
+        "RW",
+        "CF"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 90,
+        "shooting": 95,
+        "passing": 95,
+        "dribbling": 99,
+        "defending": 40,
+        "physical": 70
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker",
+        "free_kick",
+        "long_shot"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "curve_shot",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 0.92,
+        "body_type": "stocky",
+        "skin_tone": "#E8B888",
+        "hair_style": "medium_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "ambassador",
+      "era": "大使版本",
+      "years": "特殊",
+      "jersey_number": 10,
+      "base_player_id": "messi",
+      "version_index": 99,
+      "is_ambassador": true,
+      "is_national": false
+    },
+    "haaland_ambassador": {
+      "name": "厄林·哈兰德",
+      "short_name": "哈兰德(大使)",
+      "nationality": "挪威",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 95,
+        "shooting": 98,
+        "passing": 70,
+        "dribbling": 85,
+        "defending": 50,
+        "physical": 92
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "power_header",
+        "speedster"
+      ],
+      "skills": [
+        "speed_burst",
+        "power_shot",
+        "clutch_player",
+        "air_dominance"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9C28A"
+      },
+      "club": "ambassador",
+      "era": "大使版本",
+      "years": "特殊",
+      "jersey_number": 9,
+      "base_player_id": "haaland",
+      "version_index": 99,
+      "is_ambassador": true,
+      "is_national": false
+    },
+    "mbappe_ambassador": {
+      "name": "基利安·姆巴佩",
+      "short_name": "姆巴佩(大使)",
+      "nationality": "法国",
+      "positions": [
+        "ST",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 98,
+        "shooting": 92,
+        "passing": 82,
+        "dribbling": 92,
+        "defending": 40,
+        "physical": 80
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_curly",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "ambassador",
+      "era": "大使版本",
+      "years": "特殊",
+      "jersey_number": 7,
+      "base_player_id": "mbappe",
+      "version_index": 99,
+      "is_ambassador": true,
+      "is_national": false
+    },
+    "bellingham_ambassador": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林(大使)",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 85,
+        "shooting": 88,
+        "passing": 90,
+        "dribbling": 90,
+        "defending": 75,
+        "physical": 85
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker",
+        "long_shot"
+      ],
+      "skills": [
+        "endless_runner",
+        "vision_pass",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8A878"
+      },
+      "club": "ambassador",
+      "era": "大使版本",
+      "years": "特殊",
+      "jersey_number": 5,
+      "base_player_id": "bellingham",
+      "version_index": 99,
+      "is_ambassador": true,
+      "is_national": false
     }
   }
 }
