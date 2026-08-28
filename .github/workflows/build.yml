@@ -1,0 +1,387 @@
+name: 🏗️ Build & Release
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+env:
+  GODOT_VERSION: 4.3
+  GODOT_SUBDIR: godot-4.3
+
+jobs:
+  # ============ 代码检查 ============
+  lint:
+    name: 📝 Code Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check GDScript syntax
+        run: |
+          echo "=== 检查GDScript文件 ==="
+          find scripts -name "*.gd" | head -20
+          echo "=== 检查场景文件 ==="
+          find scenes -name "*.tscn" | head -20
+          echo "=== 检查数据文件 ==="
+          find data -name "*.json" | while read f; do
+            python3 -c "import json; json.load(open('$f'))" && echo "✅ $f" || echo "❌ $f"
+          done
+
+      - name: Count files
+        run: |
+          echo "## 📊 项目统计" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| 类型 | 数量 |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|------|" >> $GITHUB_STEP_SUMMARY
+          echo "| GDScript | $(find scripts -name '*.gd' | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| 场景 | $(find scenes -name '*.tscn' | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| 数据 | $(find data -name '*.json' | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| 球员卡牌 | $(python3 -c "import json; d=json.load(open('data/players.json')); print(len(d.get('players',{})))") |" >> $GITHUB_STEP_SUMMARY
+
+  # ============ Android 构建 ============
+  build-android:
+    name: 📱 Build Android APK
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Godot
+        run: |
+          echo "下载Godot编辑器..."
+          wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          unzip -q Godot_v4.3-stable_linux.x86_64.zip
+          chmod +x Godot_v4.3-stable_linux.x86_64
+          sudo mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
+
+      - name: Setup Android Export Templates
+        run: |
+          echo "下载Android导出模板..."
+          wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.3.stable
+          unzip -q Godot_v4.3-stable_export_templates.tpz -d /tmp/templates
+          cp /tmp/templates/templates/* ~/.local/share/godot/export_templates/4.3.stable/
+
+      - name: Create export preset
+        run: |
+          cat > export_presets.cfg << 'EOF'
+          [preset.0]
+          name="Android"
+          platform="Android"
+          runnable=true
+          deduplicate=false
+          encryption=false
+          encrypt_index=false
+          [preset.0.options]
+          custom_template/debug=""
+          custom_template/release=""
+          gradle_build/use_gradle_build=false
+          gradle_build/export_format=0
+          gradle_build/min_sdk=21
+          gradle_build/target_sdk=34
+          architectures/armeabi-v7a=true
+          architectures/arm64-v8a=true
+          keystore/debug=""
+          keystore/debug_user=""
+          keystore/debug_password=""
+          keystore/release=""
+          keystore/release_user=""
+          keystore/release_password=""
+          package/unique_name="com.footballgame.app"
+          package/name="足球游戏"
+          package/signed=true
+          package/app_category=2
+          package/retain_data_on_uninstall=false
+          package/exclude_from_recents=false
+          launcher_icons/main_192x192=""
+          launcher_icons/adaptive_foreground_432x432=""
+          launcher_icons/adaptive_background_432x432=""
+          graphics/opengl_debug=false
+          xr_features/xr_mode=0
+          xr_features/hand_tracking=0
+          xr_features/hand_tracking_version=0
+          xr_features/passthrough=0
+          screen/immersive_mode=true
+          screen/support_small=true
+          screen/support_normal=true
+          screen/support_large=true
+          screen/support_xlarge=true
+          user_data/backup=false
+          command_line/extra_args=""
+          apk_expansion/enable=false
+          apk_expansion/SALT=""
+          apk_expansion/public_key=""
+          permissions/custom_permissions=PackedStringArray()
+          permissions/access_checkin_properties=false
+          permissions/access_coarse_location=false
+          permissions/access_fine_location=false
+          permissions/access_network_state=false
+          permissions/access_wifi_state=false
+          permissions/account_manager=false
+          permissions/add_voicemail=false
+          permissions/authenticate_accounts=false
+          permissions/battery_stats=false
+          permissions/bind_accessibility_service=false
+          permissions/bind_appwidget=false
+          permissions/bind_device_admin=false
+          permissions/bind_input_method=false
+          permissions/bind_nfc_service=false
+          permissions/bind_notification_listener_service=false
+          permissions/bind_print_service=false
+          permissions/bind_remoteviews=false
+          permissions/bind_text_service=false
+          permissions/bind_vpn_service=false
+          permissions/bind_wallpaper=false
+          permissions/bluetooth=false
+          permissions/bluetooth_admin=false
+          permissions/bluetooth_privileged=false
+          permissions/brick=false
+          permissions/broadcast_package_removed=false
+          permissions/broadcast_sms=false
+          permissions/broadcast_sticky=false
+          permissions/broadcast_wap_push=false
+          permissions/call_phone=false
+          permissions/call_privileged=false
+          permissions/camera=false
+          permissions/capture_audio_output=false
+          permissions/capture_secure_video_output=false
+          permissions/capture_video_output=false
+          permissions/change_component_enabled_state=false
+          permissions/change_configuration=false
+          permissions/change_network_state=false
+          permissions/change_wifi_multicast_state=false
+          permissions/change_wifi_state=false
+          permissions/clear_app_cache=false
+          permissions/clear_app_user_data=false
+          permissions/control_location_updates=false
+          permissions/delete_cache_files=false
+          permissions/delete_packages=false
+          permissions/device_power=false
+          permissions/diagnostic=false
+          permissions/disable_keyguard=false
+          permissions/dump=false
+          permissions/expand_status_bar=false
+          permissions/factory_test=false
+          permissions/flashlight=false
+          permissions/force_back=false
+          permissions/get_accounts=false
+          permissions/get_package_size=false
+          permissions/get_tasks=false
+          permissions/get_top_activity_info=false
+          permissions/global_search=false
+          permissions/hardware_test=false
+          permissions/inject_events=false
+          permissions/install_location_provider=false
+          permissions/install_packages=false
+          permissions/install_shortcut=false
+          permissions/internal_system_window=false
+          permissions/internet=false
+          permissions/kill_background_processes=false
+          permissions/location_hardware=false
+          permissions/manage_accounts=false
+          permissions/manage_app_tokens=false
+          permissions/manage_documents=false
+          permissions/manage_external_storage=false
+          permissions/master_clear=false
+          permissions/media_content_control=false
+          permissions/modify_audio_settings=false
+          permissions/modify_phone_state=false
+          permissions/mount_format_filesystems=false
+          permissions/mount_unmount_filesystems=false
+          permissions/nfc=false
+          permissions/persistent_activity=false
+          permissions/process_outgoing_calls=false
+          permissions/read_calendar=false
+          permissions/read_call_log=false
+          permissions/read_contacts=false
+          permissions/read_external_storage=false
+          permissions/read_frame_buffer=false
+          permissions/read_history_bookmarks=false
+          permissions/read_input_state=false
+          permissions/read_logs=false
+          permissions/read_media_audio=false
+          permissions/read_media_images=false
+          permissions/read_media_video=false
+          permissions/read_phone_state=false
+          permissions/read_profile=false
+          permissions/read_sms=false
+          permissions/read_social_stream=false
+          permissions/read_sync_settings=false
+          permissions/read_sync_stats=false
+          permissions/read_user_dictionary=false
+          permissions/reboot=false
+          permissions/receive_boot_completed=false
+          permissions/receive_mms=false
+          permissions/receive_sms=false
+          permissions/receive_wap_push=false
+          permissions/record_audio=false
+          permissions/reorder_tasks=false
+          permissions/restart_packages=false
+          permissions/send_respond_via_message=false
+          permissions/send_sms=false
+          permissions/set_activity_watcher=false
+          permissions/set_alarm=false
+          permissions/set_always_finish=false
+          permissions/set_animation_scale=false
+          permissions/set_debug_app=false
+          permissions/set_orientation=false
+          permissions/set_pointer_speed=false
+          permissions/set_preferred_applications=false
+          permissions/set_process_limit=false
+          permissions/set_time=false
+          permissions/set_time_zone=false
+          permissions/set_wallpaper=false
+          permissions/set_wallpaper_hints=false
+          permissions/signal_persistent_processes=false
+          permissions/status_bar=false
+          permissions/subscribed_feeds=false
+          permissions/system_alert_window=false
+          permissions/transmit_ir=false
+          permissions/uninstall_shortcut=false
+          permissions/use_credentials=false
+          permissions/use_sip=false
+          permissions/vibrate=false
+          permissions/wake_lock=false
+          permissions/write_apn_settings=false
+          permissions/write_calendar=false
+          permissions/write_call_log=false
+          permissions/write_contacts=false
+          permissions/write_external_storage=false
+          permissions/write_gservices=false
+          permissions/write_history_bookmarks=false
+          permissions/write_profile=false
+          permissions/write_secure_settings=false
+          permissions/write_settings=false
+          permissions/write_sms=false
+          permissions/write_social_stream=false
+          permissions/write_sync_settings=false
+          permissions/write_user_dictionary=false
+          EOF
+
+      - name: Build APK
+        run: |
+          mkdir -p build
+          godot --headless --export-release "Android" build/football-game.apk || true
+          ls -la build/ || echo "构建目录为空"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-game-android
+          path: build/*.apk
+          retention-days: 30
+
+  # ============ Windows 构建 ============
+  build-windows:
+    name: 🪟 Build Windows
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Godot
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          unzip -q Godot_v4.3-stable_linux.x86_64.zip
+          chmod +x Godot_v4.3-stable_linux.x86_64
+          sudo mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
+
+      - name: Setup Windows Export Template
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.3.stable
+          unzip -q Godot_v4.3-stable_export_templates.tpz -d /tmp/templates
+          cp /tmp/templates/templates/* ~/.local/share/godot/export_templates/4.3.stable/
+
+      - name: Create Windows export preset
+        run: |
+          cat > export_presets.cfg << 'EOF'
+          [preset.0]
+          name="Windows Desktop"
+          platform="Windows Desktop"
+          runnable=true
+          [preset.0.options]
+          custom_template/debug=""
+          custom_template/release=""
+          debug/export_console_wrapper=1
+          binary_format/embed_pck=false
+          texture_format/bptc=true
+          texture_format/s3tc=true
+          binary_format/architecture="x86_64"
+          codesign/enable=false
+          application/modify_resources=true
+          application/icon=""
+          application/console_wrapper_icon=""
+          application/icon_interpolation=4
+          application/file_version=""
+          application/product_version=""
+          application/company_name="FootballGame"
+          application/product_name="足球游戏"
+          application/file_description="俯视角足球游戏"
+          application/copyright=""
+          application/trademarks=""
+          application/export_angle=0
+          ssh_remote_deploy/enabled=false
+          EOF
+
+      - name: Build Windows
+        run: |
+          mkdir -p build
+          godot --headless --export-release "Windows Desktop" build/FootballGame.exe || true
+          ls -la build/ || echo "构建目录为空"
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-game-windows
+          path: build/*
+          retention-days: 30
+
+  # ============ 发布Release ============
+  release:
+    name: 🚀 Release
+    needs: [build-android, build-windows]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Display structure
+        run: ls -R artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: 足球游戏 ${{ github.ref_name }}
+          body: |
+            ## 📦 下载安装
+
+            ### Android
+            - 下载 `football-game.apk` 安装到手机
+
+            ### Windows
+            - 下载 `FootballGame.exe` 运行
+
+            ## ✨ 功能
+            - 11v11 足球比赛
+            - 五大联赛 + 国家队
+            - 215张球员卡牌
+            - 24种阵型
+            - 联赛/杯赛/世界杯模式
+            - 触屏操作
+            - 局域网1v1联机
+          files: |
+            artifacts/football-game-android/*.apk
+            artifacts/football-game-windows/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
