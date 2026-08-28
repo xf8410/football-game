@@ -57,6 +57,8 @@ NationalTeamBadge="*res://scripts/national_team_badge.gd"
 ContinentalCup="*res://scripts/continental_cup.gd"
 WorldCupMode="*res://scripts/world_cup_mode.gd"
 SeasonHistory="*res://scripts/season_history.gd"
+AwardSystem="*res://scripts/award_system.gd"
+CardExchange="*res://scripts/card_exchange.gd"
 
 [display]
 

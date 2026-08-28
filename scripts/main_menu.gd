@@ -19,6 +19,11 @@ extends Control
 @onready var achievement_button = $VBoxContainer/MenuContainer/AchievementButton
 @onready var stadium_button = $VBoxContainer/MenuContainer/StadiumButton
 @onready var kit_button = $VBoxContainer/MenuContainer/KitButton
+@onready var continental_cup_button = $VBoxContainer/MenuContainer/ContinentalCupButton
+@onready var world_cup_button = $VBoxContainer/MenuContainer/WorldCupButton
+@onready var history_button = $VBoxContainer/MenuContainer/HistoryButton
+@onready var awards_button = $VBoxContainer/MenuContainer/AwardsButton
+@onready var trade_button = $VBoxContainer/MenuContainer/TradeButton
 @onready var stats_button = $VBoxContainer/MenuContainer/StatsButton
 @onready var profile_button = $VBoxContainer/MenuContainer/ProfileButton
 @onready var lan_button = $VBoxContainer/MenuContainer/LANButton
@@ -43,6 +48,11 @@ func _ready():
         achievement_button.pressed.connect(_on_achievement_pressed)
         stadium_button.pressed.connect(_on_stadium_pressed)
         kit_button.pressed.connect(_on_kit_pressed)
+        continental_cup_button.pressed.connect(_on_continental_cup_pressed)
+        world_cup_button.pressed.connect(_on_world_cup_pressed)
+        history_button.pressed.connect(_on_history_pressed)
+        awards_button.pressed.connect(_on_awards_pressed)
+        trade_button.pressed.connect(_on_trade_pressed)
         stats_button.pressed.connect(_on_stats_pressed)
         profile_button.pressed.connect(_on_profile_pressed)
         lan_button.pressed.connect(_on_lan_pressed)
@@ -158,6 +168,26 @@ func _on_stadium_pressed():
 func _on_kit_pressed():
         print("[MainMenu] 打开球衣选择")
         get_tree().change_scene_to_file("res://scenes/KitSelect.tscn")
+
+func _on_continental_cup_pressed():
+        print("[MainMenu] 打开洲际杯赛")
+        get_tree().change_scene_to_file("res://scenes/ContinentalCup.tscn")
+
+func _on_world_cup_pressed():
+        print("[MainMenu] 打开世界杯")
+        get_tree().change_scene_to_file("res://scenes/WorldCup.tscn")
+
+func _on_history_pressed():
+        print("[MainMenu] 打开赛季历史")
+        get_tree().change_scene_to_file("res://scenes/SeasonHistory.tscn")
+
+func _on_awards_pressed():
+        print("[MainMenu] 打开奖项")
+        get_tree().change_scene_to_file("res://scenes/Awards.tscn")
+
+func _on_trade_pressed():
+        print("[MainMenu] 打开卡牌交易")
+        get_tree().change_scene_to_file("res://scenes/CardTrade.tscn")
 
 func _on_stats_pressed():
         print("[MainMenu] 打开赛季统计")

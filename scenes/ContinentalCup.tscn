@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=3 uid="uid://a9n0k1m2n3o4p"]
+
+[ext_resource type="Script" path="res://scripts/continental_cup_ui.gd" id="1_cup"]
+
+[node name="ContinentalCupUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cup")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.15, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 18
+text = "← 返回"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "🏆 洲际杯赛"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="欧冠" type="Control" parent="VBox/TabContainer"]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBox/TabContainer/欧冠"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 14
+text = "欧冠信息"
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/TabContainer/欧冠"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 160.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TeamsLabel" type="Label" parent="VBox/TabContainer/欧冠/ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "参赛球队"
+autowrap_mode = 3
+
+[node name="欧联" type="Control" parent="VBox/TabContainer"]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBox/TabContainer/欧联"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 14
+text = "欧联信息"
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/TabContainer/欧联"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 160.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TeamsLabel" type="Label" parent="VBox/TabContainer/欧联/ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "参赛球队"
+autowrap_mode = 3
+
+[node name="欧协联" type="Control" parent="VBox/TabContainer"]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBox/TabContainer/欧协联"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 14
+text = "欧协联信息"
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/TabContainer/欧协联"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 160.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TeamsLabel" type="Label" parent="VBox/TabContainer/欧协联/ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "参赛球队"
+autowrap_mode = 3

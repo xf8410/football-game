@@ -162,6 +162,36 @@ custom_minimum_size = Vector2(400, 60)
 theme_override_font_sizes/font_size = 24
 text = "👕 球衣选择"
 
+[node name="ContinentalCupButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🏆 欧冠/欧联"
+
+[node name="WorldCupButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🌍 世界杯"
+
+[node name="HistoryButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "📚 赛季历史"
+
+[node name="AwardsButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🏅 奖项"
+
+[node name="TradeButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 60)
+theme_override_font_sizes/font_size = 24
+text = "🔄 卡牌交易"
+
 [node name="StatsButton" type="Button" parent="VBoxContainer/MenuContainer"]
 layout_mode = 2
 custom_minimum_size = Vector2(400, 60)
