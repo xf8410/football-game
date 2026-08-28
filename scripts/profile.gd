@@ -14,6 +14,7 @@ extends Control
 
 var profile: Dictionary
 var team_edit: LineEdit
+var team_dialog: ConfirmationDialog
 
 func _ready():
 	back_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/MainMenu.tscn"))
@@ -31,32 +32,30 @@ func _ready():
 	# 添加修改球队名按钮
 	var team_btn = Button.new()
 	team_btn.text = "修改球队名"
-	team_btn.pressed.connect(func(): _open_team_rename())
+	team_btn.pressed.connect(_open_team_rename)
 	$ScrollContainer/VBox/ProfileHeader.add_child(team_btn)
 
 	# 确认改名
 	rename_dialog.confirmed.connect(_on_rename_confirmed)
 
-func _open_team_rename():
-	# 程序化构建一个球队改名弹窗
-	var dialog = ConfirmationDialog.new()
-	dialog.title = "修改球队名"
-	dialog.ok_button_text = "确定"
-	dialog.cancel_button_text = "取消"
-
+	# 球队改名弹窗（只创建一次，复用）
+	team_dialog = ConfirmationDialog.new()
+	team_dialog.title = "修改球队名"
+	team_dialog.ok_button_text = "确定"
+	team_dialog.cancel_button_text = "取消"
 	team_edit = LineEdit.new()
 	team_edit.placeholder_text = "输入球队名"
-	var my = SaveManager.get_my_team()
-	team_edit.text = my.get("name", "我的球队")
 	team_edit.custom_minimum_size = Vector2(280, 40)
-
 	var vbox = VBoxContainer.new()
 	vbox.add_child(team_edit)
-	dialog.add_child(vbox)
+	team_dialog.add_child(vbox)
+	add_child(team_dialog)
+	team_dialog.confirmed.connect(_on_team_rename_confirmed)
 
-	add_child(dialog)
-	dialog.confirmed.connect(_on_team_rename_confirmed)
-	dialog.popup_centered()
+func _open_team_rename():
+	var my = SaveManager.get_my_team()
+	team_edit.text = my.get("name", "我的球队")
+	team_dialog.popup_centered()
 
 func _on_team_rename_confirmed():
 	var new_name = team_edit.text.strip_edges()
