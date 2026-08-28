@@ -22,6 +22,18 @@ func _get_default_data() -> Dictionary:
 			"goals_scored": 0,
 			"goals_conceded": 0,
 		},
+		# 玩家自定义球队（"我的球队"）：机器人/AI 对手使用真实俱乐部，
+		# 而玩家的主队可以自定义名称和球衣颜色。
+		"my_team": {
+			"name": "花落相思又一春",
+			"short_name": "花落",
+			"primary_color": "#C8102E",
+			"secondary_color": "#FFFFFF",
+			"formation": "4-3-3",
+			"stadium": "自家球场",
+			"rating": 82,
+			"players": [],
+		},
 		"settings": {
 			"difficulty": "normal",      # easy / normal / hard / legend
 			"match_duration": 6,          # 比赛总时长（分钟），实际游戏内会加速
@@ -125,6 +137,16 @@ func get_settings() -> Dictionary:
 func save_settings(settings: Dictionary) -> bool:
 	var data = load_data()
 	data["settings"] = settings
+	return save_data(data)
+
+## 获取玩家自定义球队（"我的球队"）
+func get_my_team() -> Dictionary:
+	return load_data().get("my_team", {})
+
+## 保存玩家自定义球队
+func save_my_team(team: Dictionary) -> bool:
+	var data = load_data()
+	data["my_team"] = team
 	return save_data(data)
 
 ## 更新比赛统计
