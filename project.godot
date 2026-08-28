@@ -52,6 +52,8 @@ AchievementSystem="*res://scripts/achievement_system.gd"
 ChemistrySystem="*res://scripts/chemistry_system.gd"
 StadiumSystem="*res://scripts/stadium_system.gd"
 KitSystem="*res://scripts/kit_system.gd"
+WorldCupCardBg="*res://scripts/worldcup_card_bg.gd"
+NationalTeamBadge="*res://scripts/national_team_badge.gd"
 
 [display]
 
