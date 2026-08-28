@@ -1,0 +1,107 @@
+name: 📱 Build APK (可安装)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: Build signed Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Godot 4.3
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          unzip -q Godot_v4.3-stable_linux.x86_64.zip
+          chmod +x Godot_v4.3-stable_linux.x86_64
+          sudo mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
+
+      - name: Setup Android export templates
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.3.stable"
+          unzip -q Godot_v4.3-stable_export_templates.tpz -d /tmp/templates
+          cp /tmp/templates/templates/* "$HOME/.local/share/godot/export_templates/4.3.stable/"
+
+      - name: Generate debug keystore (签名密钥)
+        run: |
+          keytool -genkey -v -keystore debug.keystore -storepass android \
+            -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 \
+            -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
+      - name: Create export preset
+        run: |
+          cat > export_presets.cfg << 'EOF'
+          [preset.0]
+          name="Android"
+          platform="Android"
+          runnable=true
+          deduplicate=false
+          encryption=false
+          encrypt_index=false
+          [preset.0.options]
+          custom_template/debug=""
+          custom_template/release=""
+          gradle_build/use_gradle_build=false
+          gradle_build/export_format=0
+          gradle_build/min_sdk=21
+          gradle_build/target_sdk=34
+          architectures/armeabi-v7a=true
+          architectures/arm64-v8a=true
+          keystore/debug="debug.keystore"
+          keystore/debug_user="androiddebugkey"
+          keystore/debug_password="android"
+          keystore/release="debug.keystore"
+          keystore/release_user="androiddebugkey"
+          keystore/release_password="android"
+          package/unique_name="com.footballgame.app"
+          package/name="足球游戏"
+          package/signed=true
+          package/app_category=2
+          package/retain_data_on_uninstall=false
+          package/exclude_from_recents=false
+          version/code=1
+          version/name="1.0.0"
+          screen/immersive_mode=true
+          screen/support_small=true
+          screen/support_normal=true
+          screen/support_large=true
+          screen/support_xlarge=true
+          user_data/backup=false
+          command_line/extra_args=""
+          apk_expansion/enable=false
+          permissions/custom_permissions=PackedStringArray()
+          EOF
+
+      - name: Build APK (带签名)
+        run: |
+          mkdir -p build
+          godot --headless --export-debug "Android" build/football-game.apk
+          ls -la build/
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-game-android
+          path: build/*.apk
+          retention-days: 90
+
+      - name: Create Release (仅 main 推送)
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: app-v${{ github.run_number }}
+          name: 足球游戏 APK #${{ github.run_number }}
+          body: |
+            点此下载并安装到手机：
+            - `football-game.apk`（已签名，可直接安装）
+          files: build/*.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
