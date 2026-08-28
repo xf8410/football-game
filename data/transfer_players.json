@@ -1,0 +1,2403 @@
+{
+  "players": {
+    "enzo_fernandez_river_plate_0": {
+      "name": "恩佐·费尔南德斯",
+      "short_name": "恩佐",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CDM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 70,
+        "shooting": 73,
+        "passing": 80,
+        "dribbling": 77,
+        "defending": 73,
+        "physical": 75
+      },
+      "traits": [
+        "playmaker",
+        "box_to_box"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "river_plate",
+      "era": "河床时期",
+      "years": "2019-2022",
+      "jersey_number": 5,
+      "base_player_id": "enzo_fernandez",
+      "version_index": 0,
+      "is_national": false
+    },
+    "enzo_fernandez_benfica_1": {
+      "name": "恩佐·费尔南德斯",
+      "short_name": "恩佐",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CDM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 75,
+        "shooting": 78,
+        "passing": 85,
+        "dribbling": 82,
+        "defending": 78,
+        "physical": 80
+      },
+      "traits": [
+        "playmaker",
+        "box_to_box"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "benfica",
+      "era": "本菲卡时期",
+      "years": "2022-2023",
+      "jersey_number": 13,
+      "base_player_id": "enzo_fernandez",
+      "version_index": 1,
+      "is_national": false
+    },
+    "enzo_fernandez_chelsea_2": {
+      "name": "恩佐·费尔南德斯",
+      "short_name": "恩佐",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CDM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 77,
+        "shooting": 80,
+        "passing": 87,
+        "dribbling": 84,
+        "defending": 80,
+        "physical": 82
+      },
+      "traits": [
+        "playmaker",
+        "box_to_box"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "chelsea",
+      "era": "切尔西时期",
+      "years": "2023-至今",
+      "jersey_number": 8,
+      "base_player_id": "enzo_fernandez",
+      "version_index": 2,
+      "is_national": false
+    },
+    "enzo_fernandez_argentina_3": {
+      "name": "恩佐·费尔南德斯",
+      "short_name": "恩佐",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CDM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 78,
+        "shooting": 81,
+        "passing": 88,
+        "dribbling": 85,
+        "defending": 81,
+        "physical": 83
+      },
+      "traits": [
+        "playmaker",
+        "box_to_box"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "argentina",
+      "era": "国家队",
+      "years": "2022-至今",
+      "jersey_number": 24,
+      "base_player_id": "enzo_fernandez",
+      "version_index": 3,
+      "is_national": true
+    },
+    "caicedo_independiente_del_valle_0": {
+      "name": "莫伊塞斯·凯塞多",
+      "short_name": "凯塞多",
+      "nationality": "厄瓜多尔",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 70,
+        "shooting": 57,
+        "passing": 72,
+        "dribbling": 70,
+        "defending": 77,
+        "physical": 77
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box"
+      ],
+      "skills": [
+        "iron_wall",
+        "interceptor",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "muscular",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "independiente_del_valle",
+      "era": "独立山谷时期",
+      "years": "2019-2021",
+      "jersey_number": 23,
+      "base_player_id": "caicedo",
+      "version_index": 0,
+      "is_national": false
+    },
+    "caicedo_brighton_1": {
+      "name": "莫伊塞斯·凯塞多",
+      "short_name": "凯塞多",
+      "nationality": "厄瓜多尔",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 78,
+        "shooting": 65,
+        "passing": 80,
+        "dribbling": 78,
+        "defending": 85,
+        "physical": 85
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box"
+      ],
+      "skills": [
+        "iron_wall",
+        "interceptor",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "muscular",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "brighton",
+      "era": "布莱顿时期",
+      "years": "2021-2023",
+      "jersey_number": 25,
+      "base_player_id": "caicedo",
+      "version_index": 1,
+      "is_national": false
+    },
+    "caicedo_chelsea_2": {
+      "name": "莫伊塞斯·凯塞多",
+      "short_name": "凯塞多",
+      "nationality": "厄瓜多尔",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 67,
+        "passing": 82,
+        "dribbling": 80,
+        "defending": 87,
+        "physical": 87
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box"
+      ],
+      "skills": [
+        "iron_wall",
+        "interceptor",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "muscular",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "chelsea",
+      "era": "切尔西时期",
+      "years": "2023-至今",
+      "jersey_number": 25,
+      "base_player_id": "caicedo",
+      "version_index": 2,
+      "is_national": false
+    },
+    "caicedo_ecuador_3": {
+      "name": "莫伊塞斯·凯塞多",
+      "short_name": "凯塞多",
+      "nationality": "厄瓜多尔",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 79,
+        "shooting": 66,
+        "passing": 81,
+        "dribbling": 79,
+        "defending": 86,
+        "physical": 86
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box"
+      ],
+      "skills": [
+        "iron_wall",
+        "interceptor",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "muscular",
+        "skin_tone": "#8B5A2B",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "ecuador",
+      "era": "国家队",
+      "years": "2020-至今",
+      "jersey_number": 23,
+      "base_player_id": "caicedo",
+      "version_index": 3,
+      "is_national": true
+    },
+    "mudryk_shakhtar_donetsk_0": {
+      "name": "米哈伊洛·穆德里克",
+      "short_name": "穆德里克",
+      "nationality": "乌克兰",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 90,
+        "shooting": 69,
+        "passing": 67,
+        "dribbling": 82,
+        "defending": 32,
+        "physical": 62
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "shakhtar_donetsk",
+      "era": "顿涅茨克矿工时期",
+      "years": "2018-2023",
+      "jersey_number": 10,
+      "base_player_id": "mudryk",
+      "version_index": 0,
+      "is_national": false
+    },
+    "mudryk_chelsea_1": {
+      "name": "米哈伊洛·穆德里克",
+      "short_name": "穆德里克",
+      "nationality": "乌克兰",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 93,
+        "shooting": 72,
+        "passing": 70,
+        "dribbling": 85,
+        "defending": 35,
+        "physical": 65
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "chelsea",
+      "era": "切尔西时期",
+      "years": "2023-至今",
+      "jersey_number": 15,
+      "base_player_id": "mudryk",
+      "version_index": 1,
+      "is_national": false
+    },
+    "mudryk_ukraine_2": {
+      "name": "米哈伊洛·穆德里克",
+      "short_name": "穆德里克",
+      "nationality": "乌克兰",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 93,
+        "shooting": 72,
+        "passing": 70,
+        "dribbling": 85,
+        "defending": 35,
+        "physical": 65
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "ukraine",
+      "era": "国家队",
+      "years": "2022-至今",
+      "jersey_number": 15,
+      "base_player_id": "mudryk",
+      "version_index": 2,
+      "is_national": true
+    },
+    "antony_sao_paulo_0": {
+      "name": "安东尼",
+      "short_name": "安东尼",
+      "nationality": "巴西",
+      "positions": [
+        "RW"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 80,
+        "shooting": 70,
+        "passing": 70,
+        "dribbling": 83,
+        "defending": 35,
+        "physical": 60
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "first_touch",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "sao_paulo",
+      "era": "圣保罗时期",
+      "years": "2018-2020",
+      "jersey_number": 11,
+      "base_player_id": "antony",
+      "version_index": 0,
+      "is_national": false
+    },
+    "antony_ajax_1": {
+      "name": "安东尼",
+      "short_name": "安东尼",
+      "nationality": "巴西",
+      "positions": [
+        "RW"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 85,
+        "shooting": 75,
+        "passing": 75,
+        "dribbling": 88,
+        "defending": 40,
+        "physical": 65
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "first_touch",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "ajax",
+      "era": "阿贾克斯时期",
+      "years": "2020-2022",
+      "jersey_number": 11,
+      "base_player_id": "antony",
+      "version_index": 1,
+      "is_national": false
+    },
+    "antony_man_united_2": {
+      "name": "安东尼",
+      "short_name": "安东尼",
+      "nationality": "巴西",
+      "positions": [
+        "RW"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 87,
+        "shooting": 77,
+        "passing": 77,
+        "dribbling": 90,
+        "defending": 42,
+        "physical": 67
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "first_touch",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "man_united",
+      "era": "曼联时期",
+      "years": "2022-至今",
+      "jersey_number": 21,
+      "base_player_id": "antony",
+      "version_index": 2,
+      "is_national": false
+    },
+    "antony_brazil_3": {
+      "name": "安东尼",
+      "short_name": "安东尼",
+      "nationality": "巴西",
+      "positions": [
+        "RW"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 86,
+        "shooting": 76,
+        "passing": 76,
+        "dribbling": 89,
+        "defending": 41,
+        "physical": 66
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "first_touch",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "brazil",
+      "era": "国家队",
+      "years": "2021-至今",
+      "jersey_number": 19,
+      "base_player_id": "antony",
+      "version_index": 3,
+      "is_national": true
+    },
+    "joao_felix_benfica_0": {
+      "name": "若昂·菲利克斯",
+      "short_name": "菲利克斯",
+      "nationality": "葡萄牙",
+      "positions": [
+        "CF",
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 78,
+        "shooting": 78,
+        "passing": 78,
+        "dribbling": 86,
+        "defending": 38,
+        "physical": 63
+      },
+      "traits": [
+        "dribbling_master",
+        "flair",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "slim",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "benfica",
+      "era": "本菲卡时期",
+      "years": "2018-2019",
+      "jersey_number": 79,
+      "base_player_id": "joao_felix",
+      "version_index": 0,
+      "is_national": false
+    },
+    "joao_felix_atletico_madrid_1": {
+      "name": "若昂·菲利克斯",
+      "short_name": "菲利克斯",
+      "nationality": "葡萄牙",
+      "positions": [
+        "CF",
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 80,
+        "passing": 80,
+        "dribbling": 88,
+        "defending": 40,
+        "physical": 65
+      },
+      "traits": [
+        "dribbling_master",
+        "flair",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "slim",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "atletico_madrid",
+      "era": "马竞时期",
+      "years": "2019-至今",
+      "jersey_number": 7,
+      "base_player_id": "joao_felix",
+      "version_index": 1,
+      "is_national": false
+    },
+    "joao_felix_chelsea_2": {
+      "name": "若昂·菲利克斯",
+      "short_name": "菲利克斯",
+      "nationality": "葡萄牙",
+      "positions": [
+        "CF",
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 79,
+        "shooting": 79,
+        "passing": 79,
+        "dribbling": 87,
+        "defending": 39,
+        "physical": 64
+      },
+      "traits": [
+        "dribbling_master",
+        "flair",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "slim",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "chelsea",
+      "era": "切尔西租借",
+      "years": "2023",
+      "jersey_number": 11,
+      "base_player_id": "joao_felix",
+      "version_index": 2,
+      "is_national": false
+    },
+    "joao_felix_barcelona_3": {
+      "name": "若昂·菲利克斯",
+      "short_name": "菲利克斯",
+      "nationality": "葡萄牙",
+      "positions": [
+        "CF",
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 79,
+        "shooting": 79,
+        "passing": 79,
+        "dribbling": 87,
+        "defending": 39,
+        "physical": 64
+      },
+      "traits": [
+        "dribbling_master",
+        "flair",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "slim",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "barcelona",
+      "era": "巴萨租借",
+      "years": "2023-2024",
+      "jersey_number": 14,
+      "base_player_id": "joao_felix",
+      "version_index": 3,
+      "is_national": false
+    },
+    "joao_felix_portugal_4": {
+      "name": "若昂·菲利克斯",
+      "short_name": "菲利克斯",
+      "nationality": "葡萄牙",
+      "positions": [
+        "CF",
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 81,
+        "shooting": 81,
+        "passing": 81,
+        "dribbling": 89,
+        "defending": 41,
+        "physical": 66
+      },
+      "traits": [
+        "dribbling_master",
+        "flair",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.08,
+        "body_type": "slim",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "portugal",
+      "era": "国家队",
+      "years": "2019-至今",
+      "jersey_number": 23,
+      "base_player_id": "joao_felix",
+      "version_index": 4,
+      "is_national": true
+    },
+    "havertz_leverkusen_0": {
+      "name": "凯·哈弗茨",
+      "short_name": "哈弗茨",
+      "nationality": "德国",
+      "positions": [
+        "CF",
+        "ST",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 78,
+        "shooting": 80,
+        "passing": 78,
+        "dribbling": 82,
+        "defending": 48,
+        "physical": 80
+      },
+      "traits": [
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "air_dominance",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "leverkusen",
+      "era": "勒沃库森时期",
+      "years": "2016-2020",
+      "jersey_number": 29,
+      "base_player_id": "havertz",
+      "version_index": 0,
+      "is_national": false
+    },
+    "havertz_chelsea_1": {
+      "name": "凯·哈弗茨",
+      "short_name": "哈弗茨",
+      "nationality": "德国",
+      "positions": [
+        "CF",
+        "ST",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 80,
+        "shooting": 82,
+        "passing": 80,
+        "dribbling": 84,
+        "defending": 50,
+        "physical": 82
+      },
+      "traits": [
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "air_dominance",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "chelsea",
+      "era": "切尔西时期",
+      "years": "2020-2023",
+      "jersey_number": 29,
+      "base_player_id": "havertz",
+      "version_index": 1,
+      "is_national": false
+    },
+    "havertz_arsenal_2": {
+      "name": "凯·哈弗茨",
+      "short_name": "哈弗茨",
+      "nationality": "德国",
+      "positions": [
+        "CF",
+        "ST",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 82,
+        "shooting": 84,
+        "passing": 82,
+        "dribbling": 86,
+        "defending": 52,
+        "physical": 84
+      },
+      "traits": [
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "air_dominance",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "arsenal",
+      "era": "阿森纳时期",
+      "years": "2023-至今",
+      "jersey_number": 29,
+      "base_player_id": "havertz",
+      "version_index": 2,
+      "is_national": false
+    },
+    "havertz_germany_3": {
+      "name": "凯·哈弗茨",
+      "short_name": "哈弗茨",
+      "nationality": "德国",
+      "positions": [
+        "CF",
+        "ST",
+        "CAM"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 81,
+        "shooting": 83,
+        "passing": 81,
+        "dribbling": 85,
+        "defending": 51,
+        "physical": 83
+      },
+      "traits": [
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "air_dominance",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.15,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "germany",
+      "era": "国家队",
+      "years": "2018-至今",
+      "jersey_number": 7,
+      "base_player_id": "havertz",
+      "version_index": 3,
+      "is_national": true
+    },
+    "declan_rice_west_ham_0": {
+      "name": "德克兰·赖斯",
+      "short_name": "赖斯",
+      "nationality": "英格兰",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 76,
+        "shooting": 68,
+        "passing": 80,
+        "dribbling": 76,
+        "defending": 83,
+        "physical": 86
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box",
+        "leader"
+      ],
+      "skills": [
+        "iron_wall",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "west_ham",
+      "era": "西汉姆时期",
+      "years": "2017-2023",
+      "jersey_number": 41,
+      "base_player_id": "declan_rice",
+      "version_index": 0,
+      "is_national": false
+    },
+    "declan_rice_arsenal_1": {
+      "name": "德克兰·赖斯",
+      "short_name": "赖斯",
+      "nationality": "英格兰",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 81,
+        "shooting": 73,
+        "passing": 85,
+        "dribbling": 81,
+        "defending": 88,
+        "physical": 91
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box",
+        "leader"
+      ],
+      "skills": [
+        "iron_wall",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "arsenal",
+      "era": "阿森纳时期",
+      "years": "2023-至今",
+      "jersey_number": 41,
+      "base_player_id": "declan_rice",
+      "version_index": 1,
+      "is_national": false
+    },
+    "declan_rice_england_2": {
+      "name": "德克兰·赖斯",
+      "short_name": "赖斯",
+      "nationality": "英格兰",
+      "positions": [
+        "CDM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 72,
+        "passing": 84,
+        "dribbling": 80,
+        "defending": 87,
+        "physical": 90
+      },
+      "traits": [
+        "iron_wall",
+        "box_to_box",
+        "leader"
+      ],
+      "skills": [
+        "iron_wall",
+        "pinpoint_pass",
+        "endless_runner"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "england",
+      "era": "国家队",
+      "years": "2019-至今",
+      "jersey_number": 4,
+      "base_player_id": "declan_rice",
+      "version_index": 2,
+      "is_national": true
+    },
+    "mac_allister_boca_juniors_0": {
+      "name": "亚历克西斯·麦卡利斯特",
+      "short_name": "麦卡利斯特",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 67,
+        "shooting": 73,
+        "passing": 80,
+        "dribbling": 79,
+        "defending": 65,
+        "physical": 70
+      },
+      "traits": [
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "boca_juniors",
+      "era": "博卡青年时期",
+      "years": "2016-2019",
+      "jersey_number": 8,
+      "base_player_id": "mac_allister",
+      "version_index": 0,
+      "is_national": false
+    },
+    "mac_allister_brighton_1": {
+      "name": "亚历克西斯·麦卡利斯特",
+      "short_name": "麦卡利斯特",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 72,
+        "shooting": 78,
+        "passing": 85,
+        "dribbling": 84,
+        "defending": 70,
+        "physical": 75
+      },
+      "traits": [
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "brighton",
+      "era": "布莱顿时期",
+      "years": "2019-2023",
+      "jersey_number": 10,
+      "base_player_id": "mac_allister",
+      "version_index": 1,
+      "is_national": false
+    },
+    "mac_allister_liverpool_2": {
+      "name": "亚历克西斯·麦卡利斯特",
+      "short_name": "麦卡利斯特",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 75,
+        "shooting": 81,
+        "passing": 88,
+        "dribbling": 87,
+        "defending": 73,
+        "physical": 78
+      },
+      "traits": [
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "liverpool",
+      "era": "利物浦时期",
+      "years": "2023-至今",
+      "jersey_number": 10,
+      "base_player_id": "mac_allister",
+      "version_index": 2,
+      "is_national": false
+    },
+    "mac_allister_argentina_3": {
+      "name": "亚历克西斯·麦卡利斯特",
+      "short_name": "麦卡利斯特",
+      "nationality": "阿根廷",
+      "positions": [
+        "CM",
+        "CAM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 74,
+        "shooting": 80,
+        "passing": 87,
+        "dribbling": 86,
+        "defending": 72,
+        "physical": 77
+      },
+      "traits": [
+        "playmaker",
+        "free_kick"
+      ],
+      "skills": [
+        "vision_pass",
+        "pinpoint_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.0,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#5A3D1E"
+      },
+      "club": "argentina",
+      "era": "国家队",
+      "years": "2019-至今",
+      "jersey_number": 20,
+      "base_player_id": "mac_allister",
+      "version_index": 3,
+      "is_national": true
+    },
+    "szoboszlai_salzburg_0": {
+      "name": "多米尼克·索博斯洛伊",
+      "short_name": "索博斯洛伊",
+      "nationality": "匈牙利",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 77,
+        "shooting": 79,
+        "passing": 81,
+        "dribbling": 81,
+        "defending": 57,
+        "physical": 72
+      },
+      "traits": [
+        "long_shot",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "salzburg",
+      "era": "萨尔茨堡时期",
+      "years": "2018-2021",
+      "jersey_number": 18,
+      "base_player_id": "szoboszlai",
+      "version_index": 0,
+      "is_national": false
+    },
+    "szoboszlai_leipzig_1": {
+      "name": "多米尼克·索博斯洛伊",
+      "short_name": "索博斯洛伊",
+      "nationality": "匈牙利",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 82,
+        "passing": 84,
+        "dribbling": 84,
+        "defending": 60,
+        "physical": 75
+      },
+      "traits": [
+        "long_shot",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "leipzig",
+      "era": "莱比锡时期",
+      "years": "2021-2023",
+      "jersey_number": 17,
+      "base_player_id": "szoboszlai",
+      "version_index": 1,
+      "is_national": false
+    },
+    "szoboszlai_liverpool_2": {
+      "name": "多米尼克·索博斯洛伊",
+      "short_name": "索博斯洛伊",
+      "nationality": "匈牙利",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 82,
+        "shooting": 84,
+        "passing": 86,
+        "dribbling": 86,
+        "defending": 62,
+        "physical": 77
+      },
+      "traits": [
+        "long_shot",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "liverpool",
+      "era": "利物浦时期",
+      "years": "2023-至今",
+      "jersey_number": 8,
+      "base_player_id": "szoboszlai",
+      "version_index": 2,
+      "is_national": false
+    },
+    "szoboszlai_hungary_3": {
+      "name": "多米尼克·索博斯洛伊",
+      "short_name": "索博斯洛伊",
+      "nationality": "匈牙利",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 81,
+        "shooting": 83,
+        "passing": 85,
+        "dribbling": 85,
+        "defending": 61,
+        "physical": 76
+      },
+      "traits": [
+        "long_shot",
+        "free_kick",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "vision_pass",
+        "curve_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#C8B88A"
+      },
+      "club": "hungary",
+      "era": "国家队",
+      "years": "2019-至今",
+      "jersey_number": 10,
+      "base_player_id": "szoboszlai",
+      "version_index": 3,
+      "is_national": true
+    },
+    "wirtz_leverkusen_0": {
+      "name": "弗洛里安·维尔茨",
+      "short_name": "维尔茨",
+      "nationality": "德国",
+      "positions": [
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 82,
+        "shooting": 78,
+        "passing": 85,
+        "dribbling": 88,
+        "defending": 45,
+        "physical": 65
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9C28A"
+      },
+      "club": "leverkusen",
+      "era": "勒沃库森时期",
+      "years": "2020-至今",
+      "jersey_number": 10,
+      "base_player_id": "wirtz",
+      "version_index": 0,
+      "is_national": false
+    },
+    "wirtz_germany_1": {
+      "name": "弗洛里安·维尔茨",
+      "short_name": "维尔茨",
+      "nationality": "德国",
+      "positions": [
+        "CAM",
+        "LW"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 82,
+        "shooting": 78,
+        "passing": 85,
+        "dribbling": 88,
+        "defending": 45,
+        "physical": 65
+      },
+      "traits": [
+        "dribbling_master",
+        "playmaker"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "vision_pass",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "slim",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_blonde",
+        "hair_color": "#D9C28A"
+      },
+      "club": "germany",
+      "era": "国家队",
+      "years": "2021-至今",
+      "jersey_number": 17,
+      "base_player_id": "wirtz",
+      "version_index": 1,
+      "is_national": true
+    },
+    "gvardiol_transfer_dinamo_zagreb_0": {
+      "name": "约什科·格瓦迪奥尔",
+      "short_name": "格瓦迪奥尔",
+      "nationality": "克罗地亚",
+      "positions": [
+        "CB",
+        "LB"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 73,
+        "shooting": 50,
+        "passing": 65,
+        "dribbling": 67,
+        "defending": 80,
+        "physical": 79
+      },
+      "traits": [
+        "iron_wall",
+        "header"
+      ],
+      "skills": [
+        "iron_wall",
+        "air_dominance",
+        "speed_burst"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "dinamo_zagreb",
+      "era": "萨格勒布迪纳摩时期",
+      "years": "2019-2021",
+      "jersey_number": 5,
+      "base_player_id": "gvardiol_transfer",
+      "version_index": 0,
+      "is_national": false
+    },
+    "gvardiol_transfer_leipzig_1": {
+      "name": "约什科·格瓦迪奥尔",
+      "short_name": "格瓦迪奥尔",
+      "nationality": "克罗地亚",
+      "positions": [
+        "CB",
+        "LB"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 78,
+        "shooting": 55,
+        "passing": 70,
+        "dribbling": 72,
+        "defending": 85,
+        "physical": 84
+      },
+      "traits": [
+        "iron_wall",
+        "header"
+      ],
+      "skills": [
+        "iron_wall",
+        "air_dominance",
+        "speed_burst"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "leipzig",
+      "era": "莱比锡时期",
+      "years": "2021-2023",
+      "jersey_number": 32,
+      "base_player_id": "gvardiol_transfer",
+      "version_index": 1,
+      "is_national": false
+    },
+    "gvardiol_transfer_man_city_2": {
+      "name": "约什科·格瓦迪奥尔",
+      "short_name": "格瓦迪奥尔",
+      "nationality": "克罗地亚",
+      "positions": [
+        "CB",
+        "LB"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 80,
+        "shooting": 57,
+        "passing": 72,
+        "dribbling": 74,
+        "defending": 87,
+        "physical": 86
+      },
+      "traits": [
+        "iron_wall",
+        "header"
+      ],
+      "skills": [
+        "iron_wall",
+        "air_dominance",
+        "speed_burst"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "man_city",
+      "era": "曼城时期",
+      "years": "2023-至今",
+      "jersey_number": 24,
+      "base_player_id": "gvardiol_transfer",
+      "version_index": 2,
+      "is_national": false
+    },
+    "gvardiol_transfer_croatia_3": {
+      "name": "约什科·格瓦迪奥尔",
+      "short_name": "格瓦迪奥尔",
+      "nationality": "克罗地亚",
+      "positions": [
+        "CB",
+        "LB"
+      ],
+      "preferred_foot": "left",
+      "attributes": {
+        "pace": 79,
+        "shooting": 56,
+        "passing": 71,
+        "dribbling": 73,
+        "defending": 86,
+        "physical": 85
+      },
+      "traits": [
+        "iron_wall",
+        "header"
+      ],
+      "skills": [
+        "iron_wall",
+        "air_dominance",
+        "speed_burst"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "croatia",
+      "era": "国家队",
+      "years": "2021-至今",
+      "jersey_number": 20,
+      "base_player_id": "gvardiol_transfer",
+      "version_index": 3,
+      "is_national": true
+    },
+    "kvaratskhelia_dinamo_batumi_0": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "克瓦拉",
+      "nationality": "格鲁吉亚",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 83,
+        "shooting": 75,
+        "passing": 73,
+        "dribbling": 85,
+        "defending": 35,
+        "physical": 67
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "speed_burst",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "dinamo_batumi",
+      "era": "巴统迪纳摩时期",
+      "years": "2021",
+      "jersey_number": 77,
+      "base_player_id": "kvaratskhelia",
+      "version_index": 0,
+      "is_national": false
+    },
+    "kvaratskhelia_rubin_kazan_1": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "克瓦拉",
+      "nationality": "格鲁吉亚",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 85,
+        "shooting": 77,
+        "passing": 75,
+        "dribbling": 87,
+        "defending": 37,
+        "physical": 69
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "speed_burst",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "rubin_kazan",
+      "era": "喀山红宝石时期",
+      "years": "2019-2022",
+      "jersey_number": 9,
+      "base_player_id": "kvaratskhelia",
+      "version_index": 1,
+      "is_national": false
+    },
+    "kvaratskhelia_napoli_2": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "克瓦拉",
+      "nationality": "格鲁吉亚",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 90,
+        "shooting": 82,
+        "passing": 80,
+        "dribbling": 92,
+        "defending": 42,
+        "physical": 74
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "speed_burst",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "napoli",
+      "era": "那不勒斯时期",
+      "years": "2022-至今",
+      "jersey_number": 77,
+      "base_player_id": "kvaratskhelia",
+      "version_index": 2,
+      "is_national": false
+    },
+    "kvaratskhelia_georgia_3": {
+      "name": "赫维恰·克瓦拉茨赫利亚",
+      "short_name": "克瓦拉",
+      "nationality": "格鲁吉亚",
+      "positions": [
+        "LW",
+        "LM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 89,
+        "shooting": 81,
+        "passing": 79,
+        "dribbling": 91,
+        "defending": 41,
+        "physical": 73
+      },
+      "traits": [
+        "dribbling_master",
+        "flair"
+      ],
+      "skills": [
+        "ghost_dribble",
+        "speed_burst",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.05,
+        "body_type": "athletic",
+        "skin_tone": "#E8B888",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "georgia",
+      "era": "国家队",
+      "years": "2019-至今",
+      "jersey_number": 7,
+      "base_player_id": "kvaratskhelia",
+      "version_index": 3,
+      "is_national": true
+    },
+    "osimhen_lille_0": {
+      "name": "维克托·奥斯梅恩",
+      "short_name": "奥斯梅恩",
+      "nationality": "尼日利亚",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 87,
+        "shooting": 85,
+        "passing": 62,
+        "dribbling": 77,
+        "defending": 37,
+        "physical": 82
+      },
+      "traits": [
+        "speedster",
+        "header",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "air_dominance",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "lille",
+      "era": "里尔时期",
+      "years": "2019-2020",
+      "jersey_number": 7,
+      "base_player_id": "osimhen",
+      "version_index": 0,
+      "is_national": false
+    },
+    "osimhen_napoli_1": {
+      "name": "维克托·奥斯梅恩",
+      "short_name": "奥斯梅恩",
+      "nationality": "尼日利亚",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 92,
+        "shooting": 90,
+        "passing": 67,
+        "dribbling": 82,
+        "defending": 42,
+        "physical": 87
+      },
+      "traits": [
+        "speedster",
+        "header",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "air_dominance",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "napoli",
+      "era": "那不勒斯时期",
+      "years": "2020-至今",
+      "jersey_number": 9,
+      "base_player_id": "osimhen",
+      "version_index": 1,
+      "is_national": false
+    },
+    "osimhen_nigeria_2": {
+      "name": "维克托·奥斯梅恩",
+      "short_name": "奥斯梅恩",
+      "nationality": "尼日利亚",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 91,
+        "shooting": 89,
+        "passing": 66,
+        "dribbling": 81,
+        "defending": 41,
+        "physical": 86
+      },
+      "traits": [
+        "speedster",
+        "header",
+        "long_shot"
+      ],
+      "skills": [
+        "speed_burst",
+        "air_dominance",
+        "power_shot"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "short_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "nigeria",
+      "era": "国家队",
+      "years": "2017-至今",
+      "jersey_number": 9,
+      "base_player_id": "osimhen",
+      "version_index": 2,
+      "is_national": true
+    },
+    "leao_transfer_lille_0": {
+      "name": "拉斐尔·莱奥",
+      "short_name": "莱奥",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 90,
+        "shooting": 77,
+        "passing": 72,
+        "dribbling": 85,
+        "defending": 27,
+        "physical": 75
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "lille",
+      "era": "里尔时期",
+      "years": "2018-2019",
+      "jersey_number": 9,
+      "base_player_id": "leao_transfer",
+      "version_index": 0,
+      "is_national": false
+    },
+    "leao_transfer_ac_milan_1": {
+      "name": "拉斐尔·莱奥",
+      "short_name": "莱奥",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 95,
+        "shooting": 82,
+        "passing": 77,
+        "dribbling": 90,
+        "defending": 32,
+        "physical": 80
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "ac_milan",
+      "era": "AC米兰时期",
+      "years": "2019-至今",
+      "jersey_number": 10,
+      "base_player_id": "leao_transfer",
+      "version_index": 1,
+      "is_national": false
+    },
+    "leao_transfer_portugal_2": {
+      "name": "拉斐尔·莱奥",
+      "short_name": "莱奥",
+      "nationality": "葡萄牙",
+      "positions": [
+        "LW",
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 94,
+        "shooting": 81,
+        "passing": 76,
+        "dribbling": 89,
+        "defending": 31,
+        "physical": 79
+      },
+      "traits": [
+        "speedster",
+        "dribbling_master"
+      ],
+      "skills": [
+        "speed_burst",
+        "ghost_dribble",
+        "first_touch"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#5A3D2A",
+        "hair_style": "curly_black",
+        "hair_color": "#1A1A1A"
+      },
+      "club": "portugal",
+      "era": "国家队",
+      "years": "2021-至今",
+      "jersey_number": 15,
+      "base_player_id": "leao_transfer",
+      "version_index": 2,
+      "is_national": true
+    },
+    "kane_transfer_tottenham_0": {
+      "name": "哈里·凯恩",
+      "short_name": "凯恩",
+      "nationality": "英格兰",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 70,
+        "shooting": 93,
+        "passing": 84,
+        "dribbling": 80,
+        "defending": 45,
+        "physical": 85
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "air_dominance",
+        "vision_pass"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "tottenham",
+      "era": "热刺时期",
+      "years": "2009-2023",
+      "jersey_number": 10,
+      "base_player_id": "kane_transfer",
+      "version_index": 0,
+      "is_national": false
+    },
+    "kane_transfer_bayern_munich_1": {
+      "name": "哈里·凯恩",
+      "short_name": "凯恩",
+      "nationality": "英格兰",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 72,
+        "shooting": 95,
+        "passing": 86,
+        "dribbling": 82,
+        "defending": 47,
+        "physical": 87
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "air_dominance",
+        "vision_pass"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "bayern_munich",
+      "era": "拜仁时期",
+      "years": "2023-至今",
+      "jersey_number": 9,
+      "base_player_id": "kane_transfer",
+      "version_index": 1,
+      "is_national": false
+    },
+    "kane_transfer_england_2": {
+      "name": "哈里·凯恩",
+      "short_name": "凯恩",
+      "nationality": "英格兰",
+      "positions": [
+        "ST"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 71,
+        "shooting": 94,
+        "passing": 85,
+        "dribbling": 81,
+        "defending": 46,
+        "physical": 86
+      },
+      "traits": [
+        "long_shot",
+        "header",
+        "playmaker"
+      ],
+      "skills": [
+        "power_shot",
+        "air_dominance",
+        "vision_pass"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "muscular",
+        "skin_tone": "#F2C49B",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "england",
+      "era": "国家队",
+      "years": "2015-至今",
+      "jersey_number": 9,
+      "base_player_id": "kane_transfer",
+      "version_index": 2,
+      "is_national": true
+    },
+    "bellingham_transfer_birmingham_0": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 72,
+        "shooting": 77,
+        "passing": 77,
+        "dribbling": 79,
+        "defending": 67,
+        "physical": 74
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker",
+        "leader"
+      ],
+      "skills": [
+        "vision_pass",
+        "endless_runner",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "birmingham",
+      "era": "伯明翰时期",
+      "years": "2019-2020",
+      "jersey_number": 22,
+      "base_player_id": "bellingham_transfer",
+      "version_index": 0,
+      "is_national": false
+    },
+    "bellingham_transfer_dortmund_1": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 80,
+        "shooting": 85,
+        "passing": 85,
+        "dribbling": 87,
+        "defending": 75,
+        "physical": 82
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker",
+        "leader"
+      ],
+      "skills": [
+        "vision_pass",
+        "endless_runner",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "dortmund",
+      "era": "多特蒙德时期",
+      "years": "2020-2023",
+      "jersey_number": 22,
+      "base_player_id": "bellingham_transfer",
+      "version_index": 1,
+      "is_national": false
+    },
+    "bellingham_transfer_real_madrid_2": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 83,
+        "shooting": 88,
+        "passing": 88,
+        "dribbling": 90,
+        "defending": 78,
+        "physical": 85
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker",
+        "leader"
+      ],
+      "skills": [
+        "vision_pass",
+        "endless_runner",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "real_madrid",
+      "era": "皇马时期",
+      "years": "2023-至今",
+      "jersey_number": 5,
+      "base_player_id": "bellingham_transfer",
+      "version_index": 2,
+      "is_national": false
+    },
+    "bellingham_transfer_england_3": {
+      "name": "裘德·贝林厄姆",
+      "short_name": "贝林厄姆",
+      "nationality": "英格兰",
+      "positions": [
+        "CAM",
+        "CM"
+      ],
+      "preferred_foot": "right",
+      "attributes": {
+        "pace": 82,
+        "shooting": 87,
+        "passing": 87,
+        "dribbling": 89,
+        "defending": 77,
+        "physical": 84
+      },
+      "traits": [
+        "box_to_box",
+        "playmaker",
+        "leader"
+      ],
+      "skills": [
+        "vision_pass",
+        "endless_runner",
+        "clutch_player"
+      ],
+      "appearance": {
+        "height_mult": 1.1,
+        "body_type": "athletic",
+        "skin_tone": "#D9A87A",
+        "hair_style": "short_brown",
+        "hair_color": "#3A2A1A"
+      },
+      "club": "england",
+      "era": "国家队",
+      "years": "2020-至今",
+      "jersey_number": 26,
+      "base_player_id": "bellingham_transfer",
+      "version_index": 3,
+      "is_national": true
+    }
+  }
+}
