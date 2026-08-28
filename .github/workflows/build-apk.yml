@@ -65,6 +65,8 @@ jobs:
           package/app_category=2
           package/retain_data_on_uninstall=false
           package/exclude_from_recents=false
+          version/code=1
+          version/name="1.0.0"
           screen/immersive_mode=true
           screen/support_small=true
           screen/support_normal=true
